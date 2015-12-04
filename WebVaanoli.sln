@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B45E3C2E-18AA-4E5A-AEE5-2409A1C4D467}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{846806D0-DB7E-4F10-912D-1B1373473D04}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebVaanoli", "src\WebVaanoli\WebVaanoli.xproj", "{AA613498-9C96-46B4-9D54-7BC889AC0769}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA613498-9C96-46B4-9D54-7BC889AC0769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA613498-9C96-46B4-9D54-7BC889AC0769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA613498-9C96-46B4-9D54-7BC889AC0769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA613498-9C96-46B4-9D54-7BC889AC0769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA613498-9C96-46B4-9D54-7BC889AC0769} = {B45E3C2E-18AA-4E5A-AEE5-2409A1C4D467}
+	EndGlobalSection
+EndGlobal
