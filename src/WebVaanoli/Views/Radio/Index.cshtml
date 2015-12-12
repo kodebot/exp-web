@@ -1,0 +1,30 @@
+﻿@model WebVaanoli.ViewModels.Radio.IndexViewModel
+@{
+    ViewData["Title"] = "Radios";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Genre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var radio in Model.Radios)
+        {
+            <tr>
+                <td>@radio.Id</td>
+                <td>@radio.Name</td>
+                <td>@radio.Description</td>
+                <td>@radio.Genre</td>
+                <td>Actions</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
