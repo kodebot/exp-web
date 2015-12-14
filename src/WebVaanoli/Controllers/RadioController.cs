@@ -28,7 +28,7 @@ namespace WebVaanoli.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Detail(int id)
         {
             if (id == 0)
             {

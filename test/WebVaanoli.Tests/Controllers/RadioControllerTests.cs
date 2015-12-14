@@ -60,7 +60,7 @@ namespace WebVaanoli.Tests.Controllers
             var sut = _fixture.Create<RadioController>();
             
             // Exercise Sut
-            var result = sut.Details(invalidId);
+            var result = sut.Detail(invalidId);
 
             // Verify Outcome
             var badRequest = result as BadRequestResult;
@@ -81,7 +81,7 @@ namespace WebVaanoli.Tests.Controllers
             var sut = _fixture.Create<RadioController>();
             
             // Exercise Sut
-            var result = sut.Details(nonExistentId);
+            var result = sut.Detail(nonExistentId);
 
             // Verify Outcome
             var notFoundResult = result as HttpNotFoundResult;
@@ -108,7 +108,7 @@ namespace WebVaanoli.Tests.Controllers
             var sut = _fixture.Create<RadioController>();
 
             // Exercise Sut
-            var result = sut.Details(anyId);
+            var result = sut.Detail(anyId);
 
             // Verify Outcome
             var viewResult = result as ViewResult;

@@ -17,7 +17,7 @@
     <tbody>
         @foreach (var radio in Model.Radios)
         {
-            <tr>
+            <tr onclick='window.location.href="@Url.Action("detail", new { id = radio.Id })"'>
                 <td>@radio.Id</td>
                 <td>@radio.Name</td>
                 <td>@radio.Description</td>
