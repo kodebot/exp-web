@@ -45,5 +45,10 @@ namespace WebVaanoli.Controllers
 
             return View(detailViewModel);
         }
+
+        public IActionResult Edit(int invalidId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

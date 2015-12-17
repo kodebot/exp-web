@@ -5,6 +5,7 @@ using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 using Shouldly;
+using System;
 using System.Linq;
 using WebVaanoli.Controllers;
 using WebVaanoli.Data;
@@ -40,32 +41,27 @@ namespace WebVaanoli.Tests.Controllers
             var result = sut.Index();
 
             // Verify Outcome
-            var viewResult = result as ViewResult;
-            viewResult.ShouldNotBe(null);
-            viewResult.ViewName.ShouldBe(null); // Indicates default view name
-            var indexViewModel = viewResult.ViewData.Model as IndexViewModel;
-            indexViewModel.ShouldNotBe(null);
-            indexViewModel.Radios.ShouldBe(manyRadios);
-            
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<IndexViewModel>(
+                actions: model => model.Radios.ShouldBe(manyRadios));
+
             // Fixture Teardown
         }
 
-        
+
         [Fact]
         public void DetailWithInvalidIdShouldReturnBadRequest()
         {
             // Fixture Setup
             var invalidId = 0;
-            
+
             var sut = _fixture.Create<RadioController>();
-            
+
             // Exercise Sut
             var result = sut.Detail(invalidId);
 
             // Verify Outcome
-            var badRequest = result as BadRequestResult;
-            badRequest.ShouldNotBe(null);
-            
+            result.ShouldBeHttpBadRequest();
+
             // Fixture Teardown
         }
 
@@ -79,13 +75,12 @@ namespace WebVaanoli.Tests.Controllers
             mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(id => id == nonExistentId))).Returns(() => null);
 
             var sut = _fixture.Create<RadioController>();
-            
+
             // Exercise Sut
             var result = sut.Detail(nonExistentId);
 
             // Verify Outcome
-            var notFoundResult = result as HttpNotFoundResult;
-            notFoundResult.ShouldNotBe(null);
+            result.ShouldBeHttpNotFound();
 
             // Fixture Teardown
         }
@@ -99,7 +94,7 @@ namespace WebVaanoli.Tests.Controllers
             var anyRadio = _fixture.Build<Radio>()
                 .With(item => item.Id, anyId)
                 .Create();
-            
+
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
             mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(id => id == anyId))).Returns(anyRadio);
 
@@ -111,12 +106,42 @@ namespace WebVaanoli.Tests.Controllers
             var result = sut.Detail(anyId);
 
             // Verify Outcome
-            var viewResult = result as ViewResult;
-            viewResult.ShouldNotBe(null);
-            viewResult.ViewName.ShouldBe(null); // Indicates default view name
-            var detailViewModel = viewResult.ViewData.Model as DetailViewModel;
-            detailViewModel.ShouldNotBe(null);
-            detailViewModel.Id.ShouldBe(anyRadio.Id);
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<DetailViewModel>(
+                actions: model => model.Id.ShouldBe(anyRadio.Id));
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void EditWithInvalidIdShouldReturnNotFound()
+        {
+            // Fixture Setup
+            var invalidId = _fixture.Create<int>();
+
+            var mockRadioRepository = _fixture.Create<Mock<IRadioRepository>>();
+            mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(value => value == invalidId)))
+                .Returns(() => null);
+
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Edit(invalidId);
+
+            // Verify Outcome
+            result.ShouldBeHttpNotFound();
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void EditShouldReturnDefaultView()
+        {
+
+            // Fixture Setup
+
+            // Exercise Sut
+
+            // Verify Outcome
 
             // Fixture Teardown
         }
