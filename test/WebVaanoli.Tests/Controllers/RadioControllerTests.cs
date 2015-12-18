@@ -118,7 +118,7 @@ namespace WebVaanoli.Tests.Controllers
             // Fixture Setup
             var invalidId = _fixture.Create<int>();
 
-            var mockRadioRepository = _fixture.Create<Mock<IRadioRepository>>();
+            var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
             mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(value => value == invalidId)))
                 .Returns(() => null);
 
@@ -142,6 +142,21 @@ namespace WebVaanoli.Tests.Controllers
             // Exercise Sut
 
             // Verify Outcome
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void AddShouldReturnEditorView()
+        {
+            // Fixture Setup
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Add();
+
+            // Verify Outcome
+            result.ShouldBeViewResultWithViewName("Editor");
 
             // Fixture Teardown
         }

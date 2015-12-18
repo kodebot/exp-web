@@ -46,9 +46,20 @@ namespace WebVaanoli.Controllers
             return View(detailViewModel);
         }
 
-        public IActionResult Edit(int invalidId)
+        public IActionResult Edit(int id)
         {
+            var selectedRadio = _radioRepository.Find(id);
+            if (selectedRadio == null)
+            {
+                return new HttpNotFoundResult();
+            }
+
             throw new NotImplementedException();
+        }
+
+        public IActionResult Add()
+        {
+            return View("Editor");
         }
     }
 }

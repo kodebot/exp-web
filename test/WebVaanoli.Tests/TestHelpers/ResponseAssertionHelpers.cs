@@ -40,11 +40,19 @@ namespace WebVaanoli.Tests.TestHelpers
 
         }
 
+        public static void ShouldBeViewResultWithViewName(this IActionResult actionResult, string viewName = null)
+        {
+            actionResult.ShouldBeAssignableTo(typeof(ViewResult));
+
+            var viewResult = actionResult as ViewResult;
+            viewResult.ViewName.ShouldBe(viewName);
+        }
+
         public static void ShouldBeViewResultWithModelSatisfyingAllConditions<T>(this IActionResult actionResult, string viewName = null, params Action<T>[] actions) where T : class
         {
             actionResult.ShouldBeAssignableTo(typeof(ViewResult));
             var viewResult = actionResult as ViewResult;
-          
+
             viewResult.ViewName.ShouldBe(viewName);
 
             var model = viewResult.ViewData.Model as T;

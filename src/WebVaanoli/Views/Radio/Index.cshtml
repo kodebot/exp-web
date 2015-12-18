@@ -4,27 +4,41 @@
 }
 
 <h2>@ViewData["Title"]</h2>
-<table class="table table-hover table-bordered">
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Genre</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var radio in Model.Radios)
-        {
-            <tr onclick='window.location.href="@Url.Action("detail", new { id = radio.Id })"'>
-                <td>@radio.Id</td>
-                <td>@radio.Name</td>
-                <td>@radio.Description</td>
-                <td>@radio.Genre</td>
-                <td>Actions</td>
-            </tr>
+<div>
+    <a asp-controller="radio" asp-action="add" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp; Add New</a>
+</div>
+<div>
 
-        }
-    </tbody>
-</table>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Stream Url</th>
+                <th>Stream Quality</th>
+                <th>Genre</th>
+                <th>Priority</th>
+                <th>Is Active?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var radio in Model.Radios)
+            {
+                <tr onclick='window.location.href="@Url.Action("detail", new { id = radio.Id })"'>
+                    <td>@radio.Id</td>
+                    <td>@radio.Name</td>
+                    <td>@radio.Description</td>
+                    <td>@radio.StreamUrl</td>
+                    <td>@radio.StreamQuality</td>
+                    <td>@radio.Genre</td>
+                    <td>@radio.Priority</td>
+                    <td>@radio.IsActive</td>
+                    <td>Actions</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
