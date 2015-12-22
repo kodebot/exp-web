@@ -14,10 +14,12 @@ namespace WebVaanoli.Controllers
     public class RadioController : Controller
     {
         private readonly IRadioRepository _radioRepository;
+        private readonly IMappingEngine _mappingEngine;
 
-        public RadioController(IRadioRepository radioRepository)
+        public RadioController(IRadioRepository radioRepository, IMappingEngine mappingEngine)
         {
             _radioRepository = radioRepository;
+            _mappingEngine = mappingEngine;
         }
 
         public IActionResult Index()
@@ -41,25 +43,31 @@ namespace WebVaanoli.Controllers
                 return new HttpNotFoundResult();
             }
 
-            var detailViewModel = Mapper.Map<DetailViewModel>(selectedRadio);
+            var detailViewModel = _mappingEngine.Map<DetailViewModel>(selectedRadio);
 
             return View(detailViewModel);
         }
 
         public IActionResult Edit(int id)
         {
+            if(id == 0)
+            {
+                return new BadRequestResult();
+            }
+
             var selectedRadio = _radioRepository.Find(id);
             if (selectedRadio == null)
             {
                 return new HttpNotFoundResult();
             }
 
-            throw new NotImplementedException();
+            var editorViewModel = _mappingEngine.Map<EditorViewModel>(selectedRadio);
+            return View("editor", editorViewModel);
         }
 
         public IActionResult Add()
         {
-            return View("Editor");
+            return View("Editor", new EditorViewModel());
         }
     }
 }

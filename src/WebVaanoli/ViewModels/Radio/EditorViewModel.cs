@@ -1,8 +1,12 @@
-﻿namespace WebVaanoli.ViewModels.Radio
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebVaanoli.ViewModels.Radio
 {
     public class EditorViewModel
     {
         public int Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
         public string Description { get; set; }
         public string StreamUrl { get; set; }

@@ -62,6 +62,8 @@ namespace WebVaanoli
             services.AddTransient<IRadioRepository, RadioRepository>();
 
             Mapper.CreateMap(typeof(Radio), typeof(DetailViewModel));
+            Mapper.CreateMap(typeof(Radio), typeof(EditorViewModel));
+            services.AddInstance<IMappingEngine>(Mapper.Engine);
 
         }
 
