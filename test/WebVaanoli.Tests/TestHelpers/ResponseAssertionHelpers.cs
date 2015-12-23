@@ -59,5 +59,29 @@ namespace WebVaanoli.Tests.TestHelpers
             model.ShouldNotBeNull();
             model.ShouldSatisfyAllConditions(actions.Select(act => new Action(() => act.Invoke(model))).ToArray());
         }
+
+        public static void ShouldBeRedirectToActionResult(this IActionResult actionResult, string controllerName = null, string actionName = null, IDictionary<string, object> routeValues = null)
+        {
+            actionResult.ShouldBeAssignableTo(typeof(RedirectToActionResult));
+            var redirectToActionResult = actionResult as RedirectToActionResult;
+
+            if (controllerName != null)
+            {
+                redirectToActionResult.ControllerName.ShouldBe(controllerName);
+            }
+
+            if (actionName != null)
+            {
+                redirectToActionResult.ActionName.ShouldBe(actionName);
+            }
+
+            if (routeValues != null)
+            {
+                foreach (var routeValue in routeValues)
+                {
+                    redirectToActionResult.RouteValues.ShouldContainKeyAndValue(routeValue.Key, routeValue.Value);
+                }
+            }
+        }
     }
 }
