@@ -29,7 +29,8 @@
     "GenFu": "1.0.4",
     "AutoMapper": "4.1.1",
     "WebVaanoli.Domain": "",
-    "WebVaanoli.Data": ""
+    "WebVaanoli.Data": "",
+    "WebVaanoli.Common": ""
   },
 
   "commands": {

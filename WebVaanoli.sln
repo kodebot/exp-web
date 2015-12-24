@@ -20,6 +20,8 @@ Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebVaanoli.Domain", "src\We
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebVaanoli.Data", "src\WebVaanoli.Data\WebVaanoli.Data.xproj", "{A51DBB1A-493D-4126-BAB2-EC8D41E60D62}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebVaanoli.Common", "src\WebVaanoli.Common\WebVaanoli.Common.xproj", "{212796E4-7C82-42C6-B966-6EA04F6502F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{A51DBB1A-493D-4126-BAB2-EC8D41E60D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A51DBB1A-493D-4126-BAB2-EC8D41E60D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A51DBB1A-493D-4126-BAB2-EC8D41E60D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{212796E4-7C82-42C6-B966-6EA04F6502F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212796E4-7C82-42C6-B966-6EA04F6502F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212796E4-7C82-42C6-B966-6EA04F6502F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212796E4-7C82-42C6-B966-6EA04F6502F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +57,6 @@ Global
 		{2C4771A2-5B24-4075-8A25-21B3D3A19D9D} = {554BCE4E-6D98-4C45-B011-5EC6C60787B0}
 		{BC69C52D-141E-4EA7-ACF1-C30C2CF31A8A} = {B45E3C2E-18AA-4E5A-AEE5-2409A1C4D467}
 		{A51DBB1A-493D-4126-BAB2-EC8D41E60D62} = {B45E3C2E-18AA-4E5A-AEE5-2409A1C4D467}
+		{212796E4-7C82-42C6-B966-6EA04F6502F2} = {B45E3C2E-18AA-4E5A-AEE5-2409A1C4D467}
 	EndGlobalSection
 EndGlobal

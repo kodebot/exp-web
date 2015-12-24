@@ -6,6 +6,7 @@ using Microsoft.Data.Entity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebVaanoli.Common.ConfigOptions;
 using WebVaanoli.Data;
 using WebVaanoli.Domain;
 using WebVaanoli.Models;
@@ -35,6 +36,7 @@ namespace WebVaanoli
 
             builder.AddEnvironmentVariables();
             Configuration = builder.Build();
+
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -55,6 +57,9 @@ namespace WebVaanoli
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
+
+            services.AddOptions();
+            services.Configure<FirebaseOptions>(Configuration);
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

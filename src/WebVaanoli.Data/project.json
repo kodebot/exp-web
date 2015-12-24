@@ -7,8 +7,11 @@
   "licenseUrl": "",
 
   "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "GenFu": "1.0.4",
-    "WebVaanoli.Domain": ""
+    "FireSharp": "2.0.3",
+    "WebVaanoli.Domain": "",
+    "WebVaanoli.Common": ""
   },
 
   "frameworks": {

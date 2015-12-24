@@ -10,5 +10,6 @@ namespace WebVaanoli.Data
         Genre Find(int id);
         IQueryable<Genre> FindAll(Expression<Func<Genre, bool>> filter = null);
         int Add(Genre genre);
+        void Save(Genre genre);
     }
 }

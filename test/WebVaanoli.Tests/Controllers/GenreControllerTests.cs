@@ -12,6 +12,7 @@ using System.Linq;
 using AutoMapper;
 using Microsoft.AspNet.Mvc.ModelBinding;
 using System.Collections.Generic;
+using System;
 
 namespace WebVaanoli.Tests.Controllers
 {
@@ -216,7 +217,7 @@ namespace WebVaanoli.Tests.Controllers
         }
 
         [Fact]
-        public void SaveWithViewModelIdZeroShouldAddNewGenreSuccessfullyAndReturnToDetailsView()
+        public void SaveWithIdZeroShouldAddNewGenreSuccessfullyAndReturnToDetailsView()
         {
             // Fixture Setup
             var anyGenre = _fixture.Build<Genre>()
@@ -243,7 +244,98 @@ namespace WebVaanoli.Tests.Controllers
             // Verify Outcome
             mockGenreRepository.VerifyAll();
             result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyNewId });
-            
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithIdZeroThrowingExceptionShouldReturnEditorViewWithError()
+        {
+            // Fixture Setup
+            var anyGenre = _fixture.Build<Genre>()
+                .With(genre => genre.Id, 0)
+                .Create();
+
+            var anyNewId = _fixture.Create<int>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyGenre);
+
+            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
+            mockGenreRepository
+                .Setup(mock => mock.Add(It.Is<Genre>(val => val == anyGenre)))
+                .Throws(new Exception())
+                .Verifiable();
+
+            var sut = _fixture.Create<GenreController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockGenreRepository.VerifyAll();
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
+                "editor",
+                actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));
+            sut.ModelState.IsValid.ShouldBe(false);
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithExistingIdShouldUpdateGenreSuccessfullyAndReturnToDetailsView()
+        {
+            // Fixture Setup
+            var anyGenre = _fixture.Create<Genre>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyGenre);
+
+            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
+            mockGenreRepository
+                .Setup(mock => mock.Save(It.Is<Genre>(val => val == anyGenre)))
+                .Verifiable();
+
+            var sut = _fixture.Create<GenreController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockGenreRepository.VerifyAll();
+            result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyGenre.Id });
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithExistingIdThrowingExceptionShouldReturnEditorViewWithError()
+        {
+            // Fixture Setup
+            var anyGenre = _fixture.Create<Genre>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyGenre);
+
+            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
+            mockGenreRepository
+                .Setup(mock => mock.Save(It.Is<Genre>(val => val == anyGenre)))
+                .Throws(new Exception())
+                .Verifiable();
+
+            var sut = _fixture.Create<GenreController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockGenreRepository.VerifyAll();
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
+                "editor",
+                actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));
+
             // Fixture Teardown
         }
     }

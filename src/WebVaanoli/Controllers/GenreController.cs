@@ -85,19 +85,41 @@ namespace WebVaanoli.Controllers
 
         public IActionResult Save(EditorViewModel editorViewModel)
         {
-           if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View("editor", editorViewModel);
             }
 
             var genre = _mappingEngine.Map<Genre>(editorViewModel);
-            if(genre.Id == 0)
-            {
-                var newId =_genreRepository.Add(genre);
-                return RedirectToAction("Detail", new { id = newId });
-            }
 
-            throw new NotImplementedException();
+            if (genre.Id == 0)
+            {
+                try
+                {
+                    var newId = _genreRepository.Add(genre);
+                    return RedirectToAction("Detail", new { id = newId });
+                }
+                catch (Exception ex)
+                {
+                    // todo: log ex
+                    ModelState.AddModelError("", "Unable to add genre. Please contact your system administrator.");
+                    return View("editor", editorViewModel);
+                }
+            }
+            else
+            {
+                try
+                {
+                    _genreRepository.Save(genre);
+                    return RedirectToAction("Detail", new { id = genre.Id });
+                }
+                catch (Exception ex)
+                {
+                    // todo: log ex
+                    ModelState.AddModelError("", "Unable to update genre. Please contact your system administrator.");
+                    return View("editor", editorViewModel);
+                }
+            }
         }
     }
 }
