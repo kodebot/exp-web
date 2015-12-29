@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNet.Mvc;
 using System.Linq;
-using WebVaanoli.Data;
 using WebVaanoli.ViewModels.Genre;
 using AutoMapper;
 using System;
 using WebVaanoli.Domain;
+using WebVaanoli.Data.Interfaces;
 
 namespace WebVaanoli.Controllers
 {

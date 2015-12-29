@@ -1,12 +1,7 @@
 ﻿using AutoMapper;
-using GenFu;
 using Microsoft.AspNet.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using WebVaanoli.Data;
-using WebVaanoli.Domain;
+using WebVaanoli.Data.Interfaces;
 using WebVaanoli.ViewModels.Radio;
 
 namespace WebVaanoli.Controllers

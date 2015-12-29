@@ -5,7 +5,7 @@ using Ploeh.AutoFixture.AutoMoq;
 using Shouldly;
 using System.Linq;
 using WebVaanoli.Controllers;
-using WebVaanoli.Data;
+using WebVaanoli.Data.Interfaces;
 using WebVaanoli.Domain;
 using WebVaanoli.Tests.TestHelpers;
 using WebVaanoli.ViewModels.Radio;

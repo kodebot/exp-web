@@ -1,20 +1,20 @@
 ﻿using Microsoft.Extensions.OptionsModel;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Threading.Tasks;
 using WebVaanoli.Common.ConfigOptions;
+using WebVaanoli.Data.Interfaces;
 using WebVaanoli.Domain;
 
 namespace WebVaanoli.Data
 {
     public class GenreRepository : IGenreRepository
     {
-        private readonly FirebaseOptions _firebaseOptions;
-        public GenreRepository(IOptions<FirebaseOptions> firebaseOptions)
+        private readonly IVaanoliDataContext _vaanoliDataContext;
+
+        public GenreRepository(IVaanoliDataContext vaanoliDataContext)
         {
-            _firebaseOptions = firebaseOptions.Value;
+            _vaanoliDataContext = vaanoliDataContext;
         }
         public int Add(Genre genre)
         {

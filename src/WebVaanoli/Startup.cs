@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using WebVaanoli.Common.ConfigOptions;
 using WebVaanoli.Data;
+using WebVaanoli.Data.Interfaces;
 using WebVaanoli.Domain;
 using WebVaanoli.Models;
 using WebVaanoli.Services;
@@ -65,6 +66,7 @@ namespace WebVaanoli
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IRadioRepository, RadioRepository>();
+            services.AddTransient<IVaanoliDataContext, VaanoliDataContext>();
 
             Mapper.CreateMap(typeof(Radio), typeof(DetailViewModel));
             Mapper.CreateMap(typeof(Radio), typeof(EditorViewModel));

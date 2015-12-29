@@ -7,6 +7,6 @@ namespace WebVaanoli.Common.ConfigOptions
 {
     public class FirebaseOptions
     {
-        public string WebVaanoliDatabase { get; set; }
+        public string VaanoliDatabase { get; set; }
     }
 }

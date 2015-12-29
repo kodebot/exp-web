@@ -2,7 +2,6 @@
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 using WebVaanoli.Controllers;
-using WebVaanoli.Data;
 using WebVaanoli.Domain;
 using WebVaanoli.Tests.TestHelpers;
 using WebVaanoli.ViewModels.Genre;
@@ -10,9 +9,9 @@ using Xunit;
 using Shouldly;
 using System.Linq;
 using AutoMapper;
-using Microsoft.AspNet.Mvc.ModelBinding;
 using System.Collections.Generic;
 using System;
+using WebVaanoli.Data.Interfaces;
 
 namespace WebVaanoli.Tests.Controllers
 {
