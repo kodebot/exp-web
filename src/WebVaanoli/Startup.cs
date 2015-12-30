@@ -66,10 +66,15 @@ namespace WebVaanoli
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
             services.AddTransient<IRadioRepository, RadioRepository>();
+            services.AddTransient<IGenreRepository, GenreRepository>();
             services.AddTransient<IVaanoliDataContext, VaanoliDataContext>();
 
             Mapper.CreateMap(typeof(Radio), typeof(DetailViewModel));
             Mapper.CreateMap(typeof(Radio), typeof(EditorViewModel));
+            Mapper.CreateMap(typeof(Genre), typeof(ViewModels.Genre.EditorViewModel));
+            Mapper.CreateMap(typeof(ViewModels.Genre.EditorViewModel), typeof(Genre));
+
+            Mapper.AssertConfigurationIsValid();
             services.AddInstance<IMappingEngine>(Mapper.Engine);
 
         }

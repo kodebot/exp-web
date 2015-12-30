@@ -13,7 +13,7 @@ namespace WebVaanoli.Data
 {
     public class VaanoliDataContext : IVaanoliDataContext, IDisposable
     {
-        private const string GENRES_ENTITY_NAME = "Genres";
+        private const string GENRES_ENTITY_NAME = "";
         private const string STREAM_QUALITIES_ENTITY_NAME = "StreamQualities";
         private const string RADIOS_ENTITY_NAME = "Radios";
 
@@ -59,6 +59,7 @@ namespace WebVaanoli.Data
         {
             var firebaseConfig = new FirebaseConfig()
             {
+                AuthSecret = "3Y58a7to6BNx4WgCaoBYpNNyPixHLT0I7RWZBW2x",
                 BasePath = String.Format("{0}/{1}", _firebaseOptions.Value.VaanoliDatabase, GENRES_ENTITY_NAME)
             };
 

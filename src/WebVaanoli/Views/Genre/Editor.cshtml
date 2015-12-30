@@ -1,0 +1,37 @@
+﻿@model WebVaanoli.ViewModels.Genre.EditorViewModel
+@{
+    var addOrEdit = Model.Id == 0 ? "Add" : "Edit";
+    ViewBag.Title = $"Genre - {addOrEdit}";
+}
+<h2>@ViewBag.Title</h2>
+<form asp-antiforgery="true" asp-controller="genre" asp-action="save">
+    <div class="form-group">
+        <label asp-for="Name">Name</label>
+        <input type="text" class="form-control" asp-for="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input type="text" class="form-control" asp-for="Description" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Priority">Priority</label>
+        <input type="text" class="form-control" asp-for="Priority" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="IsActive">IsActive?</label>
+        <input type="text" class="form-control" asp-for="IsActive" />
+    </div>
+
+    <button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-floppy-disk"></i> &nbsp;Save</button>
+    <a class="btn btn-default" asp-controller="genre" asp-action="index"><i class="glyphicon glyphicon-remove"></i>&nbsp; Cancel</a>
+
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

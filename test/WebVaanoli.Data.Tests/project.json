@@ -1,0 +1,28 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "WebVaanoli.Data.Tests Class Library",
+  "authors": [ "vmani" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204",
+    "AutoFixture.AutoMoq": "3.37.3",
+    "SemanticComparison": "3.37.3",
+    "Shouldly": "2.6.0",
+    "WebVaanoli.Data": "",
+    "WebVaanoli.Domain": ""
+  },
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "Microsoft.AspNet.WebApi.Client": "5.2.3"
+      }
+    }
+
+  },
+  "commands": {
+    "test": "xunit.runner.dnx"
+  }
+}
