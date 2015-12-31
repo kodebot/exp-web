@@ -60,7 +60,7 @@ namespace WebVaanoli
             services.AddMvc();
 
             services.AddOptions();
-            services.Configure<FirebaseOptions>(Configuration);
+            services.Configure<FirebaseOptions>(Configuration.GetSection("Firebase"));
 
             // Add application services.
             services.AddTransient<IEmailSender, AuthMessageSender>();

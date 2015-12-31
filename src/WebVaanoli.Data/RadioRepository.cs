@@ -19,7 +19,7 @@ namespace WebVaanoli.Data
                 _radios = A.ListOf<Radio>();
             }
         }
-        public Radio Find(int id)
+        public Radio Find(string id)
         {
             return _radios.FirstOrDefault(item => item.Id == id);
         }

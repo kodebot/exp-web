@@ -7,9 +7,9 @@ namespace WebVaanoli.Data.Interfaces
 {
     public interface IGenreRepository
     {
-        Genre Find(int id);
+        Genre Find(string id);
         IQueryable<Genre> FindAll(Expression<Func<Genre, bool>> filter = null);
-        int Add(Genre genre);
+        string Add(Genre genre);
         void Save(Genre genre);
     }
 }

@@ -22,5 +22,11 @@ namespace WebVaanoli.Data.Tests.TestHelpers
             var response = new HttpResponseMessage();
             return new FirebaseResponse(JsonConvert.SerializeObject(responseData), statusCode, response);
         }
+
+        public static SetResponse CreateSetResponse<T>(T responseData, HttpStatusCode statusCode = HttpStatusCode.OK)
+        {
+            var response = new HttpResponseMessage();
+            return new SetResponse(JsonConvert.SerializeObject(responseData), statusCode, response);
+        }
     }
 }

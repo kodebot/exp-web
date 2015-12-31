@@ -7,7 +7,7 @@ namespace WebVaanoli.Data.Interfaces
 {
     public interface IStreamQualityRepository
     {
-        StreamQuality Find(int id);
+        StreamQuality Find(string id);
         IQueryable<StreamQuality> FindAll(Expression<Func<StreamQuality, bool>> filter = null);
     }
 }

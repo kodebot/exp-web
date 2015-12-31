@@ -7,7 +7,7 @@ namespace WebVaanoli.Data.Interfaces
 {
     public interface IRadioRepository
     {
-        Radio Find(int id);
+        Radio Find(string id);
         IQueryable<Radio> FindAll(Expression<Func<Radio, bool>> filter = null);
     }
 }

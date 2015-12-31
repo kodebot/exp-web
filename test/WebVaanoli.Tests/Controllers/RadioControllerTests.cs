@@ -3,6 +3,7 @@ using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 using Shouldly;
+using System;
 using System.Linq;
 using WebVaanoli.Controllers;
 using WebVaanoli.Data.Interfaces;
@@ -49,7 +50,7 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailWithInvalidIdShouldReturnBadRequest()
         {
             // Fixture Setup
-            var invalidId = 0;
+            var invalidId = String.Empty;
 
             var sut = _fixture.Create<RadioController>();
 
@@ -66,10 +67,10 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailWithIdWhichDoesntExistShouldReturnNotFound()
         {
             // Fixture Setup
-            int nonExistentId = _fixture.Create<int>();
+            var nonExistentId = _fixture.Create<string>();
 
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
-            mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(id => id == nonExistentId))).Returns(() => null);
+            mockRadioRepository.Setup(mock => mock.Find(It.Is<string>(id => id == nonExistentId))).Returns(() => null);
 
             var sut = _fixture.Create<RadioController>();
 
@@ -86,7 +87,7 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailWithValidIdShouldReturnDefaultViewWithCorrectDetailViewModel()
         {
             // Fixture Setup
-            var anyId = _fixture.Create<int>();
+            var anyId = _fixture.Create<string>();
 
             var anyRadio = _fixture.Build<Radio>()
                 .With(item => item.Id, anyId)
@@ -95,7 +96,7 @@ namespace WebVaanoli.Tests.Controllers
             var anyDetailViewModel = _fixture.Create<DetailViewModel>();
 
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
-            mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(id => id == anyId))).Returns(anyRadio);
+            mockRadioRepository.Setup(mock => mock.Find(It.Is<string>(id => id == anyId))).Returns(anyRadio);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();
             mockMappingEngine.Setup(mock => mock.Map<DetailViewModel>(It.Is<Radio>(val => val == anyRadio)))
@@ -117,10 +118,10 @@ namespace WebVaanoli.Tests.Controllers
         public void EditWithNonExistingIdShouldReturnNotFound()
         {
             // Fixture Setup
-            var invalidId = _fixture.Create<int>();
+            var invalidId = _fixture.Create<string>();
 
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
-            mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(value => value == invalidId)))
+            mockRadioRepository.Setup(mock => mock.Find(It.Is<string>(value => value == invalidId)))
                 .Returns(() => null);
 
             var sut = _fixture.Create<RadioController>();
@@ -138,10 +139,10 @@ namespace WebVaanoli.Tests.Controllers
         public void EditWithInvalidIdShouldReturnNotFound()
         {
             // Fixture Setup
-            var invalidId = 0;
+            var invalidId = String.Empty;
 
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
-            mockRadioRepository.Setup(mock => mock.Find(It.Is<int>(value => value == invalidId)))
+            mockRadioRepository.Setup(mock => mock.Find(It.Is<string>(value => value == invalidId)))
                 .Returns(() => null);
 
             var sut = _fixture.Create<RadioController>();
@@ -160,13 +161,13 @@ namespace WebVaanoli.Tests.Controllers
         {
 
             // Fixture Setup
-            var anyId = _fixture.Create<int>();
+            var anyId = _fixture.Create<string>();
             var anyRadio = _fixture.Create<Radio>();
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
             var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
             mockRadioRepository
-                .Setup(mock => mock.Find(It.Is<int>(val => val == anyId)))
+                .Setup(mock => mock.Find(It.Is<string>(val => val == anyId)))
                 .Returns(anyRadio);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();

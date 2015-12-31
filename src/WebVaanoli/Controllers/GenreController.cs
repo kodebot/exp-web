@@ -44,9 +44,9 @@ namespace WebVaanoli.Controllers
         /// </summary>
         /// <param name="id">The identifier.</param>
         /// <returns>The Genre Detail view with selected genre detail.</returns>
-        public IActionResult Detail(int id)
+        public IActionResult Detail(string id)
         {
-            if (id == 0)
+            if (String.IsNullOrWhiteSpace(id))
             {
                 return HttpBadRequest();
             }
@@ -61,9 +61,9 @@ namespace WebVaanoli.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(string id)
         {
-            if (id == 0)
+            if (String.IsNullOrWhiteSpace(id))
             {
                 return HttpBadRequest();
             }
@@ -92,7 +92,7 @@ namespace WebVaanoli.Controllers
 
             var genre = _mappingEngine.Map<Genre>(editorViewModel);
 
-            if (genre.Id == 0)
+            if (string.IsNullOrWhiteSpace(genre.Id))
             {
                 try
                 {

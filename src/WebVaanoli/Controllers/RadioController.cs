@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNet.Mvc;
+using System;
 using System.Linq;
 using WebVaanoli.Data.Interfaces;
 using WebVaanoli.ViewModels.Radio;
@@ -25,9 +26,9 @@ namespace WebVaanoli.Controllers
             return View(viewModel);
         }
 
-        public IActionResult Detail(int id)
+        public IActionResult Detail(string id)
         {
-            if (id == 0)
+            if (String.IsNullOrWhiteSpace(id))
             {
                 return new BadRequestResult();
             }
@@ -43,9 +44,9 @@ namespace WebVaanoli.Controllers
             return View(detailViewModel);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(string id)
         {
-            if(id == 0)
+            if(String.IsNullOrWhiteSpace(id))
             {
                 return new BadRequestResult();
             }

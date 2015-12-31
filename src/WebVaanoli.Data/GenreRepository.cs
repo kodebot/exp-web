@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.OptionsModel;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using WebVaanoli.Common.ConfigOptions;
@@ -16,23 +17,26 @@ namespace WebVaanoli.Data
         {
             _vaanoliDataContext = vaanoliDataContext;
         }
-        public int Add(Genre genre)
+        public string Add(Genre genre)
         {
             if (genre == null) { throw new ArgumentNullException(nameof(genre)); }
 
-            var response = _vaanoliDataContext.Genres.Push("genres.json", genre);
-            var addedGenre = response.ResultAs<Genre>();
-            return addedGenre.Id;
+            var response = _vaanoliDataContext.Genres.Push("/", genre);
+            genre.Id = response.Result.Name;
+            _vaanoliDataContext.Genres.Set($"/{genre.Id}/", genre);
+            return genre.Id;
         }
 
-        public Genre Find(int id)
+        public Genre Find(string id)
         {
-            var response = _vaanoliDataContext.Genres.Get($"{id}");
+            var response = _vaanoliDataContext.Genres.Get($"/{id}/");
             return response.ResultAs<Genre>();
         }
 
         public IQueryable<Genre> FindAll(Expression<Func<Genre, bool>> filter = null)
         {
+            var result = _vaanoliDataContext.Genres.Get("/");
+            return result.ResultAs<List<Genre>>().AsQueryable();
             throw new NotImplementedException();
         }
 

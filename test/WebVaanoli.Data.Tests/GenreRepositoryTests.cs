@@ -6,6 +6,8 @@ using Ploeh.AutoFixture.AutoMoq;
 using Ploeh.SemanticComparison;
 using Shouldly;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -18,6 +20,7 @@ namespace WebVaanoli.Data.Tests
 {
     public class GenreRepositoryTests
     {
+        private const int Many = 3;
         private readonly IFixture _fixture;
         public GenreRepositoryTests()
         {
@@ -45,9 +48,14 @@ namespace WebVaanoli.Data.Tests
             // Fixture Setup
             var anyGenre = _fixture.Create<Genre>();
             var anyNewId = _fixture.Create<int>();
+
             var mockFirebaseClient = FreezeFirebaseClient();
-            mockFirebaseClient.Setup(mock => mock.Push<Genre>("push", anyGenre))
-                .Returns(FirebaseClientTestHelper.CreatePushResponse(anyGenre));
+            var pushResponse = FirebaseClientTestHelper.CreatePushResponse(anyGenre);
+            mockFirebaseClient.Setup(mock => mock.Push<Genre>("/", anyGenre))
+                .Returns(pushResponse);
+            anyGenre.Id = pushResponse.Result.Name;
+            mockFirebaseClient.Setup(mock => mock.Set($"/{anyGenre.Id}/", anyGenre))
+            .Returns(FirebaseClientTestHelper.CreateSetResponse(anyGenre));
 
             var sut = _fixture.Create<GenreRepository>();
 
@@ -64,11 +72,13 @@ namespace WebVaanoli.Data.Tests
         public void FindShouldReturnCorrectGenre()
         {
             // Fixture Setup
-            var anyId = _fixture.Create<int>();
+            var anyId = _fixture.Create<string>();
             var anyGenre = _fixture.Create<Genre>();
+
             var mockFirebaseClient = FreezeFirebaseClient();
-            mockFirebaseClient.Setup(mock => mock.Get($"{anyId}"))
+            mockFirebaseClient.Setup(mock => mock.Get($"/{anyId}/"))
                 .Returns(FirebaseClientTestHelper.CreateResponse(anyGenre));
+
             var sut = _fixture.Create<GenreRepository>();
 
             // Exercise Sut
@@ -78,6 +88,28 @@ namespace WebVaanoli.Data.Tests
             var expected = new Likeness<Genre, Genre>(anyGenre);
             expected.Equals(result).ShouldBeTrue();
 
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void FindAllWithNoFilterShouldReturnAllGenres()
+        {
+            // Fixture Setup
+            var manyGenre = _fixture.CreateMany<Genre>(Many).ToList();
+
+            var mockFirebaseClient = FreezeFirebaseClient();
+            mockFirebaseClient.Setup(mock => mock.Get("/"))
+                .Returns(FirebaseClientTestHelper.CreateResponse(manyGenre));
+
+            var sut = _fixture.Create<GenreRepository>();
+
+            // Exercise Sut
+            var result = sut.FindAll();
+
+            // Verify Outcome
+            var expectedResult = new Likeness<List<Genre>, List<Genre>>(manyGenre);
+            expectedResult.Equals(result.ToList()).ShouldBeTrue();
+            
             // Fixture Teardown
         }
 

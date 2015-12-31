@@ -13,9 +13,9 @@ namespace WebVaanoli.Data
 {
     public class VaanoliDataContext : IVaanoliDataContext, IDisposable
     {
-        private const string GENRES_ENTITY_NAME = "";
-        private const string STREAM_QUALITIES_ENTITY_NAME = "StreamQualities";
-        private const string RADIOS_ENTITY_NAME = "Radios";
+        private const string GenresEntityName = "Genres";
+        private const string StreamQualitiesEntityName = "StreamQualities";
+        private const string RadiosEntityName = "Radios";
 
         private IFirebaseClient _genresClient;
         private IFirebaseClient _streamQualitiesClient;
@@ -32,7 +32,7 @@ namespace WebVaanoli.Data
         {
             get
             {
-                return _genresClient = _genresClient ?? CreateFirebaseClient(GENRES_ENTITY_NAME);
+                return _genresClient = _genresClient ?? CreateFirebaseClient(GenresEntityName);
             }
 
         }
@@ -41,7 +41,7 @@ namespace WebVaanoli.Data
         {
             get
             {
-                return _streamQualitiesClient = _streamQualitiesClient ?? CreateFirebaseClient(STREAM_QUALITIES_ENTITY_NAME);
+                return _streamQualitiesClient = _streamQualitiesClient ?? CreateFirebaseClient(StreamQualitiesEntityName);
             }
 
         }
@@ -50,7 +50,7 @@ namespace WebVaanoli.Data
         {
             get
             {
-                return _radiosClient = _radiosClient ?? CreateFirebaseClient(RADIOS_ENTITY_NAME);
+                return _radiosClient = _radiosClient ?? CreateFirebaseClient(RadiosEntityName);
             }
 
         }
@@ -60,7 +60,7 @@ namespace WebVaanoli.Data
             var firebaseConfig = new FirebaseConfig()
             {
                 AuthSecret = "3Y58a7to6BNx4WgCaoBYpNNyPixHLT0I7RWZBW2x",
-                BasePath = String.Format("{0}/{1}", _firebaseOptions.Value.VaanoliDatabase, GENRES_ENTITY_NAME)
+                BasePath = String.Format("{0}/{1}", _firebaseOptions.Value.VaanoliDatabase, GenresEntityName)
             };
 
             return new FirebaseClient(firebaseConfig);

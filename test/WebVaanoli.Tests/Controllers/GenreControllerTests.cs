@@ -52,7 +52,7 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailWithInvalidIdShouldReturnBadRequest()
         {
             // Fixture Setup
-            int invalidId = 0;
+            string invalidId = String.Empty;
             var sut = _fixture.Create<GenreController>();
 
             // Exercise Sut
@@ -68,10 +68,10 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailWithNonExistingIdShouldReturnHttpNotFound()
         {
             // Fixture Setup
-            var nonExistingId = _fixture.Create<int>();
+            var nonExistingId = _fixture.Create<string>();
             var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
             mockGenreRepository
-                .Setup(mock => mock.Find(It.Is<int>(val => val == nonExistingId)))
+                .Setup(mock => mock.Find(It.Is<string>(val => val == nonExistingId)))
                 .Returns(() => null);
 
             var sut = _fixture.Create<GenreController>();
@@ -89,13 +89,13 @@ namespace WebVaanoli.Tests.Controllers
         public void DetailShouldReturnViewWithCorrectViewModel()
         {
             // Fixture Setup
-            var anyId = _fixture.Create<int>();
+            var anyId = _fixture.Create<string>();
             var anyGenre = _fixture.Create<Genre>();
             var anyDetailViewModel = _fixture.Create<DetailViewModel>();
 
             var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
             mockGenreRepository
-                .Setup(mock => mock.Find(It.Is<int>(val => val == anyId)))
+                .Setup(mock => mock.Find(It.Is<string>(val => val == anyId)))
                 .Returns(anyGenre);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();
@@ -118,7 +118,7 @@ namespace WebVaanoli.Tests.Controllers
         public void EditWithInvalidIdShouldReturnBadRequest()
         {
             // Fixture Setup
-            int invalidId = 0;
+            string invalidId = String.Empty;
             var sut = _fixture.Create<GenreController>();
 
             // Exercise Sut
@@ -134,10 +134,10 @@ namespace WebVaanoli.Tests.Controllers
         public void EditWithNonExistingIdShouldReturnHttpNotFound()
         {
             // Fixture Setup
-            var nonExistingId = _fixture.Create<int>();
+            var nonExistingId = _fixture.Create<string>();
             var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
             mockGenreRepository
-                .Setup(mock => mock.Find(It.Is<int>(val => val == nonExistingId)))
+                .Setup(mock => mock.Find(It.Is<string>(val => val == nonExistingId)))
                 .Returns(() => null);
 
             var sut = _fixture.Create<GenreController>();
@@ -155,13 +155,13 @@ namespace WebVaanoli.Tests.Controllers
         public void EditShouldReturnViewWithCorrectViewModel()
         {
             // Fixture Setup
-            var anyId = _fixture.Create<int>();
+            var anyId = _fixture.Create<string>();
             var anyGenre = _fixture.Create<Genre>();
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
             var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
             mockGenreRepository
-                .Setup(mock => mock.Find(It.Is<int>(val => val == anyId)))
+                .Setup(mock => mock.Find(It.Is<string>(val => val == anyId)))
                 .Returns(anyGenre);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();
@@ -216,14 +216,14 @@ namespace WebVaanoli.Tests.Controllers
         }
 
         [Fact]
-        public void SaveWithIdZeroShouldAddNewGenreSuccessfullyAndReturnToDetailsView()
+        public void SaveWithEmptyIdShouldAddNewGenreSuccessfullyAndReturnToDetailsView()
         {
             // Fixture Setup
             var anyGenre = _fixture.Build<Genre>()
-                .With(genre => genre.Id, 0)
+                .With(genre => genre.Id, String.Empty)
                 .Create();
 
-            var anyNewId = _fixture.Create<int>();
+            var anyNewId = _fixture.Create<string>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
@@ -248,14 +248,14 @@ namespace WebVaanoli.Tests.Controllers
         }
 
         [Fact]
-        public void SaveWithIdZeroThrowingExceptionShouldReturnEditorViewWithError()
+        public void SaveWithEmptyIdThrowingExceptionShouldReturnEditorViewWithError()
         {
             // Fixture Setup
             var anyGenre = _fixture.Build<Genre>()
-                .With(genre => genre.Id, 0)
+                .With(genre => genre.Id, String.Empty)
                 .Create();
 
-            var anyNewId = _fixture.Create<int>();
+            var anyNewId = _fixture.Create<string>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
