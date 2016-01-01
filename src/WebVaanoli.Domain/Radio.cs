@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebVaanoli.Domain
 {
-    public class Radio
+    public class Radio:Entity
     {
-        public string Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string StreamUrl { get; set; }

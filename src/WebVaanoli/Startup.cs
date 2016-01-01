@@ -68,12 +68,15 @@ namespace WebVaanoli
             services.AddTransient<IRadioRepository, RadioRepository>();
             services.AddTransient<IGenreRepository, GenreRepository>();
             services.AddTransient<IVaanoliDataContext, VaanoliDataContext>();
+            services.AddTransient<IFirebaseRepository<Genre>>(provider => new FirebaseRepository<Genre>(provider.GetService<IVaanoliDataContext>().Genres));
+            services.AddTransient<IFirebaseRepository<StreamQuality>>(provider => new FirebaseRepository<StreamQuality>(provider.GetService<IVaanoliDataContext>().StreamQualities));
+            services.AddTransient<IFirebaseRepository<Radio>>(provider => new FirebaseRepository<Radio>(provider.GetService<IVaanoliDataContext>().Radios));
 
             Mapper.CreateMap(typeof(Radio), typeof(DetailViewModel));
             Mapper.CreateMap(typeof(Radio), typeof(EditorViewModel));
             Mapper.CreateMap(typeof(Genre), typeof(ViewModels.Genre.EditorViewModel));
             Mapper.CreateMap(typeof(ViewModels.Genre.EditorViewModel), typeof(Genre));
-
+            Mapper.CreateMap(typeof(Genre), typeof(ViewModels.Genre.DetailViewModel));
             Mapper.AssertConfigurationIsValid();
             services.AddInstance<IMappingEngine>(Mapper.Engine);
 

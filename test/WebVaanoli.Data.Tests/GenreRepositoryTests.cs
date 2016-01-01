@@ -1,5 +1,4 @@
 ﻿using FireSharp.Interfaces;
-using FireSharp.Response;
 using Moq;
 using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
@@ -8,9 +7,7 @@ using Shouldly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Formatting;
+using System.Linq.Expressions;
 using WebVaanoli.Data.Interfaces;
 using WebVaanoli.Data.Tests.TestHelpers;
 using WebVaanoli.Domain;
@@ -20,7 +17,6 @@ namespace WebVaanoli.Data.Tests
 {
     public class GenreRepositoryTests
     {
-        private const int Many = 3;
         private readonly IFixture _fixture;
         public GenreRepositoryTests()
         {
@@ -29,98 +25,89 @@ namespace WebVaanoli.Data.Tests
         }
 
         [Fact]
-        public void AddShouldThrowWhenGenreIsNotProvided()
-        {
-            // Fixture Setup
-            Genre invalidGenre = null;
-            var sut = _fixture.Create<GenreRepository>();
-
-            // Exercise Sut
-            // Verify Outcome
-            Should.Throw<ArgumentNullException>(() => sut.Add(invalidGenre));
-
-            // Fixture Teardown
-        }
-
-        [Fact]
-        public void AddShouldCorrectlyAddTheProvidedGenre()
+        public void AddShouldAddGenreCorrectly()
         {
             // Fixture Setup
             var anyGenre = _fixture.Create<Genre>();
-            var anyNewId = _fixture.Create<int>();
 
-            var mockFirebaseClient = FreezeFirebaseClient();
-            var pushResponse = FirebaseClientTestHelper.CreatePushResponse(anyGenre);
-            mockFirebaseClient.Setup(mock => mock.Push<Genre>("/", anyGenre))
-                .Returns(pushResponse);
-            anyGenre.Id = pushResponse.Result.Name;
-            mockFirebaseClient.Setup(mock => mock.Set($"/{anyGenre.Id}/", anyGenre))
-            .Returns(FirebaseClientTestHelper.CreateSetResponse(anyGenre));
+            var mockFirebaseRepository = _fixture.Freeze<Mock<IFirebaseRepository<Genre>>>();
+            mockFirebaseRepository.Setup(mock => mock.Add(anyGenre))
+                .Verifiable();
 
             var sut = _fixture.Create<GenreRepository>();
 
             // Exercise Sut
-            var result = sut.Add(anyGenre);
+            sut.Add(anyGenre);
 
             // Verify Outcome
-            result.ShouldBe(anyGenre.Id);
+            mockFirebaseRepository.VerifyAll();
 
             // Fixture Teardown
         }
 
         [Fact]
-        public void FindShouldReturnCorrectGenre()
+        public void FindShouldReturnGenreCorrectly()
         {
             // Fixture Setup
             var anyId = _fixture.Create<string>();
-            var anyGenre = _fixture.Create<Genre>();
 
-            var mockFirebaseClient = FreezeFirebaseClient();
-            mockFirebaseClient.Setup(mock => mock.Get($"/{anyId}/"))
-                .Returns(FirebaseClientTestHelper.CreateResponse(anyGenre));
+            var mockFirebaseRepository = _fixture.Freeze<Mock<IFirebaseRepository<Genre>>>();
+            mockFirebaseRepository.Setup(mock => mock.Find(anyId))
+                .Verifiable();
 
             var sut = _fixture.Create<GenreRepository>();
 
             // Exercise Sut
-            var result = sut.Find(anyId);
+            sut.Find(anyId);
 
             // Verify Outcome
-            var expected = new Likeness<Genre, Genre>(anyGenre);
-            expected.Equals(result).ShouldBeTrue();
+            mockFirebaseRepository.VerifyAll();
 
             // Fixture Teardown
         }
 
         [Fact]
-        public void FindAllWithNoFilterShouldReturnAllGenres()
+        public void FindAllShouldReturnGenresCorrectly()
         {
             // Fixture Setup
-            var manyGenre = _fixture.CreateMany<Genre>(Many).ToList();
+            Expression<Func<Genre, bool>> anyFilter = item => item.Id == "0";
 
-            var mockFirebaseClient = FreezeFirebaseClient();
-            mockFirebaseClient.Setup(mock => mock.Get("/"))
-                .Returns(FirebaseClientTestHelper.CreateResponse(manyGenre));
+            var mockFirebaseRepository = _fixture.Freeze<Mock<IFirebaseRepository<Genre>>>();
+            mockFirebaseRepository.Setup(mock => mock.FindAll(anyFilter))
+                .Verifiable();
 
             var sut = _fixture.Create<GenreRepository>();
 
             // Exercise Sut
-            var result = sut.FindAll();
+            sut.FindAll(anyFilter);
 
             // Verify Outcome
-            var expectedResult = new Likeness<List<Genre>, List<Genre>>(manyGenre);
-            expectedResult.Equals(result.ToList()).ShouldBeTrue();
-            
+            mockFirebaseRepository.VerifyAll();
+
             // Fixture Teardown
         }
 
-        #region TestHelpers
-        private Mock<IFirebaseClient> FreezeFirebaseClient()
+        [Fact]
+        public void SaveShouldSaveGenreCorrectly()
         {
-            var mockVaanoliDataContext = _fixture.Freeze<Mock<IVaanoliDataContext>>();
-            var mockFirebaseClient = _fixture.Freeze<Mock<IFirebaseClient>>();
-            mockVaanoliDataContext.Setup(mock => mock.Genres).Returns(mockFirebaseClient.Object);
-            return mockFirebaseClient;
+            // Fixture Setup
+            var anyGenre = _fixture.Create<Genre>();
+
+            var mockFirebaseRepository = _fixture.Freeze<Mock<IFirebaseRepository<Genre>>>();
+            mockFirebaseRepository.Setup(mock => mock.Save(anyGenre))
+                .Verifiable();
+
+            var sut = _fixture.Create<GenreRepository>();
+
+            // Exercise Sut
+            sut.Save(anyGenre);
+
+            // Verify Outcome
+            mockFirebaseRepository.VerifyAll();
+
+            // Fixture Teardown
         }
-        #endregion
+
+
     }
 }

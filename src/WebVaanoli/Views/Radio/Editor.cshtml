@@ -1,6 +1,6 @@
 ﻿@model EditorViewModel
 @{
-    var addOrEdit = Model.Id == 0 ? "Add" : "Edit";
+    var addOrEdit = String.IsNullOrWhiteSpace(Model.Id) ? "Add" : "Edit";
     ViewBag.Title = $"Radio - {addOrEdit}";
 }
 <h2>@ViewBag.Title</h2>

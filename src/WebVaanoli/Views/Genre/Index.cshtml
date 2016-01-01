@@ -1,0 +1,38 @@
+﻿@model WebVaanoli.ViewModels.Genre.IndexViewModel
+@{
+    ViewData["Title"] = "Genre";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div>
+    <a asp-controller="genre" asp-action="add" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp; Add New</a>
+</div>
+<div>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Priority</th>
+                <th>Is Active?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var genre in Model.Genres)
+            {
+                <tr onclick='window.location.href="@Url.Action("detail", new { id = genre.Id })"'>
+                    <td>@genre.Id</td>
+                    <td>@genre.Name</td>
+                    <td>@genre.Description</td>
+                    <td>@genre.Priority</td>
+                    <td>@genre.IsActive</td>
+                    <td>Actions</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
