@@ -5,6 +5,7 @@
 }
 <h2>@ViewBag.Title</h2>
 <form asp-antiforgery="true" asp-controller="radio" asp-action="save">
+    <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input type="text" class="form-control" asp-for="Name" />
@@ -17,18 +18,18 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="StreamUrl">StreamUrl</label>
+        <label asp-for="StreamUrl">Stream Url</label>
         <input type="text" class="form-control" asp-for="StreamUrl" />
     </div>
 
     <div class="form-group">
-        <label asp-for="StreamQuality">StreamQuality</label>
-        <input type="text" class="form-control" asp-for="StreamQuality" />
+        <label asp-for="StreamQuality">Stream Quality</label>
+        <select class="form-control" asp-for="StreamQuality" asp-items="Model.StreamQualities"></select>
     </div>
 
     <div class="form-group">
         <label asp-for="Genre">Genre</label>
-        <input type="text" class="form-control" asp-for="Genre" />
+        <select type="text" class="form-control" asp-for="Genre" asp-items="Model.Genres"> </select>
     </div>
 
     <div class="form-group">
@@ -38,8 +39,8 @@
 
 
     <div class="form-group">
-        <label asp-for="IsActive">IsActive?</label>
-        <input type="text" class="form-control" asp-for="IsActive" />
+        <label asp-for="IsActive">Is Active?</label>
+        <select type="text" class="form-control" asp-for="IsActive" asp-items="WebVaanoli.Helpers.SelectListHelper.BooleanSelectList()"></select>
     </div>
 
     <button type="submit" class="btn btn-primary"> <i class="glyphicon glyphicon-floppy-disk"></i> &nbsp;Save</button>

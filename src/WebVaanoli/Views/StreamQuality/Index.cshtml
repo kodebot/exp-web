@@ -1,0 +1,38 @@
+﻿@model WebVaanoli.ViewModels.StreamQuality.IndexViewModel
+@{
+    ViewData["Title"] = "Stream Quality";
+}
+
+<h2>@ViewData["Title"]</h2>
+<div>
+    <a asp-controller="streamquality" asp-action="add" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-plus"></i>&nbsp; Add New</a>
+</div>
+<div>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Priority</th>
+                <th>Is Active?</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var streamQuality in Model.StreamQualities)
+            {
+                <tr onclick='window.location.href="@Url.Action("detail", new { id = streamQuality.Id })"'>
+                    <td>@streamQuality.Id</td>
+                    <td>@streamQuality.Name</td>
+                    <td>@streamQuality.Description</td>
+                    <td>@streamQuality.Priority</td>
+                    <td>@streamQuality.IsActive</td>
+                    <td>Actions</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

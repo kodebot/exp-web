@@ -4,7 +4,7 @@ using Ploeh.AutoFixture.AutoMoq;
 using WebVaanoli.Controllers;
 using WebVaanoli.Domain;
 using WebVaanoli.Tests.TestHelpers;
-using WebVaanoli.ViewModels.Genre;
+using WebVaanoli.ViewModels.StreamQuality;
 using Xunit;
 using Shouldly;
 using System.Linq;
@@ -15,12 +15,12 @@ using WebVaanoli.Data.Interfaces;
 
 namespace WebVaanoli.Tests.Controllers
 {
-    public class GenreControllerTests
+    public class StreamQualityControllerTests
     {
         private const int Many = 3;
         private readonly IFixture _fixture;
 
-        public GenreControllerTests()
+        public StreamQualityControllerTests()
         {
             _fixture = new Fixture()
                 .Customize(new AutoMoqCustomization())
@@ -31,19 +31,19 @@ namespace WebVaanoli.Tests.Controllers
         public void IndexShouldReturnDefaultViewModelWithCorrectIndexViewModel()
         {
             // Fixture Setup
-            var manyGenres = _fixture.CreateMany<Genre>(Many);
+            var manyStreamQualities = _fixture.CreateMany<StreamQuality>(Many);
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository.Setup(mock => mock.FindAll(null)).Returns(manyGenres.AsQueryable());
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository.Setup(mock => mock.FindAll(null)).Returns(manyStreamQualities.AsQueryable());
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise System
             var result = sut.Index();
 
             // Verify Outcome
             result.ShouldBeViewResultWithModelSatisfyingAllConditions<IndexViewModel>(
-                actions: viewModel => viewModel.Genres.ShouldBe(manyGenres));
+                actions: viewModel => viewModel.StreamQualities.ShouldBe(manyStreamQualities));
 
             // Fixture Teardown
         }
@@ -53,7 +53,7 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             string invalidId = String.Empty;
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Detail(invalidId);
@@ -69,12 +69,12 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             var nonExistingId = _fixture.Create<string>();
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
                 .Setup(mock => mock.Find(It.Is<string>(val => val == nonExistingId)))
                 .Returns(() => null);
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Detail(nonExistingId);
@@ -90,19 +90,19 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             var anyId = _fixture.Create<string>();
-            var anyGenre = _fixture.Create<Genre>();
+            var anyStreamQuality = _fixture.Create<StreamQuality>();
             var anyDetailViewModel = _fixture.Create<DetailViewModel>();
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
                 .Setup(mock => mock.Find(It.Is<string>(val => val == anyId)))
-                .Returns(anyGenre);
+                .Returns(anyStreamQuality);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();
-            mockMappingEngine.Setup(mock => mock.Map<DetailViewModel>(It.IsAny<Genre>()))
+            mockMappingEngine.Setup(mock => mock.Map<DetailViewModel>(It.IsAny<StreamQuality>()))
             .Returns(anyDetailViewModel);
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Detail(anyId);
@@ -119,7 +119,7 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             string invalidId = String.Empty;
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Edit(invalidId);
@@ -135,12 +135,12 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             var nonExistingId = _fixture.Create<string>();
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
                 .Setup(mock => mock.Find(It.Is<string>(val => val == nonExistingId)))
                 .Returns(() => null);
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Edit(nonExistingId);
@@ -156,19 +156,19 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             var anyId = _fixture.Create<string>();
-            var anyGenre = _fixture.Create<Genre>();
+            var anyStreamQuality = _fixture.Create<StreamQuality>();
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
                 .Setup(mock => mock.Find(It.Is<string>(val => val == anyId)))
-                .Returns(anyGenre);
+                .Returns(anyStreamQuality);
 
             var mockMappingEngine = _fixture.Freeze<Mock<IMappingEngine>>();
-            mockMappingEngine.Setup(mock => mock.Map<EditorViewModel>(It.IsAny<Genre>()))
+            mockMappingEngine.Setup(mock => mock.Map<EditorViewModel>(It.IsAny<StreamQuality>()))
             .Returns(anyEditorViewModel);
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Edit(anyId);
@@ -185,7 +185,7 @@ namespace WebVaanoli.Tests.Controllers
         public void AddShouldReturnViewWithCorrectViewModel()
         {
             // Fixture Setup
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Add();
@@ -201,7 +201,7 @@ namespace WebVaanoli.Tests.Controllers
         {
             // Fixture Setup
             var invalidEditorViewModel = _fixture.Create<EditorViewModel>();
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
             sut.ModelState.AddModelError("Id", "Some Error");
 
             // Exercise Sut
@@ -216,32 +216,32 @@ namespace WebVaanoli.Tests.Controllers
         }
 
         [Fact]
-        public void SaveWithEmptyIdShouldAddNewGenreSuccessfullyAndReturnToDetailsView()
+        public void SaveWithEmptyIdShouldAddNewStreamQualitySuccessfullyAndReturnToDetailsView()
         {
             // Fixture Setup
-            var anyGenre = _fixture.Build<Genre>()
-                .With(genre => genre.Id, String.Empty)
+            var anyStreamQuality = _fixture.Build<StreamQuality>()
+                .With(streamQuality => streamQuality.Id, String.Empty)
                 .Create();
 
             var anyNewId = _fixture.Create<string>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
-            _fixture.Map(anyEditorViewModel, anyGenre);
+            _fixture.Map(anyEditorViewModel, anyStreamQuality);
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
-                .Setup(mock => mock.Add(It.Is<Genre>(val => val == anyGenre)))
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
+                .Setup(mock => mock.Add(It.Is<StreamQuality>(val => val == anyStreamQuality)))
                 .Returns(anyNewId)
                 .Verifiable();
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Save(anyEditorViewModel);
 
             // Verify Outcome
-            mockGenreRepository.VerifyAll();
+            mockStreamQualityRepository.VerifyAll();
             result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyNewId });
 
             // Fixture Teardown
@@ -251,29 +251,29 @@ namespace WebVaanoli.Tests.Controllers
         public void SaveWithEmptyIdThrowingExceptionShouldReturnEditorViewWithError()
         {
             // Fixture Setup
-            var anyGenre = _fixture.Build<Genre>()
-                .With(genre => genre.Id, String.Empty)
+            var anyStreamQuality = _fixture.Build<StreamQuality>()
+                .With(streamQuality => streamQuality.Id, String.Empty)
                 .Create();
 
             var anyNewId = _fixture.Create<string>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
-            _fixture.Map(anyEditorViewModel, anyGenre);
+            _fixture.Map(anyEditorViewModel, anyStreamQuality);
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
-                .Setup(mock => mock.Add(It.Is<Genre>(val => val == anyGenre)))
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
+                .Setup(mock => mock.Add(It.Is<StreamQuality>(val => val == anyStreamQuality)))
                 .Throws(new Exception())
                 .Verifiable();
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Save(anyEditorViewModel);
 
             // Verify Outcome
-            mockGenreRepository.VerifyAll();
+            mockStreamQualityRepository.VerifyAll();
             result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
                 "editor",
                 actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));
@@ -282,28 +282,28 @@ namespace WebVaanoli.Tests.Controllers
         }
 
         [Fact]
-        public void SaveWithExistingIdShouldUpdateGenreSuccessfullyAndReturnToDetailsView()
+        public void SaveWithExistingIdShouldUpdateStreamQualitySuccessfullyAndReturnToDetailsView()
         {
             // Fixture Setup
-            var anyGenre = _fixture.Create<Genre>();
+            var anyStreamQuality = _fixture.Create<StreamQuality>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
-            _fixture.Map(anyEditorViewModel, anyGenre);
+            _fixture.Map(anyEditorViewModel, anyStreamQuality);
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
-                .Setup(mock => mock.Save(It.Is<Genre>(val => val == anyGenre)))
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
+                .Setup(mock => mock.Save(It.Is<StreamQuality>(val => val == anyStreamQuality)))
                 .Verifiable();
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Save(anyEditorViewModel);
 
             // Verify Outcome
-            mockGenreRepository.VerifyAll();
-            result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyGenre.Id });
+            mockStreamQualityRepository.VerifyAll();
+            result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyStreamQuality.Id });
 
             // Fixture Teardown
         }
@@ -312,25 +312,25 @@ namespace WebVaanoli.Tests.Controllers
         public void SaveWithExistingIdThrowingExceptionShouldReturnEditorViewWithError()
         {
             // Fixture Setup
-            var anyGenre = _fixture.Create<Genre>();
+            var anyStreamQuality = _fixture.Create<StreamQuality>();
 
             var anyEditorViewModel = _fixture.Create<EditorViewModel>();
 
-            _fixture.Map(anyEditorViewModel, anyGenre);
+            _fixture.Map(anyEditorViewModel, anyStreamQuality);
 
-            var mockGenreRepository = _fixture.Freeze<Mock<IGenreRepository>>();
-            mockGenreRepository
-                .Setup(mock => mock.Save(It.Is<Genre>(val => val == anyGenre)))
+            var mockStreamQualityRepository = _fixture.Freeze<Mock<IStreamQualityRepository>>();
+            mockStreamQualityRepository
+                .Setup(mock => mock.Save(It.Is<StreamQuality>(val => val == anyStreamQuality)))
                 .Throws(new Exception())
                 .Verifiable();
 
-            var sut = _fixture.Create<GenreController>();
+            var sut = _fixture.Create<StreamQualityController>();
 
             // Exercise Sut
             var result = sut.Save(anyEditorViewModel);
 
             // Verify Outcome
-            mockGenreRepository.VerifyAll();
+            mockStreamQualityRepository.VerifyAll();
             result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
                 "editor",
                 actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));

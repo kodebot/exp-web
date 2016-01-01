@@ -9,5 +9,7 @@ namespace WebVaanoli.Data.Interfaces
     {
         Radio Find(string id);
         IQueryable<Radio> FindAll(Expression<Func<Radio, bool>> filter = null);
+        string Add(Radio radio);
+        void Save(Radio radio);
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNet.Mvc.Rendering;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebVaanoli.ViewModels.Radio
 {
@@ -14,5 +16,8 @@ namespace WebVaanoli.ViewModels.Radio
         public string Genre { get; set; }
         public int Priority { get; set; }
         public bool IsActive { get; set; }
+
+        public List<SelectListItem> StreamQualities { get; set; }
+        public List<SelectListItem> Genres { get; set; }
     }
 }

@@ -60,7 +60,7 @@ namespace WebVaanoli.Data
             var firebaseConfig = new FirebaseConfig()
             {
                 AuthSecret = "3Y58a7to6BNx4WgCaoBYpNNyPixHLT0I7RWZBW2x",
-                BasePath = String.Format("{0}/{1}", _firebaseOptions.Value.VaanoliDatabase, GenresEntityName)
+                BasePath = String.Format("{0}/{1}", _firebaseOptions.Value.VaanoliDatabase, entityName)
             };
 
             return new FirebaseClient(firebaseConfig);

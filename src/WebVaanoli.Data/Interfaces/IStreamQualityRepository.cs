@@ -9,5 +9,7 @@ namespace WebVaanoli.Data.Interfaces
     {
         StreamQuality Find(string id);
         IQueryable<StreamQuality> FindAll(Expression<Func<StreamQuality, bool>> filter = null);
+        string Add(StreamQuality streamQuality);
+        void Save(StreamQuality streamQuality);
     }
 }

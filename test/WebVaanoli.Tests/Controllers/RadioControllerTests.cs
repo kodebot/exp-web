@@ -4,6 +4,7 @@ using Ploeh.AutoFixture;
 using Ploeh.AutoFixture.AutoMoq;
 using Shouldly;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using WebVaanoli.Controllers;
 using WebVaanoli.Data.Interfaces;
@@ -198,6 +199,148 @@ namespace WebVaanoli.Tests.Controllers
 
             // Verify Outcome
             result.ShouldBeViewResultWithModel<EditorViewModel>("Editor");
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithInvalidViewModelShouldReturnEditorViewWithSameInvlaidViewModel()
+        {
+            // Fixture Setup
+            var invalidEditorViewModel = _fixture.Create<EditorViewModel>();
+            var sut = _fixture.Create<RadioController>();
+            sut.ModelState.AddModelError("Id", "Some Error");
+
+            // Exercise Sut
+            var result = sut.Save(invalidEditorViewModel);
+
+            // Verify Outcome
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
+                "editor",
+                actions: viewModel => viewModel.ShouldBe(invalidEditorViewModel));
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithEmptyIdShouldAddNewRadioSuccessfullyAndReturnToDetailsView()
+        {
+            // Fixture Setup
+            var anyRadio= _fixture.Build<Radio>()
+                .With(radio => radio.Id, String.Empty)
+                .Create();
+
+            var anyNewId = _fixture.Create<string>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyRadio);
+
+            var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
+            mockRadioRepository
+                .Setup(mock => mock.Add(It.Is<Radio>(val => val == anyRadio)))
+                .Returns(anyNewId)
+                .Verifiable();
+
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockRadioRepository.VerifyAll();
+            result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyNewId });
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithEmptyIdThrowingExceptionShouldReturnEditorViewWithError()
+        {
+            // Fixture Setup
+            var anyRadio = _fixture.Build<Radio>()
+                .With(radio => radio.Id, String.Empty)
+                .Create();
+
+            var anyNewId = _fixture.Create<string>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyRadio);
+
+            var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
+            mockRadioRepository
+                .Setup(mock => mock.Add(It.Is<Radio>(val => val == anyRadio)))
+                .Throws(new Exception())
+                .Verifiable();
+
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockRadioRepository.VerifyAll();
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
+                "editor",
+                actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));
+            sut.ModelState.IsValid.ShouldBe(false);
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithExistingIdShouldUpdateRadioSuccessfullyAndReturnToDetailsView()
+        {
+            // Fixture Setup
+            var anyRadio = _fixture.Create<Radio>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyRadio);
+
+            var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
+            mockRadioRepository
+                .Setup(mock => mock.Save(It.Is<Radio>(val => val == anyRadio)))
+                .Verifiable();
+
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockRadioRepository.VerifyAll();
+            result.ShouldBeRedirectToActionResult(actionName: "Detail", routeValues: new Dictionary<string, object>() { ["id"] = anyRadio.Id });
+
+            // Fixture Teardown
+        }
+
+        [Fact]
+        public void SaveWithExistingIdThrowingExceptionShouldReturnEditorViewWithError()
+        {
+            // Fixture Setup
+            var anyRadio = _fixture.Create<Radio>();
+
+            var anyEditorViewModel = _fixture.Create<EditorViewModel>();
+
+            _fixture.Map(anyEditorViewModel, anyRadio);
+
+            var mockRadioRepository = _fixture.Freeze<Mock<IRadioRepository>>();
+            mockRadioRepository
+                .Setup(mock => mock.Save(It.Is<Radio>(val => val == anyRadio)))
+                .Throws(new Exception())
+                .Verifiable();
+
+            var sut = _fixture.Create<RadioController>();
+
+            // Exercise Sut
+            var result = sut.Save(anyEditorViewModel);
+
+            // Verify Outcome
+            mockRadioRepository.VerifyAll();
+            result.ShouldBeViewResultWithModelSatisfyingAllConditions<EditorViewModel>(
+                "editor",
+                actions: viewModel => viewModel.ShouldBe(anyEditorViewModel));
 
             // Fixture Teardown
         }

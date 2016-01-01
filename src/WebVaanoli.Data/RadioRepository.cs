@@ -1,4 +1,4 @@
-﻿using GenFu;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,24 +10,31 @@ namespace WebVaanoli.Data
 {
     public class RadioRepository : IRadioRepository
     {
-        private static IList<Radio> _radios;
-
-        public RadioRepository()
+        private readonly IFirebaseRepository<Radio> _firebaseRadioRepository;
+        public RadioRepository(IFirebaseRepository<Radio> firebaseRadioRepository)
         {
-            if (_radios == null)
-            {
-                _radios = A.ListOf<Radio>();
-            }
+            _firebaseRadioRepository = firebaseRadioRepository;
         }
+
+        public string Add(Radio radio)
+        {
+            return _firebaseRadioRepository.Add(radio);
+        }
+
         public Radio Find(string id)
         {
-            return _radios.FirstOrDefault(item => item.Id == id);
+            return _firebaseRadioRepository.Find(id);
         }
 
         public IQueryable<Radio> FindAll(Expression<Func<Radio, bool>> filter = null)
         {
-            if (filter == null) return _radios.AsQueryable();
-            return _radios.AsQueryable().Where(filter);
+            return _firebaseRadioRepository.FindAll(filter);
+        }
+
+        public void Save(Radio radio)
+        {
+            _firebaseRadioRepository.Save(radio);
+
         }
     }
 }
