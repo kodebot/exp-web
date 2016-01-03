@@ -27,13 +27,15 @@ a img{
     text-align: center;
 }
 
-.container{
-    max-width: 960px;
+.mdl-layout__content{
+    max-width: 1140px;
     margin: 0 auto;
 }
 
-.mdl-progress{
-    width:960px;
+.mdl-card{
+  width: 256px;
+  height: 160px;
+  margin:auto;
 }
 
 
