@@ -27,7 +27,7 @@ a img{
     text-align: center;
 }
 
-.mdl-layout__content{
+.container{
     max-width: 1140px;
     margin: 0 auto;
 }
@@ -36,7 +36,17 @@ a img{
   width: 256px;
   height: 160px;
   margin:auto;
+  /*background-color: #9E9E9E;*/
 }
 
+.player-card{
+    width: 300px;
+    margin:auto
+}
+
+audio{
+    display: none;
+    visibility: hidden;
+}
 
 

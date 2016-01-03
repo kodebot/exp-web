@@ -1,5 +1,7 @@
-     <div class="mdl-grid ">
-        <div class="mdl-cell mdl-cell--3-col  mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--stretch" *ngFor="#radio of radios">
-            <radio [radio] = "radio" ></radio>
-        </div>
+<player></player>
+
+<div class="row">
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4" *ngFor="#radio of radios" style="padding:15px">
+        <radio [radio]="radio"></radio>
     </div>
+</div>

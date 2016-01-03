@@ -3,11 +3,12 @@ import {Http, HTTP_PROVIDERS}  from "angular2/http";
 import "rxjs/add/operator/map";
 
 import {RadioComponent} from "./radio.component";
+import {PlayerComponent} from "../player/player.component";
 
 @Component({
        selector:"radio-list",
        providers: [HTTP_PROVIDERS],
-       directives:[RadioComponent],
+       directives:[RadioComponent, PlayerComponent],
        templateUrl:"app/radio/radio-list.html",
 
 })

@@ -1,27 +1,34 @@
 <!doctype html>
- <html>
- <head>
- <meta charset="utf-8">
+<html>
+
+<head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Listen to you favourite Hindi, Tamil and Telugu radios.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title>Bharat Radios</title>
-        
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="node_modules/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.css" />-->
     <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-pink.min.css" />
     <link rel="stylesheet" href="styles.css">
-    
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>-->
+    <script src="node_modules/material-design-lite/dist/material.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/jplayer/dist/jplayer/jquery.jplayer.js"></script>
 
-     <script>
-      System.config({
+    <script>
+        System.config({
         packages: {        
           app: {
             format: 'register',
@@ -34,9 +41,9 @@
             .catch(console.error.bind(console));
     </script>
 
-  </head>
+</head>
 
-  <body>
+<body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -49,17 +56,23 @@
                 </nav>
             </div>
         </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Bharat Radios</span>
-        <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Hindi</a>
-        <a class="mdl-navigation__link" href="">Tamil</a>
-        <a class="mdl-navigation__link" href="">Telugu</a>
-        </nav>
-    </div>
-    <main class="mdl-layout__content">
-            <app-shell>Loading...</app-shell>
-    </main>
-    </div>
-  </body>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Bharat Radios</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="">Hindi</a>
+                <a class="mdl-navigation__link" href="">Tamil</a>
+                <a class="mdl-navigation__link" href="">Telugu</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+                <div class="mdl-cell--2-col mdl-cell-hide-phone">&nbsp;</div>
+                <div class="mdl-cell--8-col">&nbsp;
+                    <app-shell>Loading...</app-shell>
+                </div>
+                <div class="mdl-cell--2-col mdl-cell-hide-phone">&nbsp;</div>
+        </main>
+        </div>
+</body>
+
 </html>
