@@ -11,15 +11,16 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <!--<link rel="stylesheet" href="node_modules/jplayer/dist/skin/blue.monday/css/jplayer.blue.monday.css" />-->
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.red-pink.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.css" />
     <link rel="stylesheet" href="styles.css">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!--<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>-->
-    <script src="node_modules/material-design-lite/dist/material.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap-slider/dist/bootstrap-slider.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
@@ -44,35 +45,39 @@
 </head>
 
 <body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <span class="mdl-layout-title">Bharat Radios</span>
-                <div class="mdl-layout-spacer"></div>
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <a class="mdl-navigation__link" href="">Hindi</a>
-                    <a class="mdl-navigation__link" href="">Tamil</a>
-                    <a class="mdl-navigation__link" href="">Telugu</a>
-                </nav>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Bharat Radios</a>
             </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">Bharat Radios</span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Hindi</a>
-                <a class="mdl-navigation__link" href="">Tamil</a>
-                <a class="mdl-navigation__link" href="">Telugu</a>
-            </nav>
+
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Hindi</a></li>
+                    <li><a href="#">Tamil</a></li>
+                    <li><a href="#">Telugu</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <main class="mdl-layout__content">
-            <div class="mdl-grid">
-                <div class="mdl-cell--2-col mdl-cell-hide-phone">&nbsp;</div>
-                <div class="mdl-cell--8-col">&nbsp;
-                    <app-shell>Loading...</app-shell>
-                </div>
-                <div class="mdl-cell--2-col mdl-cell-hide-phone">&nbsp;</div>
-        </main>
-        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container">
+        <app-shell>Loading...</app-shell>
+    </div>
+
 </body>
 
 </html>

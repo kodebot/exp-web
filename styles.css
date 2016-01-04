@@ -49,4 +49,22 @@ audio{
     visibility: hidden;
 }
 
+#ex1Slider .slider-selection {
+	background: #BABABA;
+    
+}
+
+.btn-round{
+    border-radius:40px;
+}
+
+.btn-fav-container {
+    position: relative;
+}
+.btn-fav {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 
