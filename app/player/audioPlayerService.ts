@@ -6,15 +6,6 @@ declare var $;
 
 @Injectable()
 export class AudioPlayerService {
-
-    constructor() {
-        $('#ex1').slider({
-            formatter: function(value) {
-                return 'Volume: ' + value;
-            }
-        });
-    }
-
     play(url: string, title: string) {
         let player = $("#jquery_jplayer_1");
 

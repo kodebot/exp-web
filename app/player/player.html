@@ -1,33 +1,37 @@
 <div id="jquery_jplayer_1" class="jp-jplayer">
 </div>
 
-<div class="row">
+<div class="row container-player">
     <div class="col-md-3 hidden-xs">&nbsp;</div>
     <div class="col-md-6 col-xs-12">
         <div class="panel panel-primary jp-audio" id="jp_container_1">
-            <div class="panel-body">
+            <div class="panel-heading text-center" style="padding:0">
+                <img src="images/radios/tamil/lankasrifm.jpg" alt="" class="img-rounded" height="30" width="30">
+                <span class="jp-details">
+                    <span class="jp-title" style="font-weight:bold"> select your radio</span>
+                </span>
+                </div>
+            <div class="panel-body" style="padding:5px">
                 <div class="row">
                     <div class="col-xs-5">
                         <div class=" pull-right">
-                            <button type="button" class="btn btn-primary btn-sm btn-round">&nbsp;<i class="fa fa-step-backward"></i>&nbsp;</button>
-                            <button type="button" class="btn btn-success btn-round btn-sm jp-play">&nbsp;<i class="fa fa-play"></i></button>
-                            <button type="button" class="btn btn-primary btn-sm btn-round">&nbsp;<i class="fa fa-step-forward"></i>&nbsp;</button>
+                            <button type="button" class="btn btn-default btn-sm btn-round"><i class="fa fa-step-backward"></i></button>
+                            <button type="button" class="btn btn-success jp-play" style="height:50px;width:50px;border-radius:25px">&nbsp;<i class="fa fa-play"></i></button>
+                            <button type="button" class="btn btn-danger jp-stop" style="height:50px;width:50px;border-radius:25px">&nbsp;<i class="fa fa-stop"></i></button>
+                            <button type="button" class="btn btn-default btn-sm btn-round"><i class="fa fa-step-forward"></i></button>
                         </div>
                     </div>
                     <div class="col-xs-7">
-                        <button type="button" class="btn btn-primary btn-sm btn-round">&nbsp;<i class="fa fa-volume-off"></i>&nbsp;</button>
-                        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="100" data-slider-step="1" data-slider-value="40"
-                        style="width:100px;" />
-                        <button type="button" class="btn btn-primary btn-sm btn-round"><i class="fa fa-volume-up"></i></button>
+                        <!--<button type="button" class="btn btn-primary btn-sm btn-round">&nbsp;<i class="fa fa-volume-off"></i>&nbsp;</button>-->
+                        <div style="padding-top:15px">
+                        <span><i class="fa fa-volume-off"></i></span>
+                        <input type="range" style="width:70%"/>
+                        <span><i class="fa fa-volume-up"></i></span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="panel-heading text-center">
-                <img src="images/radios/tamil/lankasrifm.jpg" alt="" class="img-rounded" height="30" width="30">
-                <span class="jp-details">
-                    <span class="jp-title"> Panel footer</span>
-                </span>
-                </div>
+         
         </div>
     </div>
 </div>
