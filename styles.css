@@ -16,7 +16,8 @@
 
 body {
   margin: 0;
-  background: lightgray;
+  background:#bfd4d9;
+  
 }
 
 /* Disable ugly boxes around images in IE10 */
@@ -73,7 +74,7 @@ a.navbar-brand{
 }
 
 .container-player {
-    background:lightgray;
+    background:#bfd4d9;
     position: fixed;
     top: 50px;
     padding-top:5px;
