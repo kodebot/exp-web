@@ -14,12 +14,35 @@
     <link rel="stylesheet" href="assets/css/simple-line-icons.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-    <link rel="stylesheet" href = "styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
     <!--[if lt IE 9]>
     <script src="js/ie/html5shiv.js"></script>
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
   <![endif]-->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/jplayer/dist/jplayer/jquery.jplayer.js"></script>
+
+    <script>
+        System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+
+      System.import('app/boot')
+            .catch(console.error.bind(console));
+    </script>
+    
 </head>
 
 <body class="">
@@ -56,8 +79,6 @@
                     </div>
                 </div>
             </form>
-
-
 
             <div class="navbar-right ">
                 <ul class="nav navbar-nav m-n hidden-xs nav-user user">
@@ -110,149 +131,18 @@
                 </aside>
                 <!-- /.aside menu-->
                 <section id="content">
-                    <section class="vbox">
-
-                        <section class="w-f-md">
-                            <section class="hbox stretch bg-black dker">
-
-                                <section class="col-sm-2 no-padder lt">
-                                    <section class="vbox">
-                                        ads here
-                                    </section>
-                                </section>
-                                <!-- side content - currently playing image and comments-->
-                                <aside class="col-sm-3 no-padder" id="sidebar">
-                                    <section class="vbox animated fadeInUp">
-                                        <section class="scrollable">
-                                            <div class="m-t-n-xxs item pos-rlt">
-                                                <div class="top text-right">
-                                                    <span class="musicbar animate bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
-                                                    <span class="bar1 a3 lter"></span>
-                                                    <span class="bar2 a5 lt"></span>
-                                                    <span class="bar3 a1 bg"></span>
-                                                    <span class="bar4 a4 dk"></span>
-                                                    <span class="bar5 a2 dker"></span>
-                                                    </span>
-                                                </div>
-                                                <div class="bottom gd bg-info wrapper-lg">
-                                                    <span class="h2 font-thin">Lankasri FM</span>
-                                                </div>
-                                                <img class="img-full" src="images/radios/tamil/lankasri-fm.jpg" alt="...">
-                                            </div>
-                                            
-                                        </section>
-                                    </section>
-                                </aside>
-                                <!-- / side content -currently playing image and comments-->
-
-                                <section class="col-sm-4 no-padder bg">
-                                    <section class="vbox">
-                                        <section class="scrollable hover">
-                                            <ul class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
-                                                <li class="list-group-item clearfix">
-                                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                        <i class="icon-control-play text"></i>
-                                                        <i class="icon-control-pause text-active"></i>
-                                                    </a>
-                                                    <a href="#" class="pull-left thumb-sm m-r">
-                                                        <img src="images/radios/tamil/lankasri-fm.jpg" alt="...">
-                                                    </a>
-                                                    <a class="clear" href="#">
-                                                        <span class="block text-ellipsis">Lankasri FM</span>
-                                                        <small class="text-muted">Ulaga tamilargalin ithaya thudipu</small>
-                                                    </a>
-                                                </li>
-                                                <li class="list-group-item clearfix">
-                                                    <a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
-                                                        <i class="icon-control-play text"></i>
-                                                        <i class="icon-control-pause text-active"></i>
-                                                    </a>
-                                                    <a href="#" class="pull-left thumb-sm m-r">
-                                                        <img src="images/radios/tamil/ar-rehman-hits.jpg" alt="...">
-                                                    </a>
-                                                    <a class="clear" href="#">
-                                                        <span class="block text-ellipsis">AR Rehman Hits</span>
-                                                        <small class="text-muted">AR Rehman Hits</small>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </section>
-                                    </section>
-                                </section>
-                                <section class="col-sm-2 no-padder lt">
-                                    <section class="vbox">
-                                        ads here
-                                    </section>
-                                </section>
-                            </section>
-                        </section>
-                        <footer class="footer bg-success dker">
-                            <div id="jp_container_N">
-                                <div class="jp-type-playlist">
-                                    <div id="jplayer_N" class="jp-jplayer hide"></div>
-                                    <div class="jp-gui">
-                                        <div class="jp-video-play hide">
-                                            <a class="jp-video-play-icon">play</a>
-                                        </div>
-                                        <div class="jp-interface">
-                                            <div class="jp-controls">
-                                                <div><a class="jp-previous"><i class="icon-control-rewind i-lg"></i></a></div>
-                                                <div>
-                                                    <a class="jp-play"><i class="icon-control-play i-2x"></i></a>
-                                                    <a class="jp-pause hid"><i class="icon-control-pause i-2x"></i></a>
-                                                </div>
-                                                <div><a class="jp-next"><i class="icon-control-forward i-lg"></i></a></div>
-                                                <div class="hide"><a class="jp-stop"><i class="fa fa-stop"></i></a></div>
-                                                <div class="jp-progress hidden-xs">
-                                                    <div class="jp-title text-lt">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="hidden-xs hidden-sm">
-                                                    <a class="jp-mute" title="mute"><i class="icon-volume-2"></i></a>
-                                                    <a class="jp-unmute hid" title="unmute"><i class="icon-volume-off"></i></a>
-                                                </div>
-                                                <div class="hidden-xs hidden-sm jp-volume">
-                                                    <div class="jp-volume-bar dk">
-                                                        <div class="jp-volume-bar-value lter"></div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="hide">
-                                                    <a class="jp-full-screen" title="full screen"><i class="fa fa-expand"></i></a>
-                                                    <a class="jp-restore-screen" title="restore screen"><i class="fa fa-compress text-lt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="jp-playlist dropup" id="playlist">
-                                        <ul class="dropdown-menu aside-xl dker">
-                                            <!-- The method Playlist.displayPlaylist() uses this unordered list -->
-                                            <li class="list-group-item"></li>
-                                        </ul>
-                                    </div>
-                                    <div class="jp-no-solution hide">
-                                        <span>Update Required</span> To play the media you will need to either update your
-                                        browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/"
-                                        target="_blank">Flash plugin</a>.
-                                    </div>
-                                </div>
-                            </div>
-                        </footer>
-                    </section>
-                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+                    <app-shell></app-shell>
                 </section>
             </section>
         </section>
     </section>
-    <script src="assets/js/jquery.min.js"></script>
+
     <!-- Bootstrap -->
     <script src="assets/js/bootstrap.js"></script>
     <!-- App -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
     <script src="assets/js/app.plugin.js"></script>
-    <script type="text/javascript" src="assets/js/jPlayer/jquery.jplayer.min.js"></script>
     <script type="text/javascript" src="assets/js/jPlayer/add-on/jplayer.playlist.min.js"></script>
     <script type="text/javascript" src="assets/js/jPlayer/demo.js"></script>
 </body>

@@ -1,26 +1,11 @@
-<!--<div class="thumbnail btn-fav-container" style="border:1px solid red;width:125px" (click)="play(radio)">
-    
-    <div class="caption" style="background:url('images/radios/tamil/lankasrifm.jpg');height:100px;">
-    
-        <p class="text-center"><i class="fa fa-2x fa-heart-o btn-fav" style="background-color:white"></i> </p>
-    </div>
-</div>-->
-<!--
-<div class="panel panel-primary" (click)="play(radio)" style=";cursor:pointer">
-  <div class="panel-heading" style="white-space:nowrap;font-size:x-small;font-weight:bold">
-      {{radio.name}}
-      <p class="text-center pull-right"><i class="fa fa-heart-o"></i> </p>
-  </div>
-  <div class="panel-body" style="height:150px;">
-    <img src="images/radios/tamil/{{radio.imgName}}.jpg">
-  </div>
-</div>-->
-
-
-    <div class="thumbnail" (click)="play(radio)">
-      <img src="images/radios/tamil/{{radio.imgName}}.jpg" alt="{{radio.name}}">
-      <div class="caption">
-        <span style="white-space:nowrap;font-size:x-small;font-weight:bold">{{radio.name}}</span>
-        <p>{{radio.description}}</p>
-      </div>
-    </div>
+<a href="#" class="jp-play-me pull-right m-t-sm m-l text-md">
+    <i class="icon-control-play text"></i>
+    <i class="icon-control-pause text-active"></i>
+</a>
+<a href="#" class="pull-left thumb-sm m-r">
+    <img src="images/radios/tamil/lankasri-fm.jpg" alt="...">
+</a>
+<a class="clear" href="#">
+    <span class="block text-ellipsis">{{radio.name}}</span>
+    <small class="text-muted">{{radio.description}}</small>
+</a>
