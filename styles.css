@@ -24,5 +24,10 @@
 /* JPlayer settings end */
 
 
-
+  .hbox > app-shell {
+    display: table-cell;
+    vertical-align: top;
+    height: 100%;
+    float: none;
+  }
 

@@ -1,48 +1,93 @@
-<section class="vbox">
-    <section class="w-f-md">
-        <section class="hbox stretch bg-black dker">
+<section class="hbox stretch">
 
-            <section class="col-sm-2 no-padder lt">
-                <section class="vbox">
-                    ads here
-                </section>
-            </section>
-            <!-- side content - currently playing image and comments-->
-            <aside class="col-sm-3 no-padder" id="sidebar">
-                <section class="vbox animated fadeInUp">
-                    <section class="scrollable">
-                        <div class="m-t-n-xxs item pos-rlt">
-                            <div class="top text-right">
-                                <span class="musicbar animate bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
-                                                    <span class="bar1 a3 lter"></span>
-                                <span class="bar2 a5 lt"></span>
-                                <span class="bar3 a1 bg"></span>
-                                <span class="bar4 a4 dk"></span>
-                                <span class="bar5 a2 dker"></span>
-                                </span>
-                            </div>
-                            <div class="bottom gd bg-info wrapper-lg">
-                                <span class="h2 font-thin">Lankasri FM</span>
-                            </div>
-                            <img class="img-full" src="images/radios/tamil/lankasri-fm.jpg" alt="...">
-                        </div>
-
-                    </section>
-                </section>
-            </aside>
-            <!-- / side content -currently playing image and comments-->
-
-            <radio-list></radio-list>
-
-            <section class="col-sm-2 no-padder lt">
-                <section class="vbox">
-                    ads here
-                </section>
+    <!-- .aside menu-->
+    <aside class="bg-black dk nav-xs aside hidden-print" id="nav">
+        <section class="vbox">
+            <section class="w-f-md scrollable">
+                <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+                    <!-- nav -->
+                    <nav class="nav-primary hidden-xs">
+                        <ul class="nav bg clearfix">
+                            <li>
+                                <a href="#">
+                                    <i class="icon-disc icon text-success"></i>
+                                    <span class="font-bold">Hindi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon-music-tone-alt icon text-info"></i>
+                                    <span class="font-bold">Tamil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon-list icon  text-info-dker"></i>
+                                    <span class="font-bold">Telugu</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </section>
         </section>
+    </aside>
+    <!-- /.aside menu-->
+
+
+    <section id="content">
+        <section class="vbox">
+            <section class="w-f-md">
+                <section class="hbox stretch bg-black dker">
+                    <section class="col-sm-2 no-padder lt">
+                        <section class="vbox">
+                            ads here
+                        </section>
+                    </section>
+                    <!-- side content - currently playing image and comments-->
+                    <aside class="col-sm-3 no-padder" id="sidebar">
+                        <section class="vbox animated fadeInUp">
+                            <section class="scrollable">
+                                <div class="m-t-n-xxs item pos-rlt">
+                                    <div class="top text-right">
+                                        <span class="musicbar animate bg-success bg-empty inline m-r-lg m-t" style="width:25px;height:30px">
+                                                    <span class="bar1 a3 lter"></span>
+                                        <span class="bar2 a5 lt"></span>
+                                        <span class="bar3 a1 bg"></span>
+                                        <span class="bar4 a4 dk"></span>
+                                        <span class="bar5 a2 dker"></span>
+                                        </span>
+                                    </div>
+                                    <div class="bottom gd bg-info wrapper-lg">
+                                        <span class="h2 font-thin">Lankasri FM</span>
+                                    </div>
+                                    <img class="img-full" src="images/radios/tamil/lankasri-fm.jpg" alt="...">
+                                </div>
+
+                            </section>
+                        </section>
+                    </aside>
+                    <!-- / side content -currently playing image and comments-->
+                    <section class="col-sm-4 no-padder bg">
+                        <section class="vbox">
+                            <section class="scrollable hover">
+                                <ul class="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
+                                    <radio-list></radio-list>
+                                </ul>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="col-sm-2 no-padder lt">
+                        <section class="vbox">
+                            ads here
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <footer class="footer bg-success dker">
+                <player></player>
+            </footer>
+        </section>
+        <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
     </section>
-    <!--<footer class="footer bg-success dker">
-        <player></player>
-    </footer>-->
 </section>
-<a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>

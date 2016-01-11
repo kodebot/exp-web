@@ -9,6 +9,5 @@ import "../../assets/js/app.plugin.js";
 })
 export class PlayerComponent {
     constructor() {
-        alert("test");
     }
 }

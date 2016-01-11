@@ -5,21 +5,23 @@ import "rxjs/add/operator/map";
 import {RadioComponent} from "./radio.component";
 import {PlayerComponent} from "../player/player.component";
 
+declare var $: any;
+
 @Component({
-       selector:"radio-list",
-       providers: [HTTP_PROVIDERS],
-       directives:[RadioComponent, PlayerComponent],
-       templateUrl:"app/radio/radio-list.html",
+    selector: "radio-list",
+    providers: [HTTP_PROVIDERS],
+    directives: [RadioComponent, PlayerComponent],
+    templateUrl: "app/radio/radio-list.html",
 
 })
 export class RadioListComponent {
-    radios:any[];
-    constructor(private _http:Http){
+    radios: any[];
+    constructor(private _http: Http) {
     }
-    
-    ngOnInit(){
+
+    ngOnInit() {
         this._http.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json")
-        .map(response => response.json())
-        .subscribe(result => this.radios = result.radios);
+            .map(response => response.json())
+            .subscribe(result => this.radios = result.radios);
     }
 }
