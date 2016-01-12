@@ -6,8 +6,11 @@ declare var $;
 
 @Injectable()
 export class AudioPlayerService {
+    constructor(){
+        this.play("test", "test");
+    }
     play(url: string, title: string) {
-        let player = $("#jquery_jplayer_1");
+        let player = $("#jplayer_N");
 
         player.jPlayer({
             ready: function() {
@@ -17,7 +20,7 @@ export class AudioPlayerService {
                 });
                 $(this).jPlayer("play");
             },
-            cssSelectorAncestor: "#jp_container_1",
+            cssSelectorAncestor: "#jp_container_N",
             swfPath: "/js", // todo: fix this
             supplied: "m4a, oga",
             useStateClassSkin: true,
