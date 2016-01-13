@@ -9,5 +9,12 @@ import {CurrentlyPlayingComponent} from "../currently-playing/currently-playing.
     directives: [RadioListComponent, PlayerComponent, CurrentlyPlayingComponent]
 })
 export class ShellComponent{
-    test:RadioListComponent;
+    currentlyPlaying:any;
+    test1:RadioListComponent;
+    
+    public currentRadioChanged(radio){
+        console.log("shell");
+        console.log(radio);
+        this.currentlyPlaying = radio;
+    }
 }

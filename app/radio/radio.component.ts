@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, EventEmitter, Output} from "angular2/core";
 import {AudioPlayerService} from "../player/audioPlayerService";
 
 @Component({
@@ -10,9 +10,13 @@ import {AudioPlayerService} from "../player/audioPlayerService";
 })
 export class RadioComponent{
     public radio:any
-    constructor(private _audioPlayerService: AudioPlayerService) { }
+    @Output() radioChange:EventEmitter<any>;
+    constructor(private _audioPlayerService: AudioPlayerService) {
+        this.radioChange = new EventEmitter<any>();
+     }
 
     play(radio:any) {
+        this.radioChange.emit(radio);
         this._audioPlayerService.play(radio.streamUrl, radio.name);
     }
 }
