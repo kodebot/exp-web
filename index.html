@@ -7,27 +7,30 @@
     <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="assets/js/jPlayer/jplayer.flat.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" />
-    <link rel="stylesheet" href="assets/css/simple-line-icons.css" type="text/css" />
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" type="text/css" />
+    <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/font.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/jplayer.flat.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/app.css" type="text/css" />
-    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
     <!--[if lt IE 9]>
     <script src="js/ie/html5shiv.js"></script>
     <script src="js/ie/respond.min.js"></script>
     <script src="js/ie/excanvas.js"></script>
   <![endif]-->
 
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
     <script src="node_modules/jplayer/dist/jplayer/jquery.jplayer.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 
     <script>
         System.config({
@@ -48,98 +51,75 @@
 <body class="">
     <section class="vbox">
         <header class="bg-black lter header header-md navbar navbar-fixed-top-xs">
-            <div class="navbar-header aside bg-success nav-xs">
-                <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+
+            <div class="navbar-header aside bg-success nav-xs visible-xs">
+                <a class="btn btn-linknavbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav">
                     <i class="icon-list"></i>
                 </a>
-                <a href="index.html" class="navbar-brand text-lt">
-                    <i class="icon-earphones"></i>
-                    <img src="images/logo.png" alt="." class="hide">
-                    <span class="hidden-nav-xs m-l-sm">Bharat Radios</span>
-                </a>
-                <a class="btn btn-link visible-xs" data-toggle="dropdown" data-target=".user">
-                    <i class="icon-settings"></i>
+                <a href="index.html" class="navbar-brand">
+                    <i><img src="assets/images/logos/1_Primary_logo_on_transparent_211X40.png" alt="."></i>
                 </a>
             </div>
-            <ul class="nav navbar-nav hidden-xs">
-                <li>
-                    <a href="#nav,.navbar-header" data-toggle="class:nav-xs,nav-xs" class="text-muted">
-                        <i class="fa fa-indent text"></i>
-                        <i class="fa fa-dedent text-active"></i>
-                    </a>
-                </li>
-            </ul>
-            <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
-                <div class="form-group">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-              <button type="submit" class="btn btn-sm bg-white btn-icon rounded"><i class="fa fa-search"></i></button>
-            </span>
-                        <input type="text" class="form-control input-sm no-border rounded" placeholder="Search radios">
-                    </div>
-                </div>
-            </form>
 
-            <div class="navbar-right ">
-                <ul class="nav navbar-nav m-n hidden-xs nav-user user">
+            <div class="navbar-header aside bg-success hidden-xs">
+                <a href="index.html" class="navbar-brand">
+                    <i><img src="assets/images/logos/1_Primary_logo_on_transparent_211X40.png" alt="."></i>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="main-nav">
+                <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">F</a>
+                        <a href="#">
+                            <span class="font-bold">Hindi</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">g+</a>
+                        <a href="#">
+                            <span class="font-bold">Tamil</span>
+                        </a>
                     </li>
                     <li>
-                        <a href="#">pin</a>
+                        <a href="#">
+                            <span class="font-bold">Telugu</span>
+                        </a>
                     </li>
+
                 </ul>
+
+                <form class="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button type="submit" class="btn btn-sm bg-white btn-icon"><i class="fa fa-search"></i></button>
+                            </span>
+                            <input type="text" class="form-control input-sm no-border" placeholder="Search radios">
+                        </div>
+                    </div>
+                </form>
+                <div class="navbar-right ">
+                    <ul class="nav navbar-nav m-n hidden-xs">
+                        <li>
+                            <a href="#">F</a>
+                        </li>
+                        <li>
+                            <a href="#">g+</a>
+                        </li>
+                        <li>
+                            <a href="#">pin</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </header>
         <section>
             <section class="hbox stretch">
 
-                <!-- .aside menu-->
-                <aside class="bg-black dk nav-xs aside hidden-print" id="nav">
-                    <section class="vbox">
-                        <section class="w-f-md scrollable">
-                            <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
-                                <!-- nav -->
-                                <nav class="nav-primary hidden-xs">
-                                    <ul class="nav bg clearfix">
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon-disc icon text-success"></i>
-                                                <span class="font-bold">Hindi</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon-music-tone-alt icon text-info"></i>
-                                                <span class="font-bold">Tamil</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="icon-list icon  text-info-dker"></i>
-                                                <span class="font-bold">Telugu</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </section>
-                    </section>
-                </aside>
-                <!-- /.aside menu-->
                 <section id="content">
                     <app-shell class="vbox"></app-shell>
                 </section>
             </section>
         </section>
     </section>
-
-    <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.js"></script>
-    <script src="assets/js/slimscroll/jquery.slimscroll.min.js"></script>
 </body>
-
 </html>
