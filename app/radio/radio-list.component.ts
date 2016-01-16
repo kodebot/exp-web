@@ -10,16 +10,12 @@ declare var $: any;
 @Component({
     selector: "radio-list",
     providers: [HTTP_PROVIDERS],
-    directives: [RadioComponent, PlayerComponent],
-    templateUrl: "app/radio/radio-list.html",
-    inputs:["currentlyPlaying"]
-
+    directives: [RadioComponent],
+    templateUrl: "app/radio/radio-list.html"
 })
 export class RadioListComponent {
     radios: any[];
-    @Output() radioChange: EventEmitter<any>;
     constructor(private _http: Http) {
-        this.radioChange = new EventEmitter<any>();
     }
 
     ngOnInit() {
@@ -27,11 +23,4 @@ export class RadioListComponent {
             .map(response => response.json())
             .subscribe(result => this.radios = result.radios);
     }
-    
-    public currentRadioChanged(radio){
-        console.log("list");
-        this.radioChange.emit(radio);
-    }
-
-
 }
