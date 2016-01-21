@@ -3,10 +3,14 @@
 import * as React from "react";
 import {render} from "react-dom";
 
+import {PlayerComponent} from "../player/player.component";
+import {RadioListComponent} from "../radio/radio-list.component";
+
 export class ShellComponent extends React.Component<any, any>{
     constructor(props: any) {
         super(props);
     }
+
 
     render() {
         return (
@@ -30,7 +34,7 @@ export class ShellComponent extends React.Component<any, any>{
                             <section className="col-sm-4 no-padder bg">
                                 <section className="vbox">
                                     <section className="scrollable hover">
-                                        // radio-list
+                                        <RadioListComponent />
                                         </section>
                                     </section>
                                 </section>
@@ -42,10 +46,10 @@ export class ShellComponent extends React.Component<any, any>{
                         </section>
                     </section>
                         <footer className="footer bg-success dker">
-                            // player
+                            <PlayerComponent />
                             </footer >
                 </section >
-            // <a href="#" className="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+       
         );
     }
 }
