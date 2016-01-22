@@ -18,8 +18,8 @@ export class RadioComponent extends React.Component<any, any>{
                 </a>
 
                 <a className="clear" href="#" data-click ="play(radio)">
-                   <span className="block text-ellipsis">name</span>
-                   <small className="text-muted">description</small>
+                   <span className="block text-ellipsis">{this.props.radio.name}</span>
+                   <small className="text-muted">{this.props.radio.description}</small>
                 </a>
             </div >
         );
