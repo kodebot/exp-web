@@ -35,6 +35,19 @@
     },
     "devDependencies": {
       "typescript": "npm:typescript@^1.6.2"
+    },
+    "overrides": {
+      "npm:jplayer@2.9.2": {
+        "format": "global",
+        "dependencies": {
+          "jquery": "*"
+        },
+        "shim": {
+          "dist/jplayer/jquery.jplayer": [
+            "jquery"
+          ]
+        }
+      }
     }
   }
 }

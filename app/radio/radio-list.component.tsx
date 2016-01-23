@@ -11,14 +11,11 @@ export class RadioListComponent extends React.Component<any, any> implements Rea
     }
 
     render() {
-        console.log(this.state);
-
-        let radiosComponents = this.state.radios.map(radio => <RadioComponent radio={radio} />);
+        let radiosComponents = this.state.radios.map(radio => <RadioComponent radio={radio} onClick={this.props.onRadioChange.bind(this, radio) }/>);
         return (
+
             <ul className="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
-                <li className="list-group-item clearfix" >
                     {radiosComponents}
-                    </li>
                 </ul>
         );
     }
@@ -26,8 +23,9 @@ export class RadioListComponent extends React.Component<any, any> implements Rea
     componentDidMount() {
         $.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json")
             .done(data => {
+                this.setState({ radios: JSON.parse(data).radios.map(radio => { radio.key = radio.id; return radio; }) });
                 console.log(data);
-                this.setState({ radios: JSON.parse(data).radios });
+                
             })
             .fail(error => {
                 console.log(error);

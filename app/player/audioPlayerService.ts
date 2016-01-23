@@ -1,16 +1,14 @@
-import {Injectable, OnInit} from "angular2/core";
-// import "node_modules/bootstrap-slider/dist/bootstrap-slider.js";
+///<reference path="../../typings/jquery/jquery.d.ts" />
+///<reference path="../../typings/misc.d.ts" />
+import $ from  "jquery";
+import jplayer from  "jplayer";
 
-declare var document;
-declare var $;
-
-@Injectable()
 export class AudioPlayerService {
-    constructor(){
-        this.play("test", "test");
+    constructor() {
+        // this.play("test", "test");
     }
     play(url: string, title: string) {
-        let player = $("#jplayer_N");
+        let player: any = $("#jplayer_N");
 
         player.jPlayer({
             ready: function() {
