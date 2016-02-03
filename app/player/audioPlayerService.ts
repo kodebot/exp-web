@@ -1,15 +1,13 @@
-///<reference path="../../typings/jquery/jquery.d.ts" />
-///<reference path="../../typings/misc.d.ts" />
+///<reference path="../../typings/tsd.d.ts" />
 import $ from  "jquery";
-import jplayer from  "jplayer";
+//import jplayer from  "jplayer";
 
 export class AudioPlayerService {
     constructor() {
         // this.play("test", "test");
     }
     play(url: string, title: string) {
-        let player: any = $("#jplayer_N");
-
+        let player: JQuery = $("#jplayer_N");
         player.jPlayer({
             ready: function() {
                 $(this).jPlayer("setMedia", {
@@ -32,6 +30,5 @@ export class AudioPlayerService {
         player.jPlayer("setMedia", { title: title, m4a: url });
         player.jPlayer("play");
     }
-
-}
+ }
 

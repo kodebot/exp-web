@@ -1,8 +1,7 @@
-///<reference path="../../typings/react/react.d.ts"/>
 import * as React from "react";
 
 export class CurrentlyPlayingComponent extends React.Component<any, any>{
-    private _imgUrl: string;
+    _imgUrl: string;
     constructor(public props: any) {
         super(props)
     }

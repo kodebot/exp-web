@@ -1,5 +1,5 @@
-///<reference path="../../typings/react/react.d.ts"/>
-///<reference path="../../typings/jquery/jquery.d.ts"/>
+///<reference path="../../typings/tsd.d.ts"/>
+
 import * as React from "react";
 import {RadioComponent} from "./radio.component";
 import * as $ from "jquery";

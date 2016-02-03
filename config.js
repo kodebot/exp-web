@@ -24,7 +24,7 @@ System.config({
     "simple-line-icons": "npm:simple-line-icons@2.2.3",
     "slimscroll": "npm:slimscroll@0.9.1",
     "text": "github:systemjs/plugin-text@0.0.4",
-    "typescript": "npm:typescript@1.7.5",
+    "typescript": "npm:typescript@1.8.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },

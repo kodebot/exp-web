@@ -1,4 +1,4 @@
-///<reference path="../../typings/react/react.d.ts"/>
+///<reference path="../../typings/tsd.d.ts"/>
 import * as React from "react";
 
 export class RadioComponent extends React.Component<any, any>{

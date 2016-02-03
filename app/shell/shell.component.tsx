@@ -1,5 +1,5 @@
-///<reference path="../../typings/react/react.d.ts"/>
-///<reference path="../../typings/react/react-dom.d.ts"/>
+///<reference path="../../typings/tsd.d.ts"/>
+
 import * as React from "react";
 import {render} from "react-dom";
 
