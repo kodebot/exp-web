@@ -24,7 +24,10 @@ export class RadioListComponent extends React.Component<any, any> implements Rea
         $.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json")
             .done(data => {
                 this.setState({ radios: JSON.parse(data).radios.map(radio => { radio.key = radio.id; return radio; }) });
-                console.log(data);
+                if(this.state.radios){
+                    // play the first radio by default
+                    this.props.onRadioChange(this.state.radios[0]);
+                }
                 
             })
             .fail(error => {
