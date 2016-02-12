@@ -10,16 +10,22 @@ export class RadioComponent extends React.Component<any, any>{
 
     render() {
         this._imageUrl = `assets/images/radios/tamil/${this.props.radio.imgName}.jpg`;
+        var thumbStyle = {
+            "height": 40,
+            "width": 40,
+            "background-color": "#1ab667"
+        };
 
         return (
             <li className="list-group-item clearfix" >
                 <div>
                     <a href="#" className="jp-play-me pull-right m-t-sm m-l text-md">
+                        <i className="icon-heart"></i>
                         <i className="icon-control-play text"></i>
                         <i className="icon-control-pause text-active"></i>
                     </a>
                     <a href="#" className="pull-left thumb-sm m-r">
-                        <img src= {this._imageUrl} alt="..." />
+                        <div style={thumbStyle}>AB</div>
                     </a>
 
                     <a className="clear" href="#" onClick ={this.props.onClick}>
