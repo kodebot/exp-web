@@ -40,7 +40,7 @@ export class ShellComponent extends React.Component<any, any> implements React.C
                 item.currentlyPlaying = true;
                 this.state.currentIndex = index;
             } else {
-                item.currenltyPlaying = false;
+                item.currentlyPlaying = false;
             }
 
         });
@@ -52,7 +52,7 @@ export class ShellComponent extends React.Component<any, any> implements React.C
     componentDidMount() {
         $.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json")
             .done(data => {
-                this.setState({ radios: JSON.parse(data).radios.map(radio => { radio.key = radio.id; return radio; }) });
+                this.setState({ radios: JSON.parse(data).radios.map(radio => { radio.key = radio.id; radio.currentlyPlaying = false; return radio; }) });
                 if (this.state.radios) {
                     // play the first radio by default
                     this.updateCurrentlyPlaying(this.state.radios[0]);
@@ -65,13 +65,25 @@ export class ShellComponent extends React.Component<any, any> implements React.C
     }
 
     render() {
+        var adStyle = {
+            "display": "inline-block",
+            width: "300px",
+            height: "600px"
+        };
         return (
-            <section className="vbox">
+            <section className="vbox bg-black lt">
                 <section className="w-f-md">
                     <section className="hbox stretch bg-black dker">
                         <section className="col-sm-2 no-padder lt">
                             <section className="vbox">
-                                ads here
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+                                <div className="adsbygoogle" style={adStyle}
+                                    data-ad-client="ca-pub-3040799023438032"
+                                    data-ad-slot="5454002702"></div>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle ||[]).push({});
+                                </script>
                             </section>
                         </section>
                         <section className="col-sm-6 no-padder bg">
@@ -86,13 +98,16 @@ export class ShellComponent extends React.Component<any, any> implements React.C
                         </section>
                         <section className="col-sm-2 no-padder lt">
                             <section className="vbox">
-                                ads here
+
                             </section>
                         </section>
                     </section>
                 </section>
-                <footer className="bg-success">
-                    this is footer
+                <footer className="text-white">
+                    DISCLAIMER: BharatRadios does not host any radios, it simply provides links to the radios hosted in the internet.
+                    If you are owner of the radio and you don't want BharatRadios to provide link to your radio then please send an email to the address below.
+                    <br/>
+                    Qubits Solutions Ltd | mailto:qubitssolutionsltd@outlook.com
                 </footer>
             </section >
 

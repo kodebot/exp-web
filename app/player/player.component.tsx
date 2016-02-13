@@ -32,16 +32,16 @@ export class PlayerComponent extends React.Component<any, any>{
                                 </div>
                                 <div onClick={this.next.bind(this)}><a className="jp-next"><i className="icon-control-forward i-lg"></i></a></div>
                                 <div className="hide"><a className="jp-stop"><i className="fa fa-stop"></i></a></div>
-                                <div className="jp-progress hidden-xs">
+                                <div className="jp-progress">
                                     <div className="jp-title text-lt">
                                     </div>
                                 </div>
 
-                                <div className="hidden-xs hidden-sm">
+                                <div className="">
                                     <a className="jp-mute" title="mute"><i className="icon-volume-2"></i></a>
                                     <a className="jp-unmute hid" title="unmute"><i className="icon-volume-off"></i></a>
                                 </div>
-                                <div className="hidden-xs hidden-sm jp-volume">
+                                <div className="jp-volume">
                                     <div className="jp-volume-bar dk">
                                         <div className="jp-volume-bar-value lter"></div>
                                     </div>

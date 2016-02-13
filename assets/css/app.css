@@ -2345,7 +2345,7 @@ fieldset[disabled] .btn-dark.active {
 }
 .bg-success.lter,
 .bg-success .lter {
-  background-color: #2ad980;
+  background-color: #2ad980 !important;
 }
 .bg-success.dk,
 .bg-success .dk {
