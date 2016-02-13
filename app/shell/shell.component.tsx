@@ -1,6 +1,6 @@
 ///<reference path="../../typings/tsd.d.ts"/>
 
-import * as React from "react";
+import React from "react";
 import {render} from "react-dom";
 
 import {PlayerComponent} from "../player/player.component";

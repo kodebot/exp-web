@@ -1,5 +1,5 @@
 ///<reference path="../../typings/tsd.d.ts"/>
-import * as React from "react";
+import React from "react";
 
 export class PlayerComponent extends React.Component<any, any>{
     constructor(public props: any) {

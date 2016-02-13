@@ -9,6 +9,15 @@ System.config({
     "npm:*": "jspm_packages/npm/*",
     "github:*": "jspm_packages/github/*"
   },
+  shim: {
+    "packages": {
+      "jplayer": {
+        "format": "global",
+        "deps": "jquery",
+        "exports": "$.jPlayer"
+      }
+    }
+  },
 
   map: {
     "animate.css": "npm:animate.css@3.4.0",

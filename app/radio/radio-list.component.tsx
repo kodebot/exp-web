@@ -1,8 +1,8 @@
 ///<reference path="../../typings/tsd.d.ts"/>
 
-import * as React from "react";
+import React from "react";
 import {RadioComponent} from "./radio.component";
-import * as $ from "jquery";
+import $ from "jquery";
 
 export class RadioListComponent extends React.Component<any, any> implements React.ComponentLifecycle<any, any>{
     constructor(props: any) {
@@ -11,7 +11,7 @@ export class RadioListComponent extends React.Component<any, any> implements Rea
     }
 
     render() {
-        let radiosComponents = this.state.radios.map(radio => <RadioComponent radio={radio} onClick={this.props.onRadioChange.bind(this, radio) }/>);
+        let radiosComponents = this.state.radios.map(radio => <RadioComponent key={radio.id} radio={radio} onClick={this.props.onRadioChange.bind(this, radio) }/>);
         return (
 
             <ul className="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">

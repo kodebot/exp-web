@@ -1,5 +1,6 @@
 ///<reference path="../../typings/tsd.d.ts" />
 import $ from  "jquery";
+import "jplayer";
 
 export class AudioPlayerService {
     constructor() {

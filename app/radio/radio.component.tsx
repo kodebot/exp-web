@@ -1,5 +1,5 @@
 ///<reference path="../../typings/tsd.d.ts"/>
-import * as React from "react";
+import React from "react";
 
 export class RadioComponent extends React.Component<any, any>{
     private _imageUrl: string;
@@ -13,7 +13,7 @@ export class RadioComponent extends React.Component<any, any>{
         var thumbStyle = {
             "height": 40,
             "width": 40,
-            "background-color": "#1ab667"
+            "backgroundColor": "#1ab667"
         };
 
         return (
