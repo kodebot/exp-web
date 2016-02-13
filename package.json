@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "lite": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" \"jspm bundle app/boot app.bundle.js --inject\""
   },
   "author": "MV",
   "license": "ISC",
@@ -35,6 +35,7 @@
       "text": "github:systemjs/plugin-text@^0.0.4"
     },
     "devDependencies": {
+      "clean-css": "npm:clean-css@^3.4.9",
       "typescript": "npm:typescript@^1.8.0"
     }
   }

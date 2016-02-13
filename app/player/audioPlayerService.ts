@@ -7,7 +7,7 @@ export class AudioPlayerService {
         // this.play("test", "test");
     }
     play(url: string, title: string) {
-        let player: JQuery = $("#jplayer_N");
+        let player: JQuery = $("#jplayer");
         player.jPlayer({
             ready: function() {
                 $(this).jPlayer("setMedia", {
@@ -16,7 +16,7 @@ export class AudioPlayerService {
                 });
                 $(this).jPlayer("play");
             },
-            cssSelectorAncestor: "#jp_container_N",
+            cssSelectorAncestor: "#jp_container",
             swfPath: "/js", // todo: fix this
             supplied: "m4a, oga",
             useStateClassSkin: true,

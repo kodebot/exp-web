@@ -1,4 +1,20 @@
 "bundle";
+System.register("github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("npm:animate.css@3.4.0//animate.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("npm:font-awesome@4.5.0/css/font-awesome.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("npm:simple-line-icons@2.2.3/css/simple-line-icons.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("assets/css/font.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("assets/css/jplayer.flat.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("assets/css/app.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
+System.register("assets/css/styles.css!github:systemjs/plugin-css@0.1.20.js", [], function() { return { setters: [], execute: function() {} } });
+
 (function() {
 var _removeDefine = System.get("@@amd-helpers").createDefine();
 (function(global, factory) {
@@ -7660,11 +7676,11 @@ System.register("app/player/player.component.js", ["npm:react@0.14.6.js"], funct
     }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
   };
-  var React;
+  var react_1;
   var PlayerComponent;
   return {
-    setters: [function(React_1) {
-      React = React_1;
+    setters: [function(react_1_1) {
+      react_1 = react_1_1;
     }],
     execute: function() {
       PlayerComponent = (function(_super) {
@@ -7673,29 +7689,29 @@ System.register("app/player/player.component.js", ["npm:react@0.14.6.js"], funct
           _super.call(this, props);
           this.props = props;
         }
+        PlayerComponent.prototype.previous = function() {
+          this.props.onPreviousOrNext(true);
+        };
+        PlayerComponent.prototype.next = function() {
+          this.props.onPreviousOrNext(false);
+        };
         PlayerComponent.prototype.render = function() {
-          return (React.createElement("div", {id: "jp_container_N"}, React.createElement("div", {className: "jp-type-playlist"}, React.createElement("div", {
-            id: "jplayer_N",
+          return (react_1.default.createElement("div", {id: "jp_container"}, react_1.default.createElement("div", {className: "jp-type-playlist"}, react_1.default.createElement("div", {
+            id: "jplayer",
             className: "jp-jplayer hide"
-          }), React.createElement("div", {className: "jp-gui"}, React.createElement("div", {className: "jp-video-play hide"}, React.createElement("a", {className: "jp-video-play-icon"}, "play")), React.createElement("div", {className: "jp-interface"}, React.createElement("div", {className: "jp-controls"}, React.createElement("div", null, React.createElement("a", {className: "jp-previous"}, React.createElement("i", {className: "icon-control-rewind i-lg"}))), React.createElement("div", null, React.createElement("a", {className: "jp-play"}, React.createElement("i", {className: "icon-control-play i-2x"})), React.createElement("a", {className: "jp-pause hid"}, React.createElement("i", {className: "icon-control-pause i-2x"}))), React.createElement("div", null, React.createElement("a", {className: "jp-next"}, React.createElement("i", {className: "icon-control-forward i-lg"}))), React.createElement("div", {className: "hide"}, React.createElement("a", {className: "jp-stop"}, React.createElement("i", {className: "fa fa-stop"}))), React.createElement("div", {className: "jp-progress hidden-xs"}, React.createElement("div", {className: "jp-title text-lt"})), React.createElement("div", {className: "hidden-xs hidden-sm"}, React.createElement("a", {
+          }), react_1.default.createElement("div", {className: "jp-gui"}, react_1.default.createElement("div", {className: "jp-video-play hide"}, react_1.default.createElement("a", {className: "jp-video-play-icon"}, "play")), react_1.default.createElement("div", {className: "jp-interface"}, react_1.default.createElement("div", {className: "jp-controls"}, react_1.default.createElement("div", {onClick: this.previous.bind(this)}, react_1.default.createElement("a", {className: "jp-previous"}, react_1.default.createElement("i", {className: "icon-control-rewind i-lg"}))), react_1.default.createElement("div", null, react_1.default.createElement("a", {className: "jp-play"}, react_1.default.createElement("i", {className: "icon-control-play i-2x"})), react_1.default.createElement("a", {className: "jp-pause"}, react_1.default.createElement("i", {className: "icon-control-pause i-2x"}))), react_1.default.createElement("div", {onClick: this.next.bind(this)}, react_1.default.createElement("a", {className: "jp-next"}, react_1.default.createElement("i", {className: "icon-control-forward i-lg"}))), react_1.default.createElement("div", {className: "hide"}, react_1.default.createElement("a", {className: "jp-stop"}, react_1.default.createElement("i", {className: "fa fa-stop"}))), react_1.default.createElement("div", {className: "jp-progress hidden-xs"}, react_1.default.createElement("div", {className: "jp-title text-lt"})), react_1.default.createElement("div", {className: "hidden-xs hidden-sm"}, react_1.default.createElement("a", {
             className: "jp-mute",
             title: "mute"
-          }, React.createElement("i", {className: "icon-volume-2"})), React.createElement("a", {
+          }, react_1.default.createElement("i", {className: "icon-volume-2"})), react_1.default.createElement("a", {
             className: "jp-unmute hid",
             title: "unmute"
-          }, React.createElement("i", {className: "icon-volume-off"}))), React.createElement("div", {className: "hidden-xs hidden-sm jp-volume"}, React.createElement("div", {className: "jp-volume-bar dk"}, React.createElement("div", {className: "jp-volume-bar-value lter"}))), React.createElement("div", {className: "hide"}, React.createElement("a", {
-            className: "jp-full-screen",
-            title: "full screen"
-          }, React.createElement("i", {className: "fa fa-expand"})), React.createElement("a", {
-            className: "jp-restore-screen",
-            title: "restore screen"
-          }, React.createElement("i", {className: "fa fa-compress text-lt"})))))), React.createElement("div", {className: "jp-no-solution hide"}, React.createElement("span", null, "Update Required"), " To play the media you will need to either update your browser to a recent version" + ' ' + "or update your ", React.createElement("a", {
+          }, react_1.default.createElement("i", {className: "icon-volume-off"}))), react_1.default.createElement("div", {className: "hidden-xs hidden-sm jp-volume"}, react_1.default.createElement("div", {className: "jp-volume-bar dk"}, react_1.default.createElement("div", {className: "jp-volume-bar-value lter"})))))), react_1.default.createElement("div", {className: "jp-no-solution hide"}, react_1.default.createElement("span", null, "Update Required"), " To play the media you will need to either update your browser to a recent version" + ' ' + "or update your ", react_1.default.createElement("a", {
             href: "http://get.adobe.com/flashplayer/",
             target: "_blank"
           }, "Flash plugin"), "."))));
         };
         return PlayerComponent;
-      }(React.Component));
+      }(react_1.default.Component));
       exports_1("PlayerComponent", PlayerComponent);
     }
   };
@@ -19146,11 +19162,11 @@ System.register("app/radio/radio.component.js", ["npm:react@0.14.6.js"], functio
     }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
   };
-  var React;
+  var react_1;
   var RadioComponent;
   return {
-    setters: [function(React_1) {
-      React = React_1;
+    setters: [function(react_1_1) {
+      react_1 = react_1_1;
     }],
     execute: function() {
       RadioComponent = (function(_super) {
@@ -19163,28 +19179,28 @@ System.register("app/radio/radio.component.js", ["npm:react@0.14.6.js"], functio
           var thumbStyle = {
             "height": 40,
             "width": 40,
-            "background-color": "#1ab667"
+            "backgroundColor": "#1ab667"
           };
-          return (React.createElement("li", {className: "list-group-item clearfix"}, React.createElement("div", null, React.createElement("a", {
+          return (react_1.default.createElement("li", {className: "list-group-item clearfix"}, react_1.default.createElement("div", null, react_1.default.createElement("a", {
             href: "#",
             className: "jp-play-me pull-right m-t-sm m-l text-md"
-          }, React.createElement("i", {className: "icon-heart"}), React.createElement("i", {className: "icon-control-play text"}), React.createElement("i", {className: "icon-control-pause text-active"})), React.createElement("a", {
+          }, react_1.default.createElement("i", {className: "icon-control-play text"}), react_1.default.createElement("i", {className: "icon-control-pause text-active"})), react_1.default.createElement("a", {
             href: "#",
             className: "pull-left thumb-sm m-r"
-          }, React.createElement("div", {style: thumbStyle}, "AB")), React.createElement("a", {
+          }), react_1.default.createElement("a", {
             className: "clear",
             href: "#",
             onClick: this.props.onClick
-          }, React.createElement("span", {className: "block text-ellipsis"}, this.props.radio.name), React.createElement("small", {className: "text-muted"}, this.props.radio.description)))));
+          }, react_1.default.createElement("span", {className: "block text-ellipsis text-white"}, this.props.radio.name), react_1.default.createElement("small", {className: "text-muted"}, this.props.radio.description)))));
         };
         return RadioComponent;
-      }(React.Component));
+      }(react_1.default.Component));
       exports_1("RadioComponent", RadioComponent);
     }
   };
 });
 
-System.register("app/radio/radio-list.component.js", ["npm:react@0.14.6.js", "app/radio/radio.component.js", "npm:jquery@2.2.0.js"], function(exports_1) {
+System.register("app/radio/radio-list.component.js", ["npm:react@0.14.6.js", "app/radio/radio.component.js"], function(exports_1) {
   "use strict";
   var __extends = (this && this.__extends) || function(d, b) {
     for (var p in b)
@@ -19195,51 +19211,34 @@ System.register("app/radio/radio-list.component.js", ["npm:react@0.14.6.js", "ap
     }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
   };
-  var React,
-      radio_component_1,
-      $;
+  var react_1,
+      radio_component_1;
   var RadioListComponent;
   return {
-    setters: [function(React_1) {
-      React = React_1;
+    setters: [function(react_1_1) {
+      react_1 = react_1_1;
     }, function(radio_component_1_1) {
       radio_component_1 = radio_component_1_1;
-    }, function($_1) {
-      $ = $_1;
     }],
     execute: function() {
       RadioListComponent = (function(_super) {
         __extends(RadioListComponent, _super);
         function RadioListComponent(props) {
           _super.call(this, props);
-          this.state = {radios: []};
         }
         RadioListComponent.prototype.render = function() {
           var _this = this;
-          var radiosComponents = this.state.radios.map(function(radio) {
-            return React.createElement(radio_component_1.RadioComponent, {
+          var radiosComponents = this.props.radios.map(function(radio) {
+            return react_1.default.createElement(radio_component_1.RadioComponent, {
+              key: radio.id,
               radio: radio,
               onClick: _this.props.onRadioChange.bind(_this, radio)
             });
           });
-          return (React.createElement("ul", {className: "list-group list-group-lg no-bg auto m-b-none m-t-n-xxs"}, radiosComponents));
-        };
-        RadioListComponent.prototype.componentDidMount = function() {
-          var _this = this;
-          $.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json").done(function(data) {
-            _this.setState({radios: JSON.parse(data).radios.map(function(radio) {
-                radio.key = radio.id;
-                return radio;
-              })});
-            if (_this.state.radios) {
-              _this.props.onRadioChange(_this.state.radios[0]);
-            }
-          }).fail(function(error) {
-            console.log(error);
-          });
+          return (react_1.default.createElement("ul", {className: "list-group list-group-lg no-bg auto m-b-none m-t-n-xxs"}, radiosComponents));
         };
         return RadioListComponent;
-      }(React.Component));
+      }(react_1.default.Component));
       exports_1("RadioListComponent", RadioListComponent);
     }
   };
@@ -25272,2998 +25271,2999 @@ define("npm:jquery@2.2.0.js", ["npm:jquery@2.2.0/dist/jquery.js"], function(main
 
 _removeDefine();
 })();
-System.registerDynamic("npm:jplayer@2.9.2/dist/jplayer/jquery.jplayer.js", ["npm:jquery@2.2.0.js"], false, function(__require, __exports, __module) {
-  var _retrieveGlobal = System.get("@@global-helpers").prepareGlobal(__module.id, null, null);
-  (function() {
-    "format global";
-    "deps jquery";
-    (function(root, factory) {
-      if (typeof define === 'function' && define.amd) {
-        define(['jquery'], factory);
-      } else if (typeof exports === 'object') {
-        factory(require('jquery'));
+System.registerDynamic("npm:jplayer@2.9.2/dist/jplayer/jquery.jplayer.js", ["npm:jquery@2.2.0.js"], true, function($__require, exports, module) {
+  ;
+  var global = this,
+      __define = global.define;
+  global.define = undefined;
+  "format cjs";
+  (function(root, factory) {
+    if (typeof define === 'function' && define.amd) {
+      define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+      factory($__require('npm:jquery@2.2.0.js'));
+    } else {
+      if (root.jQuery) {
+        factory(root.jQuery);
       } else {
-        if (root.jQuery) {
-          factory(root.jQuery);
-        } else {
-          factory(root.Zepto);
-        }
+        factory(root.Zepto);
       }
-    }(this, function($, undefined) {
-      $.fn.jPlayer = function(options) {
-        var name = "jPlayer";
-        var isMethodCall = typeof options === "string",
-            args = Array.prototype.slice.call(arguments, 1),
-            returnValue = this;
-        options = !isMethodCall && args.length ? $.extend.apply(null, [true, options].concat(args)) : options;
-        if (isMethodCall && options.charAt(0) === "_") {
-          return returnValue;
-        }
-        if (isMethodCall) {
-          this.each(function() {
-            var instance = $(this).data(name),
-                methodValue = instance && $.isFunction(instance[options]) ? instance[options].apply(instance, args) : instance;
-            if (methodValue !== instance && methodValue !== undefined) {
-              returnValue = methodValue;
-              return false;
-            }
-          });
-        } else {
-          this.each(function() {
-            var instance = $(this).data(name);
-            if (instance) {
-              instance.option(options || {});
-            } else {
-              $(this).data(name, new $.jPlayer(options, this));
-            }
-          });
-        }
+    }
+  }(this, function($, undefined) {
+    $.fn.jPlayer = function(options) {
+      var name = "jPlayer";
+      var isMethodCall = typeof options === "string",
+          args = Array.prototype.slice.call(arguments, 1),
+          returnValue = this;
+      options = !isMethodCall && args.length ? $.extend.apply(null, [true, options].concat(args)) : options;
+      if (isMethodCall && options.charAt(0) === "_") {
         return returnValue;
-      };
-      $.jPlayer = function(options, element) {
-        if (arguments.length) {
-          this.element = $(element);
-          this.options = $.extend(true, {}, this.options, options);
-          var self = this;
-          this.element.bind("remove.jPlayer", function() {
-            self.destroy();
-          });
-          this._init();
-        }
-      };
-      if (typeof $.fn.stop !== 'function') {
-        $.fn.stop = function() {};
       }
-      $.jPlayer.emulateMethods = "load play pause";
-      $.jPlayer.emulateStatus = "src readyState networkState currentTime duration paused ended playbackRate";
-      $.jPlayer.emulateOptions = "muted volume";
-      $.jPlayer.reservedEvent = "ready flashreset resize repeat error warning";
-      $.jPlayer.event = {};
-      $.each(['ready', 'setmedia', 'flashreset', 'resize', 'repeat', 'click', 'error', 'warning', 'loadstart', 'progress', 'suspend', 'abort', 'emptied', 'stalled', 'play', 'pause', 'loadedmetadata', 'loadeddata', 'waiting', 'playing', 'canplay', 'canplaythrough', 'seeking', 'seeked', 'timeupdate', 'ended', 'ratechange', 'durationchange', 'volumechange'], function() {
-        $.jPlayer.event[this] = 'jPlayer_' + this;
-      });
-      $.jPlayer.htmlEvent = ["loadstart", "abort", "emptied", "stalled", "loadedmetadata", "canplay", "canplaythrough"];
-      $.jPlayer.pause = function() {
-        $.jPlayer.prototype.destroyRemoved();
-        $.each($.jPlayer.prototype.instances, function(i, element) {
-          if (element.data("jPlayer").status.srcSet) {
-            element.jPlayer("pause");
+      if (isMethodCall) {
+        this.each(function() {
+          var instance = $(this).data(name),
+              methodValue = instance && $.isFunction(instance[options]) ? instance[options].apply(instance, args) : instance;
+          if (methodValue !== instance && methodValue !== undefined) {
+            returnValue = methodValue;
+            return false;
           }
         });
-      };
-      $.jPlayer.timeFormat = {
-        showHour: false,
-        showMin: true,
-        showSec: true,
-        padHour: false,
-        padMin: true,
-        padSec: true,
-        sepHour: ":",
-        sepMin: ":",
-        sepSec: ""
-      };
-      var ConvertTime = function() {
-        this.init();
-      };
-      ConvertTime.prototype = {
-        init: function() {
-          this.options = {timeFormat: $.jPlayer.timeFormat};
-        },
-        time: function(s) {
-          s = (s && typeof s === 'number') ? s : 0;
-          var myTime = new Date(s * 1000),
-              hour = myTime.getUTCHours(),
-              min = this.options.timeFormat.showHour ? myTime.getUTCMinutes() : myTime.getUTCMinutes() + hour * 60,
-              sec = this.options.timeFormat.showMin ? myTime.getUTCSeconds() : myTime.getUTCSeconds() + min * 60,
-              strHour = (this.options.timeFormat.padHour && hour < 10) ? "0" + hour : hour,
-              strMin = (this.options.timeFormat.padMin && min < 10) ? "0" + min : min,
-              strSec = (this.options.timeFormat.padSec && sec < 10) ? "0" + sec : sec,
-              strTime = "";
-          strTime += this.options.timeFormat.showHour ? strHour + this.options.timeFormat.sepHour : "";
-          strTime += this.options.timeFormat.showMin ? strMin + this.options.timeFormat.sepMin : "";
-          strTime += this.options.timeFormat.showSec ? strSec + this.options.timeFormat.sepSec : "";
-          return strTime;
-        }
-      };
-      var myConvertTime = new ConvertTime();
-      $.jPlayer.convertTime = function(s) {
-        return myConvertTime.time(s);
-      };
-      $.jPlayer.uaBrowser = function(userAgent) {
-        var ua = userAgent.toLowerCase();
-        var rwebkit = /(webkit)[ \/]([\w.]+)/;
-        var ropera = /(opera)(?:.*version)?[ \/]([\w.]+)/;
-        var rmsie = /(msie) ([\w.]+)/;
-        var rmozilla = /(mozilla)(?:.*? rv:([\w.]+))?/;
-        var match = rwebkit.exec(ua) || ropera.exec(ua) || rmsie.exec(ua) || ua.indexOf("compatible") < 0 && rmozilla.exec(ua) || [];
-        return {
-          browser: match[1] || "",
-          version: match[2] || "0"
-        };
-      };
-      $.jPlayer.uaPlatform = function(userAgent) {
-        var ua = userAgent.toLowerCase();
-        var rplatform = /(ipad|iphone|ipod|android|blackberry|playbook|windows ce|webos)/;
-        var rtablet = /(ipad|playbook)/;
-        var randroid = /(android)/;
-        var rmobile = /(mobile)/;
-        var platform = rplatform.exec(ua) || [];
-        var tablet = rtablet.exec(ua) || !rmobile.exec(ua) && randroid.exec(ua) || [];
-        if (platform[1]) {
-          platform[1] = platform[1].replace(/\s/g, "_");
-        }
-        return {
-          platform: platform[1] || "",
-          tablet: tablet[1] || ""
-        };
-      };
-      $.jPlayer.browser = {};
-      $.jPlayer.platform = {};
-      var browserMatch = $.jPlayer.uaBrowser(navigator.userAgent);
-      if (browserMatch.browser) {
-        $.jPlayer.browser[browserMatch.browser] = true;
-        $.jPlayer.browser.version = browserMatch.version;
-      }
-      var platformMatch = $.jPlayer.uaPlatform(navigator.userAgent);
-      if (platformMatch.platform) {
-        $.jPlayer.platform[platformMatch.platform] = true;
-        $.jPlayer.platform.mobile = !platformMatch.tablet;
-        $.jPlayer.platform.tablet = !!platformMatch.tablet;
-      }
-      $.jPlayer.getDocMode = function() {
-        var docMode;
-        if ($.jPlayer.browser.msie) {
-          if (document.documentMode) {
-            docMode = document.documentMode;
+      } else {
+        this.each(function() {
+          var instance = $(this).data(name);
+          if (instance) {
+            instance.option(options || {});
           } else {
-            docMode = 5;
-            if (document.compatMode) {
-              if (document.compatMode === "CSS1Compat") {
-                docMode = 7;
-              }
+            $(this).data(name, new $.jPlayer(options, this));
+          }
+        });
+      }
+      return returnValue;
+    };
+    $.jPlayer = function(options, element) {
+      if (arguments.length) {
+        this.element = $(element);
+        this.options = $.extend(true, {}, this.options, options);
+        var self = this;
+        this.element.bind("remove.jPlayer", function() {
+          self.destroy();
+        });
+        this._init();
+      }
+    };
+    if (typeof $.fn.stop !== 'function') {
+      $.fn.stop = function() {};
+    }
+    $.jPlayer.emulateMethods = "load play pause";
+    $.jPlayer.emulateStatus = "src readyState networkState currentTime duration paused ended playbackRate";
+    $.jPlayer.emulateOptions = "muted volume";
+    $.jPlayer.reservedEvent = "ready flashreset resize repeat error warning";
+    $.jPlayer.event = {};
+    $.each(['ready', 'setmedia', 'flashreset', 'resize', 'repeat', 'click', 'error', 'warning', 'loadstart', 'progress', 'suspend', 'abort', 'emptied', 'stalled', 'play', 'pause', 'loadedmetadata', 'loadeddata', 'waiting', 'playing', 'canplay', 'canplaythrough', 'seeking', 'seeked', 'timeupdate', 'ended', 'ratechange', 'durationchange', 'volumechange'], function() {
+      $.jPlayer.event[this] = 'jPlayer_' + this;
+    });
+    $.jPlayer.htmlEvent = ["loadstart", "abort", "emptied", "stalled", "loadedmetadata", "canplay", "canplaythrough"];
+    $.jPlayer.pause = function() {
+      $.jPlayer.prototype.destroyRemoved();
+      $.each($.jPlayer.prototype.instances, function(i, element) {
+        if (element.data("jPlayer").status.srcSet) {
+          element.jPlayer("pause");
+        }
+      });
+    };
+    $.jPlayer.timeFormat = {
+      showHour: false,
+      showMin: true,
+      showSec: true,
+      padHour: false,
+      padMin: true,
+      padSec: true,
+      sepHour: ":",
+      sepMin: ":",
+      sepSec: ""
+    };
+    var ConvertTime = function() {
+      this.init();
+    };
+    ConvertTime.prototype = {
+      init: function() {
+        this.options = {timeFormat: $.jPlayer.timeFormat};
+      },
+      time: function(s) {
+        s = (s && typeof s === 'number') ? s : 0;
+        var myTime = new Date(s * 1000),
+            hour = myTime.getUTCHours(),
+            min = this.options.timeFormat.showHour ? myTime.getUTCMinutes() : myTime.getUTCMinutes() + hour * 60,
+            sec = this.options.timeFormat.showMin ? myTime.getUTCSeconds() : myTime.getUTCSeconds() + min * 60,
+            strHour = (this.options.timeFormat.padHour && hour < 10) ? "0" + hour : hour,
+            strMin = (this.options.timeFormat.padMin && min < 10) ? "0" + min : min,
+            strSec = (this.options.timeFormat.padSec && sec < 10) ? "0" + sec : sec,
+            strTime = "";
+        strTime += this.options.timeFormat.showHour ? strHour + this.options.timeFormat.sepHour : "";
+        strTime += this.options.timeFormat.showMin ? strMin + this.options.timeFormat.sepMin : "";
+        strTime += this.options.timeFormat.showSec ? strSec + this.options.timeFormat.sepSec : "";
+        return strTime;
+      }
+    };
+    var myConvertTime = new ConvertTime();
+    $.jPlayer.convertTime = function(s) {
+      return myConvertTime.time(s);
+    };
+    $.jPlayer.uaBrowser = function(userAgent) {
+      var ua = userAgent.toLowerCase();
+      var rwebkit = /(webkit)[ \/]([\w.]+)/;
+      var ropera = /(opera)(?:.*version)?[ \/]([\w.]+)/;
+      var rmsie = /(msie) ([\w.]+)/;
+      var rmozilla = /(mozilla)(?:.*? rv:([\w.]+))?/;
+      var match = rwebkit.exec(ua) || ropera.exec(ua) || rmsie.exec(ua) || ua.indexOf("compatible") < 0 && rmozilla.exec(ua) || [];
+      return {
+        browser: match[1] || "",
+        version: match[2] || "0"
+      };
+    };
+    $.jPlayer.uaPlatform = function(userAgent) {
+      var ua = userAgent.toLowerCase();
+      var rplatform = /(ipad|iphone|ipod|android|blackberry|playbook|windows ce|webos)/;
+      var rtablet = /(ipad|playbook)/;
+      var randroid = /(android)/;
+      var rmobile = /(mobile)/;
+      var platform = rplatform.exec(ua) || [];
+      var tablet = rtablet.exec(ua) || !rmobile.exec(ua) && randroid.exec(ua) || [];
+      if (platform[1]) {
+        platform[1] = platform[1].replace(/\s/g, "_");
+      }
+      return {
+        platform: platform[1] || "",
+        tablet: tablet[1] || ""
+      };
+    };
+    $.jPlayer.browser = {};
+    $.jPlayer.platform = {};
+    var browserMatch = $.jPlayer.uaBrowser(navigator.userAgent);
+    if (browserMatch.browser) {
+      $.jPlayer.browser[browserMatch.browser] = true;
+      $.jPlayer.browser.version = browserMatch.version;
+    }
+    var platformMatch = $.jPlayer.uaPlatform(navigator.userAgent);
+    if (platformMatch.platform) {
+      $.jPlayer.platform[platformMatch.platform] = true;
+      $.jPlayer.platform.mobile = !platformMatch.tablet;
+      $.jPlayer.platform.tablet = !!platformMatch.tablet;
+    }
+    $.jPlayer.getDocMode = function() {
+      var docMode;
+      if ($.jPlayer.browser.msie) {
+        if (document.documentMode) {
+          docMode = document.documentMode;
+        } else {
+          docMode = 5;
+          if (document.compatMode) {
+            if (document.compatMode === "CSS1Compat") {
+              docMode = 7;
             }
           }
         }
-        return docMode;
-      };
-      $.jPlayer.browser.documentMode = $.jPlayer.getDocMode();
-      $.jPlayer.nativeFeatures = {init: function() {
-          var d = document,
-              v = d.createElement('video'),
-              spec = {
-                w3c: ['fullscreenEnabled', 'fullscreenElement', 'requestFullscreen', 'exitFullscreen', 'fullscreenchange', 'fullscreenerror'],
-                moz: ['mozFullScreenEnabled', 'mozFullScreenElement', 'mozRequestFullScreen', 'mozCancelFullScreen', 'mozfullscreenchange', 'mozfullscreenerror'],
-                webkit: ['', 'webkitCurrentFullScreenElement', 'webkitRequestFullScreen', 'webkitCancelFullScreen', 'webkitfullscreenchange', ''],
-                webkitVideo: ['webkitSupportsFullscreen', 'webkitDisplayingFullscreen', 'webkitEnterFullscreen', 'webkitExitFullscreen', '', ''],
-                ms: ['', 'msFullscreenElement', 'msRequestFullscreen', 'msExitFullscreen', 'MSFullscreenChange', 'MSFullscreenError']
-              },
-              specOrder = ['w3c', 'moz', 'webkit', 'webkitVideo', 'ms'],
-              fs,
-              i,
-              il;
-          this.fullscreen = fs = {
-            support: {
-              w3c: !!d[spec.w3c[0]],
-              moz: !!d[spec.moz[0]],
-              webkit: typeof d[spec.webkit[3]] === 'function',
-              webkitVideo: typeof v[spec.webkitVideo[2]] === 'function',
-              ms: typeof v[spec.ms[2]] === 'function'
+      }
+      return docMode;
+    };
+    $.jPlayer.browser.documentMode = $.jPlayer.getDocMode();
+    $.jPlayer.nativeFeatures = {init: function() {
+        var d = document,
+            v = d.createElement('video'),
+            spec = {
+              w3c: ['fullscreenEnabled', 'fullscreenElement', 'requestFullscreen', 'exitFullscreen', 'fullscreenchange', 'fullscreenerror'],
+              moz: ['mozFullScreenEnabled', 'mozFullScreenElement', 'mozRequestFullScreen', 'mozCancelFullScreen', 'mozfullscreenchange', 'mozfullscreenerror'],
+              webkit: ['', 'webkitCurrentFullScreenElement', 'webkitRequestFullScreen', 'webkitCancelFullScreen', 'webkitfullscreenchange', ''],
+              webkitVideo: ['webkitSupportsFullscreen', 'webkitDisplayingFullscreen', 'webkitEnterFullscreen', 'webkitExitFullscreen', '', ''],
+              ms: ['', 'msFullscreenElement', 'msRequestFullscreen', 'msExitFullscreen', 'MSFullscreenChange', 'MSFullscreenError']
             },
-            used: {}
-          };
-          for (i = 0, il = specOrder.length; i < il; i++) {
-            var n = specOrder[i];
-            if (fs.support[n]) {
-              fs.spec = n;
-              fs.used[n] = true;
-              break;
+            specOrder = ['w3c', 'moz', 'webkit', 'webkitVideo', 'ms'],
+            fs,
+            i,
+            il;
+        this.fullscreen = fs = {
+          support: {
+            w3c: !!d[spec.w3c[0]],
+            moz: !!d[spec.moz[0]],
+            webkit: typeof d[spec.webkit[3]] === 'function',
+            webkitVideo: typeof v[spec.webkitVideo[2]] === 'function',
+            ms: typeof v[spec.ms[2]] === 'function'
+          },
+          used: {}
+        };
+        for (i = 0, il = specOrder.length; i < il; i++) {
+          var n = specOrder[i];
+          if (fs.support[n]) {
+            fs.spec = n;
+            fs.used[n] = true;
+            break;
+          }
+        }
+        if (fs.spec) {
+          var s = spec[fs.spec];
+          fs.api = {
+            fullscreenEnabled: true,
+            fullscreenElement: function(elem) {
+              elem = elem ? elem : d;
+              return elem[s[1]];
+            },
+            requestFullscreen: function(elem) {
+              return elem[s[2]]();
+            },
+            exitFullscreen: function(elem) {
+              elem = elem ? elem : d;
+              return elem[s[3]]();
             }
+          };
+          fs.event = {
+            fullscreenchange: s[4],
+            fullscreenerror: s[5]
+          };
+        } else {
+          fs.api = {
+            fullscreenEnabled: false,
+            fullscreenElement: function() {
+              return null;
+            },
+            requestFullscreen: function() {},
+            exitFullscreen: function() {}
+          };
+          fs.event = {};
+        }
+      }};
+    $.jPlayer.nativeFeatures.init();
+    $.jPlayer.focus = null;
+    $.jPlayer.keyIgnoreElementNames = "A INPUT TEXTAREA SELECT BUTTON";
+    var keyBindings = function(event) {
+      var f = $.jPlayer.focus,
+          ignoreKey;
+      if (f) {
+        $.each($.jPlayer.keyIgnoreElementNames.split(/\s+/g), function(i, name) {
+          if (event.target.nodeName.toUpperCase() === name.toUpperCase()) {
+            ignoreKey = true;
+            return false;
           }
-          if (fs.spec) {
-            var s = spec[fs.spec];
-            fs.api = {
-              fullscreenEnabled: true,
-              fullscreenElement: function(elem) {
-                elem = elem ? elem : d;
-                return elem[s[1]];
-              },
-              requestFullscreen: function(elem) {
-                return elem[s[2]]();
-              },
-              exitFullscreen: function(elem) {
-                elem = elem ? elem : d;
-                return elem[s[3]]();
-              }
-            };
-            fs.event = {
-              fullscreenchange: s[4],
-              fullscreenerror: s[5]
-            };
-          } else {
-            fs.api = {
-              fullscreenEnabled: false,
-              fullscreenElement: function() {
-                return null;
-              },
-              requestFullscreen: function() {},
-              exitFullscreen: function() {}
-            };
-            fs.event = {};
-          }
-        }};
-      $.jPlayer.nativeFeatures.init();
-      $.jPlayer.focus = null;
-      $.jPlayer.keyIgnoreElementNames = "A INPUT TEXTAREA SELECT BUTTON";
-      var keyBindings = function(event) {
-        var f = $.jPlayer.focus,
-            ignoreKey;
-        if (f) {
-          $.each($.jPlayer.keyIgnoreElementNames.split(/\s+/g), function(i, name) {
-            if (event.target.nodeName.toUpperCase() === name.toUpperCase()) {
-              ignoreKey = true;
+        });
+        if (!ignoreKey) {
+          $.each(f.options.keyBindings, function(action, binding) {
+            if ((binding && $.isFunction(binding.fn)) && ((typeof binding.key === 'number' && event.which === binding.key) || (typeof binding.key === 'string' && event.key === binding.key))) {
+              event.preventDefault();
+              binding.fn(f);
               return false;
             }
           });
-          if (!ignoreKey) {
-            $.each(f.options.keyBindings, function(action, binding) {
-              if ((binding && $.isFunction(binding.fn)) && ((typeof binding.key === 'number' && event.which === binding.key) || (typeof binding.key === 'string' && event.key === binding.key))) {
-                event.preventDefault();
-                binding.fn(f);
-                return false;
-              }
-            });
-          }
         }
-      };
-      $.jPlayer.keys = function(en) {
-        var event = "keydown.jPlayer";
-        $(document.documentElement).unbind(event);
-        if (en) {
-          $(document.documentElement).bind(event, keyBindings);
-        }
-      };
-      $.jPlayer.keys(true);
-      $.jPlayer.prototype = {
-        count: 0,
-        version: {
-          script: "2.9.2",
-          needFlash: "2.9.0",
-          flash: "unknown"
+      }
+    };
+    $.jPlayer.keys = function(en) {
+      var event = "keydown.jPlayer";
+      $(document.documentElement).unbind(event);
+      if (en) {
+        $(document.documentElement).bind(event, keyBindings);
+      }
+    };
+    $.jPlayer.keys(true);
+    $.jPlayer.prototype = {
+      count: 0,
+      version: {
+        script: "2.9.2",
+        needFlash: "2.9.0",
+        flash: "unknown"
+      },
+      options: {
+        swfPath: "js",
+        solution: "html, flash",
+        supplied: "mp3",
+        auroraFormats: "wav",
+        preload: 'metadata',
+        volume: 0.8,
+        muted: false,
+        remainingDuration: false,
+        toggleDuration: false,
+        captureDuration: true,
+        playbackRate: 1,
+        defaultPlaybackRate: 1,
+        minPlaybackRate: 0.5,
+        maxPlaybackRate: 4,
+        wmode: "opaque",
+        backgroundColor: "#000000",
+        cssSelectorAncestor: "#jp_container_1",
+        cssSelector: {
+          videoPlay: ".jp-video-play",
+          play: ".jp-play",
+          pause: ".jp-pause",
+          stop: ".jp-stop",
+          seekBar: ".jp-seek-bar",
+          playBar: ".jp-play-bar",
+          mute: ".jp-mute",
+          unmute: ".jp-unmute",
+          volumeBar: ".jp-volume-bar",
+          volumeBarValue: ".jp-volume-bar-value",
+          volumeMax: ".jp-volume-max",
+          playbackRateBar: ".jp-playback-rate-bar",
+          playbackRateBarValue: ".jp-playback-rate-bar-value",
+          currentTime: ".jp-current-time",
+          duration: ".jp-duration",
+          title: ".jp-title",
+          fullScreen: ".jp-full-screen",
+          restoreScreen: ".jp-restore-screen",
+          repeat: ".jp-repeat",
+          repeatOff: ".jp-repeat-off",
+          gui: ".jp-gui",
+          noSolution: ".jp-no-solution"
         },
-        options: {
-          swfPath: "js",
-          solution: "html, flash",
-          supplied: "mp3",
-          auroraFormats: "wav",
-          preload: 'metadata',
-          volume: 0.8,
-          muted: false,
-          remainingDuration: false,
-          toggleDuration: false,
-          captureDuration: true,
-          playbackRate: 1,
-          defaultPlaybackRate: 1,
-          minPlaybackRate: 0.5,
-          maxPlaybackRate: 4,
-          wmode: "opaque",
-          backgroundColor: "#000000",
-          cssSelectorAncestor: "#jp_container_1",
-          cssSelector: {
-            videoPlay: ".jp-video-play",
-            play: ".jp-play",
-            pause: ".jp-pause",
-            stop: ".jp-stop",
-            seekBar: ".jp-seek-bar",
-            playBar: ".jp-play-bar",
-            mute: ".jp-mute",
-            unmute: ".jp-unmute",
-            volumeBar: ".jp-volume-bar",
-            volumeBarValue: ".jp-volume-bar-value",
-            volumeMax: ".jp-volume-max",
-            playbackRateBar: ".jp-playback-rate-bar",
-            playbackRateBarValue: ".jp-playback-rate-bar-value",
-            currentTime: ".jp-current-time",
-            duration: ".jp-duration",
-            title: ".jp-title",
-            fullScreen: ".jp-full-screen",
-            restoreScreen: ".jp-restore-screen",
-            repeat: ".jp-repeat",
-            repeatOff: ".jp-repeat-off",
-            gui: ".jp-gui",
-            noSolution: ".jp-no-solution"
-          },
-          stateClass: {
-            playing: "jp-state-playing",
-            seeking: "jp-state-seeking",
-            muted: "jp-state-muted",
-            looped: "jp-state-looped",
-            fullScreen: "jp-state-full-screen",
-            noVolume: "jp-state-no-volume"
-          },
-          useStateClassSkin: false,
-          autoBlur: true,
-          smoothPlayBar: false,
-          fullScreen: false,
-          fullWindow: false,
-          autohide: {
-            restored: false,
-            full: true,
-            fadeIn: 200,
-            fadeOut: 600,
-            hold: 1000
-          },
-          loop: false,
-          repeat: function(event) {
-            if (event.jPlayer.options.loop) {
-              $(this).unbind(".jPlayerRepeat").bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
-                $(this).jPlayer("play");
-              });
-            } else {
-              $(this).unbind(".jPlayerRepeat");
-            }
-          },
-          nativeVideoControls: {},
-          noFullWindow: {
-            msie: /msie [0-6]\./,
-            ipad: /ipad.*?os [0-4]\./,
-            iphone: /iphone/,
-            ipod: /ipod/,
-            android_pad: /android [0-3]\.(?!.*?mobile)/,
-            android_phone: /(?=.*android)(?!.*chrome)(?=.*mobile)/,
-            blackberry: /blackberry/,
-            windows_ce: /windows ce/,
-            iemobile: /iemobile/,
-            webos: /webos/
-          },
-          noVolume: {
-            ipad: /ipad/,
-            iphone: /iphone/,
-            ipod: /ipod/,
-            android_pad: /android(?!.*?mobile)/,
-            android_phone: /android.*?mobile/,
-            blackberry: /blackberry/,
-            windows_ce: /windows ce/,
-            iemobile: /iemobile/,
-            webos: /webos/,
-            playbook: /playbook/
-          },
-          timeFormat: {},
-          keyEnabled: false,
-          audioFullScreen: false,
-          keyBindings: {
-            play: {
-              key: 80,
-              fn: function(f) {
-                if (f.status.paused) {
-                  f.play();
-                } else {
-                  f.pause();
-                }
-              }
-            },
-            fullScreen: {
-              key: 70,
-              fn: function(f) {
-                if (f.status.video || f.options.audioFullScreen) {
-                  f._setOption("fullScreen", !f.options.fullScreen);
-                }
-              }
-            },
-            muted: {
-              key: 77,
-              fn: function(f) {
-                f._muted(!f.options.muted);
-              }
-            },
-            volumeUp: {
-              key: 190,
-              fn: function(f) {
-                f.volume(f.options.volume + 0.1);
-              }
-            },
-            volumeDown: {
-              key: 188,
-              fn: function(f) {
-                f.volume(f.options.volume - 0.1);
-              }
-            },
-            loop: {
-              key: 76,
-              fn: function(f) {
-                f._loop(!f.options.loop);
-              }
-            }
-          },
-          verticalVolume: false,
-          verticalPlaybackRate: false,
-          globalVolume: false,
-          idPrefix: "jp",
-          noConflict: "jQuery",
-          emulateHtml: false,
-          consoleAlerts: true,
-          errorAlerts: false,
-          warningAlerts: false
+        stateClass: {
+          playing: "jp-state-playing",
+          seeking: "jp-state-seeking",
+          muted: "jp-state-muted",
+          looped: "jp-state-looped",
+          fullScreen: "jp-state-full-screen",
+          noVolume: "jp-state-no-volume"
         },
-        optionsAudio: {
-          size: {
-            width: "0px",
-            height: "0px",
-            cssClass: ""
-          },
-          sizeFull: {
-            width: "0px",
-            height: "0px",
-            cssClass: ""
-          }
+        useStateClassSkin: false,
+        autoBlur: true,
+        smoothPlayBar: false,
+        fullScreen: false,
+        fullWindow: false,
+        autohide: {
+          restored: false,
+          full: true,
+          fadeIn: 200,
+          fadeOut: 600,
+          hold: 1000
         },
-        optionsVideo: {
-          size: {
-            width: "480px",
-            height: "270px",
-            cssClass: "jp-video-270p"
-          },
-          sizeFull: {
-            width: "100%",
-            height: "100%",
-            cssClass: "jp-video-full"
-          }
-        },
-        instances: {},
-        status: {
-          src: "",
-          media: {},
-          paused: true,
-          format: {},
-          formatType: "",
-          waitForPlay: true,
-          waitForLoad: true,
-          srcSet: false,
-          video: false,
-          seekPercent: 0,
-          currentPercentRelative: 0,
-          currentPercentAbsolute: 0,
-          currentTime: 0,
-          duration: 0,
-          remaining: 0,
-          videoWidth: 0,
-          videoHeight: 0,
-          readyState: 0,
-          networkState: 0,
-          playbackRate: 1,
-          ended: 0
-        },
-        internal: {ready: false},
-        solution: {
-          html: true,
-          aurora: true,
-          flash: true
-        },
-        format: {
-          mp3: {
-            codec: 'audio/mpeg',
-            flashCanPlay: true,
-            media: 'audio'
-          },
-          m4a: {
-            codec: 'audio/mp4; codecs="mp4a.40.2"',
-            flashCanPlay: true,
-            media: 'audio'
-          },
-          m3u8a: {
-            codec: 'application/vnd.apple.mpegurl; codecs="mp4a.40.2"',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          m3ua: {
-            codec: 'audio/mpegurl',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          oga: {
-            codec: 'audio/ogg; codecs="vorbis, opus"',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          flac: {
-            codec: 'audio/x-flac',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          wav: {
-            codec: 'audio/wav; codecs="1"',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          webma: {
-            codec: 'audio/webm; codecs="vorbis"',
-            flashCanPlay: false,
-            media: 'audio'
-          },
-          fla: {
-            codec: 'audio/x-flv',
-            flashCanPlay: true,
-            media: 'audio'
-          },
-          rtmpa: {
-            codec: 'audio/rtmp; codecs="rtmp"',
-            flashCanPlay: true,
-            media: 'audio'
-          },
-          m4v: {
-            codec: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"',
-            flashCanPlay: true,
-            media: 'video'
-          },
-          m3u8v: {
-            codec: 'application/vnd.apple.mpegurl; codecs="avc1.42E01E, mp4a.40.2"',
-            flashCanPlay: false,
-            media: 'video'
-          },
-          m3uv: {
-            codec: 'audio/mpegurl',
-            flashCanPlay: false,
-            media: 'video'
-          },
-          ogv: {
-            codec: 'video/ogg; codecs="theora, vorbis"',
-            flashCanPlay: false,
-            media: 'video'
-          },
-          webmv: {
-            codec: 'video/webm; codecs="vorbis, vp8"',
-            flashCanPlay: false,
-            media: 'video'
-          },
-          flv: {
-            codec: 'video/x-flv',
-            flashCanPlay: true,
-            media: 'video'
-          },
-          rtmpv: {
-            codec: 'video/rtmp; codecs="rtmp"',
-            flashCanPlay: true,
-            media: 'video'
-          }
-        },
-        _init: function() {
-          var self = this;
-          this.element.empty();
-          this.status = $.extend({}, this.status);
-          this.internal = $.extend({}, this.internal);
-          this.options.timeFormat = $.extend({}, $.jPlayer.timeFormat, this.options.timeFormat);
-          this.internal.cmdsIgnored = $.jPlayer.platform.ipad || $.jPlayer.platform.iphone || $.jPlayer.platform.ipod;
-          this.internal.domNode = this.element.get(0);
-          if (this.options.keyEnabled && !$.jPlayer.focus) {
-            $.jPlayer.focus = this;
-          }
-          this.androidFix = {
-            setMedia: false,
-            play: false,
-            pause: false,
-            time: NaN
-          };
-          if ($.jPlayer.platform.android) {
-            this.options.preload = this.options.preload !== 'auto' ? 'metadata' : 'auto';
-          }
-          this.formats = [];
-          this.solutions = [];
-          this.require = {};
-          this.htmlElement = {};
-          this.html = {};
-          this.html.audio = {};
-          this.html.video = {};
-          this.aurora = {};
-          this.aurora.formats = [];
-          this.aurora.properties = [];
-          this.flash = {};
-          this.css = {};
-          this.css.cs = {};
-          this.css.jq = {};
-          this.ancestorJq = [];
-          this.options.volume = this._limitValue(this.options.volume, 0, 1);
-          $.each(this.options.supplied.toLowerCase().split(","), function(index1, value1) {
-            var format = value1.replace(/^\s+|\s+$/g, "");
-            if (self.format[format]) {
-              var dupFound = false;
-              $.each(self.formats, function(index2, value2) {
-                if (format === value2) {
-                  dupFound = true;
-                  return false;
-                }
-              });
-              if (!dupFound) {
-                self.formats.push(format);
-              }
-            }
-          });
-          $.each(this.options.solution.toLowerCase().split(","), function(index1, value1) {
-            var solution = value1.replace(/^\s+|\s+$/g, "");
-            if (self.solution[solution]) {
-              var dupFound = false;
-              $.each(self.solutions, function(index2, value2) {
-                if (solution === value2) {
-                  dupFound = true;
-                  return false;
-                }
-              });
-              if (!dupFound) {
-                self.solutions.push(solution);
-              }
-            }
-          });
-          $.each(this.options.auroraFormats.toLowerCase().split(","), function(index1, value1) {
-            var format = value1.replace(/^\s+|\s+$/g, "");
-            if (self.format[format]) {
-              var dupFound = false;
-              $.each(self.aurora.formats, function(index2, value2) {
-                if (format === value2) {
-                  dupFound = true;
-                  return false;
-                }
-              });
-              if (!dupFound) {
-                self.aurora.formats.push(format);
-              }
-            }
-          });
-          this.internal.instance = "jp_" + this.count;
-          this.instances[this.internal.instance] = this.element;
-          if (!this.element.attr("id")) {
-            this.element.attr("id", this.options.idPrefix + "_jplayer_" + this.count);
-          }
-          this.internal.self = $.extend({}, {
-            id: this.element.attr("id"),
-            jq: this.element
-          });
-          this.internal.audio = $.extend({}, {
-            id: this.options.idPrefix + "_audio_" + this.count,
-            jq: undefined
-          });
-          this.internal.video = $.extend({}, {
-            id: this.options.idPrefix + "_video_" + this.count,
-            jq: undefined
-          });
-          this.internal.flash = $.extend({}, {
-            id: this.options.idPrefix + "_flash_" + this.count,
-            jq: undefined,
-            swf: this.options.swfPath + (this.options.swfPath.toLowerCase().slice(-4) !== ".swf" ? (this.options.swfPath && this.options.swfPath.slice(-1) !== "/" ? "/" : "") + "jquery.jplayer.swf" : "")
-          });
-          this.internal.poster = $.extend({}, {
-            id: this.options.idPrefix + "_poster_" + this.count,
-            jq: undefined
-          });
-          $.each($.jPlayer.event, function(eventName, eventType) {
-            if (self.options[eventName] !== undefined) {
-              self.element.bind(eventType + ".jPlayer", self.options[eventName]);
-              self.options[eventName] = undefined;
-            }
-          });
-          this.require.audio = false;
-          this.require.video = false;
-          $.each(this.formats, function(priority, format) {
-            self.require[self.format[format].media] = true;
-          });
-          if (this.require.video) {
-            this.options = $.extend(true, {}, this.optionsVideo, this.options);
-          } else {
-            this.options = $.extend(true, {}, this.optionsAudio, this.options);
-          }
-          this._setSize();
-          this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
-          this.status.noFullWindow = this._uaBlocklist(this.options.noFullWindow);
-          this.status.noVolume = this._uaBlocklist(this.options.noVolume);
-          if ($.jPlayer.nativeFeatures.fullscreen.api.fullscreenEnabled) {
-            this._fullscreenAddEventListeners();
-          }
-          this._restrictNativeVideoControls();
-          this.htmlElement.poster = document.createElement('img');
-          this.htmlElement.poster.id = this.internal.poster.id;
-          this.htmlElement.poster.onload = function() {
-            if (!self.status.video || self.status.waitForPlay) {
-              self.internal.poster.jq.show();
-            }
-          };
-          this.element.append(this.htmlElement.poster);
-          this.internal.poster.jq = $("#" + this.internal.poster.id);
-          this.internal.poster.jq.css({
-            'width': this.status.width,
-            'height': this.status.height
-          });
-          this.internal.poster.jq.hide();
-          this.internal.poster.jq.bind("click.jPlayer", function() {
-            self._trigger($.jPlayer.event.click);
-          });
-          this.html.audio.available = false;
-          if (this.require.audio) {
-            this.htmlElement.audio = document.createElement('audio');
-            this.htmlElement.audio.id = this.internal.audio.id;
-            this.html.audio.available = !!this.htmlElement.audio.canPlayType && this._testCanPlayType(this.htmlElement.audio);
-          }
-          this.html.video.available = false;
-          if (this.require.video) {
-            this.htmlElement.video = document.createElement('video');
-            this.htmlElement.video.id = this.internal.video.id;
-            this.html.video.available = !!this.htmlElement.video.canPlayType && this._testCanPlayType(this.htmlElement.video);
-          }
-          this.flash.available = this._checkForFlash(10.1);
-          this.html.canPlay = {};
-          this.aurora.canPlay = {};
-          this.flash.canPlay = {};
-          $.each(this.formats, function(priority, format) {
-            self.html.canPlay[format] = self.html[self.format[format].media].available && "" !== self.htmlElement[self.format[format].media].canPlayType(self.format[format].codec);
-            self.aurora.canPlay[format] = ($.inArray(format, self.aurora.formats) > -1);
-            self.flash.canPlay[format] = self.format[format].flashCanPlay && self.flash.available;
-          });
-          this.html.desired = false;
-          this.aurora.desired = false;
-          this.flash.desired = false;
-          $.each(this.solutions, function(solutionPriority, solution) {
-            if (solutionPriority === 0) {
-              self[solution].desired = true;
-            } else {
-              var audioCanPlay = false;
-              var videoCanPlay = false;
-              $.each(self.formats, function(formatPriority, format) {
-                if (self[self.solutions[0]].canPlay[format]) {
-                  if (self.format[format].media === 'video') {
-                    videoCanPlay = true;
-                  } else {
-                    audioCanPlay = true;
-                  }
-                }
-              });
-              self[solution].desired = (self.require.audio && !audioCanPlay) || (self.require.video && !videoCanPlay);
-            }
-          });
-          this.html.support = {};
-          this.aurora.support = {};
-          this.flash.support = {};
-          $.each(this.formats, function(priority, format) {
-            self.html.support[format] = self.html.canPlay[format] && self.html.desired;
-            self.aurora.support[format] = self.aurora.canPlay[format] && self.aurora.desired;
-            self.flash.support[format] = self.flash.canPlay[format] && self.flash.desired;
-          });
-          this.html.used = false;
-          this.aurora.used = false;
-          this.flash.used = false;
-          $.each(this.solutions, function(solutionPriority, solution) {
-            $.each(self.formats, function(formatPriority, format) {
-              if (self[solution].support[format]) {
-                self[solution].used = true;
-                return false;
-              }
+        loop: false,
+        repeat: function(event) {
+          if (event.jPlayer.options.loop) {
+            $(this).unbind(".jPlayerRepeat").bind($.jPlayer.event.ended + ".jPlayer.jPlayerRepeat", function() {
+              $(this).jPlayer("play");
             });
-          });
-          this._resetActive();
-          this._resetGate();
-          this._cssSelectorAncestor(this.options.cssSelectorAncestor);
-          if (!(this.html.used || this.aurora.used || this.flash.used)) {
-            this._error({
-              type: $.jPlayer.error.NO_SOLUTION,
-              context: "{solution:'" + this.options.solution + "', supplied:'" + this.options.supplied + "'}",
-              message: $.jPlayer.errorMsg.NO_SOLUTION,
-              hint: $.jPlayer.errorHint.NO_SOLUTION
-            });
-            if (this.css.jq.noSolution.length) {
-              this.css.jq.noSolution.show();
-            }
           } else {
-            if (this.css.jq.noSolution.length) {
-              this.css.jq.noSolution.hide();
-            }
+            $(this).unbind(".jPlayerRepeat");
           }
-          if (this.flash.used) {
-            var htmlObj,
-                flashVars = 'jQuery=' + encodeURI(this.options.noConflict) + '&id=' + encodeURI(this.internal.self.id) + '&vol=' + this.options.volume + '&muted=' + this.options.muted;
-            if ($.jPlayer.browser.msie && (Number($.jPlayer.browser.version) < 9 || $.jPlayer.browser.documentMode < 9)) {
-              var objStr = '<object id="' + this.internal.flash.id + '" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="0" height="0" tabindex="-1"></object>';
-              var paramStr = ['<param name="movie" value="' + this.internal.flash.swf + '" />', '<param name="FlashVars" value="' + flashVars + '" />', '<param name="allowScriptAccess" value="always" />', '<param name="bgcolor" value="' + this.options.backgroundColor + '" />', '<param name="wmode" value="' + this.options.wmode + '" />'];
-              htmlObj = document.createElement(objStr);
-              for (var i = 0; i < paramStr.length; i++) {
-                htmlObj.appendChild(document.createElement(paramStr[i]));
-              }
-            } else {
-              var createParam = function(el, n, v) {
-                var p = document.createElement("param");
-                p.setAttribute("name", n);
-                p.setAttribute("value", v);
-                el.appendChild(p);
-              };
-              htmlObj = document.createElement("object");
-              htmlObj.setAttribute("id", this.internal.flash.id);
-              htmlObj.setAttribute("name", this.internal.flash.id);
-              htmlObj.setAttribute("data", this.internal.flash.swf);
-              htmlObj.setAttribute("type", "application/x-shockwave-flash");
-              htmlObj.setAttribute("width", "1");
-              htmlObj.setAttribute("height", "1");
-              htmlObj.setAttribute("tabindex", "-1");
-              createParam(htmlObj, "flashvars", flashVars);
-              createParam(htmlObj, "allowscriptaccess", "always");
-              createParam(htmlObj, "bgcolor", this.options.backgroundColor);
-              createParam(htmlObj, "wmode", this.options.wmode);
-            }
-            this.element.append(htmlObj);
-            this.internal.flash.jq = $(htmlObj);
-          }
-          if (this.html.used && !this.flash.used) {
-            this.status.playbackRateEnabled = this._testPlaybackRate('audio');
-          } else {
-            this.status.playbackRateEnabled = false;
-          }
-          this._updatePlaybackRate();
-          if (this.html.used) {
-            if (this.html.audio.available) {
-              this._addHtmlEventListeners(this.htmlElement.audio, this.html.audio);
-              this.element.append(this.htmlElement.audio);
-              this.internal.audio.jq = $("#" + this.internal.audio.id);
-            }
-            if (this.html.video.available) {
-              this._addHtmlEventListeners(this.htmlElement.video, this.html.video);
-              this.element.append(this.htmlElement.video);
-              this.internal.video.jq = $("#" + this.internal.video.id);
-              if (this.status.nativeVideoControls) {
-                this.internal.video.jq.css({
-                  'width': this.status.width,
-                  'height': this.status.height
-                });
+        },
+        nativeVideoControls: {},
+        noFullWindow: {
+          msie: /msie [0-6]\./,
+          ipad: /ipad.*?os [0-4]\./,
+          iphone: /iphone/,
+          ipod: /ipod/,
+          android_pad: /android [0-3]\.(?!.*?mobile)/,
+          android_phone: /(?=.*android)(?!.*chrome)(?=.*mobile)/,
+          blackberry: /blackberry/,
+          windows_ce: /windows ce/,
+          iemobile: /iemobile/,
+          webos: /webos/
+        },
+        noVolume: {
+          ipad: /ipad/,
+          iphone: /iphone/,
+          ipod: /ipod/,
+          android_pad: /android(?!.*?mobile)/,
+          android_phone: /android.*?mobile/,
+          blackberry: /blackberry/,
+          windows_ce: /windows ce/,
+          iemobile: /iemobile/,
+          webos: /webos/,
+          playbook: /playbook/
+        },
+        timeFormat: {},
+        keyEnabled: false,
+        audioFullScreen: false,
+        keyBindings: {
+          play: {
+            key: 80,
+            fn: function(f) {
+              if (f.status.paused) {
+                f.play();
               } else {
-                this.internal.video.jq.css({
-                  'width': '0px',
-                  'height': '0px'
-                });
-              }
-              this.internal.video.jq.bind("click.jPlayer", function() {
-                self._trigger($.jPlayer.event.click);
-              });
-            }
-          }
-          if (this.aurora.used) {}
-          if (this.options.emulateHtml) {
-            this._emulateHtmlBridge();
-          }
-          if ((this.html.used || this.aurora.used) && !this.flash.used) {
-            setTimeout(function() {
-              self.internal.ready = true;
-              self.version.flash = "n/a";
-              self._trigger($.jPlayer.event.repeat);
-              self._trigger($.jPlayer.event.ready);
-            }, 100);
-          }
-          this._updateNativeVideoControls();
-          if (this.css.jq.videoPlay.length) {
-            this.css.jq.videoPlay.hide();
-          }
-          $.jPlayer.prototype.count++;
-        },
-        destroy: function() {
-          this.clearMedia();
-          this._removeUiClass();
-          if (this.css.jq.currentTime.length) {
-            this.css.jq.currentTime.text("");
-          }
-          if (this.css.jq.duration.length) {
-            this.css.jq.duration.text("");
-          }
-          $.each(this.css.jq, function(fn, jq) {
-            if (jq.length) {
-              jq.unbind(".jPlayer");
-            }
-          });
-          this.internal.poster.jq.unbind(".jPlayer");
-          if (this.internal.video.jq) {
-            this.internal.video.jq.unbind(".jPlayer");
-          }
-          this._fullscreenRemoveEventListeners();
-          if (this === $.jPlayer.focus) {
-            $.jPlayer.focus = null;
-          }
-          if (this.options.emulateHtml) {
-            this._destroyHtmlBridge();
-          }
-          this.element.removeData("jPlayer");
-          this.element.unbind(".jPlayer");
-          this.element.empty();
-          delete this.instances[this.internal.instance];
-        },
-        destroyRemoved: function() {
-          var self = this;
-          $.each(this.instances, function(i, element) {
-            if (self.element !== element) {
-              if (!element.data("jPlayer")) {
-                element.jPlayer("destroy");
-                delete self.instances[i];
+                f.pause();
               }
             }
-          });
-        },
-        enable: function() {},
-        disable: function() {},
-        _testCanPlayType: function(elem) {
-          try {
-            elem.canPlayType(this.format.mp3.codec);
-            return true;
-          } catch (err) {
-            return false;
+          },
+          fullScreen: {
+            key: 70,
+            fn: function(f) {
+              if (f.status.video || f.options.audioFullScreen) {
+                f._setOption("fullScreen", !f.options.fullScreen);
+              }
+            }
+          },
+          muted: {
+            key: 77,
+            fn: function(f) {
+              f._muted(!f.options.muted);
+            }
+          },
+          volumeUp: {
+            key: 190,
+            fn: function(f) {
+              f.volume(f.options.volume + 0.1);
+            }
+          },
+          volumeDown: {
+            key: 188,
+            fn: function(f) {
+              f.volume(f.options.volume - 0.1);
+            }
+          },
+          loop: {
+            key: 76,
+            fn: function(f) {
+              f._loop(!f.options.loop);
+            }
           }
         },
-        _testPlaybackRate: function(type) {
-          var el,
-              rate = 0.5;
-          type = typeof type === 'string' ? type : 'audio';
-          el = document.createElement(type);
-          try {
-            if ('playbackRate' in el) {
-              el.playbackRate = rate;
-              return el.playbackRate === rate;
-            } else {
-              return false;
-            }
-          } catch (err) {
-            return false;
-          }
+        verticalVolume: false,
+        verticalPlaybackRate: false,
+        globalVolume: false,
+        idPrefix: "jp",
+        noConflict: "jQuery",
+        emulateHtml: false,
+        consoleAlerts: true,
+        errorAlerts: false,
+        warningAlerts: false
+      },
+      optionsAudio: {
+        size: {
+          width: "0px",
+          height: "0px",
+          cssClass: ""
         },
-        _uaBlocklist: function(list) {
-          var ua = navigator.userAgent.toLowerCase(),
-              block = false;
-          $.each(list, function(p, re) {
-            if (re && re.test(ua)) {
-              block = true;
+        sizeFull: {
+          width: "0px",
+          height: "0px",
+          cssClass: ""
+        }
+      },
+      optionsVideo: {
+        size: {
+          width: "480px",
+          height: "270px",
+          cssClass: "jp-video-270p"
+        },
+        sizeFull: {
+          width: "100%",
+          height: "100%",
+          cssClass: "jp-video-full"
+        }
+      },
+      instances: {},
+      status: {
+        src: "",
+        media: {},
+        paused: true,
+        format: {},
+        formatType: "",
+        waitForPlay: true,
+        waitForLoad: true,
+        srcSet: false,
+        video: false,
+        seekPercent: 0,
+        currentPercentRelative: 0,
+        currentPercentAbsolute: 0,
+        currentTime: 0,
+        duration: 0,
+        remaining: 0,
+        videoWidth: 0,
+        videoHeight: 0,
+        readyState: 0,
+        networkState: 0,
+        playbackRate: 1,
+        ended: 0
+      },
+      internal: {ready: false},
+      solution: {
+        html: true,
+        aurora: true,
+        flash: true
+      },
+      format: {
+        mp3: {
+          codec: 'audio/mpeg',
+          flashCanPlay: true,
+          media: 'audio'
+        },
+        m4a: {
+          codec: 'audio/mp4; codecs="mp4a.40.2"',
+          flashCanPlay: true,
+          media: 'audio'
+        },
+        m3u8a: {
+          codec: 'application/vnd.apple.mpegurl; codecs="mp4a.40.2"',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        m3ua: {
+          codec: 'audio/mpegurl',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        oga: {
+          codec: 'audio/ogg; codecs="vorbis, opus"',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        flac: {
+          codec: 'audio/x-flac',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        wav: {
+          codec: 'audio/wav; codecs="1"',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        webma: {
+          codec: 'audio/webm; codecs="vorbis"',
+          flashCanPlay: false,
+          media: 'audio'
+        },
+        fla: {
+          codec: 'audio/x-flv',
+          flashCanPlay: true,
+          media: 'audio'
+        },
+        rtmpa: {
+          codec: 'audio/rtmp; codecs="rtmp"',
+          flashCanPlay: true,
+          media: 'audio'
+        },
+        m4v: {
+          codec: 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"',
+          flashCanPlay: true,
+          media: 'video'
+        },
+        m3u8v: {
+          codec: 'application/vnd.apple.mpegurl; codecs="avc1.42E01E, mp4a.40.2"',
+          flashCanPlay: false,
+          media: 'video'
+        },
+        m3uv: {
+          codec: 'audio/mpegurl',
+          flashCanPlay: false,
+          media: 'video'
+        },
+        ogv: {
+          codec: 'video/ogg; codecs="theora, vorbis"',
+          flashCanPlay: false,
+          media: 'video'
+        },
+        webmv: {
+          codec: 'video/webm; codecs="vorbis, vp8"',
+          flashCanPlay: false,
+          media: 'video'
+        },
+        flv: {
+          codec: 'video/x-flv',
+          flashCanPlay: true,
+          media: 'video'
+        },
+        rtmpv: {
+          codec: 'video/rtmp; codecs="rtmp"',
+          flashCanPlay: true,
+          media: 'video'
+        }
+      },
+      _init: function() {
+        var self = this;
+        this.element.empty();
+        this.status = $.extend({}, this.status);
+        this.internal = $.extend({}, this.internal);
+        this.options.timeFormat = $.extend({}, $.jPlayer.timeFormat, this.options.timeFormat);
+        this.internal.cmdsIgnored = $.jPlayer.platform.ipad || $.jPlayer.platform.iphone || $.jPlayer.platform.ipod;
+        this.internal.domNode = this.element.get(0);
+        if (this.options.keyEnabled && !$.jPlayer.focus) {
+          $.jPlayer.focus = this;
+        }
+        this.androidFix = {
+          setMedia: false,
+          play: false,
+          pause: false,
+          time: NaN
+        };
+        if ($.jPlayer.platform.android) {
+          this.options.preload = this.options.preload !== 'auto' ? 'metadata' : 'auto';
+        }
+        this.formats = [];
+        this.solutions = [];
+        this.require = {};
+        this.htmlElement = {};
+        this.html = {};
+        this.html.audio = {};
+        this.html.video = {};
+        this.aurora = {};
+        this.aurora.formats = [];
+        this.aurora.properties = [];
+        this.flash = {};
+        this.css = {};
+        this.css.cs = {};
+        this.css.jq = {};
+        this.ancestorJq = [];
+        this.options.volume = this._limitValue(this.options.volume, 0, 1);
+        $.each(this.options.supplied.toLowerCase().split(","), function(index1, value1) {
+          var format = value1.replace(/^\s+|\s+$/g, "");
+          if (self.format[format]) {
+            var dupFound = false;
+            $.each(self.formats, function(index2, value2) {
+              if (format === value2) {
+                dupFound = true;
+                return false;
+              }
+            });
+            if (!dupFound) {
+              self.formats.push(format);
+            }
+          }
+        });
+        $.each(this.options.solution.toLowerCase().split(","), function(index1, value1) {
+          var solution = value1.replace(/^\s+|\s+$/g, "");
+          if (self.solution[solution]) {
+            var dupFound = false;
+            $.each(self.solutions, function(index2, value2) {
+              if (solution === value2) {
+                dupFound = true;
+                return false;
+              }
+            });
+            if (!dupFound) {
+              self.solutions.push(solution);
+            }
+          }
+        });
+        $.each(this.options.auroraFormats.toLowerCase().split(","), function(index1, value1) {
+          var format = value1.replace(/^\s+|\s+$/g, "");
+          if (self.format[format]) {
+            var dupFound = false;
+            $.each(self.aurora.formats, function(index2, value2) {
+              if (format === value2) {
+                dupFound = true;
+                return false;
+              }
+            });
+            if (!dupFound) {
+              self.aurora.formats.push(format);
+            }
+          }
+        });
+        this.internal.instance = "jp_" + this.count;
+        this.instances[this.internal.instance] = this.element;
+        if (!this.element.attr("id")) {
+          this.element.attr("id", this.options.idPrefix + "_jplayer_" + this.count);
+        }
+        this.internal.self = $.extend({}, {
+          id: this.element.attr("id"),
+          jq: this.element
+        });
+        this.internal.audio = $.extend({}, {
+          id: this.options.idPrefix + "_audio_" + this.count,
+          jq: undefined
+        });
+        this.internal.video = $.extend({}, {
+          id: this.options.idPrefix + "_video_" + this.count,
+          jq: undefined
+        });
+        this.internal.flash = $.extend({}, {
+          id: this.options.idPrefix + "_flash_" + this.count,
+          jq: undefined,
+          swf: this.options.swfPath + (this.options.swfPath.toLowerCase().slice(-4) !== ".swf" ? (this.options.swfPath && this.options.swfPath.slice(-1) !== "/" ? "/" : "") + "jquery.jplayer.swf" : "")
+        });
+        this.internal.poster = $.extend({}, {
+          id: this.options.idPrefix + "_poster_" + this.count,
+          jq: undefined
+        });
+        $.each($.jPlayer.event, function(eventName, eventType) {
+          if (self.options[eventName] !== undefined) {
+            self.element.bind(eventType + ".jPlayer", self.options[eventName]);
+            self.options[eventName] = undefined;
+          }
+        });
+        this.require.audio = false;
+        this.require.video = false;
+        $.each(this.formats, function(priority, format) {
+          self.require[self.format[format].media] = true;
+        });
+        if (this.require.video) {
+          this.options = $.extend(true, {}, this.optionsVideo, this.options);
+        } else {
+          this.options = $.extend(true, {}, this.optionsAudio, this.options);
+        }
+        this._setSize();
+        this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
+        this.status.noFullWindow = this._uaBlocklist(this.options.noFullWindow);
+        this.status.noVolume = this._uaBlocklist(this.options.noVolume);
+        if ($.jPlayer.nativeFeatures.fullscreen.api.fullscreenEnabled) {
+          this._fullscreenAddEventListeners();
+        }
+        this._restrictNativeVideoControls();
+        this.htmlElement.poster = document.createElement('img');
+        this.htmlElement.poster.id = this.internal.poster.id;
+        this.htmlElement.poster.onload = function() {
+          if (!self.status.video || self.status.waitForPlay) {
+            self.internal.poster.jq.show();
+          }
+        };
+        this.element.append(this.htmlElement.poster);
+        this.internal.poster.jq = $("#" + this.internal.poster.id);
+        this.internal.poster.jq.css({
+          'width': this.status.width,
+          'height': this.status.height
+        });
+        this.internal.poster.jq.hide();
+        this.internal.poster.jq.bind("click.jPlayer", function() {
+          self._trigger($.jPlayer.event.click);
+        });
+        this.html.audio.available = false;
+        if (this.require.audio) {
+          this.htmlElement.audio = document.createElement('audio');
+          this.htmlElement.audio.id = this.internal.audio.id;
+          this.html.audio.available = !!this.htmlElement.audio.canPlayType && this._testCanPlayType(this.htmlElement.audio);
+        }
+        this.html.video.available = false;
+        if (this.require.video) {
+          this.htmlElement.video = document.createElement('video');
+          this.htmlElement.video.id = this.internal.video.id;
+          this.html.video.available = !!this.htmlElement.video.canPlayType && this._testCanPlayType(this.htmlElement.video);
+        }
+        this.flash.available = this._checkForFlash(10.1);
+        this.html.canPlay = {};
+        this.aurora.canPlay = {};
+        this.flash.canPlay = {};
+        $.each(this.formats, function(priority, format) {
+          self.html.canPlay[format] = self.html[self.format[format].media].available && "" !== self.htmlElement[self.format[format].media].canPlayType(self.format[format].codec);
+          self.aurora.canPlay[format] = ($.inArray(format, self.aurora.formats) > -1);
+          self.flash.canPlay[format] = self.format[format].flashCanPlay && self.flash.available;
+        });
+        this.html.desired = false;
+        this.aurora.desired = false;
+        this.flash.desired = false;
+        $.each(this.solutions, function(solutionPriority, solution) {
+          if (solutionPriority === 0) {
+            self[solution].desired = true;
+          } else {
+            var audioCanPlay = false;
+            var videoCanPlay = false;
+            $.each(self.formats, function(formatPriority, format) {
+              if (self[self.solutions[0]].canPlay[format]) {
+                if (self.format[format].media === 'video') {
+                  videoCanPlay = true;
+                } else {
+                  audioCanPlay = true;
+                }
+              }
+            });
+            self[solution].desired = (self.require.audio && !audioCanPlay) || (self.require.video && !videoCanPlay);
+          }
+        });
+        this.html.support = {};
+        this.aurora.support = {};
+        this.flash.support = {};
+        $.each(this.formats, function(priority, format) {
+          self.html.support[format] = self.html.canPlay[format] && self.html.desired;
+          self.aurora.support[format] = self.aurora.canPlay[format] && self.aurora.desired;
+          self.flash.support[format] = self.flash.canPlay[format] && self.flash.desired;
+        });
+        this.html.used = false;
+        this.aurora.used = false;
+        this.flash.used = false;
+        $.each(this.solutions, function(solutionPriority, solution) {
+          $.each(self.formats, function(formatPriority, format) {
+            if (self[solution].support[format]) {
+              self[solution].used = true;
               return false;
             }
           });
-          return block;
-        },
-        _restrictNativeVideoControls: function() {
-          if (this.require.audio) {
+        });
+        this._resetActive();
+        this._resetGate();
+        this._cssSelectorAncestor(this.options.cssSelectorAncestor);
+        if (!(this.html.used || this.aurora.used || this.flash.used)) {
+          this._error({
+            type: $.jPlayer.error.NO_SOLUTION,
+            context: "{solution:'" + this.options.solution + "', supplied:'" + this.options.supplied + "'}",
+            message: $.jPlayer.errorMsg.NO_SOLUTION,
+            hint: $.jPlayer.errorHint.NO_SOLUTION
+          });
+          if (this.css.jq.noSolution.length) {
+            this.css.jq.noSolution.show();
+          }
+        } else {
+          if (this.css.jq.noSolution.length) {
+            this.css.jq.noSolution.hide();
+          }
+        }
+        if (this.flash.used) {
+          var htmlObj,
+              flashVars = 'jQuery=' + encodeURI(this.options.noConflict) + '&id=' + encodeURI(this.internal.self.id) + '&vol=' + this.options.volume + '&muted=' + this.options.muted;
+          if ($.jPlayer.browser.msie && (Number($.jPlayer.browser.version) < 9 || $.jPlayer.browser.documentMode < 9)) {
+            var objStr = '<object id="' + this.internal.flash.id + '" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="0" height="0" tabindex="-1"></object>';
+            var paramStr = ['<param name="movie" value="' + this.internal.flash.swf + '" />', '<param name="FlashVars" value="' + flashVars + '" />', '<param name="allowScriptAccess" value="always" />', '<param name="bgcolor" value="' + this.options.backgroundColor + '" />', '<param name="wmode" value="' + this.options.wmode + '" />'];
+            htmlObj = document.createElement(objStr);
+            for (var i = 0; i < paramStr.length; i++) {
+              htmlObj.appendChild(document.createElement(paramStr[i]));
+            }
+          } else {
+            var createParam = function(el, n, v) {
+              var p = document.createElement("param");
+              p.setAttribute("name", n);
+              p.setAttribute("value", v);
+              el.appendChild(p);
+            };
+            htmlObj = document.createElement("object");
+            htmlObj.setAttribute("id", this.internal.flash.id);
+            htmlObj.setAttribute("name", this.internal.flash.id);
+            htmlObj.setAttribute("data", this.internal.flash.swf);
+            htmlObj.setAttribute("type", "application/x-shockwave-flash");
+            htmlObj.setAttribute("width", "1");
+            htmlObj.setAttribute("height", "1");
+            htmlObj.setAttribute("tabindex", "-1");
+            createParam(htmlObj, "flashvars", flashVars);
+            createParam(htmlObj, "allowscriptaccess", "always");
+            createParam(htmlObj, "bgcolor", this.options.backgroundColor);
+            createParam(htmlObj, "wmode", this.options.wmode);
+          }
+          this.element.append(htmlObj);
+          this.internal.flash.jq = $(htmlObj);
+        }
+        if (this.html.used && !this.flash.used) {
+          this.status.playbackRateEnabled = this._testPlaybackRate('audio');
+        } else {
+          this.status.playbackRateEnabled = false;
+        }
+        this._updatePlaybackRate();
+        if (this.html.used) {
+          if (this.html.audio.available) {
+            this._addHtmlEventListeners(this.htmlElement.audio, this.html.audio);
+            this.element.append(this.htmlElement.audio);
+            this.internal.audio.jq = $("#" + this.internal.audio.id);
+          }
+          if (this.html.video.available) {
+            this._addHtmlEventListeners(this.htmlElement.video, this.html.video);
+            this.element.append(this.htmlElement.video);
+            this.internal.video.jq = $("#" + this.internal.video.id);
             if (this.status.nativeVideoControls) {
-              this.status.nativeVideoControls = false;
-              this.status.noFullWindow = true;
-            }
-          }
-        },
-        _updateNativeVideoControls: function() {
-          if (this.html.video.available && this.html.used) {
-            this.htmlElement.video.controls = this.status.nativeVideoControls;
-            this._updateAutohide();
-            if (this.status.nativeVideoControls && this.require.video) {
-              this.internal.poster.jq.hide();
               this.internal.video.jq.css({
                 'width': this.status.width,
                 'height': this.status.height
               });
-            } else if (this.status.waitForPlay && this.status.video) {
-              this.internal.poster.jq.show();
+            } else {
               this.internal.video.jq.css({
                 'width': '0px',
                 'height': '0px'
               });
             }
+            this.internal.video.jq.bind("click.jPlayer", function() {
+              self._trigger($.jPlayer.event.click);
+            });
           }
-        },
-        _addHtmlEventListeners: function(mediaElement, entity) {
-          var self = this;
-          mediaElement.preload = this.options.preload;
-          mediaElement.muted = this.options.muted;
-          mediaElement.volume = this.options.volume;
-          if (this.status.playbackRateEnabled) {
-            mediaElement.defaultPlaybackRate = this.options.defaultPlaybackRate;
-            mediaElement.playbackRate = this.options.playbackRate;
+        }
+        if (this.aurora.used) {}
+        if (this.options.emulateHtml) {
+          this._emulateHtmlBridge();
+        }
+        if ((this.html.used || this.aurora.used) && !this.flash.used) {
+          setTimeout(function() {
+            self.internal.ready = true;
+            self.version.flash = "n/a";
+            self._trigger($.jPlayer.event.repeat);
+            self._trigger($.jPlayer.event.ready);
+          }, 100);
+        }
+        this._updateNativeVideoControls();
+        if (this.css.jq.videoPlay.length) {
+          this.css.jq.videoPlay.hide();
+        }
+        $.jPlayer.prototype.count++;
+      },
+      destroy: function() {
+        this.clearMedia();
+        this._removeUiClass();
+        if (this.css.jq.currentTime.length) {
+          this.css.jq.currentTime.text("");
+        }
+        if (this.css.jq.duration.length) {
+          this.css.jq.duration.text("");
+        }
+        $.each(this.css.jq, function(fn, jq) {
+          if (jq.length) {
+            jq.unbind(".jPlayer");
           }
-          mediaElement.addEventListener("progress", function() {
-            if (entity.gate) {
-              if (self.internal.cmdsIgnored && this.readyState > 0) {
-                self.internal.cmdsIgnored = false;
-              }
-              self._getHtmlStatus(mediaElement);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.progress);
-            }
-          }, false);
-          mediaElement.addEventListener("loadeddata", function() {
-            if (entity.gate) {
-              self.androidFix.setMedia = false;
-              if (self.androidFix.play) {
-                self.androidFix.play = false;
-                self.play(self.androidFix.time);
-              }
-              if (self.androidFix.pause) {
-                self.androidFix.pause = false;
-                self.pause(self.androidFix.time);
-              }
-              self._trigger($.jPlayer.event.loadeddata);
-            }
-          }, false);
-          mediaElement.addEventListener("timeupdate", function() {
-            if (entity.gate) {
-              self._getHtmlStatus(mediaElement);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.timeupdate);
-            }
-          }, false);
-          mediaElement.addEventListener("durationchange", function() {
-            if (entity.gate) {
-              self._getHtmlStatus(mediaElement);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.durationchange);
-            }
-          }, false);
-          mediaElement.addEventListener("play", function() {
-            if (entity.gate) {
-              self._updateButtons(true);
-              self._html_checkWaitForPlay();
-              self._trigger($.jPlayer.event.play);
-            }
-          }, false);
-          mediaElement.addEventListener("playing", function() {
-            if (entity.gate) {
-              self._updateButtons(true);
-              self._seeked();
-              self._trigger($.jPlayer.event.playing);
-            }
-          }, false);
-          mediaElement.addEventListener("pause", function() {
-            if (entity.gate) {
-              self._updateButtons(false);
-              self._trigger($.jPlayer.event.pause);
-            }
-          }, false);
-          mediaElement.addEventListener("waiting", function() {
-            if (entity.gate) {
-              self._seeking();
-              self._trigger($.jPlayer.event.waiting);
-            }
-          }, false);
-          mediaElement.addEventListener("seeking", function() {
-            if (entity.gate) {
-              self._seeking();
-              self._trigger($.jPlayer.event.seeking);
-            }
-          }, false);
-          mediaElement.addEventListener("seeked", function() {
-            if (entity.gate) {
-              self._seeked();
-              self._trigger($.jPlayer.event.seeked);
-            }
-          }, false);
-          mediaElement.addEventListener("volumechange", function() {
-            if (entity.gate) {
-              self.options.volume = mediaElement.volume;
-              self.options.muted = mediaElement.muted;
-              self._updateMute();
-              self._updateVolume();
-              self._trigger($.jPlayer.event.volumechange);
-            }
-          }, false);
-          mediaElement.addEventListener("ratechange", function() {
-            if (entity.gate) {
-              self.options.defaultPlaybackRate = mediaElement.defaultPlaybackRate;
-              self.options.playbackRate = mediaElement.playbackRate;
-              self._updatePlaybackRate();
-              self._trigger($.jPlayer.event.ratechange);
-            }
-          }, false);
-          mediaElement.addEventListener("suspend", function() {
-            if (entity.gate) {
-              self._seeked();
-              self._trigger($.jPlayer.event.suspend);
-            }
-          }, false);
-          mediaElement.addEventListener("ended", function() {
-            if (entity.gate) {
-              if (!$.jPlayer.browser.webkit) {
-                self.htmlElement.media.currentTime = 0;
-              }
-              self.htmlElement.media.pause();
-              self._updateButtons(false);
-              self._getHtmlStatus(mediaElement, true);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.ended);
-            }
-          }, false);
-          mediaElement.addEventListener("error", function() {
-            if (entity.gate) {
-              self._updateButtons(false);
-              self._seeked();
-              if (self.status.srcSet) {
-                clearTimeout(self.internal.htmlDlyCmdId);
-                self.status.waitForLoad = true;
-                self.status.waitForPlay = true;
-                if (self.status.video && !self.status.nativeVideoControls) {
-                  self.internal.video.jq.css({
-                    'width': '0px',
-                    'height': '0px'
-                  });
-                }
-                if (self._validString(self.status.media.poster) && !self.status.nativeVideoControls) {
-                  self.internal.poster.jq.show();
-                }
-                if (self.css.jq.videoPlay.length) {
-                  self.css.jq.videoPlay.show();
-                }
-                self._error({
-                  type: $.jPlayer.error.URL,
-                  context: self.status.src,
-                  message: $.jPlayer.errorMsg.URL,
-                  hint: $.jPlayer.errorHint.URL
-                });
-              }
-            }
-          }, false);
-          $.each($.jPlayer.htmlEvent, function(i, eventType) {
-            mediaElement.addEventListener(this, function() {
-              if (entity.gate) {
-                self._trigger($.jPlayer.event[eventType]);
-              }
-            }, false);
-          });
-        },
-        _addAuroraEventListeners: function(player, entity) {
-          var self = this;
-          player.volume = this.options.volume * 100;
-          player.on("progress", function() {
-            if (entity.gate) {
-              if (self.internal.cmdsIgnored && this.readyState > 0) {
-                self.internal.cmdsIgnored = false;
-              }
-              self._getAuroraStatus(player);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.progress);
-              if (player.duration > 0) {
-                self._trigger($.jPlayer.event.timeupdate);
-              }
-            }
-          }, false);
-          player.on("ready", function() {
-            if (entity.gate) {
-              self._trigger($.jPlayer.event.loadeddata);
-            }
-          }, false);
-          player.on("duration", function() {
-            if (entity.gate) {
-              self._getAuroraStatus(player);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.durationchange);
-            }
-          }, false);
-          player.on("end", function() {
-            if (entity.gate) {
-              self._updateButtons(false);
-              self._getAuroraStatus(player, true);
-              self._updateInterface();
-              self._trigger($.jPlayer.event.ended);
-            }
-          }, false);
-          player.on("error", function() {
-            if (entity.gate) {
-              self._updateButtons(false);
-              self._seeked();
-              if (self.status.srcSet) {
-                self.status.waitForLoad = true;
-                self.status.waitForPlay = true;
-                if (self.status.video && !self.status.nativeVideoControls) {
-                  self.internal.video.jq.css({
-                    'width': '0px',
-                    'height': '0px'
-                  });
-                }
-                if (self._validString(self.status.media.poster) && !self.status.nativeVideoControls) {
-                  self.internal.poster.jq.show();
-                }
-                if (self.css.jq.videoPlay.length) {
-                  self.css.jq.videoPlay.show();
-                }
-                self._error({
-                  type: $.jPlayer.error.URL,
-                  context: self.status.src,
-                  message: $.jPlayer.errorMsg.URL,
-                  hint: $.jPlayer.errorHint.URL
-                });
-              }
-            }
-          }, false);
-        },
-        _getHtmlStatus: function(media, override) {
-          var ct = 0,
-              cpa = 0,
-              sp = 0,
-              cpr = 0;
-          if (isFinite(media.duration)) {
-            this.status.duration = media.duration;
-          }
-          ct = media.currentTime;
-          cpa = (this.status.duration > 0) ? 100 * ct / this.status.duration : 0;
-          if ((typeof media.seekable === "object") && (media.seekable.length > 0)) {
-            sp = (this.status.duration > 0) ? 100 * media.seekable.end(media.seekable.length - 1) / this.status.duration : 100;
-            cpr = (this.status.duration > 0) ? 100 * media.currentTime / media.seekable.end(media.seekable.length - 1) : 0;
-          } else {
-            sp = 100;
-            cpr = cpa;
-          }
-          if (override) {
-            ct = 0;
-            cpr = 0;
-            cpa = 0;
-          }
-          this.status.seekPercent = sp;
-          this.status.currentPercentRelative = cpr;
-          this.status.currentPercentAbsolute = cpa;
-          this.status.currentTime = ct;
-          this.status.remaining = this.status.duration - this.status.currentTime;
-          this.status.videoWidth = media.videoWidth;
-          this.status.videoHeight = media.videoHeight;
-          this.status.readyState = media.readyState;
-          this.status.networkState = media.networkState;
-          this.status.playbackRate = media.playbackRate;
-          this.status.ended = media.ended;
-        },
-        _getAuroraStatus: function(player, override) {
-          var ct = 0,
-              cpa = 0,
-              sp = 0,
-              cpr = 0;
-          this.status.duration = player.duration / 1000;
-          ct = player.currentTime / 1000;
-          cpa = (this.status.duration > 0) ? 100 * ct / this.status.duration : 0;
-          if (player.buffered > 0) {
-            sp = (this.status.duration > 0) ? (player.buffered * this.status.duration) / this.status.duration : 100;
-            cpr = (this.status.duration > 0) ? ct / (player.buffered * this.status.duration) : 0;
-          } else {
-            sp = 100;
-            cpr = cpa;
-          }
-          if (override) {
-            ct = 0;
-            cpr = 0;
-            cpa = 0;
-          }
-          this.status.seekPercent = sp;
-          this.status.currentPercentRelative = cpr;
-          this.status.currentPercentAbsolute = cpa;
-          this.status.currentTime = ct;
-          this.status.remaining = this.status.duration - this.status.currentTime;
-          this.status.readyState = 4;
-          this.status.networkState = 0;
-          this.status.playbackRate = 1;
-          this.status.ended = false;
-        },
-        _resetStatus: function() {
-          this.status = $.extend({}, this.status, $.jPlayer.prototype.status);
-        },
-        _trigger: function(eventType, error, warning) {
-          var event = $.Event(eventType);
-          event.jPlayer = {};
-          event.jPlayer.version = $.extend({}, this.version);
-          event.jPlayer.options = $.extend(true, {}, this.options);
-          event.jPlayer.status = $.extend(true, {}, this.status);
-          event.jPlayer.html = $.extend(true, {}, this.html);
-          event.jPlayer.aurora = $.extend(true, {}, this.aurora);
-          event.jPlayer.flash = $.extend(true, {}, this.flash);
-          if (error) {
-            event.jPlayer.error = $.extend({}, error);
-          }
-          if (warning) {
-            event.jPlayer.warning = $.extend({}, warning);
-          }
-          this.element.trigger(event);
-        },
-        jPlayerFlashEvent: function(eventType, status) {
-          if (eventType === $.jPlayer.event.ready) {
-            if (!this.internal.ready) {
-              this.internal.ready = true;
-              this.internal.flash.jq.css({
-                'width': '0px',
-                'height': '0px'
-              });
-              this.version.flash = status.version;
-              if (this.version.needFlash !== this.version.flash) {
-                this._error({
-                  type: $.jPlayer.error.VERSION,
-                  context: this.version.flash,
-                  message: $.jPlayer.errorMsg.VERSION + this.version.flash,
-                  hint: $.jPlayer.errorHint.VERSION
-                });
-              }
-              this._trigger($.jPlayer.event.repeat);
-              this._trigger(eventType);
-            } else {
-              if (this.flash.gate) {
-                if (this.status.srcSet) {
-                  var currentTime = this.status.currentTime,
-                      paused = this.status.paused;
-                  this.setMedia(this.status.media);
-                  this.volumeWorker(this.options.volume);
-                  if (currentTime > 0) {
-                    if (paused) {
-                      this.pause(currentTime);
-                    } else {
-                      this.play(currentTime);
-                    }
-                  }
-                }
-                this._trigger($.jPlayer.event.flashreset);
-              }
+        });
+        this.internal.poster.jq.unbind(".jPlayer");
+        if (this.internal.video.jq) {
+          this.internal.video.jq.unbind(".jPlayer");
+        }
+        this._fullscreenRemoveEventListeners();
+        if (this === $.jPlayer.focus) {
+          $.jPlayer.focus = null;
+        }
+        if (this.options.emulateHtml) {
+          this._destroyHtmlBridge();
+        }
+        this.element.removeData("jPlayer");
+        this.element.unbind(".jPlayer");
+        this.element.empty();
+        delete this.instances[this.internal.instance];
+      },
+      destroyRemoved: function() {
+        var self = this;
+        $.each(this.instances, function(i, element) {
+          if (self.element !== element) {
+            if (!element.data("jPlayer")) {
+              element.jPlayer("destroy");
+              delete self.instances[i];
             }
           }
-          if (this.flash.gate) {
-            switch (eventType) {
-              case $.jPlayer.event.progress:
-                this._getFlashStatus(status);
-                this._updateInterface();
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.timeupdate:
-                this._getFlashStatus(status);
-                this._updateInterface();
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.play:
-                this._seeked();
-                this._updateButtons(true);
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.pause:
-                this._updateButtons(false);
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.ended:
-                this._updateButtons(false);
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.click:
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.error:
-                this.status.waitForLoad = true;
-                this.status.waitForPlay = true;
-                if (this.status.video) {
-                  this.internal.flash.jq.css({
-                    'width': '0px',
-                    'height': '0px'
-                  });
-                }
-                if (this._validString(this.status.media.poster)) {
-                  this.internal.poster.jq.show();
-                }
-                if (this.css.jq.videoPlay.length && this.status.video) {
-                  this.css.jq.videoPlay.show();
-                }
-                if (this.status.video) {
-                  this._flash_setVideo(this.status.media);
-                } else {
-                  this._flash_setAudio(this.status.media);
-                }
-                this._updateButtons(false);
-                this._error({
-                  type: $.jPlayer.error.URL,
-                  context: status.src,
-                  message: $.jPlayer.errorMsg.URL,
-                  hint: $.jPlayer.errorHint.URL
-                });
-                break;
-              case $.jPlayer.event.seeking:
-                this._seeking();
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.seeked:
-                this._seeked();
-                this._trigger(eventType);
-                break;
-              case $.jPlayer.event.ready:
-                break;
-              default:
-                this._trigger(eventType);
-            }
-          }
+        });
+      },
+      enable: function() {},
+      disable: function() {},
+      _testCanPlayType: function(elem) {
+        try {
+          elem.canPlayType(this.format.mp3.codec);
+          return true;
+        } catch (err) {
           return false;
-        },
-        _getFlashStatus: function(status) {
-          this.status.seekPercent = status.seekPercent;
-          this.status.currentPercentRelative = status.currentPercentRelative;
-          this.status.currentPercentAbsolute = status.currentPercentAbsolute;
-          this.status.currentTime = status.currentTime;
-          this.status.duration = status.duration;
-          this.status.remaining = status.duration - status.currentTime;
-          this.status.videoWidth = status.videoWidth;
-          this.status.videoHeight = status.videoHeight;
-          this.status.readyState = 4;
-          this.status.networkState = 0;
-          this.status.playbackRate = 1;
-          this.status.ended = false;
-        },
-        _updateButtons: function(playing) {
-          if (playing === undefined) {
-            playing = !this.status.paused;
+        }
+      },
+      _testPlaybackRate: function(type) {
+        var el,
+            rate = 0.5;
+        type = typeof type === 'string' ? type : 'audio';
+        el = document.createElement(type);
+        try {
+          if ('playbackRate' in el) {
+            el.playbackRate = rate;
+            return el.playbackRate === rate;
           } else {
-            this.status.paused = !playing;
+            return false;
           }
-          if (playing) {
-            this.addStateClass('playing');
-          } else {
-            this.removeStateClass('playing');
+        } catch (err) {
+          return false;
+        }
+      },
+      _uaBlocklist: function(list) {
+        var ua = navigator.userAgent.toLowerCase(),
+            block = false;
+        $.each(list, function(p, re) {
+          if (re && re.test(ua)) {
+            block = true;
+            return false;
           }
-          if (!this.status.noFullWindow && this.options.fullWindow) {
-            this.addStateClass('fullScreen');
-          } else {
-            this.removeStateClass('fullScreen');
+        });
+        return block;
+      },
+      _restrictNativeVideoControls: function() {
+        if (this.require.audio) {
+          if (this.status.nativeVideoControls) {
+            this.status.nativeVideoControls = false;
+            this.status.noFullWindow = true;
           }
-          if (this.options.loop) {
-            this.addStateClass('looped');
-          } else {
-            this.removeStateClass('looped');
-          }
-          if (this.css.jq.play.length && this.css.jq.pause.length) {
-            if (playing) {
-              this.css.jq.play.hide();
-              this.css.jq.pause.show();
-            } else {
-              this.css.jq.play.show();
-              this.css.jq.pause.hide();
-            }
-          }
-          if (this.css.jq.restoreScreen.length && this.css.jq.fullScreen.length) {
-            if (this.status.noFullWindow) {
-              this.css.jq.fullScreen.hide();
-              this.css.jq.restoreScreen.hide();
-            } else if (this.options.fullWindow) {
-              this.css.jq.fullScreen.hide();
-              this.css.jq.restoreScreen.show();
-            } else {
-              this.css.jq.fullScreen.show();
-              this.css.jq.restoreScreen.hide();
-            }
-          }
-          if (this.css.jq.repeat.length && this.css.jq.repeatOff.length) {
-            if (this.options.loop) {
-              this.css.jq.repeat.hide();
-              this.css.jq.repeatOff.show();
-            } else {
-              this.css.jq.repeat.show();
-              this.css.jq.repeatOff.hide();
-            }
-          }
-        },
-        _updateInterface: function() {
-          if (this.css.jq.seekBar.length) {
-            this.css.jq.seekBar.width(this.status.seekPercent + "%");
-          }
-          if (this.css.jq.playBar.length) {
-            if (this.options.smoothPlayBar) {
-              this.css.jq.playBar.stop().animate({width: this.status.currentPercentAbsolute + "%"}, 250, "linear");
-            } else {
-              this.css.jq.playBar.width(this.status.currentPercentRelative + "%");
-            }
-          }
-          var currentTimeText = '';
-          if (this.css.jq.currentTime.length) {
-            currentTimeText = this._convertTime(this.status.currentTime);
-            if (currentTimeText !== this.css.jq.currentTime.text()) {
-              this.css.jq.currentTime.text(this._convertTime(this.status.currentTime));
-            }
-          }
-          var durationText = '',
-              duration = this.status.duration,
-              remaining = this.status.remaining;
-          if (this.css.jq.duration.length) {
-            if (typeof this.status.media.duration === 'string') {
-              durationText = this.status.media.duration;
-            } else {
-              if (typeof this.status.media.duration === 'number') {
-                duration = this.status.media.duration;
-                remaining = duration - this.status.currentTime;
-              }
-              if (this.options.remainingDuration) {
-                durationText = (remaining > 0 ? '-' : '') + this._convertTime(remaining);
-              } else {
-                durationText = this._convertTime(duration);
-              }
-            }
-            if (durationText !== this.css.jq.duration.text()) {
-              this.css.jq.duration.text(durationText);
-            }
-          }
-        },
-        _convertTime: ConvertTime.prototype.time,
-        _seeking: function() {
-          if (this.css.jq.seekBar.length) {
-            this.css.jq.seekBar.addClass("jp-seeking-bg");
-          }
-          this.addStateClass('seeking');
-        },
-        _seeked: function() {
-          if (this.css.jq.seekBar.length) {
-            this.css.jq.seekBar.removeClass("jp-seeking-bg");
-          }
-          this.removeStateClass('seeking');
-        },
-        _resetGate: function() {
-          this.html.audio.gate = false;
-          this.html.video.gate = false;
-          this.aurora.gate = false;
-          this.flash.gate = false;
-        },
-        _resetActive: function() {
-          this.html.active = false;
-          this.aurora.active = false;
-          this.flash.active = false;
-        },
-        _escapeHtml: function(s) {
-          return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;');
-        },
-        _qualifyURL: function(url) {
-          var el = document.createElement('div');
-          el.innerHTML = '<a href="' + this._escapeHtml(url) + '">x</a>';
-          return el.firstChild.href;
-        },
-        _absoluteMediaUrls: function(media) {
-          var self = this;
-          $.each(media, function(type, url) {
-            if (url && self.format[type] && url.substr(0, 5) !== "data:") {
-              media[type] = self._qualifyURL(url);
-            }
-          });
-          return media;
-        },
-        addStateClass: function(state) {
-          if (this.ancestorJq.length) {
-            this.ancestorJq.addClass(this.options.stateClass[state]);
-          }
-        },
-        removeStateClass: function(state) {
-          if (this.ancestorJq.length) {
-            this.ancestorJq.removeClass(this.options.stateClass[state]);
-          }
-        },
-        setMedia: function(media) {
-          var self = this,
-              supported = false,
-              posterChanged = this.status.media.poster !== media.poster;
-          this._resetMedia();
-          this._resetGate();
-          this._resetActive();
-          this.androidFix.setMedia = false;
-          this.androidFix.play = false;
-          this.androidFix.pause = false;
-          media = this._absoluteMediaUrls(media);
-          $.each(this.formats, function(formatPriority, format) {
-            var isVideo = self.format[format].media === 'video';
-            $.each(self.solutions, function(solutionPriority, solution) {
-              if (self[solution].support[format] && self._validString(media[format])) {
-                var isHtml = solution === 'html';
-                var isAurora = solution === 'aurora';
-                if (isVideo) {
-                  if (isHtml) {
-                    self.html.video.gate = true;
-                    self._html_setVideo(media);
-                    self.html.active = true;
-                  } else {
-                    self.flash.gate = true;
-                    self._flash_setVideo(media);
-                    self.flash.active = true;
-                  }
-                  if (self.css.jq.videoPlay.length) {
-                    self.css.jq.videoPlay.show();
-                  }
-                  self.status.video = true;
-                } else {
-                  if (isHtml) {
-                    self.html.audio.gate = true;
-                    self._html_setAudio(media);
-                    self.html.active = true;
-                    if ($.jPlayer.platform.android) {
-                      self.androidFix.setMedia = true;
-                    }
-                  } else if (isAurora) {
-                    self.aurora.gate = true;
-                    self._aurora_setAudio(media);
-                    self.aurora.active = true;
-                  } else {
-                    self.flash.gate = true;
-                    self._flash_setAudio(media);
-                    self.flash.active = true;
-                  }
-                  if (self.css.jq.videoPlay.length) {
-                    self.css.jq.videoPlay.hide();
-                  }
-                  self.status.video = false;
-                }
-                supported = true;
-                return false;
-              }
-            });
-            if (supported) {
-              return false;
-            }
-          });
-          if (supported) {
-            if (!(this.status.nativeVideoControls && this.html.video.gate)) {
-              if (this._validString(media.poster)) {
-                if (posterChanged) {
-                  this.htmlElement.poster.src = media.poster;
-                } else {
-                  this.internal.poster.jq.show();
-                }
-              }
-            }
-            if (typeof media.title === 'string') {
-              if (this.css.jq.title.length) {
-                this.css.jq.title.html(media.title);
-              }
-              if (this.htmlElement.audio) {
-                this.htmlElement.audio.setAttribute('title', media.title);
-              }
-              if (this.htmlElement.video) {
-                this.htmlElement.video.setAttribute('title', media.title);
-              }
-            }
-            this.status.srcSet = true;
-            this.status.media = $.extend({}, media);
-            this._updateButtons(false);
-            this._updateInterface();
-            this._trigger($.jPlayer.event.setmedia);
-          } else {
-            this._error({
-              type: $.jPlayer.error.NO_SUPPORT,
-              context: "{supplied:'" + this.options.supplied + "'}",
-              message: $.jPlayer.errorMsg.NO_SUPPORT,
-              hint: $.jPlayer.errorHint.NO_SUPPORT
-            });
-          }
-        },
-        _resetMedia: function() {
-          this._resetStatus();
-          this._updateButtons(false);
-          this._updateInterface();
-          this._seeked();
-          this.internal.poster.jq.hide();
-          clearTimeout(this.internal.htmlDlyCmdId);
-          if (this.html.active) {
-            this._html_resetMedia();
-          } else if (this.aurora.active) {
-            this._aurora_resetMedia();
-          } else if (this.flash.active) {
-            this._flash_resetMedia();
-          }
-        },
-        clearMedia: function() {
-          this._resetMedia();
-          if (this.html.active) {
-            this._html_clearMedia();
-          } else if (this.aurora.active) {
-            this._aurora_clearMedia();
-          } else if (this.flash.active) {
-            this._flash_clearMedia();
-          }
-          this._resetGate();
-          this._resetActive();
-        },
-        load: function() {
-          if (this.status.srcSet) {
-            if (this.html.active) {
-              this._html_load();
-            } else if (this.aurora.active) {
-              this._aurora_load();
-            } else if (this.flash.active) {
-              this._flash_load();
-            }
-          } else {
-            this._urlNotSetError("load");
-          }
-        },
-        focus: function() {
-          if (this.options.keyEnabled) {
-            $.jPlayer.focus = this;
-          }
-        },
-        play: function(time) {
-          var guiAction = typeof time === "object";
-          if (guiAction && this.options.useStateClassSkin && !this.status.paused) {
-            this.pause(time);
-          } else {
-            time = (typeof time === "number") ? time : NaN;
-            if (this.status.srcSet) {
-              this.focus();
-              if (this.html.active) {
-                this._html_play(time);
-              } else if (this.aurora.active) {
-                this._aurora_play(time);
-              } else if (this.flash.active) {
-                this._flash_play(time);
-              }
-            } else {
-              this._urlNotSetError("play");
-            }
-          }
-        },
-        videoPlay: function() {
-          this.play();
-        },
-        pause: function(time) {
-          time = (typeof time === "number") ? time : NaN;
-          if (this.status.srcSet) {
-            if (this.html.active) {
-              this._html_pause(time);
-            } else if (this.aurora.active) {
-              this._aurora_pause(time);
-            } else if (this.flash.active) {
-              this._flash_pause(time);
-            }
-          } else {
-            this._urlNotSetError("pause");
-          }
-        },
-        tellOthers: function(command, conditions) {
-          var self = this,
-              hasConditions = typeof conditions === 'function',
-              args = Array.prototype.slice.call(arguments);
-          if (typeof command !== 'string') {
-            return;
-          }
-          if (hasConditions) {
-            args.splice(1, 1);
-          }
-          $.jPlayer.prototype.destroyRemoved();
-          $.each(this.instances, function() {
-            if (self.element !== this) {
-              if (!hasConditions || conditions.call(this.data("jPlayer"), self)) {
-                this.jPlayer.apply(this, args);
-              }
-            }
-          });
-        },
-        pauseOthers: function(time) {
-          this.tellOthers("pause", function() {
-            return this.status.srcSet;
-          }, time);
-        },
-        stop: function() {
-          if (this.status.srcSet) {
-            if (this.html.active) {
-              this._html_pause(0);
-            } else if (this.aurora.active) {
-              this._aurora_pause(0);
-            } else if (this.flash.active) {
-              this._flash_pause(0);
-            }
-          } else {
-            this._urlNotSetError("stop");
-          }
-        },
-        playHead: function(p) {
-          p = this._limitValue(p, 0, 100);
-          if (this.status.srcSet) {
-            if (this.html.active) {
-              this._html_playHead(p);
-            } else if (this.aurora.active) {
-              this._aurora_playHead(p);
-            } else if (this.flash.active) {
-              this._flash_playHead(p);
-            }
-          } else {
-            this._urlNotSetError("playHead");
-          }
-        },
-        _muted: function(muted) {
-          this.mutedWorker(muted);
-          if (this.options.globalVolume) {
-            this.tellOthers("mutedWorker", function() {
-              return this.options.globalVolume;
-            }, muted);
-          }
-        },
-        mutedWorker: function(muted) {
-          this.options.muted = muted;
-          if (this.html.used) {
-            this._html_setProperty('muted', muted);
-          }
-          if (this.aurora.used) {
-            this._aurora_mute(muted);
-          }
-          if (this.flash.used) {
-            this._flash_mute(muted);
-          }
-          if (!this.html.video.gate && !this.html.audio.gate) {
-            this._updateMute(muted);
-            this._updateVolume(this.options.volume);
-            this._trigger($.jPlayer.event.volumechange);
-          }
-        },
-        mute: function(mute) {
-          var guiAction = typeof mute === "object";
-          if (guiAction && this.options.useStateClassSkin && this.options.muted) {
-            this._muted(false);
-          } else {
-            mute = mute === undefined ? true : !!mute;
-            this._muted(mute);
-          }
-        },
-        unmute: function(unmute) {
-          unmute = unmute === undefined ? true : !!unmute;
-          this._muted(!unmute);
-        },
-        _updateMute: function(mute) {
-          if (mute === undefined) {
-            mute = this.options.muted;
-          }
-          if (mute) {
-            this.addStateClass('muted');
-          } else {
-            this.removeStateClass('muted');
-          }
-          if (this.css.jq.mute.length && this.css.jq.unmute.length) {
-            if (this.status.noVolume) {
-              this.css.jq.mute.hide();
-              this.css.jq.unmute.hide();
-            } else if (mute) {
-              this.css.jq.mute.hide();
-              this.css.jq.unmute.show();
-            } else {
-              this.css.jq.mute.show();
-              this.css.jq.unmute.hide();
-            }
-          }
-        },
-        volume: function(v) {
-          this.volumeWorker(v);
-          if (this.options.globalVolume) {
-            this.tellOthers("volumeWorker", function() {
-              return this.options.globalVolume;
-            }, v);
-          }
-        },
-        volumeWorker: function(v) {
-          v = this._limitValue(v, 0, 1);
-          this.options.volume = v;
-          if (this.html.used) {
-            this._html_setProperty('volume', v);
-          }
-          if (this.aurora.used) {
-            this._aurora_volume(v);
-          }
-          if (this.flash.used) {
-            this._flash_volume(v);
-          }
-          if (!this.html.video.gate && !this.html.audio.gate) {
-            this._updateVolume(v);
-            this._trigger($.jPlayer.event.volumechange);
-          }
-        },
-        volumeBar: function(e) {
-          if (this.css.jq.volumeBar.length) {
-            var $bar = $(e.currentTarget),
-                offset = $bar.offset(),
-                x = e.pageX - offset.left,
-                w = $bar.width(),
-                y = $bar.height() - e.pageY + offset.top,
-                h = $bar.height();
-            if (this.options.verticalVolume) {
-              this.volume(y / h);
-            } else {
-              this.volume(x / w);
-            }
-          }
-          if (this.options.muted) {
-            this._muted(false);
-          }
-        },
-        _updateVolume: function(v) {
-          if (v === undefined) {
-            v = this.options.volume;
-          }
-          v = this.options.muted ? 0 : v;
-          if (this.status.noVolume) {
-            this.addStateClass('noVolume');
-            if (this.css.jq.volumeBar.length) {
-              this.css.jq.volumeBar.hide();
-            }
-            if (this.css.jq.volumeBarValue.length) {
-              this.css.jq.volumeBarValue.hide();
-            }
-            if (this.css.jq.volumeMax.length) {
-              this.css.jq.volumeMax.hide();
-            }
-          } else {
-            this.removeStateClass('noVolume');
-            if (this.css.jq.volumeBar.length) {
-              this.css.jq.volumeBar.show();
-            }
-            if (this.css.jq.volumeBarValue.length) {
-              this.css.jq.volumeBarValue.show();
-              this.css.jq.volumeBarValue[this.options.verticalVolume ? "height" : "width"]((v * 100) + "%");
-            }
-            if (this.css.jq.volumeMax.length) {
-              this.css.jq.volumeMax.show();
-            }
-          }
-        },
-        volumeMax: function() {
-          this.volume(1);
-          if (this.options.muted) {
-            this._muted(false);
-          }
-        },
-        _cssSelectorAncestor: function(ancestor) {
-          var self = this;
-          this.options.cssSelectorAncestor = ancestor;
-          this._removeUiClass();
-          this.ancestorJq = ancestor ? $(ancestor) : [];
-          if (ancestor && this.ancestorJq.length !== 1) {
-            this._warning({
-              type: $.jPlayer.warning.CSS_SELECTOR_COUNT,
-              context: ancestor,
-              message: $.jPlayer.warningMsg.CSS_SELECTOR_COUNT + this.ancestorJq.length + " found for cssSelectorAncestor.",
-              hint: $.jPlayer.warningHint.CSS_SELECTOR_COUNT
-            });
-          }
-          this._addUiClass();
-          $.each(this.options.cssSelector, function(fn, cssSel) {
-            self._cssSelector(fn, cssSel);
-          });
-          this._updateInterface();
-          this._updateButtons();
+        }
+      },
+      _updateNativeVideoControls: function() {
+        if (this.html.video.available && this.html.used) {
+          this.htmlElement.video.controls = this.status.nativeVideoControls;
           this._updateAutohide();
-          this._updateVolume();
-          this._updateMute();
-        },
-        _cssSelector: function(fn, cssSel) {
-          var self = this;
-          if (typeof cssSel === 'string') {
-            if ($.jPlayer.prototype.options.cssSelector[fn]) {
-              if (this.css.jq[fn] && this.css.jq[fn].length) {
-                this.css.jq[fn].unbind(".jPlayer");
-              }
-              this.options.cssSelector[fn] = cssSel;
-              this.css.cs[fn] = this.options.cssSelectorAncestor + " " + cssSel;
-              if (cssSel) {
-                this.css.jq[fn] = $(this.css.cs[fn]);
-              } else {
-                this.css.jq[fn] = [];
-              }
-              if (this.css.jq[fn].length && this[fn]) {
-                var handler = function(e) {
-                  e.preventDefault();
-                  self[fn](e);
-                  if (self.options.autoBlur) {
-                    $(this).blur();
-                  } else {
-                    $(this).focus();
-                  }
-                };
-                this.css.jq[fn].bind("click.jPlayer", handler);
-              }
-              if (cssSel && this.css.jq[fn].length !== 1) {
-                this._warning({
-                  type: $.jPlayer.warning.CSS_SELECTOR_COUNT,
-                  context: this.css.cs[fn],
-                  message: $.jPlayer.warningMsg.CSS_SELECTOR_COUNT + this.css.jq[fn].length + " found for " + fn + " method.",
-                  hint: $.jPlayer.warningHint.CSS_SELECTOR_COUNT
-                });
-              }
-            } else {
-              this._warning({
-                type: $.jPlayer.warning.CSS_SELECTOR_METHOD,
-                context: fn,
-                message: $.jPlayer.warningMsg.CSS_SELECTOR_METHOD,
-                hint: $.jPlayer.warningHint.CSS_SELECTOR_METHOD
-              });
-            }
-          } else {
-            this._warning({
-              type: $.jPlayer.warning.CSS_SELECTOR_STRING,
-              context: cssSel,
-              message: $.jPlayer.warningMsg.CSS_SELECTOR_STRING,
-              hint: $.jPlayer.warningHint.CSS_SELECTOR_STRING
-            });
-          }
-        },
-        duration: function(e) {
-          if (this.options.toggleDuration) {
-            if (this.options.captureDuration) {
-              e.stopPropagation();
-            }
-            this._setOption("remainingDuration", !this.options.remainingDuration);
-          }
-        },
-        seekBar: function(e) {
-          if (this.css.jq.seekBar.length) {
-            var $bar = $(e.currentTarget),
-                offset = $bar.offset(),
-                x = e.pageX - offset.left,
-                w = $bar.width(),
-                p = 100 * x / w;
-            this.playHead(p);
-          }
-        },
-        playbackRate: function(pbr) {
-          this._setOption("playbackRate", pbr);
-        },
-        playbackRateBar: function(e) {
-          if (this.css.jq.playbackRateBar.length) {
-            var $bar = $(e.currentTarget),
-                offset = $bar.offset(),
-                x = e.pageX - offset.left,
-                w = $bar.width(),
-                y = $bar.height() - e.pageY + offset.top,
-                h = $bar.height(),
-                ratio,
-                pbr;
-            if (this.options.verticalPlaybackRate) {
-              ratio = y / h;
-            } else {
-              ratio = x / w;
-            }
-            pbr = ratio * (this.options.maxPlaybackRate - this.options.minPlaybackRate) + this.options.minPlaybackRate;
-            this.playbackRate(pbr);
-          }
-        },
-        _updatePlaybackRate: function() {
-          var pbr = this.options.playbackRate,
-              ratio = (pbr - this.options.minPlaybackRate) / (this.options.maxPlaybackRate - this.options.minPlaybackRate);
-          if (this.status.playbackRateEnabled) {
-            if (this.css.jq.playbackRateBar.length) {
-              this.css.jq.playbackRateBar.show();
-            }
-            if (this.css.jq.playbackRateBarValue.length) {
-              this.css.jq.playbackRateBarValue.show();
-              this.css.jq.playbackRateBarValue[this.options.verticalPlaybackRate ? "height" : "width"]((ratio * 100) + "%");
-            }
-          } else {
-            if (this.css.jq.playbackRateBar.length) {
-              this.css.jq.playbackRateBar.hide();
-            }
-            if (this.css.jq.playbackRateBarValue.length) {
-              this.css.jq.playbackRateBarValue.hide();
-            }
-          }
-        },
-        repeat: function(event) {
-          var guiAction = typeof event === "object";
-          if (guiAction && this.options.useStateClassSkin && this.options.loop) {
-            this._loop(false);
-          } else {
-            this._loop(true);
-          }
-        },
-        repeatOff: function() {
-          this._loop(false);
-        },
-        _loop: function(loop) {
-          if (this.options.loop !== loop) {
-            this.options.loop = loop;
-            this._updateButtons();
-            this._trigger($.jPlayer.event.repeat);
-          }
-        },
-        option: function(key, value) {
-          var options = key;
-          if (arguments.length === 0) {
-            return $.extend(true, {}, this.options);
-          }
-          if (typeof key === "string") {
-            var keys = key.split(".");
-            if (value === undefined) {
-              var opt = $.extend(true, {}, this.options);
-              for (var i = 0; i < keys.length; i++) {
-                if (opt[keys[i]] !== undefined) {
-                  opt = opt[keys[i]];
-                } else {
-                  this._warning({
-                    type: $.jPlayer.warning.OPTION_KEY,
-                    context: key,
-                    message: $.jPlayer.warningMsg.OPTION_KEY,
-                    hint: $.jPlayer.warningHint.OPTION_KEY
-                  });
-                  return undefined;
-                }
-              }
-              return opt;
-            }
-            options = {};
-            var opts = options;
-            for (var j = 0; j < keys.length; j++) {
-              if (j < keys.length - 1) {
-                opts[keys[j]] = {};
-                opts = opts[keys[j]];
-              } else {
-                opts[keys[j]] = value;
-              }
-            }
-          }
-          this._setOptions(options);
-          return this;
-        },
-        _setOptions: function(options) {
-          var self = this;
-          $.each(options, function(key, value) {
-            self._setOption(key, value);
-          });
-          return this;
-        },
-        _setOption: function(key, value) {
-          var self = this;
-          switch (key) {
-            case "volume":
-              this.volume(value);
-              break;
-            case "muted":
-              this._muted(value);
-              break;
-            case "globalVolume":
-              this.options[key] = value;
-              break;
-            case "cssSelectorAncestor":
-              this._cssSelectorAncestor(value);
-              break;
-            case "cssSelector":
-              $.each(value, function(fn, cssSel) {
-                self._cssSelector(fn, cssSel);
-              });
-              break;
-            case "playbackRate":
-              this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate, this.options.maxPlaybackRate);
-              if (this.html.used) {
-                this._html_setProperty('playbackRate', value);
-              }
-              this._updatePlaybackRate();
-              break;
-            case "defaultPlaybackRate":
-              this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate, this.options.maxPlaybackRate);
-              if (this.html.used) {
-                this._html_setProperty('defaultPlaybackRate', value);
-              }
-              this._updatePlaybackRate();
-              break;
-            case "minPlaybackRate":
-              this.options[key] = value = this._limitValue(value, 0.1, this.options.maxPlaybackRate - 0.1);
-              this._updatePlaybackRate();
-              break;
-            case "maxPlaybackRate":
-              this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate + 0.1, 16);
-              this._updatePlaybackRate();
-              break;
-            case "fullScreen":
-              if (this.options[key] !== value) {
-                var wkv = $.jPlayer.nativeFeatures.fullscreen.used.webkitVideo;
-                if (!wkv || wkv && !this.status.waitForPlay) {
-                  if (!wkv) {
-                    this.options[key] = value;
-                  }
-                  if (value) {
-                    this._requestFullscreen();
-                  } else {
-                    this._exitFullscreen();
-                  }
-                  if (!wkv) {
-                    this._setOption("fullWindow", value);
-                  }
-                }
-              }
-              break;
-            case "fullWindow":
-              if (this.options[key] !== value) {
-                this._removeUiClass();
-                this.options[key] = value;
-                this._refreshSize();
-              }
-              break;
-            case "size":
-              if (!this.options.fullWindow && this.options[key].cssClass !== value.cssClass) {
-                this._removeUiClass();
-              }
-              this.options[key] = $.extend({}, this.options[key], value);
-              this._refreshSize();
-              break;
-            case "sizeFull":
-              if (this.options.fullWindow && this.options[key].cssClass !== value.cssClass) {
-                this._removeUiClass();
-              }
-              this.options[key] = $.extend({}, this.options[key], value);
-              this._refreshSize();
-              break;
-            case "autohide":
-              this.options[key] = $.extend({}, this.options[key], value);
-              this._updateAutohide();
-              break;
-            case "loop":
-              this._loop(value);
-              break;
-            case "remainingDuration":
-              this.options[key] = value;
-              this._updateInterface();
-              break;
-            case "toggleDuration":
-              this.options[key] = value;
-              break;
-            case "nativeVideoControls":
-              this.options[key] = $.extend({}, this.options[key], value);
-              this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
-              this._restrictNativeVideoControls();
-              this._updateNativeVideoControls();
-              break;
-            case "noFullWindow":
-              this.options[key] = $.extend({}, this.options[key], value);
-              this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
-              this.status.noFullWindow = this._uaBlocklist(this.options.noFullWindow);
-              this._restrictNativeVideoControls();
-              this._updateButtons();
-              break;
-            case "noVolume":
-              this.options[key] = $.extend({}, this.options[key], value);
-              this.status.noVolume = this._uaBlocklist(this.options.noVolume);
-              this._updateVolume();
-              this._updateMute();
-              break;
-            case "emulateHtml":
-              if (this.options[key] !== value) {
-                this.options[key] = value;
-                if (value) {
-                  this._emulateHtmlBridge();
-                } else {
-                  this._destroyHtmlBridge();
-                }
-              }
-              break;
-            case "timeFormat":
-              this.options[key] = $.extend({}, this.options[key], value);
-              break;
-            case "keyEnabled":
-              this.options[key] = value;
-              if (!value && this === $.jPlayer.focus) {
-                $.jPlayer.focus = null;
-              }
-              break;
-            case "keyBindings":
-              this.options[key] = $.extend(true, {}, this.options[key], value);
-              break;
-            case "audioFullScreen":
-              this.options[key] = value;
-              break;
-            case "autoBlur":
-              this.options[key] = value;
-              break;
-          }
-          return this;
-        },
-        _refreshSize: function() {
-          this._setSize();
-          this._addUiClass();
-          this._updateSize();
-          this._updateButtons();
-          this._updateAutohide();
-          this._trigger($.jPlayer.event.resize);
-        },
-        _setSize: function() {
-          if (this.options.fullWindow) {
-            this.status.width = this.options.sizeFull.width;
-            this.status.height = this.options.sizeFull.height;
-            this.status.cssClass = this.options.sizeFull.cssClass;
-          } else {
-            this.status.width = this.options.size.width;
-            this.status.height = this.options.size.height;
-            this.status.cssClass = this.options.size.cssClass;
-          }
-          this.element.css({
-            'width': this.status.width,
-            'height': this.status.height
-          });
-        },
-        _addUiClass: function() {
-          if (this.ancestorJq.length) {
-            this.ancestorJq.addClass(this.status.cssClass);
-          }
-        },
-        _removeUiClass: function() {
-          if (this.ancestorJq.length) {
-            this.ancestorJq.removeClass(this.status.cssClass);
-          }
-        },
-        _updateSize: function() {
-          this.internal.poster.jq.css({
-            'width': this.status.width,
-            'height': this.status.height
-          });
-          if (!this.status.waitForPlay && this.html.active && this.status.video || this.html.video.available && this.html.used && this.status.nativeVideoControls) {
+          if (this.status.nativeVideoControls && this.require.video) {
+            this.internal.poster.jq.hide();
             this.internal.video.jq.css({
               'width': this.status.width,
               'height': this.status.height
             });
-          } else if (!this.status.waitForPlay && this.flash.active && this.status.video) {
+          } else if (this.status.waitForPlay && this.status.video) {
+            this.internal.poster.jq.show();
+            this.internal.video.jq.css({
+              'width': '0px',
+              'height': '0px'
+            });
+          }
+        }
+      },
+      _addHtmlEventListeners: function(mediaElement, entity) {
+        var self = this;
+        mediaElement.preload = this.options.preload;
+        mediaElement.muted = this.options.muted;
+        mediaElement.volume = this.options.volume;
+        if (this.status.playbackRateEnabled) {
+          mediaElement.defaultPlaybackRate = this.options.defaultPlaybackRate;
+          mediaElement.playbackRate = this.options.playbackRate;
+        }
+        mediaElement.addEventListener("progress", function() {
+          if (entity.gate) {
+            if (self.internal.cmdsIgnored && this.readyState > 0) {
+              self.internal.cmdsIgnored = false;
+            }
+            self._getHtmlStatus(mediaElement);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.progress);
+          }
+        }, false);
+        mediaElement.addEventListener("loadeddata", function() {
+          if (entity.gate) {
+            self.androidFix.setMedia = false;
+            if (self.androidFix.play) {
+              self.androidFix.play = false;
+              self.play(self.androidFix.time);
+            }
+            if (self.androidFix.pause) {
+              self.androidFix.pause = false;
+              self.pause(self.androidFix.time);
+            }
+            self._trigger($.jPlayer.event.loadeddata);
+          }
+        }, false);
+        mediaElement.addEventListener("timeupdate", function() {
+          if (entity.gate) {
+            self._getHtmlStatus(mediaElement);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.timeupdate);
+          }
+        }, false);
+        mediaElement.addEventListener("durationchange", function() {
+          if (entity.gate) {
+            self._getHtmlStatus(mediaElement);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.durationchange);
+          }
+        }, false);
+        mediaElement.addEventListener("play", function() {
+          if (entity.gate) {
+            self._updateButtons(true);
+            self._html_checkWaitForPlay();
+            self._trigger($.jPlayer.event.play);
+          }
+        }, false);
+        mediaElement.addEventListener("playing", function() {
+          if (entity.gate) {
+            self._updateButtons(true);
+            self._seeked();
+            self._trigger($.jPlayer.event.playing);
+          }
+        }, false);
+        mediaElement.addEventListener("pause", function() {
+          if (entity.gate) {
+            self._updateButtons(false);
+            self._trigger($.jPlayer.event.pause);
+          }
+        }, false);
+        mediaElement.addEventListener("waiting", function() {
+          if (entity.gate) {
+            self._seeking();
+            self._trigger($.jPlayer.event.waiting);
+          }
+        }, false);
+        mediaElement.addEventListener("seeking", function() {
+          if (entity.gate) {
+            self._seeking();
+            self._trigger($.jPlayer.event.seeking);
+          }
+        }, false);
+        mediaElement.addEventListener("seeked", function() {
+          if (entity.gate) {
+            self._seeked();
+            self._trigger($.jPlayer.event.seeked);
+          }
+        }, false);
+        mediaElement.addEventListener("volumechange", function() {
+          if (entity.gate) {
+            self.options.volume = mediaElement.volume;
+            self.options.muted = mediaElement.muted;
+            self._updateMute();
+            self._updateVolume();
+            self._trigger($.jPlayer.event.volumechange);
+          }
+        }, false);
+        mediaElement.addEventListener("ratechange", function() {
+          if (entity.gate) {
+            self.options.defaultPlaybackRate = mediaElement.defaultPlaybackRate;
+            self.options.playbackRate = mediaElement.playbackRate;
+            self._updatePlaybackRate();
+            self._trigger($.jPlayer.event.ratechange);
+          }
+        }, false);
+        mediaElement.addEventListener("suspend", function() {
+          if (entity.gate) {
+            self._seeked();
+            self._trigger($.jPlayer.event.suspend);
+          }
+        }, false);
+        mediaElement.addEventListener("ended", function() {
+          if (entity.gate) {
+            if (!$.jPlayer.browser.webkit) {
+              self.htmlElement.media.currentTime = 0;
+            }
+            self.htmlElement.media.pause();
+            self._updateButtons(false);
+            self._getHtmlStatus(mediaElement, true);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.ended);
+          }
+        }, false);
+        mediaElement.addEventListener("error", function() {
+          if (entity.gate) {
+            self._updateButtons(false);
+            self._seeked();
+            if (self.status.srcSet) {
+              clearTimeout(self.internal.htmlDlyCmdId);
+              self.status.waitForLoad = true;
+              self.status.waitForPlay = true;
+              if (self.status.video && !self.status.nativeVideoControls) {
+                self.internal.video.jq.css({
+                  'width': '0px',
+                  'height': '0px'
+                });
+              }
+              if (self._validString(self.status.media.poster) && !self.status.nativeVideoControls) {
+                self.internal.poster.jq.show();
+              }
+              if (self.css.jq.videoPlay.length) {
+                self.css.jq.videoPlay.show();
+              }
+              self._error({
+                type: $.jPlayer.error.URL,
+                context: self.status.src,
+                message: $.jPlayer.errorMsg.URL,
+                hint: $.jPlayer.errorHint.URL
+              });
+            }
+          }
+        }, false);
+        $.each($.jPlayer.htmlEvent, function(i, eventType) {
+          mediaElement.addEventListener(this, function() {
+            if (entity.gate) {
+              self._trigger($.jPlayer.event[eventType]);
+            }
+          }, false);
+        });
+      },
+      _addAuroraEventListeners: function(player, entity) {
+        var self = this;
+        player.volume = this.options.volume * 100;
+        player.on("progress", function() {
+          if (entity.gate) {
+            if (self.internal.cmdsIgnored && this.readyState > 0) {
+              self.internal.cmdsIgnored = false;
+            }
+            self._getAuroraStatus(player);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.progress);
+            if (player.duration > 0) {
+              self._trigger($.jPlayer.event.timeupdate);
+            }
+          }
+        }, false);
+        player.on("ready", function() {
+          if (entity.gate) {
+            self._trigger($.jPlayer.event.loadeddata);
+          }
+        }, false);
+        player.on("duration", function() {
+          if (entity.gate) {
+            self._getAuroraStatus(player);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.durationchange);
+          }
+        }, false);
+        player.on("end", function() {
+          if (entity.gate) {
+            self._updateButtons(false);
+            self._getAuroraStatus(player, true);
+            self._updateInterface();
+            self._trigger($.jPlayer.event.ended);
+          }
+        }, false);
+        player.on("error", function() {
+          if (entity.gate) {
+            self._updateButtons(false);
+            self._seeked();
+            if (self.status.srcSet) {
+              self.status.waitForLoad = true;
+              self.status.waitForPlay = true;
+              if (self.status.video && !self.status.nativeVideoControls) {
+                self.internal.video.jq.css({
+                  'width': '0px',
+                  'height': '0px'
+                });
+              }
+              if (self._validString(self.status.media.poster) && !self.status.nativeVideoControls) {
+                self.internal.poster.jq.show();
+              }
+              if (self.css.jq.videoPlay.length) {
+                self.css.jq.videoPlay.show();
+              }
+              self._error({
+                type: $.jPlayer.error.URL,
+                context: self.status.src,
+                message: $.jPlayer.errorMsg.URL,
+                hint: $.jPlayer.errorHint.URL
+              });
+            }
+          }
+        }, false);
+      },
+      _getHtmlStatus: function(media, override) {
+        var ct = 0,
+            cpa = 0,
+            sp = 0,
+            cpr = 0;
+        if (isFinite(media.duration)) {
+          this.status.duration = media.duration;
+        }
+        ct = media.currentTime;
+        cpa = (this.status.duration > 0) ? 100 * ct / this.status.duration : 0;
+        if ((typeof media.seekable === "object") && (media.seekable.length > 0)) {
+          sp = (this.status.duration > 0) ? 100 * media.seekable.end(media.seekable.length - 1) / this.status.duration : 100;
+          cpr = (this.status.duration > 0) ? 100 * media.currentTime / media.seekable.end(media.seekable.length - 1) : 0;
+        } else {
+          sp = 100;
+          cpr = cpa;
+        }
+        if (override) {
+          ct = 0;
+          cpr = 0;
+          cpa = 0;
+        }
+        this.status.seekPercent = sp;
+        this.status.currentPercentRelative = cpr;
+        this.status.currentPercentAbsolute = cpa;
+        this.status.currentTime = ct;
+        this.status.remaining = this.status.duration - this.status.currentTime;
+        this.status.videoWidth = media.videoWidth;
+        this.status.videoHeight = media.videoHeight;
+        this.status.readyState = media.readyState;
+        this.status.networkState = media.networkState;
+        this.status.playbackRate = media.playbackRate;
+        this.status.ended = media.ended;
+      },
+      _getAuroraStatus: function(player, override) {
+        var ct = 0,
+            cpa = 0,
+            sp = 0,
+            cpr = 0;
+        this.status.duration = player.duration / 1000;
+        ct = player.currentTime / 1000;
+        cpa = (this.status.duration > 0) ? 100 * ct / this.status.duration : 0;
+        if (player.buffered > 0) {
+          sp = (this.status.duration > 0) ? (player.buffered * this.status.duration) / this.status.duration : 100;
+          cpr = (this.status.duration > 0) ? ct / (player.buffered * this.status.duration) : 0;
+        } else {
+          sp = 100;
+          cpr = cpa;
+        }
+        if (override) {
+          ct = 0;
+          cpr = 0;
+          cpa = 0;
+        }
+        this.status.seekPercent = sp;
+        this.status.currentPercentRelative = cpr;
+        this.status.currentPercentAbsolute = cpa;
+        this.status.currentTime = ct;
+        this.status.remaining = this.status.duration - this.status.currentTime;
+        this.status.readyState = 4;
+        this.status.networkState = 0;
+        this.status.playbackRate = 1;
+        this.status.ended = false;
+      },
+      _resetStatus: function() {
+        this.status = $.extend({}, this.status, $.jPlayer.prototype.status);
+      },
+      _trigger: function(eventType, error, warning) {
+        var event = $.Event(eventType);
+        event.jPlayer = {};
+        event.jPlayer.version = $.extend({}, this.version);
+        event.jPlayer.options = $.extend(true, {}, this.options);
+        event.jPlayer.status = $.extend(true, {}, this.status);
+        event.jPlayer.html = $.extend(true, {}, this.html);
+        event.jPlayer.aurora = $.extend(true, {}, this.aurora);
+        event.jPlayer.flash = $.extend(true, {}, this.flash);
+        if (error) {
+          event.jPlayer.error = $.extend({}, error);
+        }
+        if (warning) {
+          event.jPlayer.warning = $.extend({}, warning);
+        }
+        this.element.trigger(event);
+      },
+      jPlayerFlashEvent: function(eventType, status) {
+        if (eventType === $.jPlayer.event.ready) {
+          if (!this.internal.ready) {
+            this.internal.ready = true;
+            this.internal.flash.jq.css({
+              'width': '0px',
+              'height': '0px'
+            });
+            this.version.flash = status.version;
+            if (this.version.needFlash !== this.version.flash) {
+              this._error({
+                type: $.jPlayer.error.VERSION,
+                context: this.version.flash,
+                message: $.jPlayer.errorMsg.VERSION + this.version.flash,
+                hint: $.jPlayer.errorHint.VERSION
+              });
+            }
+            this._trigger($.jPlayer.event.repeat);
+            this._trigger(eventType);
+          } else {
+            if (this.flash.gate) {
+              if (this.status.srcSet) {
+                var currentTime = this.status.currentTime,
+                    paused = this.status.paused;
+                this.setMedia(this.status.media);
+                this.volumeWorker(this.options.volume);
+                if (currentTime > 0) {
+                  if (paused) {
+                    this.pause(currentTime);
+                  } else {
+                    this.play(currentTime);
+                  }
+                }
+              }
+              this._trigger($.jPlayer.event.flashreset);
+            }
+          }
+        }
+        if (this.flash.gate) {
+          switch (eventType) {
+            case $.jPlayer.event.progress:
+              this._getFlashStatus(status);
+              this._updateInterface();
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.timeupdate:
+              this._getFlashStatus(status);
+              this._updateInterface();
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.play:
+              this._seeked();
+              this._updateButtons(true);
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.pause:
+              this._updateButtons(false);
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.ended:
+              this._updateButtons(false);
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.click:
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.error:
+              this.status.waitForLoad = true;
+              this.status.waitForPlay = true;
+              if (this.status.video) {
+                this.internal.flash.jq.css({
+                  'width': '0px',
+                  'height': '0px'
+                });
+              }
+              if (this._validString(this.status.media.poster)) {
+                this.internal.poster.jq.show();
+              }
+              if (this.css.jq.videoPlay.length && this.status.video) {
+                this.css.jq.videoPlay.show();
+              }
+              if (this.status.video) {
+                this._flash_setVideo(this.status.media);
+              } else {
+                this._flash_setAudio(this.status.media);
+              }
+              this._updateButtons(false);
+              this._error({
+                type: $.jPlayer.error.URL,
+                context: status.src,
+                message: $.jPlayer.errorMsg.URL,
+                hint: $.jPlayer.errorHint.URL
+              });
+              break;
+            case $.jPlayer.event.seeking:
+              this._seeking();
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.seeked:
+              this._seeked();
+              this._trigger(eventType);
+              break;
+            case $.jPlayer.event.ready:
+              break;
+            default:
+              this._trigger(eventType);
+          }
+        }
+        return false;
+      },
+      _getFlashStatus: function(status) {
+        this.status.seekPercent = status.seekPercent;
+        this.status.currentPercentRelative = status.currentPercentRelative;
+        this.status.currentPercentAbsolute = status.currentPercentAbsolute;
+        this.status.currentTime = status.currentTime;
+        this.status.duration = status.duration;
+        this.status.remaining = status.duration - status.currentTime;
+        this.status.videoWidth = status.videoWidth;
+        this.status.videoHeight = status.videoHeight;
+        this.status.readyState = 4;
+        this.status.networkState = 0;
+        this.status.playbackRate = 1;
+        this.status.ended = false;
+      },
+      _updateButtons: function(playing) {
+        if (playing === undefined) {
+          playing = !this.status.paused;
+        } else {
+          this.status.paused = !playing;
+        }
+        if (playing) {
+          this.addStateClass('playing');
+        } else {
+          this.removeStateClass('playing');
+        }
+        if (!this.status.noFullWindow && this.options.fullWindow) {
+          this.addStateClass('fullScreen');
+        } else {
+          this.removeStateClass('fullScreen');
+        }
+        if (this.options.loop) {
+          this.addStateClass('looped');
+        } else {
+          this.removeStateClass('looped');
+        }
+        if (this.css.jq.play.length && this.css.jq.pause.length) {
+          if (playing) {
+            this.css.jq.play.hide();
+            this.css.jq.pause.show();
+          } else {
+            this.css.jq.play.show();
+            this.css.jq.pause.hide();
+          }
+        }
+        if (this.css.jq.restoreScreen.length && this.css.jq.fullScreen.length) {
+          if (this.status.noFullWindow) {
+            this.css.jq.fullScreen.hide();
+            this.css.jq.restoreScreen.hide();
+          } else if (this.options.fullWindow) {
+            this.css.jq.fullScreen.hide();
+            this.css.jq.restoreScreen.show();
+          } else {
+            this.css.jq.fullScreen.show();
+            this.css.jq.restoreScreen.hide();
+          }
+        }
+        if (this.css.jq.repeat.length && this.css.jq.repeatOff.length) {
+          if (this.options.loop) {
+            this.css.jq.repeat.hide();
+            this.css.jq.repeatOff.show();
+          } else {
+            this.css.jq.repeat.show();
+            this.css.jq.repeatOff.hide();
+          }
+        }
+      },
+      _updateInterface: function() {
+        if (this.css.jq.seekBar.length) {
+          this.css.jq.seekBar.width(this.status.seekPercent + "%");
+        }
+        if (this.css.jq.playBar.length) {
+          if (this.options.smoothPlayBar) {
+            this.css.jq.playBar.stop().animate({width: this.status.currentPercentAbsolute + "%"}, 250, "linear");
+          } else {
+            this.css.jq.playBar.width(this.status.currentPercentRelative + "%");
+          }
+        }
+        var currentTimeText = '';
+        if (this.css.jq.currentTime.length) {
+          currentTimeText = this._convertTime(this.status.currentTime);
+          if (currentTimeText !== this.css.jq.currentTime.text()) {
+            this.css.jq.currentTime.text(this._convertTime(this.status.currentTime));
+          }
+        }
+        var durationText = '',
+            duration = this.status.duration,
+            remaining = this.status.remaining;
+        if (this.css.jq.duration.length) {
+          if (typeof this.status.media.duration === 'string') {
+            durationText = this.status.media.duration;
+          } else {
+            if (typeof this.status.media.duration === 'number') {
+              duration = this.status.media.duration;
+              remaining = duration - this.status.currentTime;
+            }
+            if (this.options.remainingDuration) {
+              durationText = (remaining > 0 ? '-' : '') + this._convertTime(remaining);
+            } else {
+              durationText = this._convertTime(duration);
+            }
+          }
+          if (durationText !== this.css.jq.duration.text()) {
+            this.css.jq.duration.text(durationText);
+          }
+        }
+      },
+      _convertTime: ConvertTime.prototype.time,
+      _seeking: function() {
+        if (this.css.jq.seekBar.length) {
+          this.css.jq.seekBar.addClass("jp-seeking-bg");
+        }
+        this.addStateClass('seeking');
+      },
+      _seeked: function() {
+        if (this.css.jq.seekBar.length) {
+          this.css.jq.seekBar.removeClass("jp-seeking-bg");
+        }
+        this.removeStateClass('seeking');
+      },
+      _resetGate: function() {
+        this.html.audio.gate = false;
+        this.html.video.gate = false;
+        this.aurora.gate = false;
+        this.flash.gate = false;
+      },
+      _resetActive: function() {
+        this.html.active = false;
+        this.aurora.active = false;
+        this.flash.active = false;
+      },
+      _escapeHtml: function(s) {
+        return s.split('&').join('&amp;').split('<').join('&lt;').split('>').join('&gt;').split('"').join('&quot;');
+      },
+      _qualifyURL: function(url) {
+        var el = document.createElement('div');
+        el.innerHTML = '<a href="' + this._escapeHtml(url) + '">x</a>';
+        return el.firstChild.href;
+      },
+      _absoluteMediaUrls: function(media) {
+        var self = this;
+        $.each(media, function(type, url) {
+          if (url && self.format[type] && url.substr(0, 5) !== "data:") {
+            media[type] = self._qualifyURL(url);
+          }
+        });
+        return media;
+      },
+      addStateClass: function(state) {
+        if (this.ancestorJq.length) {
+          this.ancestorJq.addClass(this.options.stateClass[state]);
+        }
+      },
+      removeStateClass: function(state) {
+        if (this.ancestorJq.length) {
+          this.ancestorJq.removeClass(this.options.stateClass[state]);
+        }
+      },
+      setMedia: function(media) {
+        var self = this,
+            supported = false,
+            posterChanged = this.status.media.poster !== media.poster;
+        this._resetMedia();
+        this._resetGate();
+        this._resetActive();
+        this.androidFix.setMedia = false;
+        this.androidFix.play = false;
+        this.androidFix.pause = false;
+        media = this._absoluteMediaUrls(media);
+        $.each(this.formats, function(formatPriority, format) {
+          var isVideo = self.format[format].media === 'video';
+          $.each(self.solutions, function(solutionPriority, solution) {
+            if (self[solution].support[format] && self._validString(media[format])) {
+              var isHtml = solution === 'html';
+              var isAurora = solution === 'aurora';
+              if (isVideo) {
+                if (isHtml) {
+                  self.html.video.gate = true;
+                  self._html_setVideo(media);
+                  self.html.active = true;
+                } else {
+                  self.flash.gate = true;
+                  self._flash_setVideo(media);
+                  self.flash.active = true;
+                }
+                if (self.css.jq.videoPlay.length) {
+                  self.css.jq.videoPlay.show();
+                }
+                self.status.video = true;
+              } else {
+                if (isHtml) {
+                  self.html.audio.gate = true;
+                  self._html_setAudio(media);
+                  self.html.active = true;
+                  if ($.jPlayer.platform.android) {
+                    self.androidFix.setMedia = true;
+                  }
+                } else if (isAurora) {
+                  self.aurora.gate = true;
+                  self._aurora_setAudio(media);
+                  self.aurora.active = true;
+                } else {
+                  self.flash.gate = true;
+                  self._flash_setAudio(media);
+                  self.flash.active = true;
+                }
+                if (self.css.jq.videoPlay.length) {
+                  self.css.jq.videoPlay.hide();
+                }
+                self.status.video = false;
+              }
+              supported = true;
+              return false;
+            }
+          });
+          if (supported) {
+            return false;
+          }
+        });
+        if (supported) {
+          if (!(this.status.nativeVideoControls && this.html.video.gate)) {
+            if (this._validString(media.poster)) {
+              if (posterChanged) {
+                this.htmlElement.poster.src = media.poster;
+              } else {
+                this.internal.poster.jq.show();
+              }
+            }
+          }
+          if (typeof media.title === 'string') {
+            if (this.css.jq.title.length) {
+              this.css.jq.title.html(media.title);
+            }
+            if (this.htmlElement.audio) {
+              this.htmlElement.audio.setAttribute('title', media.title);
+            }
+            if (this.htmlElement.video) {
+              this.htmlElement.video.setAttribute('title', media.title);
+            }
+          }
+          this.status.srcSet = true;
+          this.status.media = $.extend({}, media);
+          this._updateButtons(false);
+          this._updateInterface();
+          this._trigger($.jPlayer.event.setmedia);
+        } else {
+          this._error({
+            type: $.jPlayer.error.NO_SUPPORT,
+            context: "{supplied:'" + this.options.supplied + "'}",
+            message: $.jPlayer.errorMsg.NO_SUPPORT,
+            hint: $.jPlayer.errorHint.NO_SUPPORT
+          });
+        }
+      },
+      _resetMedia: function() {
+        this._resetStatus();
+        this._updateButtons(false);
+        this._updateInterface();
+        this._seeked();
+        this.internal.poster.jq.hide();
+        clearTimeout(this.internal.htmlDlyCmdId);
+        if (this.html.active) {
+          this._html_resetMedia();
+        } else if (this.aurora.active) {
+          this._aurora_resetMedia();
+        } else if (this.flash.active) {
+          this._flash_resetMedia();
+        }
+      },
+      clearMedia: function() {
+        this._resetMedia();
+        if (this.html.active) {
+          this._html_clearMedia();
+        } else if (this.aurora.active) {
+          this._aurora_clearMedia();
+        } else if (this.flash.active) {
+          this._flash_clearMedia();
+        }
+        this._resetGate();
+        this._resetActive();
+      },
+      load: function() {
+        if (this.status.srcSet) {
+          if (this.html.active) {
+            this._html_load();
+          } else if (this.aurora.active) {
+            this._aurora_load();
+          } else if (this.flash.active) {
+            this._flash_load();
+          }
+        } else {
+          this._urlNotSetError("load");
+        }
+      },
+      focus: function() {
+        if (this.options.keyEnabled) {
+          $.jPlayer.focus = this;
+        }
+      },
+      play: function(time) {
+        var guiAction = typeof time === "object";
+        if (guiAction && this.options.useStateClassSkin && !this.status.paused) {
+          this.pause(time);
+        } else {
+          time = (typeof time === "number") ? time : NaN;
+          if (this.status.srcSet) {
+            this.focus();
+            if (this.html.active) {
+              this._html_play(time);
+            } else if (this.aurora.active) {
+              this._aurora_play(time);
+            } else if (this.flash.active) {
+              this._flash_play(time);
+            }
+          } else {
+            this._urlNotSetError("play");
+          }
+        }
+      },
+      videoPlay: function() {
+        this.play();
+      },
+      pause: function(time) {
+        time = (typeof time === "number") ? time : NaN;
+        if (this.status.srcSet) {
+          if (this.html.active) {
+            this._html_pause(time);
+          } else if (this.aurora.active) {
+            this._aurora_pause(time);
+          } else if (this.flash.active) {
+            this._flash_pause(time);
+          }
+        } else {
+          this._urlNotSetError("pause");
+        }
+      },
+      tellOthers: function(command, conditions) {
+        var self = this,
+            hasConditions = typeof conditions === 'function',
+            args = Array.prototype.slice.call(arguments);
+        if (typeof command !== 'string') {
+          return;
+        }
+        if (hasConditions) {
+          args.splice(1, 1);
+        }
+        $.jPlayer.prototype.destroyRemoved();
+        $.each(this.instances, function() {
+          if (self.element !== this) {
+            if (!hasConditions || conditions.call(this.data("jPlayer"), self)) {
+              this.jPlayer.apply(this, args);
+            }
+          }
+        });
+      },
+      pauseOthers: function(time) {
+        this.tellOthers("pause", function() {
+          return this.status.srcSet;
+        }, time);
+      },
+      stop: function() {
+        if (this.status.srcSet) {
+          if (this.html.active) {
+            this._html_pause(0);
+          } else if (this.aurora.active) {
+            this._aurora_pause(0);
+          } else if (this.flash.active) {
+            this._flash_pause(0);
+          }
+        } else {
+          this._urlNotSetError("stop");
+        }
+      },
+      playHead: function(p) {
+        p = this._limitValue(p, 0, 100);
+        if (this.status.srcSet) {
+          if (this.html.active) {
+            this._html_playHead(p);
+          } else if (this.aurora.active) {
+            this._aurora_playHead(p);
+          } else if (this.flash.active) {
+            this._flash_playHead(p);
+          }
+        } else {
+          this._urlNotSetError("playHead");
+        }
+      },
+      _muted: function(muted) {
+        this.mutedWorker(muted);
+        if (this.options.globalVolume) {
+          this.tellOthers("mutedWorker", function() {
+            return this.options.globalVolume;
+          }, muted);
+        }
+      },
+      mutedWorker: function(muted) {
+        this.options.muted = muted;
+        if (this.html.used) {
+          this._html_setProperty('muted', muted);
+        }
+        if (this.aurora.used) {
+          this._aurora_mute(muted);
+        }
+        if (this.flash.used) {
+          this._flash_mute(muted);
+        }
+        if (!this.html.video.gate && !this.html.audio.gate) {
+          this._updateMute(muted);
+          this._updateVolume(this.options.volume);
+          this._trigger($.jPlayer.event.volumechange);
+        }
+      },
+      mute: function(mute) {
+        var guiAction = typeof mute === "object";
+        if (guiAction && this.options.useStateClassSkin && this.options.muted) {
+          this._muted(false);
+        } else {
+          mute = mute === undefined ? true : !!mute;
+          this._muted(mute);
+        }
+      },
+      unmute: function(unmute) {
+        unmute = unmute === undefined ? true : !!unmute;
+        this._muted(!unmute);
+      },
+      _updateMute: function(mute) {
+        if (mute === undefined) {
+          mute = this.options.muted;
+        }
+        if (mute) {
+          this.addStateClass('muted');
+        } else {
+          this.removeStateClass('muted');
+        }
+        if (this.css.jq.mute.length && this.css.jq.unmute.length) {
+          if (this.status.noVolume) {
+            this.css.jq.mute.hide();
+            this.css.jq.unmute.hide();
+          } else if (mute) {
+            this.css.jq.mute.hide();
+            this.css.jq.unmute.show();
+          } else {
+            this.css.jq.mute.show();
+            this.css.jq.unmute.hide();
+          }
+        }
+      },
+      volume: function(v) {
+        this.volumeWorker(v);
+        if (this.options.globalVolume) {
+          this.tellOthers("volumeWorker", function() {
+            return this.options.globalVolume;
+          }, v);
+        }
+      },
+      volumeWorker: function(v) {
+        v = this._limitValue(v, 0, 1);
+        this.options.volume = v;
+        if (this.html.used) {
+          this._html_setProperty('volume', v);
+        }
+        if (this.aurora.used) {
+          this._aurora_volume(v);
+        }
+        if (this.flash.used) {
+          this._flash_volume(v);
+        }
+        if (!this.html.video.gate && !this.html.audio.gate) {
+          this._updateVolume(v);
+          this._trigger($.jPlayer.event.volumechange);
+        }
+      },
+      volumeBar: function(e) {
+        if (this.css.jq.volumeBar.length) {
+          var $bar = $(e.currentTarget),
+              offset = $bar.offset(),
+              x = e.pageX - offset.left,
+              w = $bar.width(),
+              y = $bar.height() - e.pageY + offset.top,
+              h = $bar.height();
+          if (this.options.verticalVolume) {
+            this.volume(y / h);
+          } else {
+            this.volume(x / w);
+          }
+        }
+        if (this.options.muted) {
+          this._muted(false);
+        }
+      },
+      _updateVolume: function(v) {
+        if (v === undefined) {
+          v = this.options.volume;
+        }
+        v = this.options.muted ? 0 : v;
+        if (this.status.noVolume) {
+          this.addStateClass('noVolume');
+          if (this.css.jq.volumeBar.length) {
+            this.css.jq.volumeBar.hide();
+          }
+          if (this.css.jq.volumeBarValue.length) {
+            this.css.jq.volumeBarValue.hide();
+          }
+          if (this.css.jq.volumeMax.length) {
+            this.css.jq.volumeMax.hide();
+          }
+        } else {
+          this.removeStateClass('noVolume');
+          if (this.css.jq.volumeBar.length) {
+            this.css.jq.volumeBar.show();
+          }
+          if (this.css.jq.volumeBarValue.length) {
+            this.css.jq.volumeBarValue.show();
+            this.css.jq.volumeBarValue[this.options.verticalVolume ? "height" : "width"]((v * 100) + "%");
+          }
+          if (this.css.jq.volumeMax.length) {
+            this.css.jq.volumeMax.show();
+          }
+        }
+      },
+      volumeMax: function() {
+        this.volume(1);
+        if (this.options.muted) {
+          this._muted(false);
+        }
+      },
+      _cssSelectorAncestor: function(ancestor) {
+        var self = this;
+        this.options.cssSelectorAncestor = ancestor;
+        this._removeUiClass();
+        this.ancestorJq = ancestor ? $(ancestor) : [];
+        if (ancestor && this.ancestorJq.length !== 1) {
+          this._warning({
+            type: $.jPlayer.warning.CSS_SELECTOR_COUNT,
+            context: ancestor,
+            message: $.jPlayer.warningMsg.CSS_SELECTOR_COUNT + this.ancestorJq.length + " found for cssSelectorAncestor.",
+            hint: $.jPlayer.warningHint.CSS_SELECTOR_COUNT
+          });
+        }
+        this._addUiClass();
+        $.each(this.options.cssSelector, function(fn, cssSel) {
+          self._cssSelector(fn, cssSel);
+        });
+        this._updateInterface();
+        this._updateButtons();
+        this._updateAutohide();
+        this._updateVolume();
+        this._updateMute();
+      },
+      _cssSelector: function(fn, cssSel) {
+        var self = this;
+        if (typeof cssSel === 'string') {
+          if ($.jPlayer.prototype.options.cssSelector[fn]) {
+            if (this.css.jq[fn] && this.css.jq[fn].length) {
+              this.css.jq[fn].unbind(".jPlayer");
+            }
+            this.options.cssSelector[fn] = cssSel;
+            this.css.cs[fn] = this.options.cssSelectorAncestor + " " + cssSel;
+            if (cssSel) {
+              this.css.jq[fn] = $(this.css.cs[fn]);
+            } else {
+              this.css.jq[fn] = [];
+            }
+            if (this.css.jq[fn].length && this[fn]) {
+              var handler = function(e) {
+                e.preventDefault();
+                self[fn](e);
+                if (self.options.autoBlur) {
+                  $(this).blur();
+                } else {
+                  $(this).focus();
+                }
+              };
+              this.css.jq[fn].bind("click.jPlayer", handler);
+            }
+            if (cssSel && this.css.jq[fn].length !== 1) {
+              this._warning({
+                type: $.jPlayer.warning.CSS_SELECTOR_COUNT,
+                context: this.css.cs[fn],
+                message: $.jPlayer.warningMsg.CSS_SELECTOR_COUNT + this.css.jq[fn].length + " found for " + fn + " method.",
+                hint: $.jPlayer.warningHint.CSS_SELECTOR_COUNT
+              });
+            }
+          } else {
+            this._warning({
+              type: $.jPlayer.warning.CSS_SELECTOR_METHOD,
+              context: fn,
+              message: $.jPlayer.warningMsg.CSS_SELECTOR_METHOD,
+              hint: $.jPlayer.warningHint.CSS_SELECTOR_METHOD
+            });
+          }
+        } else {
+          this._warning({
+            type: $.jPlayer.warning.CSS_SELECTOR_STRING,
+            context: cssSel,
+            message: $.jPlayer.warningMsg.CSS_SELECTOR_STRING,
+            hint: $.jPlayer.warningHint.CSS_SELECTOR_STRING
+          });
+        }
+      },
+      duration: function(e) {
+        if (this.options.toggleDuration) {
+          if (this.options.captureDuration) {
+            e.stopPropagation();
+          }
+          this._setOption("remainingDuration", !this.options.remainingDuration);
+        }
+      },
+      seekBar: function(e) {
+        if (this.css.jq.seekBar.length) {
+          var $bar = $(e.currentTarget),
+              offset = $bar.offset(),
+              x = e.pageX - offset.left,
+              w = $bar.width(),
+              p = 100 * x / w;
+          this.playHead(p);
+        }
+      },
+      playbackRate: function(pbr) {
+        this._setOption("playbackRate", pbr);
+      },
+      playbackRateBar: function(e) {
+        if (this.css.jq.playbackRateBar.length) {
+          var $bar = $(e.currentTarget),
+              offset = $bar.offset(),
+              x = e.pageX - offset.left,
+              w = $bar.width(),
+              y = $bar.height() - e.pageY + offset.top,
+              h = $bar.height(),
+              ratio,
+              pbr;
+          if (this.options.verticalPlaybackRate) {
+            ratio = y / h;
+          } else {
+            ratio = x / w;
+          }
+          pbr = ratio * (this.options.maxPlaybackRate - this.options.minPlaybackRate) + this.options.minPlaybackRate;
+          this.playbackRate(pbr);
+        }
+      },
+      _updatePlaybackRate: function() {
+        var pbr = this.options.playbackRate,
+            ratio = (pbr - this.options.minPlaybackRate) / (this.options.maxPlaybackRate - this.options.minPlaybackRate);
+        if (this.status.playbackRateEnabled) {
+          if (this.css.jq.playbackRateBar.length) {
+            this.css.jq.playbackRateBar.show();
+          }
+          if (this.css.jq.playbackRateBarValue.length) {
+            this.css.jq.playbackRateBarValue.show();
+            this.css.jq.playbackRateBarValue[this.options.verticalPlaybackRate ? "height" : "width"]((ratio * 100) + "%");
+          }
+        } else {
+          if (this.css.jq.playbackRateBar.length) {
+            this.css.jq.playbackRateBar.hide();
+          }
+          if (this.css.jq.playbackRateBarValue.length) {
+            this.css.jq.playbackRateBarValue.hide();
+          }
+        }
+      },
+      repeat: function(event) {
+        var guiAction = typeof event === "object";
+        if (guiAction && this.options.useStateClassSkin && this.options.loop) {
+          this._loop(false);
+        } else {
+          this._loop(true);
+        }
+      },
+      repeatOff: function() {
+        this._loop(false);
+      },
+      _loop: function(loop) {
+        if (this.options.loop !== loop) {
+          this.options.loop = loop;
+          this._updateButtons();
+          this._trigger($.jPlayer.event.repeat);
+        }
+      },
+      option: function(key, value) {
+        var options = key;
+        if (arguments.length === 0) {
+          return $.extend(true, {}, this.options);
+        }
+        if (typeof key === "string") {
+          var keys = key.split(".");
+          if (value === undefined) {
+            var opt = $.extend(true, {}, this.options);
+            for (var i = 0; i < keys.length; i++) {
+              if (opt[keys[i]] !== undefined) {
+                opt = opt[keys[i]];
+              } else {
+                this._warning({
+                  type: $.jPlayer.warning.OPTION_KEY,
+                  context: key,
+                  message: $.jPlayer.warningMsg.OPTION_KEY,
+                  hint: $.jPlayer.warningHint.OPTION_KEY
+                });
+                return undefined;
+              }
+            }
+            return opt;
+          }
+          options = {};
+          var opts = options;
+          for (var j = 0; j < keys.length; j++) {
+            if (j < keys.length - 1) {
+              opts[keys[j]] = {};
+              opts = opts[keys[j]];
+            } else {
+              opts[keys[j]] = value;
+            }
+          }
+        }
+        this._setOptions(options);
+        return this;
+      },
+      _setOptions: function(options) {
+        var self = this;
+        $.each(options, function(key, value) {
+          self._setOption(key, value);
+        });
+        return this;
+      },
+      _setOption: function(key, value) {
+        var self = this;
+        switch (key) {
+          case "volume":
+            this.volume(value);
+            break;
+          case "muted":
+            this._muted(value);
+            break;
+          case "globalVolume":
+            this.options[key] = value;
+            break;
+          case "cssSelectorAncestor":
+            this._cssSelectorAncestor(value);
+            break;
+          case "cssSelector":
+            $.each(value, function(fn, cssSel) {
+              self._cssSelector(fn, cssSel);
+            });
+            break;
+          case "playbackRate":
+            this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate, this.options.maxPlaybackRate);
+            if (this.html.used) {
+              this._html_setProperty('playbackRate', value);
+            }
+            this._updatePlaybackRate();
+            break;
+          case "defaultPlaybackRate":
+            this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate, this.options.maxPlaybackRate);
+            if (this.html.used) {
+              this._html_setProperty('defaultPlaybackRate', value);
+            }
+            this._updatePlaybackRate();
+            break;
+          case "minPlaybackRate":
+            this.options[key] = value = this._limitValue(value, 0.1, this.options.maxPlaybackRate - 0.1);
+            this._updatePlaybackRate();
+            break;
+          case "maxPlaybackRate":
+            this.options[key] = value = this._limitValue(value, this.options.minPlaybackRate + 0.1, 16);
+            this._updatePlaybackRate();
+            break;
+          case "fullScreen":
+            if (this.options[key] !== value) {
+              var wkv = $.jPlayer.nativeFeatures.fullscreen.used.webkitVideo;
+              if (!wkv || wkv && !this.status.waitForPlay) {
+                if (!wkv) {
+                  this.options[key] = value;
+                }
+                if (value) {
+                  this._requestFullscreen();
+                } else {
+                  this._exitFullscreen();
+                }
+                if (!wkv) {
+                  this._setOption("fullWindow", value);
+                }
+              }
+            }
+            break;
+          case "fullWindow":
+            if (this.options[key] !== value) {
+              this._removeUiClass();
+              this.options[key] = value;
+              this._refreshSize();
+            }
+            break;
+          case "size":
+            if (!this.options.fullWindow && this.options[key].cssClass !== value.cssClass) {
+              this._removeUiClass();
+            }
+            this.options[key] = $.extend({}, this.options[key], value);
+            this._refreshSize();
+            break;
+          case "sizeFull":
+            if (this.options.fullWindow && this.options[key].cssClass !== value.cssClass) {
+              this._removeUiClass();
+            }
+            this.options[key] = $.extend({}, this.options[key], value);
+            this._refreshSize();
+            break;
+          case "autohide":
+            this.options[key] = $.extend({}, this.options[key], value);
+            this._updateAutohide();
+            break;
+          case "loop":
+            this._loop(value);
+            break;
+          case "remainingDuration":
+            this.options[key] = value;
+            this._updateInterface();
+            break;
+          case "toggleDuration":
+            this.options[key] = value;
+            break;
+          case "nativeVideoControls":
+            this.options[key] = $.extend({}, this.options[key], value);
+            this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
+            this._restrictNativeVideoControls();
+            this._updateNativeVideoControls();
+            break;
+          case "noFullWindow":
+            this.options[key] = $.extend({}, this.options[key], value);
+            this.status.nativeVideoControls = this._uaBlocklist(this.options.nativeVideoControls);
+            this.status.noFullWindow = this._uaBlocklist(this.options.noFullWindow);
+            this._restrictNativeVideoControls();
+            this._updateButtons();
+            break;
+          case "noVolume":
+            this.options[key] = $.extend({}, this.options[key], value);
+            this.status.noVolume = this._uaBlocklist(this.options.noVolume);
+            this._updateVolume();
+            this._updateMute();
+            break;
+          case "emulateHtml":
+            if (this.options[key] !== value) {
+              this.options[key] = value;
+              if (value) {
+                this._emulateHtmlBridge();
+              } else {
+                this._destroyHtmlBridge();
+              }
+            }
+            break;
+          case "timeFormat":
+            this.options[key] = $.extend({}, this.options[key], value);
+            break;
+          case "keyEnabled":
+            this.options[key] = value;
+            if (!value && this === $.jPlayer.focus) {
+              $.jPlayer.focus = null;
+            }
+            break;
+          case "keyBindings":
+            this.options[key] = $.extend(true, {}, this.options[key], value);
+            break;
+          case "audioFullScreen":
+            this.options[key] = value;
+            break;
+          case "autoBlur":
+            this.options[key] = value;
+            break;
+        }
+        return this;
+      },
+      _refreshSize: function() {
+        this._setSize();
+        this._addUiClass();
+        this._updateSize();
+        this._updateButtons();
+        this._updateAutohide();
+        this._trigger($.jPlayer.event.resize);
+      },
+      _setSize: function() {
+        if (this.options.fullWindow) {
+          this.status.width = this.options.sizeFull.width;
+          this.status.height = this.options.sizeFull.height;
+          this.status.cssClass = this.options.sizeFull.cssClass;
+        } else {
+          this.status.width = this.options.size.width;
+          this.status.height = this.options.size.height;
+          this.status.cssClass = this.options.size.cssClass;
+        }
+        this.element.css({
+          'width': this.status.width,
+          'height': this.status.height
+        });
+      },
+      _addUiClass: function() {
+        if (this.ancestorJq.length) {
+          this.ancestorJq.addClass(this.status.cssClass);
+        }
+      },
+      _removeUiClass: function() {
+        if (this.ancestorJq.length) {
+          this.ancestorJq.removeClass(this.status.cssClass);
+        }
+      },
+      _updateSize: function() {
+        this.internal.poster.jq.css({
+          'width': this.status.width,
+          'height': this.status.height
+        });
+        if (!this.status.waitForPlay && this.html.active && this.status.video || this.html.video.available && this.html.used && this.status.nativeVideoControls) {
+          this.internal.video.jq.css({
+            'width': this.status.width,
+            'height': this.status.height
+          });
+        } else if (!this.status.waitForPlay && this.flash.active && this.status.video) {
+          this.internal.flash.jq.css({
+            'width': this.status.width,
+            'height': this.status.height
+          });
+        }
+      },
+      _updateAutohide: function() {
+        var self = this,
+            event = "mousemove.jPlayer",
+            namespace = ".jPlayerAutohide",
+            eventType = event + namespace,
+            handler = function(event) {
+              var moved = false,
+                  deltaX,
+                  deltaY;
+              if (typeof self.internal.mouse !== "undefined") {
+                deltaX = self.internal.mouse.x - event.pageX;
+                deltaY = self.internal.mouse.y - event.pageY;
+                moved = (Math.floor(deltaX) > 0) || (Math.floor(deltaY) > 0);
+              } else {
+                moved = true;
+              }
+              self.internal.mouse = {
+                x: event.pageX,
+                y: event.pageY
+              };
+              if (moved) {
+                self.css.jq.gui.fadeIn(self.options.autohide.fadeIn, function() {
+                  clearTimeout(self.internal.autohideId);
+                  self.internal.autohideId = setTimeout(function() {
+                    self.css.jq.gui.fadeOut(self.options.autohide.fadeOut);
+                  }, self.options.autohide.hold);
+                });
+              }
+            };
+        if (this.css.jq.gui.length) {
+          this.css.jq.gui.stop(true, true);
+          clearTimeout(this.internal.autohideId);
+          delete this.internal.mouse;
+          this.element.unbind(namespace);
+          this.css.jq.gui.unbind(namespace);
+          if (!this.status.nativeVideoControls) {
+            if (this.options.fullWindow && this.options.autohide.full || !this.options.fullWindow && this.options.autohide.restored) {
+              this.element.bind(eventType, handler);
+              this.css.jq.gui.bind(eventType, handler);
+              this.css.jq.gui.hide();
+            } else {
+              this.css.jq.gui.show();
+            }
+          } else {
+            this.css.jq.gui.hide();
+          }
+        }
+      },
+      fullScreen: function(event) {
+        var guiAction = typeof event === "object";
+        if (guiAction && this.options.useStateClassSkin && this.options.fullScreen) {
+          this._setOption("fullScreen", false);
+        } else {
+          this._setOption("fullScreen", true);
+        }
+      },
+      restoreScreen: function() {
+        this._setOption("fullScreen", false);
+      },
+      _fullscreenAddEventListeners: function() {
+        var self = this,
+            fs = $.jPlayer.nativeFeatures.fullscreen;
+        if (fs.api.fullscreenEnabled) {
+          if (fs.event.fullscreenchange) {
+            if (typeof this.internal.fullscreenchangeHandler !== 'function') {
+              this.internal.fullscreenchangeHandler = function() {
+                self._fullscreenchange();
+              };
+            }
+            document.addEventListener(fs.event.fullscreenchange, this.internal.fullscreenchangeHandler, false);
+          }
+        }
+      },
+      _fullscreenRemoveEventListeners: function() {
+        var fs = $.jPlayer.nativeFeatures.fullscreen;
+        if (this.internal.fullscreenchangeHandler) {
+          document.removeEventListener(fs.event.fullscreenchange, this.internal.fullscreenchangeHandler, false);
+        }
+      },
+      _fullscreenchange: function() {
+        if (this.options.fullScreen && !$.jPlayer.nativeFeatures.fullscreen.api.fullscreenElement()) {
+          this._setOption("fullScreen", false);
+        }
+      },
+      _requestFullscreen: function() {
+        var e = this.ancestorJq.length ? this.ancestorJq[0] : this.element[0],
+            fs = $.jPlayer.nativeFeatures.fullscreen;
+        if (fs.used.webkitVideo) {
+          e = this.htmlElement.video;
+        }
+        if (fs.api.fullscreenEnabled) {
+          fs.api.requestFullscreen(e);
+        }
+      },
+      _exitFullscreen: function() {
+        var fs = $.jPlayer.nativeFeatures.fullscreen,
+            e;
+        if (fs.used.webkitVideo) {
+          e = this.htmlElement.video;
+        }
+        if (fs.api.fullscreenEnabled) {
+          fs.api.exitFullscreen(e);
+        }
+      },
+      _html_initMedia: function(media) {
+        var $media = $(this.htmlElement.media).empty();
+        $.each(media.track || [], function(i, v) {
+          var track = document.createElement('track');
+          track.setAttribute("kind", v.kind ? v.kind : "");
+          track.setAttribute("src", v.src ? v.src : "");
+          track.setAttribute("srclang", v.srclang ? v.srclang : "");
+          track.setAttribute("label", v.label ? v.label : "");
+          if (v.def) {
+            track.setAttribute("default", v.def);
+          }
+          $media.append(track);
+        });
+        this.htmlElement.media.src = this.status.src;
+        if (this.options.preload !== 'none') {
+          this._html_load();
+        }
+        this._trigger($.jPlayer.event.timeupdate);
+      },
+      _html_setFormat: function(media) {
+        var self = this;
+        $.each(this.formats, function(priority, format) {
+          if (self.html.support[format] && media[format]) {
+            self.status.src = media[format];
+            self.status.format[format] = true;
+            self.status.formatType = format;
+            return false;
+          }
+        });
+      },
+      _html_setAudio: function(media) {
+        this._html_setFormat(media);
+        this.htmlElement.media = this.htmlElement.audio;
+        this._html_initMedia(media);
+      },
+      _html_setVideo: function(media) {
+        this._html_setFormat(media);
+        if (this.status.nativeVideoControls) {
+          this.htmlElement.video.poster = this._validString(media.poster) ? media.poster : "";
+        }
+        this.htmlElement.media = this.htmlElement.video;
+        this._html_initMedia(media);
+      },
+      _html_resetMedia: function() {
+        if (this.htmlElement.media) {
+          if (this.htmlElement.media.id === this.internal.video.id && !this.status.nativeVideoControls) {
+            this.internal.video.jq.css({
+              'width': '0px',
+              'height': '0px'
+            });
+          }
+          this.htmlElement.media.pause();
+        }
+      },
+      _html_clearMedia: function() {
+        if (this.htmlElement.media) {
+          this.htmlElement.media.src = "about:blank";
+          this.htmlElement.media.load();
+        }
+      },
+      _html_load: function() {
+        if (this.status.waitForLoad) {
+          this.status.waitForLoad = false;
+          this.htmlElement.media.load();
+        }
+        clearTimeout(this.internal.htmlDlyCmdId);
+      },
+      _html_play: function(time) {
+        var self = this,
+            media = this.htmlElement.media;
+        this.androidFix.pause = false;
+        this._html_load();
+        if (this.androidFix.setMedia) {
+          this.androidFix.play = true;
+          this.androidFix.time = time;
+        } else if (!isNaN(time)) {
+          if (this.internal.cmdsIgnored) {
+            media.play();
+          }
+          try {
+            if (!media.seekable || typeof media.seekable === "object" && media.seekable.length > 0) {
+              media.currentTime = time;
+              media.play();
+            } else {
+              throw 1;
+            }
+          } catch (err) {
+            this.internal.htmlDlyCmdId = setTimeout(function() {
+              self.play(time);
+            }, 250);
+            return;
+          }
+        } else {
+          media.play();
+        }
+        this._html_checkWaitForPlay();
+      },
+      _html_pause: function(time) {
+        var self = this,
+            media = this.htmlElement.media;
+        this.androidFix.play = false;
+        if (time > 0) {
+          this._html_load();
+        } else {
+          clearTimeout(this.internal.htmlDlyCmdId);
+        }
+        media.pause();
+        if (this.androidFix.setMedia) {
+          this.androidFix.pause = true;
+          this.androidFix.time = time;
+        } else if (!isNaN(time)) {
+          try {
+            if (!media.seekable || typeof media.seekable === "object" && media.seekable.length > 0) {
+              media.currentTime = time;
+            } else {
+              throw 1;
+            }
+          } catch (err) {
+            this.internal.htmlDlyCmdId = setTimeout(function() {
+              self.pause(time);
+            }, 250);
+            return;
+          }
+        }
+        if (time > 0) {
+          this._html_checkWaitForPlay();
+        }
+      },
+      _html_playHead: function(percent) {
+        var self = this,
+            media = this.htmlElement.media;
+        this._html_load();
+        try {
+          if (typeof media.seekable === "object" && media.seekable.length > 0) {
+            media.currentTime = percent * media.seekable.end(media.seekable.length - 1) / 100;
+          } else if (media.duration > 0 && !isNaN(media.duration)) {
+            media.currentTime = percent * media.duration / 100;
+          } else {
+            throw "e";
+          }
+        } catch (err) {
+          this.internal.htmlDlyCmdId = setTimeout(function() {
+            self.playHead(percent);
+          }, 250);
+          return;
+        }
+        if (!this.status.waitForLoad) {
+          this._html_checkWaitForPlay();
+        }
+      },
+      _html_checkWaitForPlay: function() {
+        if (this.status.waitForPlay) {
+          this.status.waitForPlay = false;
+          if (this.css.jq.videoPlay.length) {
+            this.css.jq.videoPlay.hide();
+          }
+          if (this.status.video) {
+            this.internal.poster.jq.hide();
+            this.internal.video.jq.css({
+              'width': this.status.width,
+              'height': this.status.height
+            });
+          }
+        }
+      },
+      _html_setProperty: function(property, value) {
+        if (this.html.audio.available) {
+          this.htmlElement.audio[property] = value;
+        }
+        if (this.html.video.available) {
+          this.htmlElement.video[property] = value;
+        }
+      },
+      _aurora_setAudio: function(media) {
+        var self = this;
+        $.each(this.formats, function(priority, format) {
+          if (self.aurora.support[format] && media[format]) {
+            self.status.src = media[format];
+            self.status.format[format] = true;
+            self.status.formatType = format;
+            return false;
+          }
+        });
+        this.aurora.player = new AV.Player.fromURL(this.status.src);
+        this._addAuroraEventListeners(this.aurora.player, this.aurora);
+        if (this.options.preload === 'auto') {
+          this._aurora_load();
+          this.status.waitForLoad = false;
+        }
+      },
+      _aurora_resetMedia: function() {
+        if (this.aurora.player) {
+          this.aurora.player.stop();
+        }
+      },
+      _aurora_clearMedia: function() {},
+      _aurora_load: function() {
+        if (this.status.waitForLoad) {
+          this.status.waitForLoad = false;
+          this.aurora.player.preload();
+        }
+      },
+      _aurora_play: function(time) {
+        if (!this.status.waitForLoad) {
+          if (!isNaN(time)) {
+            this.aurora.player.seek(time);
+          }
+        }
+        if (!this.aurora.player.playing) {
+          this.aurora.player.play();
+        }
+        this.status.waitForLoad = false;
+        this._aurora_checkWaitForPlay();
+        this._updateButtons(true);
+        this._trigger($.jPlayer.event.play);
+      },
+      _aurora_pause: function(time) {
+        if (!isNaN(time)) {
+          this.aurora.player.seek(time * 1000);
+        }
+        this.aurora.player.pause();
+        if (time > 0) {
+          this._aurora_checkWaitForPlay();
+        }
+        this._updateButtons(false);
+        this._trigger($.jPlayer.event.pause);
+      },
+      _aurora_playHead: function(percent) {
+        if (this.aurora.player.duration > 0) {
+          this.aurora.player.seek(percent * this.aurora.player.duration / 100);
+        }
+        if (!this.status.waitForLoad) {
+          this._aurora_checkWaitForPlay();
+        }
+      },
+      _aurora_checkWaitForPlay: function() {
+        if (this.status.waitForPlay) {
+          this.status.waitForPlay = false;
+        }
+      },
+      _aurora_volume: function(v) {
+        this.aurora.player.volume = v * 100;
+      },
+      _aurora_mute: function(m) {
+        if (m) {
+          this.aurora.properties.lastvolume = this.aurora.player.volume;
+          this.aurora.player.volume = 0;
+        } else {
+          this.aurora.player.volume = this.aurora.properties.lastvolume;
+        }
+        this.aurora.properties.muted = m;
+      },
+      _flash_setAudio: function(media) {
+        var self = this;
+        try {
+          $.each(this.formats, function(priority, format) {
+            if (self.flash.support[format] && media[format]) {
+              switch (format) {
+                case "m4a":
+                case "fla":
+                  self._getMovie().fl_setAudio_m4a(media[format]);
+                  break;
+                case "mp3":
+                  self._getMovie().fl_setAudio_mp3(media[format]);
+                  break;
+                case "rtmpa":
+                  self._getMovie().fl_setAudio_rtmp(media[format]);
+                  break;
+              }
+              self.status.src = media[format];
+              self.status.format[format] = true;
+              self.status.formatType = format;
+              return false;
+            }
+          });
+          if (this.options.preload === 'auto') {
+            this._flash_load();
+            this.status.waitForLoad = false;
+          }
+        } catch (err) {
+          this._flashError(err);
+        }
+      },
+      _flash_setVideo: function(media) {
+        var self = this;
+        try {
+          $.each(this.formats, function(priority, format) {
+            if (self.flash.support[format] && media[format]) {
+              switch (format) {
+                case "m4v":
+                case "flv":
+                  self._getMovie().fl_setVideo_m4v(media[format]);
+                  break;
+                case "rtmpv":
+                  self._getMovie().fl_setVideo_rtmp(media[format]);
+                  break;
+              }
+              self.status.src = media[format];
+              self.status.format[format] = true;
+              self.status.formatType = format;
+              return false;
+            }
+          });
+          if (this.options.preload === 'auto') {
+            this._flash_load();
+            this.status.waitForLoad = false;
+          }
+        } catch (err) {
+          this._flashError(err);
+        }
+      },
+      _flash_resetMedia: function() {
+        this.internal.flash.jq.css({
+          'width': '0px',
+          'height': '0px'
+        });
+        this._flash_pause(NaN);
+      },
+      _flash_clearMedia: function() {
+        try {
+          this._getMovie().fl_clearMedia();
+        } catch (err) {
+          this._flashError(err);
+        }
+      },
+      _flash_load: function() {
+        try {
+          this._getMovie().fl_load();
+        } catch (err) {
+          this._flashError(err);
+        }
+        this.status.waitForLoad = false;
+      },
+      _flash_play: function(time) {
+        try {
+          this._getMovie().fl_play(time);
+        } catch (err) {
+          this._flashError(err);
+        }
+        this.status.waitForLoad = false;
+        this._flash_checkWaitForPlay();
+      },
+      _flash_pause: function(time) {
+        try {
+          this._getMovie().fl_pause(time);
+        } catch (err) {
+          this._flashError(err);
+        }
+        if (time > 0) {
+          this.status.waitForLoad = false;
+          this._flash_checkWaitForPlay();
+        }
+      },
+      _flash_playHead: function(p) {
+        try {
+          this._getMovie().fl_play_head(p);
+        } catch (err) {
+          this._flashError(err);
+        }
+        if (!this.status.waitForLoad) {
+          this._flash_checkWaitForPlay();
+        }
+      },
+      _flash_checkWaitForPlay: function() {
+        if (this.status.waitForPlay) {
+          this.status.waitForPlay = false;
+          if (this.css.jq.videoPlay.length) {
+            this.css.jq.videoPlay.hide();
+          }
+          if (this.status.video) {
+            this.internal.poster.jq.hide();
             this.internal.flash.jq.css({
               'width': this.status.width,
               'height': this.status.height
             });
           }
-        },
-        _updateAutohide: function() {
-          var self = this,
-              event = "mousemove.jPlayer",
-              namespace = ".jPlayerAutohide",
-              eventType = event + namespace,
-              handler = function(event) {
-                var moved = false,
-                    deltaX,
-                    deltaY;
-                if (typeof self.internal.mouse !== "undefined") {
-                  deltaX = self.internal.mouse.x - event.pageX;
-                  deltaY = self.internal.mouse.y - event.pageY;
-                  moved = (Math.floor(deltaX) > 0) || (Math.floor(deltaY) > 0);
-                } else {
-                  moved = true;
-                }
-                self.internal.mouse = {
-                  x: event.pageX,
-                  y: event.pageY
-                };
-                if (moved) {
-                  self.css.jq.gui.fadeIn(self.options.autohide.fadeIn, function() {
-                    clearTimeout(self.internal.autohideId);
-                    self.internal.autohideId = setTimeout(function() {
-                      self.css.jq.gui.fadeOut(self.options.autohide.fadeOut);
-                    }, self.options.autohide.hold);
-                  });
-                }
-              };
-          if (this.css.jq.gui.length) {
-            this.css.jq.gui.stop(true, true);
-            clearTimeout(this.internal.autohideId);
-            delete this.internal.mouse;
-            this.element.unbind(namespace);
-            this.css.jq.gui.unbind(namespace);
-            if (!this.status.nativeVideoControls) {
-              if (this.options.fullWindow && this.options.autohide.full || !this.options.fullWindow && this.options.autohide.restored) {
-                this.element.bind(eventType, handler);
-                this.css.jq.gui.bind(eventType, handler);
-                this.css.jq.gui.hide();
-              } else {
-                this.css.jq.gui.show();
-              }
-            } else {
-              this.css.jq.gui.hide();
-            }
-          }
-        },
-        fullScreen: function(event) {
-          var guiAction = typeof event === "object";
-          if (guiAction && this.options.useStateClassSkin && this.options.fullScreen) {
-            this._setOption("fullScreen", false);
-          } else {
-            this._setOption("fullScreen", true);
-          }
-        },
-        restoreScreen: function() {
-          this._setOption("fullScreen", false);
-        },
-        _fullscreenAddEventListeners: function() {
-          var self = this,
-              fs = $.jPlayer.nativeFeatures.fullscreen;
-          if (fs.api.fullscreenEnabled) {
-            if (fs.event.fullscreenchange) {
-              if (typeof this.internal.fullscreenchangeHandler !== 'function') {
-                this.internal.fullscreenchangeHandler = function() {
-                  self._fullscreenchange();
-                };
-              }
-              document.addEventListener(fs.event.fullscreenchange, this.internal.fullscreenchangeHandler, false);
-            }
-          }
-        },
-        _fullscreenRemoveEventListeners: function() {
-          var fs = $.jPlayer.nativeFeatures.fullscreen;
-          if (this.internal.fullscreenchangeHandler) {
-            document.removeEventListener(fs.event.fullscreenchange, this.internal.fullscreenchangeHandler, false);
-          }
-        },
-        _fullscreenchange: function() {
-          if (this.options.fullScreen && !$.jPlayer.nativeFeatures.fullscreen.api.fullscreenElement()) {
-            this._setOption("fullScreen", false);
-          }
-        },
-        _requestFullscreen: function() {
-          var e = this.ancestorJq.length ? this.ancestorJq[0] : this.element[0],
-              fs = $.jPlayer.nativeFeatures.fullscreen;
-          if (fs.used.webkitVideo) {
-            e = this.htmlElement.video;
-          }
-          if (fs.api.fullscreenEnabled) {
-            fs.api.requestFullscreen(e);
-          }
-        },
-        _exitFullscreen: function() {
-          var fs = $.jPlayer.nativeFeatures.fullscreen,
-              e;
-          if (fs.used.webkitVideo) {
-            e = this.htmlElement.video;
-          }
-          if (fs.api.fullscreenEnabled) {
-            fs.api.exitFullscreen(e);
-          }
-        },
-        _html_initMedia: function(media) {
-          var $media = $(this.htmlElement.media).empty();
-          $.each(media.track || [], function(i, v) {
-            var track = document.createElement('track');
-            track.setAttribute("kind", v.kind ? v.kind : "");
-            track.setAttribute("src", v.src ? v.src : "");
-            track.setAttribute("srclang", v.srclang ? v.srclang : "");
-            track.setAttribute("label", v.label ? v.label : "");
-            if (v.def) {
-              track.setAttribute("default", v.def);
-            }
-            $media.append(track);
-          });
-          this.htmlElement.media.src = this.status.src;
-          if (this.options.preload !== 'none') {
-            this._html_load();
-          }
-          this._trigger($.jPlayer.event.timeupdate);
-        },
-        _html_setFormat: function(media) {
-          var self = this;
-          $.each(this.formats, function(priority, format) {
-            if (self.html.support[format] && media[format]) {
-              self.status.src = media[format];
-              self.status.format[format] = true;
-              self.status.formatType = format;
-              return false;
-            }
-          });
-        },
-        _html_setAudio: function(media) {
-          this._html_setFormat(media);
-          this.htmlElement.media = this.htmlElement.audio;
-          this._html_initMedia(media);
-        },
-        _html_setVideo: function(media) {
-          this._html_setFormat(media);
-          if (this.status.nativeVideoControls) {
-            this.htmlElement.video.poster = this._validString(media.poster) ? media.poster : "";
-          }
-          this.htmlElement.media = this.htmlElement.video;
-          this._html_initMedia(media);
-        },
-        _html_resetMedia: function() {
-          if (this.htmlElement.media) {
-            if (this.htmlElement.media.id === this.internal.video.id && !this.status.nativeVideoControls) {
-              this.internal.video.jq.css({
-                'width': '0px',
-                'height': '0px'
-              });
-            }
-            this.htmlElement.media.pause();
-          }
-        },
-        _html_clearMedia: function() {
-          if (this.htmlElement.media) {
-            this.htmlElement.media.src = "about:blank";
-            this.htmlElement.media.load();
-          }
-        },
-        _html_load: function() {
-          if (this.status.waitForLoad) {
-            this.status.waitForLoad = false;
-            this.htmlElement.media.load();
-          }
-          clearTimeout(this.internal.htmlDlyCmdId);
-        },
-        _html_play: function(time) {
-          var self = this,
-              media = this.htmlElement.media;
-          this.androidFix.pause = false;
-          this._html_load();
-          if (this.androidFix.setMedia) {
-            this.androidFix.play = true;
-            this.androidFix.time = time;
-          } else if (!isNaN(time)) {
-            if (this.internal.cmdsIgnored) {
-              media.play();
-            }
-            try {
-              if (!media.seekable || typeof media.seekable === "object" && media.seekable.length > 0) {
-                media.currentTime = time;
-                media.play();
-              } else {
-                throw 1;
-              }
-            } catch (err) {
-              this.internal.htmlDlyCmdId = setTimeout(function() {
-                self.play(time);
-              }, 250);
-              return;
-            }
-          } else {
-            media.play();
-          }
-          this._html_checkWaitForPlay();
-        },
-        _html_pause: function(time) {
-          var self = this,
-              media = this.htmlElement.media;
-          this.androidFix.play = false;
-          if (time > 0) {
-            this._html_load();
-          } else {
-            clearTimeout(this.internal.htmlDlyCmdId);
-          }
-          media.pause();
-          if (this.androidFix.setMedia) {
-            this.androidFix.pause = true;
-            this.androidFix.time = time;
-          } else if (!isNaN(time)) {
-            try {
-              if (!media.seekable || typeof media.seekable === "object" && media.seekable.length > 0) {
-                media.currentTime = time;
-              } else {
-                throw 1;
-              }
-            } catch (err) {
-              this.internal.htmlDlyCmdId = setTimeout(function() {
-                self.pause(time);
-              }, 250);
-              return;
-            }
-          }
-          if (time > 0) {
-            this._html_checkWaitForPlay();
-          }
-        },
-        _html_playHead: function(percent) {
-          var self = this,
-              media = this.htmlElement.media;
-          this._html_load();
-          try {
-            if (typeof media.seekable === "object" && media.seekable.length > 0) {
-              media.currentTime = percent * media.seekable.end(media.seekable.length - 1) / 100;
-            } else if (media.duration > 0 && !isNaN(media.duration)) {
-              media.currentTime = percent * media.duration / 100;
-            } else {
-              throw "e";
-            }
-          } catch (err) {
-            this.internal.htmlDlyCmdId = setTimeout(function() {
-              self.playHead(percent);
-            }, 250);
-            return;
-          }
-          if (!this.status.waitForLoad) {
-            this._html_checkWaitForPlay();
-          }
-        },
-        _html_checkWaitForPlay: function() {
-          if (this.status.waitForPlay) {
-            this.status.waitForPlay = false;
-            if (this.css.jq.videoPlay.length) {
-              this.css.jq.videoPlay.hide();
-            }
-            if (this.status.video) {
-              this.internal.poster.jq.hide();
-              this.internal.video.jq.css({
-                'width': this.status.width,
-                'height': this.status.height
-              });
-            }
-          }
-        },
-        _html_setProperty: function(property, value) {
-          if (this.html.audio.available) {
-            this.htmlElement.audio[property] = value;
-          }
-          if (this.html.video.available) {
-            this.htmlElement.video[property] = value;
-          }
-        },
-        _aurora_setAudio: function(media) {
-          var self = this;
-          $.each(this.formats, function(priority, format) {
-            if (self.aurora.support[format] && media[format]) {
-              self.status.src = media[format];
-              self.status.format[format] = true;
-              self.status.formatType = format;
-              return false;
-            }
-          });
-          this.aurora.player = new AV.Player.fromURL(this.status.src);
-          this._addAuroraEventListeners(this.aurora.player, this.aurora);
-          if (this.options.preload === 'auto') {
-            this._aurora_load();
-            this.status.waitForLoad = false;
-          }
-        },
-        _aurora_resetMedia: function() {
-          if (this.aurora.player) {
-            this.aurora.player.stop();
-          }
-        },
-        _aurora_clearMedia: function() {},
-        _aurora_load: function() {
-          if (this.status.waitForLoad) {
-            this.status.waitForLoad = false;
-            this.aurora.player.preload();
-          }
-        },
-        _aurora_play: function(time) {
-          if (!this.status.waitForLoad) {
-            if (!isNaN(time)) {
-              this.aurora.player.seek(time);
-            }
-          }
-          if (!this.aurora.player.playing) {
-            this.aurora.player.play();
-          }
-          this.status.waitForLoad = false;
-          this._aurora_checkWaitForPlay();
-          this._updateButtons(true);
-          this._trigger($.jPlayer.event.play);
-        },
-        _aurora_pause: function(time) {
-          if (!isNaN(time)) {
-            this.aurora.player.seek(time * 1000);
-          }
-          this.aurora.player.pause();
-          if (time > 0) {
-            this._aurora_checkWaitForPlay();
-          }
-          this._updateButtons(false);
-          this._trigger($.jPlayer.event.pause);
-        },
-        _aurora_playHead: function(percent) {
-          if (this.aurora.player.duration > 0) {
-            this.aurora.player.seek(percent * this.aurora.player.duration / 100);
-          }
-          if (!this.status.waitForLoad) {
-            this._aurora_checkWaitForPlay();
-          }
-        },
-        _aurora_checkWaitForPlay: function() {
-          if (this.status.waitForPlay) {
-            this.status.waitForPlay = false;
-          }
-        },
-        _aurora_volume: function(v) {
-          this.aurora.player.volume = v * 100;
-        },
-        _aurora_mute: function(m) {
-          if (m) {
-            this.aurora.properties.lastvolume = this.aurora.player.volume;
-            this.aurora.player.volume = 0;
-          } else {
-            this.aurora.player.volume = this.aurora.properties.lastvolume;
-          }
-          this.aurora.properties.muted = m;
-        },
-        _flash_setAudio: function(media) {
-          var self = this;
-          try {
-            $.each(this.formats, function(priority, format) {
-              if (self.flash.support[format] && media[format]) {
-                switch (format) {
-                  case "m4a":
-                  case "fla":
-                    self._getMovie().fl_setAudio_m4a(media[format]);
-                    break;
-                  case "mp3":
-                    self._getMovie().fl_setAudio_mp3(media[format]);
-                    break;
-                  case "rtmpa":
-                    self._getMovie().fl_setAudio_rtmp(media[format]);
-                    break;
-                }
-                self.status.src = media[format];
-                self.status.format[format] = true;
-                self.status.formatType = format;
-                return false;
-              }
-            });
-            if (this.options.preload === 'auto') {
-              this._flash_load();
-              this.status.waitForLoad = false;
-            }
-          } catch (err) {
-            this._flashError(err);
-          }
-        },
-        _flash_setVideo: function(media) {
-          var self = this;
-          try {
-            $.each(this.formats, function(priority, format) {
-              if (self.flash.support[format] && media[format]) {
-                switch (format) {
-                  case "m4v":
-                  case "flv":
-                    self._getMovie().fl_setVideo_m4v(media[format]);
-                    break;
-                  case "rtmpv":
-                    self._getMovie().fl_setVideo_rtmp(media[format]);
-                    break;
-                }
-                self.status.src = media[format];
-                self.status.format[format] = true;
-                self.status.formatType = format;
-                return false;
-              }
-            });
-            if (this.options.preload === 'auto') {
-              this._flash_load();
-              this.status.waitForLoad = false;
-            }
-          } catch (err) {
-            this._flashError(err);
-          }
-        },
-        _flash_resetMedia: function() {
-          this.internal.flash.jq.css({
-            'width': '0px',
-            'height': '0px'
-          });
-          this._flash_pause(NaN);
-        },
-        _flash_clearMedia: function() {
-          try {
-            this._getMovie().fl_clearMedia();
-          } catch (err) {
-            this._flashError(err);
-          }
-        },
-        _flash_load: function() {
-          try {
-            this._getMovie().fl_load();
-          } catch (err) {
-            this._flashError(err);
-          }
-          this.status.waitForLoad = false;
-        },
-        _flash_play: function(time) {
-          try {
-            this._getMovie().fl_play(time);
-          } catch (err) {
-            this._flashError(err);
-          }
-          this.status.waitForLoad = false;
-          this._flash_checkWaitForPlay();
-        },
-        _flash_pause: function(time) {
-          try {
-            this._getMovie().fl_pause(time);
-          } catch (err) {
-            this._flashError(err);
-          }
-          if (time > 0) {
-            this.status.waitForLoad = false;
-            this._flash_checkWaitForPlay();
-          }
-        },
-        _flash_playHead: function(p) {
-          try {
-            this._getMovie().fl_play_head(p);
-          } catch (err) {
-            this._flashError(err);
-          }
-          if (!this.status.waitForLoad) {
-            this._flash_checkWaitForPlay();
-          }
-        },
-        _flash_checkWaitForPlay: function() {
-          if (this.status.waitForPlay) {
-            this.status.waitForPlay = false;
-            if (this.css.jq.videoPlay.length) {
-              this.css.jq.videoPlay.hide();
-            }
-            if (this.status.video) {
-              this.internal.poster.jq.hide();
-              this.internal.flash.jq.css({
-                'width': this.status.width,
-                'height': this.status.height
-              });
-            }
-          }
-        },
-        _flash_volume: function(v) {
-          try {
-            this._getMovie().fl_volume(v);
-          } catch (err) {
-            this._flashError(err);
-          }
-        },
-        _flash_mute: function(m) {
-          try {
-            this._getMovie().fl_mute(m);
-          } catch (err) {
-            this._flashError(err);
-          }
-        },
-        _getMovie: function() {
-          return document[this.internal.flash.id];
-        },
-        _getFlashPluginVersion: function() {
-          var version = 0,
-              flash;
-          if (window.ActiveXObject) {
-            try {
-              flash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
-              if (flash) {
-                var v = flash.GetVariable("$version");
-                if (v) {
-                  v = v.split(" ")[1].split(",");
-                  version = parseInt(v[0], 10) + "." + parseInt(v[1], 10);
-                }
-              }
-            } catch (e) {}
-          } else if (navigator.plugins && navigator.mimeTypes.length > 0) {
-            flash = navigator.plugins["Shockwave Flash"];
-            if (flash) {
-              version = navigator.plugins["Shockwave Flash"].description.replace(/.*\s(\d+\.\d+).*/, "$1");
-            }
-          }
-          return version * 1;
-        },
-        _checkForFlash: function(version) {
-          var flashOk = false;
-          if (this._getFlashPluginVersion() >= version) {
-            flashOk = true;
-          }
-          return flashOk;
-        },
-        _validString: function(url) {
-          return (url && typeof url === "string");
-        },
-        _limitValue: function(value, min, max) {
-          return (value < min) ? min : ((value > max) ? max : value);
-        },
-        _urlNotSetError: function(context) {
-          this._error({
-            type: $.jPlayer.error.URL_NOT_SET,
-            context: context,
-            message: $.jPlayer.errorMsg.URL_NOT_SET,
-            hint: $.jPlayer.errorHint.URL_NOT_SET
-          });
-        },
-        _flashError: function(error) {
-          var errorType;
-          if (!this.internal.ready) {
-            errorType = "FLASH";
-          } else {
-            errorType = "FLASH_DISABLED";
-          }
-          this._error({
-            type: $.jPlayer.error[errorType],
-            context: this.internal.flash.swf,
-            message: $.jPlayer.errorMsg[errorType] + error.message,
-            hint: $.jPlayer.errorHint[errorType]
-          });
-          this.internal.flash.jq.css({
-            'width': '1px',
-            'height': '1px'
-          });
-        },
-        _error: function(error) {
-          this._trigger($.jPlayer.event.error, error);
-          if (this.options.errorAlerts) {
-            this._alert("Error!" + (error.message ? "\n" + error.message : "") + (error.hint ? "\n" + error.hint : "") + "\nContext: " + error.context);
-          }
-        },
-        _warning: function(warning) {
-          this._trigger($.jPlayer.event.warning, undefined, warning);
-          if (this.options.warningAlerts) {
-            this._alert("Warning!" + (warning.message ? "\n" + warning.message : "") + (warning.hint ? "\n" + warning.hint : "") + "\nContext: " + warning.context);
-          }
-        },
-        _alert: function(message) {
-          var msg = "jPlayer " + this.version.script + " : id='" + this.internal.self.id + "' : " + message;
-          if (!this.options.consoleAlerts) {
-            alert(msg);
-          } else if (window.console && window.console.log) {
-            window.console.log(msg);
-          }
-        },
-        _emulateHtmlBridge: function() {
-          var self = this;
-          $.each($.jPlayer.emulateMethods.split(/\s+/g), function(i, name) {
-            self.internal.domNode[name] = function(arg) {
-              self[name](arg);
-            };
-          });
-          $.each($.jPlayer.event, function(eventName, eventType) {
-            var nativeEvent = true;
-            $.each($.jPlayer.reservedEvent.split(/\s+/g), function(i, name) {
-              if (name === eventName) {
-                nativeEvent = false;
-                return false;
-              }
-            });
-            if (nativeEvent) {
-              self.element.bind(eventType + ".jPlayer.jPlayerHtml", function() {
-                self._emulateHtmlUpdate();
-                var domEvent = document.createEvent("Event");
-                domEvent.initEvent(eventName, false, true);
-                self.internal.domNode.dispatchEvent(domEvent);
-              });
-            }
-          });
-        },
-        _emulateHtmlUpdate: function() {
-          var self = this;
-          $.each($.jPlayer.emulateStatus.split(/\s+/g), function(i, name) {
-            self.internal.domNode[name] = self.status[name];
-          });
-          $.each($.jPlayer.emulateOptions.split(/\s+/g), function(i, name) {
-            self.internal.domNode[name] = self.options[name];
-          });
-        },
-        _destroyHtmlBridge: function() {
-          var self = this;
-          this.element.unbind(".jPlayerHtml");
-          var emulated = $.jPlayer.emulateMethods + " " + $.jPlayer.emulateStatus + " " + $.jPlayer.emulateOptions;
-          $.each(emulated.split(/\s+/g), function(i, name) {
-            delete self.internal.domNode[name];
-          });
         }
-      };
-      $.jPlayer.error = {
-        FLASH: "e_flash",
-        FLASH_DISABLED: "e_flash_disabled",
-        NO_SOLUTION: "e_no_solution",
-        NO_SUPPORT: "e_no_support",
-        URL: "e_url",
-        URL_NOT_SET: "e_url_not_set",
-        VERSION: "e_version"
-      };
-      $.jPlayer.errorMsg = {
-        FLASH: "jPlayer's Flash fallback is not configured correctly, or a command was issued before the jPlayer Ready event. Details: ",
-        FLASH_DISABLED: "jPlayer's Flash fallback has been disabled by the browser due to the CSS rules you have used. Details: ",
-        NO_SOLUTION: "No solution can be found by jPlayer in this browser. Neither HTML nor Flash can be used.",
-        NO_SUPPORT: "It is not possible to play any media format provided in setMedia() on this browser using your current options.",
-        URL: "Media URL could not be loaded.",
-        URL_NOT_SET: "Attempt to issue media playback commands, while no media url is set.",
-        VERSION: "jPlayer " + $.jPlayer.prototype.version.script + " needs Jplayer.swf version " + $.jPlayer.prototype.version.needFlash + " but found "
-      };
-      $.jPlayer.errorHint = {
-        FLASH: "Check your swfPath option and that Jplayer.swf is there.",
-        FLASH_DISABLED: "Check that you have not display:none; the jPlayer entity or any ancestor.",
-        NO_SOLUTION: "Review the jPlayer options: support and supplied.",
-        NO_SUPPORT: "Video or audio formats defined in the supplied option are missing.",
-        URL: "Check media URL is valid.",
-        URL_NOT_SET: "Use setMedia() to set the media URL.",
-        VERSION: "Update jPlayer files."
-      };
-      $.jPlayer.warning = {
-        CSS_SELECTOR_COUNT: "e_css_selector_count",
-        CSS_SELECTOR_METHOD: "e_css_selector_method",
-        CSS_SELECTOR_STRING: "e_css_selector_string",
-        OPTION_KEY: "e_option_key"
-      };
-      $.jPlayer.warningMsg = {
-        CSS_SELECTOR_COUNT: "The number of css selectors found did not equal one: ",
-        CSS_SELECTOR_METHOD: "The methodName given in jPlayer('cssSelector') is not a valid jPlayer method.",
-        CSS_SELECTOR_STRING: "The methodCssSelector given in jPlayer('cssSelector') is not a String or is empty.",
-        OPTION_KEY: "The option requested in jPlayer('option') is undefined."
-      };
-      $.jPlayer.warningHint = {
-        CSS_SELECTOR_COUNT: "Check your css selector and the ancestor.",
-        CSS_SELECTOR_METHOD: "Check your method name.",
-        CSS_SELECTOR_STRING: "Check your css selector is a string.",
-        OPTION_KEY: "Check your option name."
-      };
-    }));
-  })();
-  return _retrieveGlobal();
+      },
+      _flash_volume: function(v) {
+        try {
+          this._getMovie().fl_volume(v);
+        } catch (err) {
+          this._flashError(err);
+        }
+      },
+      _flash_mute: function(m) {
+        try {
+          this._getMovie().fl_mute(m);
+        } catch (err) {
+          this._flashError(err);
+        }
+      },
+      _getMovie: function() {
+        return document[this.internal.flash.id];
+      },
+      _getFlashPluginVersion: function() {
+        var version = 0,
+            flash;
+        if (window.ActiveXObject) {
+          try {
+            flash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+            if (flash) {
+              var v = flash.GetVariable("$version");
+              if (v) {
+                v = v.split(" ")[1].split(",");
+                version = parseInt(v[0], 10) + "." + parseInt(v[1], 10);
+              }
+            }
+          } catch (e) {}
+        } else if (navigator.plugins && navigator.mimeTypes.length > 0) {
+          flash = navigator.plugins["Shockwave Flash"];
+          if (flash) {
+            version = navigator.plugins["Shockwave Flash"].description.replace(/.*\s(\d+\.\d+).*/, "$1");
+          }
+        }
+        return version * 1;
+      },
+      _checkForFlash: function(version) {
+        var flashOk = false;
+        if (this._getFlashPluginVersion() >= version) {
+          flashOk = true;
+        }
+        return flashOk;
+      },
+      _validString: function(url) {
+        return (url && typeof url === "string");
+      },
+      _limitValue: function(value, min, max) {
+        return (value < min) ? min : ((value > max) ? max : value);
+      },
+      _urlNotSetError: function(context) {
+        this._error({
+          type: $.jPlayer.error.URL_NOT_SET,
+          context: context,
+          message: $.jPlayer.errorMsg.URL_NOT_SET,
+          hint: $.jPlayer.errorHint.URL_NOT_SET
+        });
+      },
+      _flashError: function(error) {
+        var errorType;
+        if (!this.internal.ready) {
+          errorType = "FLASH";
+        } else {
+          errorType = "FLASH_DISABLED";
+        }
+        this._error({
+          type: $.jPlayer.error[errorType],
+          context: this.internal.flash.swf,
+          message: $.jPlayer.errorMsg[errorType] + error.message,
+          hint: $.jPlayer.errorHint[errorType]
+        });
+        this.internal.flash.jq.css({
+          'width': '1px',
+          'height': '1px'
+        });
+      },
+      _error: function(error) {
+        this._trigger($.jPlayer.event.error, error);
+        if (this.options.errorAlerts) {
+          this._alert("Error!" + (error.message ? "\n" + error.message : "") + (error.hint ? "\n" + error.hint : "") + "\nContext: " + error.context);
+        }
+      },
+      _warning: function(warning) {
+        this._trigger($.jPlayer.event.warning, undefined, warning);
+        if (this.options.warningAlerts) {
+          this._alert("Warning!" + (warning.message ? "\n" + warning.message : "") + (warning.hint ? "\n" + warning.hint : "") + "\nContext: " + warning.context);
+        }
+      },
+      _alert: function(message) {
+        var msg = "jPlayer " + this.version.script + " : id='" + this.internal.self.id + "' : " + message;
+        if (!this.options.consoleAlerts) {
+          alert(msg);
+        } else if (window.console && window.console.log) {
+          window.console.log(msg);
+        }
+      },
+      _emulateHtmlBridge: function() {
+        var self = this;
+        $.each($.jPlayer.emulateMethods.split(/\s+/g), function(i, name) {
+          self.internal.domNode[name] = function(arg) {
+            self[name](arg);
+          };
+        });
+        $.each($.jPlayer.event, function(eventName, eventType) {
+          var nativeEvent = true;
+          $.each($.jPlayer.reservedEvent.split(/\s+/g), function(i, name) {
+            if (name === eventName) {
+              nativeEvent = false;
+              return false;
+            }
+          });
+          if (nativeEvent) {
+            self.element.bind(eventType + ".jPlayer.jPlayerHtml", function() {
+              self._emulateHtmlUpdate();
+              var domEvent = document.createEvent("Event");
+              domEvent.initEvent(eventName, false, true);
+              self.internal.domNode.dispatchEvent(domEvent);
+            });
+          }
+        });
+      },
+      _emulateHtmlUpdate: function() {
+        var self = this;
+        $.each($.jPlayer.emulateStatus.split(/\s+/g), function(i, name) {
+          self.internal.domNode[name] = self.status[name];
+        });
+        $.each($.jPlayer.emulateOptions.split(/\s+/g), function(i, name) {
+          self.internal.domNode[name] = self.options[name];
+        });
+      },
+      _destroyHtmlBridge: function() {
+        var self = this;
+        this.element.unbind(".jPlayerHtml");
+        var emulated = $.jPlayer.emulateMethods + " " + $.jPlayer.emulateStatus + " " + $.jPlayer.emulateOptions;
+        $.each(emulated.split(/\s+/g), function(i, name) {
+          delete self.internal.domNode[name];
+        });
+      }
+    };
+    $.jPlayer.error = {
+      FLASH: "e_flash",
+      FLASH_DISABLED: "e_flash_disabled",
+      NO_SOLUTION: "e_no_solution",
+      NO_SUPPORT: "e_no_support",
+      URL: "e_url",
+      URL_NOT_SET: "e_url_not_set",
+      VERSION: "e_version"
+    };
+    $.jPlayer.errorMsg = {
+      FLASH: "jPlayer's Flash fallback is not configured correctly, or a command was issued before the jPlayer Ready event. Details: ",
+      FLASH_DISABLED: "jPlayer's Flash fallback has been disabled by the browser due to the CSS rules you have used. Details: ",
+      NO_SOLUTION: "No solution can be found by jPlayer in this browser. Neither HTML nor Flash can be used.",
+      NO_SUPPORT: "It is not possible to play any media format provided in setMedia() on this browser using your current options.",
+      URL: "Media URL could not be loaded.",
+      URL_NOT_SET: "Attempt to issue media playback commands, while no media url is set.",
+      VERSION: "jPlayer " + $.jPlayer.prototype.version.script + " needs Jplayer.swf version " + $.jPlayer.prototype.version.needFlash + " but found "
+    };
+    $.jPlayer.errorHint = {
+      FLASH: "Check your swfPath option and that Jplayer.swf is there.",
+      FLASH_DISABLED: "Check that you have not display:none; the jPlayer entity or any ancestor.",
+      NO_SOLUTION: "Review the jPlayer options: support and supplied.",
+      NO_SUPPORT: "Video or audio formats defined in the supplied option are missing.",
+      URL: "Check media URL is valid.",
+      URL_NOT_SET: "Use setMedia() to set the media URL.",
+      VERSION: "Update jPlayer files."
+    };
+    $.jPlayer.warning = {
+      CSS_SELECTOR_COUNT: "e_css_selector_count",
+      CSS_SELECTOR_METHOD: "e_css_selector_method",
+      CSS_SELECTOR_STRING: "e_css_selector_string",
+      OPTION_KEY: "e_option_key"
+    };
+    $.jPlayer.warningMsg = {
+      CSS_SELECTOR_COUNT: "The number of css selectors found did not equal one: ",
+      CSS_SELECTOR_METHOD: "The methodName given in jPlayer('cssSelector') is not a valid jPlayer method.",
+      CSS_SELECTOR_STRING: "The methodCssSelector given in jPlayer('cssSelector') is not a String or is empty.",
+      OPTION_KEY: "The option requested in jPlayer('option') is undefined."
+    };
+    $.jPlayer.warningHint = {
+      CSS_SELECTOR_COUNT: "Check your css selector and the ancestor.",
+      CSS_SELECTOR_METHOD: "Check your method name.",
+      CSS_SELECTOR_STRING: "Check your css selector is a string.",
+      OPTION_KEY: "Check your option name."
+    };
+  }));
+  global.define = __define;
+  return module.exports;
 });
 
 System.registerDynamic("npm:jplayer@2.9.2.js", ["npm:jplayer@2.9.2/dist/jplayer/jquery.jplayer.js"], true, function($__require, exports, module) {
@@ -28288,7 +28288,7 @@ System.register("app/player/audioPlayerService.js", ["npm:jquery@2.2.0.js", "npm
       AudioPlayerService = (function() {
         function AudioPlayerService() {}
         AudioPlayerService.prototype.play = function(url, title) {
-          var player = jquery_1.default("#jplayer_N");
+          var player = jquery_1.default("#jplayer");
           player.jPlayer({
             ready: function() {
               jquery_1.default(this).jPlayer("setMedia", {
@@ -28297,7 +28297,7 @@ System.register("app/player/audioPlayerService.js", ["npm:jquery@2.2.0.js", "npm
               });
               jquery_1.default(this).jPlayer("play");
             },
-            cssSelectorAncestor: "#jp_container_N",
+            cssSelectorAncestor: "#jp_container",
             swfPath: "/js",
             supplied: "m4a, oga",
             useStateClassSkin: true,
@@ -28331,15 +28331,15 @@ System.register("app/shell/shell.component.js", ["npm:react@0.14.6.js", "npm:rea
     }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
   };
-  var React,
+  var react_1,
       react_dom_1,
       player_component_1,
       radio_list_component_1,
       audioPlayerService_1;
   var ShellComponent;
   return {
-    setters: [function(React_1) {
-      React = React_1;
+    setters: [function(react_1_1) {
+      react_1 = react_1_1;
     }, function(react_dom_1_1) {
       react_dom_1 = react_dom_1_1;
     }, function(player_component_1_1) {
@@ -28354,30 +28354,86 @@ System.register("app/shell/shell.component.js", ["npm:react@0.14.6.js", "npm:rea
         __extends(ShellComponent, _super);
         function ShellComponent(props) {
           _super.call(this, props);
-          this.state = {currentRadio: {}};
+          this.state = {
+            radios: [],
+            currentIndex: 0
+          };
           this._audioPlayerService = new audioPlayerService_1.AudioPlayerService();
         }
+        ShellComponent.prototype.previousOrNextSelected = function(prev) {
+          var newRadioIndex = 0;
+          if (prev) {
+            if (this.state.currentIndex === 0) {
+              newRadioIndex = this.state.radios.length - 1;
+            } else {
+              newRadioIndex = this.state.currentIndex - 1;
+            }
+          } else {
+            if (this.state.currentIndex === this.state.radios.length - 1) {
+              newRadioIndex = 0;
+            } else {
+              newRadioIndex = this.state.currentIndex + 1;
+            }
+          }
+          this.updateCurrentlyPlaying(this.state.radios[newRadioIndex]);
+        };
         ShellComponent.prototype.updateCurrentlyPlaying = function(radio) {
-          this.setState({currentRadio: radio});
+          var _this = this;
+          this.state.radios.forEach(function(item, index) {
+            if (item.id === radio.id) {
+              item.currentlyPlaying = true;
+              _this.state.currentIndex = index;
+            } else {
+              item.currenltyPlaying = false;
+            }
+          });
+          this.setState(this.state);
           this._audioPlayerService.play(radio.streamUrl, radio.name);
         };
+        ShellComponent.prototype.componentDidMount = function() {
+          var _this = this;
+          $.get("https://raw.githubusercontent.com/vmanikandan001/Vaanoli/master/list.json").done(function(data) {
+            _this.setState({radios: JSON.parse(data).radios.map(function(radio) {
+                radio.key = radio.id;
+                return radio;
+              })});
+            if (_this.state.radios) {
+              _this.updateCurrentlyPlaying(_this.state.radios[0]);
+            }
+          }).fail(function(error) {
+            console.log(error);
+          });
+        };
         ShellComponent.prototype.render = function() {
-          return (React.createElement("section", {className: "vbox"}, React.createElement("section", null, React.createElement("section", {className: "hbox stretch bg-black dker"}, React.createElement("section", {className: "col-sm-2 no-padder lt"}, React.createElement("section", {className: "vbox"}, "ads here")), React.createElement("section", {className: "col-sm-6 no-padder bg"}, React.createElement("section", {className: " bg-success dker"}, React.createElement(player_component_1.PlayerComponent, null)), React.createElement("section", {className: "vbox"}, React.createElement("section", {className: "scrollable hover"}, React.createElement(radio_list_component_1.RadioListComponent, {onRadioChange: this.updateCurrentlyPlaying.bind(this)})))), React.createElement("section", {className: "col-sm-2 no-padder lt"}, React.createElement("section", {className: "vbox"}, "ads here"))))));
+          return (react_1.default.createElement("section", {className: "vbox"}, react_1.default.createElement("section", {className: "w-f-md"}, react_1.default.createElement("section", {className: "hbox stretch bg-black dker"}, react_1.default.createElement("section", {className: "col-sm-2 no-padder lt"}, react_1.default.createElement("section", {className: "vbox"}, "ads here")), react_1.default.createElement("section", {className: "col-sm-6 no-padder bg"}, react_1.default.createElement("section", {className: " bg-success dker"}, react_1.default.createElement(player_component_1.PlayerComponent, {onPreviousOrNext: this.previousOrNextSelected.bind(this)})), react_1.default.createElement("section", {className: "vbox"}, react_1.default.createElement("section", {className: "scrollable hover  w-f-md"}, react_1.default.createElement(radio_list_component_1.RadioListComponent, {
+            onRadioChange: this.updateCurrentlyPlaying.bind(this),
+            radios: this.state.radios
+          })))), react_1.default.createElement("section", {className: "col-sm-2 no-padder lt"}, react_1.default.createElement("section", {className: "vbox"}, "ads here")))), react_1.default.createElement("footer", {className: "bg-success"}, "this is footer")));
         };
         return ShellComponent;
-      }(React.Component));
+      }(react_1.default.Component));
       exports_1("ShellComponent", ShellComponent);
-      react_dom_1.render(React.createElement(ShellComponent, null), document.getElementById("mountnode"));
+      react_dom_1.render(react_1.default.createElement(ShellComponent, null), document.getElementById("mountnode"));
     }
   };
 });
 
-System.register("app/boot.js", ["npm:jquery@2.2.0.js", "npm:jplayer@2.9.2.js", "github:twbs/bootstrap@3.3.6.js", "app/shell/shell.component.js"], function(exports_1) {
+System.register("app/boot.js", ["github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-css@0.1.20.js", "npm:animate.css@3.4.0//animate.css!github:systemjs/plugin-css@0.1.20.js", "npm:font-awesome@4.5.0/css/font-awesome.css!github:systemjs/plugin-css@0.1.20.js", "npm:simple-line-icons@2.2.3/css/simple-line-icons.css!github:systemjs/plugin-css@0.1.20.js", "assets/css/font.css!github:systemjs/plugin-css@0.1.20.js", "assets/css/jplayer.flat.css!github:systemjs/plugin-css@0.1.20.js", "assets/css/app.css!github:systemjs/plugin-css@0.1.20.js", "assets/css/styles.css!github:systemjs/plugin-css@0.1.20.js", "github:twbs/bootstrap@3.3.6.js", "app/shell/shell.component.js"], function(exports_1) {
   "use strict";
   return {
-    setters: [function(_1) {}, function(_2) {}, function(_3) {}, function(_4) {}],
+    setters: [function(_1) {}, function(_2) {}, function(_3) {}, function(_4) {}, function(_5) {}, function(_6) {}, function(_7) {}, function(_8) {}, function(_9) {}, function(_10) {}],
     execute: function() {}
   };
 });
 
+System.register('github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('npm:animate.css@3.4.0//animate.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('npm:font-awesome@4.5.0/css/font-awesome.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('npm:simple-line-icons@2.2.3/css/simple-line-icons.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('assets/css/font.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('assets/css/jplayer.flat.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('assets/css/app.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+System.register('assets/css/styles.css!github:systemjs/plugin-css@0.1.20.js', [], false, function() {});
+(function(c){if (typeof document == 'undefined') return; var d=document,a='appendChild',i='styleSheet',s=d.createElement('style');s.type='text/css';d.getElementsByTagName('head')[0][a](s);s[i]?s[i].cssText=c:s[a](d.createTextNode(c));})
+("@charset \"UTF-8\";/*!\n * Bootstrap v3.3.6 (http://getbootstrap.com)\n * Copyright 2011-2015 Twitter, Inc.\n * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n *//*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{margin:.67em 0;font-size:2em}mark{color:#000;background:#ff0}small{font-size:80%}sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{height:0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;font:inherit;color:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{padding:.35em .625em .75em;margin:0 2px;border:1px solid silver}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}/*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */@media print{*,:after,:before{color:#000!important;text-shadow:none!important;background:0 0!important;-webkit-box-shadow:none!important;box-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"javascript:\"]:after,a[href^=\"#\"]:after{content:\"\"}blockquote,pre{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}img,tr{page-break-inside:avoid}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}.navbar{display:none}.btn>.caret,.dropup>.btn>.caret{border-top-color:#000!important}.label{border:1px solid #000}.table{border-collapse:collapse!important}.table td,.table th{background-color:#fff!important}.table-bordered td,.table-bordered th{border:1px solid #ddd!important}}@font-face{font-family:'Glyphicons Halflings';src:url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.eot);src:url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.woff) format('woff'),url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(jspm_packages/github/twbs/bootstrap@3.3.6/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}.glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.glyphicon-asterisk:before{content:\"\\002a\"}.glyphicon-plus:before{content:\"\\002b\"}.glyphicon-eur:before,.glyphicon-euro:before{content:\"\\20ac\"}.glyphicon-minus:before{content:\"\\2212\"}.glyphicon-cloud:before{content:\"\\2601\"}.glyphicon-envelope:before{content:\"\\2709\"}.glyphicon-pencil:before{content:\"\\270f\"}.glyphicon-glass:before{content:\"\\e001\"}.glyphicon-music:before{content:\"\\e002\"}.glyphicon-search:before{content:\"\\e003\"}.glyphicon-heart:before{content:\"\\e005\"}.glyphicon-star:before{content:\"\\e006\"}.glyphicon-star-empty:before{content:\"\\e007\"}.glyphicon-user:before{content:\"\\e008\"}.glyphicon-film:before{content:\"\\e009\"}.glyphicon-th-large:before{content:\"\\e010\"}.glyphicon-th:before{content:\"\\e011\"}.glyphicon-th-list:before{content:\"\\e012\"}.glyphicon-ok:before{content:\"\\e013\"}.glyphicon-remove:before{content:\"\\e014\"}.glyphicon-zoom-in:before{content:\"\\e015\"}.glyphicon-zoom-out:before{content:\"\\e016\"}.glyphicon-off:before{content:\"\\e017\"}.glyphicon-signal:before{content:\"\\e018\"}.glyphicon-cog:before{content:\"\\e019\"}.glyphicon-trash:before{content:\"\\e020\"}.glyphicon-home:before{content:\"\\e021\"}.glyphicon-file:before{content:\"\\e022\"}.glyphicon-time:before{content:\"\\e023\"}.glyphicon-road:before{content:\"\\e024\"}.glyphicon-download-alt:before{content:\"\\e025\"}.glyphicon-download:before{content:\"\\e026\"}.glyphicon-upload:before{content:\"\\e027\"}.glyphicon-inbox:before{content:\"\\e028\"}.glyphicon-play-circle:before{content:\"\\e029\"}.glyphicon-repeat:before{content:\"\\e030\"}.glyphicon-refresh:before{content:\"\\e031\"}.glyphicon-list-alt:before{content:\"\\e032\"}.glyphicon-lock:before{content:\"\\e033\"}.glyphicon-flag:before{content:\"\\e034\"}.glyphicon-headphones:before{content:\"\\e035\"}.glyphicon-volume-off:before{content:\"\\e036\"}.glyphicon-volume-down:before{content:\"\\e037\"}.glyphicon-volume-up:before{content:\"\\e038\"}.glyphicon-qrcode:before{content:\"\\e039\"}.glyphicon-barcode:before{content:\"\\e040\"}.glyphicon-tag:before{content:\"\\e041\"}.glyphicon-tags:before{content:\"\\e042\"}.glyphicon-book:before{content:\"\\e043\"}.glyphicon-bookmark:before{content:\"\\e044\"}.glyphicon-print:before{content:\"\\e045\"}.glyphicon-camera:before{content:\"\\e046\"}.glyphicon-font:before{content:\"\\e047\"}.glyphicon-bold:before{content:\"\\e048\"}.glyphicon-italic:before{content:\"\\e049\"}.glyphicon-text-height:before{content:\"\\e050\"}.glyphicon-text-width:before{content:\"\\e051\"}.glyphicon-align-left:before{content:\"\\e052\"}.glyphicon-align-center:before{content:\"\\e053\"}.glyphicon-align-right:before{content:\"\\e054\"}.glyphicon-align-justify:before{content:\"\\e055\"}.glyphicon-list:before{content:\"\\e056\"}.glyphicon-indent-left:before{content:\"\\e057\"}.glyphicon-indent-right:before{content:\"\\e058\"}.glyphicon-facetime-video:before{content:\"\\e059\"}.glyphicon-picture:before{content:\"\\e060\"}.glyphicon-map-marker:before{content:\"\\e062\"}.glyphicon-adjust:before{content:\"\\e063\"}.glyphicon-tint:before{content:\"\\e064\"}.glyphicon-edit:before{content:\"\\e065\"}.glyphicon-share:before{content:\"\\e066\"}.glyphicon-check:before{content:\"\\e067\"}.glyphicon-move:before{content:\"\\e068\"}.glyphicon-step-backward:before{content:\"\\e069\"}.glyphicon-fast-backward:before{content:\"\\e070\"}.glyphicon-backward:before{content:\"\\e071\"}.glyphicon-play:before{content:\"\\e072\"}.glyphicon-pause:before{content:\"\\e073\"}.glyphicon-stop:before{content:\"\\e074\"}.glyphicon-forward:before{content:\"\\e075\"}.glyphicon-fast-forward:before{content:\"\\e076\"}.glyphicon-step-forward:before{content:\"\\e077\"}.glyphicon-eject:before{content:\"\\e078\"}.glyphicon-chevron-left:before{content:\"\\e079\"}.glyphicon-chevron-right:before{content:\"\\e080\"}.glyphicon-plus-sign:before{content:\"\\e081\"}.glyphicon-minus-sign:before{content:\"\\e082\"}.glyphicon-remove-sign:before{content:\"\\e083\"}.glyphicon-ok-sign:before{content:\"\\e084\"}.glyphicon-question-sign:before{content:\"\\e085\"}.glyphicon-info-sign:before{content:\"\\e086\"}.glyphicon-screenshot:before{content:\"\\e087\"}.glyphicon-remove-circle:before{content:\"\\e088\"}.glyphicon-ok-circle:before{content:\"\\e089\"}.glyphicon-ban-circle:before{content:\"\\e090\"}.glyphicon-arrow-left:before{content:\"\\e091\"}.glyphicon-arrow-right:before{content:\"\\e092\"}.glyphicon-arrow-up:before{content:\"\\e093\"}.glyphicon-arrow-down:before{content:\"\\e094\"}.glyphicon-share-alt:before{content:\"\\e095\"}.glyphicon-resize-full:before{content:\"\\e096\"}.glyphicon-resize-small:before{content:\"\\e097\"}.glyphicon-exclamation-sign:before{content:\"\\e101\"}.glyphicon-gift:before{content:\"\\e102\"}.glyphicon-leaf:before{content:\"\\e103\"}.glyphicon-fire:before{content:\"\\e104\"}.glyphicon-eye-open:before{content:\"\\e105\"}.glyphicon-eye-close:before{content:\"\\e106\"}.glyphicon-warning-sign:before{content:\"\\e107\"}.glyphicon-plane:before{content:\"\\e108\"}.glyphicon-calendar:before{content:\"\\e109\"}.glyphicon-random:before{content:\"\\e110\"}.glyphicon-comment:before{content:\"\\e111\"}.glyphicon-magnet:before{content:\"\\e112\"}.glyphicon-chevron-up:before{content:\"\\e113\"}.glyphicon-chevron-down:before{content:\"\\e114\"}.glyphicon-retweet:before{content:\"\\e115\"}.glyphicon-shopping-cart:before{content:\"\\e116\"}.glyphicon-folder-close:before{content:\"\\e117\"}.glyphicon-folder-open:before{content:\"\\e118\"}.glyphicon-resize-vertical:before{content:\"\\e119\"}.glyphicon-resize-horizontal:before{content:\"\\e120\"}.glyphicon-hdd:before{content:\"\\e121\"}.glyphicon-bullhorn:before{content:\"\\e122\"}.glyphicon-bell:before{content:\"\\e123\"}.glyphicon-certificate:before{content:\"\\e124\"}.glyphicon-thumbs-up:before{content:\"\\e125\"}.glyphicon-thumbs-down:before{content:\"\\e126\"}.glyphicon-hand-right:before{content:\"\\e127\"}.glyphicon-hand-left:before{content:\"\\e128\"}.glyphicon-hand-up:before{content:\"\\e129\"}.glyphicon-hand-down:before{content:\"\\e130\"}.glyphicon-circle-arrow-right:before{content:\"\\e131\"}.glyphicon-circle-arrow-left:before{content:\"\\e132\"}.glyphicon-circle-arrow-up:before{content:\"\\e133\"}.glyphicon-circle-arrow-down:before{content:\"\\e134\"}.glyphicon-globe:before{content:\"\\e135\"}.glyphicon-wrench:before{content:\"\\e136\"}.glyphicon-tasks:before{content:\"\\e137\"}.glyphicon-filter:before{content:\"\\e138\"}.glyphicon-briefcase:before{content:\"\\e139\"}.glyphicon-fullscreen:before{content:\"\\e140\"}.glyphicon-dashboard:before{content:\"\\e141\"}.glyphicon-paperclip:before{content:\"\\e142\"}.glyphicon-heart-empty:before{content:\"\\e143\"}.glyphicon-link:before{content:\"\\e144\"}.glyphicon-phone:before{content:\"\\e145\"}.glyphicon-pushpin:before{content:\"\\e146\"}.glyphicon-usd:before{content:\"\\e148\"}.glyphicon-gbp:before{content:\"\\e149\"}.glyphicon-sort:before{content:\"\\e150\"}.glyphicon-sort-by-alphabet:before{content:\"\\e151\"}.glyphicon-sort-by-alphabet-alt:before{content:\"\\e152\"}.glyphicon-sort-by-order:before{content:\"\\e153\"}.glyphicon-sort-by-order-alt:before{content:\"\\e154\"}.glyphicon-sort-by-attributes:before{content:\"\\e155\"}.glyphicon-sort-by-attributes-alt:before{content:\"\\e156\"}.glyphicon-unchecked:before{content:\"\\e157\"}.glyphicon-expand:before{content:\"\\e158\"}.glyphicon-collapse-down:before{content:\"\\e159\"}.glyphicon-collapse-up:before{content:\"\\e160\"}.glyphicon-log-in:before{content:\"\\e161\"}.glyphicon-flash:before{content:\"\\e162\"}.glyphicon-log-out:before{content:\"\\e163\"}.glyphicon-new-window:before{content:\"\\e164\"}.glyphicon-record:before{content:\"\\e165\"}.glyphicon-save:before{content:\"\\e166\"}.glyphicon-open:before{content:\"\\e167\"}.glyphicon-saved:before{content:\"\\e168\"}.glyphicon-import:before{content:\"\\e169\"}.glyphicon-export:before{content:\"\\e170\"}.glyphicon-send:before{content:\"\\e171\"}.glyphicon-floppy-disk:before{content:\"\\e172\"}.glyphicon-floppy-saved:before{content:\"\\e173\"}.glyphicon-floppy-remove:before{content:\"\\e174\"}.glyphicon-floppy-save:before{content:\"\\e175\"}.glyphicon-floppy-open:before{content:\"\\e176\"}.glyphicon-credit-card:before{content:\"\\e177\"}.glyphicon-transfer:before{content:\"\\e178\"}.glyphicon-cutlery:before{content:\"\\e179\"}.glyphicon-header:before{content:\"\\e180\"}.glyphicon-compressed:before{content:\"\\e181\"}.glyphicon-earphone:before{content:\"\\e182\"}.glyphicon-phone-alt:before{content:\"\\e183\"}.glyphicon-tower:before{content:\"\\e184\"}.glyphicon-stats:before{content:\"\\e185\"}.glyphicon-sd-video:before{content:\"\\e186\"}.glyphicon-hd-video:before{content:\"\\e187\"}.glyphicon-subtitles:before{content:\"\\e188\"}.glyphicon-sound-stereo:before{content:\"\\e189\"}.glyphicon-sound-dolby:before{content:\"\\e190\"}.glyphicon-sound-5-1:before{content:\"\\e191\"}.glyphicon-sound-6-1:before{content:\"\\e192\"}.glyphicon-sound-7-1:before{content:\"\\e193\"}.glyphicon-copyright-mark:before{content:\"\\e194\"}.glyphicon-registration-mark:before{content:\"\\e195\"}.glyphicon-cloud-download:before{content:\"\\e197\"}.glyphicon-cloud-upload:before{content:\"\\e198\"}.glyphicon-tree-conifer:before{content:\"\\e199\"}.glyphicon-tree-deciduous:before{content:\"\\e200\"}.glyphicon-cd:before{content:\"\\e201\"}.glyphicon-save-file:before{content:\"\\e202\"}.glyphicon-open-file:before{content:\"\\e203\"}.glyphicon-level-up:before{content:\"\\e204\"}.glyphicon-copy:before{content:\"\\e205\"}.glyphicon-paste:before{content:\"\\e206\"}.glyphicon-alert:before{content:\"\\e209\"}.glyphicon-equalizer:before{content:\"\\e210\"}.glyphicon-king:before{content:\"\\e211\"}.glyphicon-queen:before{content:\"\\e212\"}.glyphicon-pawn:before{content:\"\\e213\"}.glyphicon-bishop:before{content:\"\\e214\"}.glyphicon-knight:before{content:\"\\e215\"}.glyphicon-baby-formula:before{content:\"\\e216\"}.glyphicon-tent:before{content:\"\\26fa\"}.glyphicon-blackboard:before{content:\"\\e218\"}.glyphicon-bed:before{content:\"\\e219\"}.glyphicon-apple:before{content:\"\\f8ff\"}.glyphicon-erase:before{content:\"\\e221\"}.glyphicon-hourglass:before{content:\"\\231b\"}.glyphicon-lamp:before{content:\"\\e223\"}.glyphicon-duplicate:before{content:\"\\e224\"}.glyphicon-piggy-bank:before{content:\"\\e225\"}.glyphicon-scissors:before{content:\"\\e226\"}.glyphicon-bitcoin:before{content:\"\\e227\"}.glyphicon-btc:before{content:\"\\e227\"}.glyphicon-xbt:before{content:\"\\e227\"}.glyphicon-yen:before{content:\"\\00a5\"}.glyphicon-jpy:before{content:\"\\00a5\"}.glyphicon-ruble:before{content:\"\\20bd\"}.glyphicon-rub:before{content:\"\\20bd\"}.glyphicon-scale:before{content:\"\\e230\"}.glyphicon-ice-lolly:before{content:\"\\e231\"}.glyphicon-ice-lolly-tasted:before{content:\"\\e232\"}.glyphicon-education:before{content:\"\\e233\"}.glyphicon-option-horizontal:before{content:\"\\e234\"}.glyphicon-option-vertical:before{content:\"\\e235\"}.glyphicon-menu-hamburger:before{content:\"\\e236\"}.glyphicon-modal-window:before{content:\"\\e237\"}.glyphicon-oil:before{content:\"\\e238\"}.glyphicon-grain:before{content:\"\\e239\"}.glyphicon-sunglasses:before{content:\"\\e240\"}.glyphicon-text-size:before{content:\"\\e241\"}.glyphicon-text-color:before{content:\"\\e242\"}.glyphicon-text-background:before{content:\"\\e243\"}.glyphicon-object-align-top:before{content:\"\\e244\"}.glyphicon-object-align-bottom:before{content:\"\\e245\"}.glyphicon-object-align-horizontal:before{content:\"\\e246\"}.glyphicon-object-align-left:before{content:\"\\e247\"}.glyphicon-object-align-vertical:before{content:\"\\e248\"}.glyphicon-object-align-right:before{content:\"\\e249\"}.glyphicon-triangle-right:before{content:\"\\e250\"}.glyphicon-triangle-left:before{content:\"\\e251\"}.glyphicon-triangle-bottom:before{content:\"\\e252\"}.glyphicon-triangle-top:before{content:\"\\e253\"}.glyphicon-console:before{content:\"\\e254\"}.glyphicon-superscript:before{content:\"\\e255\"}.glyphicon-subscript:before{content:\"\\e256\"}.glyphicon-menu-left:before{content:\"\\e257\"}.glyphicon-menu-right:before{content:\"\\e258\"}.glyphicon-menu-down:before{content:\"\\e259\"}.glyphicon-menu-up:before{content:\"\\e260\"}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{font-size:10px;-webkit-tap-highlight-color:transparent}body{font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;font-size:14px;line-height:1.42857143;color:#333;background-color:#fff}button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}a{color:#337ab7;text-decoration:none}a:focus,a:hover{color:#23527c;text-decoration:underline}a:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}figure{margin:0}img{vertical-align:middle}.carousel-inner>.item>a>img,.carousel-inner>.item>img,.img-responsive,.thumbnail a>img,.thumbnail>img{display:block;max-width:100%;height:auto}.img-rounded{border-radius:6px}.img-thumbnail{display:inline-block;max-width:100%;height:auto;padding:4px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;transition:all .2s ease-in-out}.img-circle{border-radius:50%}hr{margin-top:20px;margin-bottom:20px;border:0;border-top:1px solid #eee}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}[role=button]{cursor:pointer}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-weight:400;line-height:1;color:#777}.h1,.h2,.h3,h1,h2,h3{margin-top:20px;margin-bottom:10px}.h1 .small,.h1 small,.h2 .small,.h2 small,.h3 .small,.h3 small,h1 .small,h1 small,h2 .small,h2 small,h3 .small,h3 small{font-size:65%}.h4,.h5,.h6,h4,h5,h6{margin-top:10px;margin-bottom:10px}.h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{font-size:75%}.h1,h1{font-size:36px}.h2,h2{font-size:30px}.h3,h3{font-size:24px}.h4,h4{font-size:18px}.h5,h5{font-size:14px}.h6,h6{font-size:12px}p{margin:0 0 10px}.lead{margin-bottom:20px;font-size:16px;font-weight:300;line-height:1.4}@media (min-width:768px){.lead{font-size:21px}}.small,small{font-size:85%}.mark,mark{padding:.2em;background-color:#fcf8e3}.text-left{text-align:left}.text-right{text-align:right}.text-center{text-align:center}.text-justify{text-align:justify}.text-nowrap{white-space:nowrap}.text-lowercase{text-transform:lowercase}.text-uppercase{text-transform:uppercase}.text-capitalize{text-transform:capitalize}.text-muted{color:#777}.text-primary{color:#337ab7}a.text-primary:focus,a.text-primary:hover{color:#286090}.text-success{color:#3c763d}a.text-success:focus,a.text-success:hover{color:#2b542c}.text-info{color:#31708f}a.text-info:focus,a.text-info:hover{color:#245269}.text-warning{color:#8a6d3b}a.text-warning:focus,a.text-warning:hover{color:#66512c}.text-danger{color:#a94442}a.text-danger:focus,a.text-danger:hover{color:#843534}.bg-primary{color:#fff;background-color:#337ab7}a.bg-primary:focus,a.bg-primary:hover{background-color:#286090}.bg-success{background-color:#dff0d8}a.bg-success:focus,a.bg-success:hover{background-color:#c1e2b3}.bg-info{background-color:#d9edf7}a.bg-info:focus,a.bg-info:hover{background-color:#afd9ee}.bg-warning{background-color:#fcf8e3}a.bg-warning:focus,a.bg-warning:hover{background-color:#f7ecb5}.bg-danger{background-color:#f2dede}a.bg-danger:focus,a.bg-danger:hover{background-color:#e4b9b9}.page-header{padding-bottom:9px;margin:40px 0 20px;border-bottom:1px solid #eee}ol,ul{margin-top:0;margin-bottom:10px}ol ol,ol ul,ul ol,ul ul{margin-bottom:0}.list-unstyled{padding-left:0;list-style:none}.list-inline{padding-left:0;margin-left:-5px;list-style:none}.list-inline>li{display:inline-block;padding-right:5px;padding-left:5px}dl{margin-top:0;margin-bottom:20px}dd,dt{line-height:1.42857143}dt{font-weight:700}dd{margin-left:0}@media (min-width:768px){.dl-horizontal dt{float:left;width:160px;overflow:hidden;clear:left;text-align:right;text-overflow:ellipsis;white-space:nowrap}.dl-horizontal dd{margin-left:180px}}abbr[data-original-title],abbr[title]{cursor:help;border-bottom:1px dotted #777}.initialism{font-size:90%;text-transform:uppercase}blockquote{padding:10px 20px;margin:0 0 20px;font-size:17.5px;border-left:5px solid #eee}blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child{margin-bottom:0}blockquote .small,blockquote footer,blockquote small{display:block;font-size:80%;line-height:1.42857143;color:#777}blockquote .small:before,blockquote footer:before,blockquote small:before{content:'\\2014 \\00A0'}.blockquote-reverse,blockquote.pull-right{padding-right:15px;padding-left:0;text-align:right;border-right:5px solid #eee;border-left:0}.blockquote-reverse .small:before,.blockquote-reverse footer:before,.blockquote-reverse small:before,blockquote.pull-right .small:before,blockquote.pull-right footer:before,blockquote.pull-right small:before{content:''}.blockquote-reverse .small:after,.blockquote-reverse footer:after,.blockquote-reverse small:after,blockquote.pull-right .small:after,blockquote.pull-right footer:after,blockquote.pull-right small:after{content:'\\00A0 \\2014'}address{margin-bottom:20px;font-style:normal;line-height:1.42857143}code,kbd,pre,samp{font-family:Menlo,Monaco,Consolas,\"Courier New\",monospace}code{padding:2px 4px;font-size:90%;color:#c7254e;background-color:#f9f2f4;border-radius:4px}kbd{padding:2px 4px;font-size:90%;color:#fff;background-color:#333;border-radius:3px;-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,.25);box-shadow:inset 0 -1px 0 rgba(0,0,0,.25)}kbd kbd{padding:0;font-size:100%;font-weight:700;-webkit-box-shadow:none;box-shadow:none}pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px}pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-wrap;background-color:transparent;border-radius:0}.pre-scrollable{max-height:340px;overflow-y:scroll}.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:768px){.container{width:750px}}@media (min-width:992px){.container{width:970px}}@media (min-width:1200px){.container{width:1170px}}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{margin-right:-15px;margin-left:-15px}.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9{float:left}.col-xs-12{width:100%}.col-xs-11{width:91.66666667%}.col-xs-10{width:83.33333333%}.col-xs-9{width:75%}.col-xs-8{width:66.66666667%}.col-xs-7{width:58.33333333%}.col-xs-6{width:50%}.col-xs-5{width:41.66666667%}.col-xs-4{width:33.33333333%}.col-xs-3{width:25%}.col-xs-2{width:16.66666667%}.col-xs-1{width:8.33333333%}.col-xs-pull-12{right:100%}.col-xs-pull-11{right:91.66666667%}.col-xs-pull-10{right:83.33333333%}.col-xs-pull-9{right:75%}.col-xs-pull-8{right:66.66666667%}.col-xs-pull-7{right:58.33333333%}.col-xs-pull-6{right:50%}.col-xs-pull-5{right:41.66666667%}.col-xs-pull-4{right:33.33333333%}.col-xs-pull-3{right:25%}.col-xs-pull-2{right:16.66666667%}.col-xs-pull-1{right:8.33333333%}.col-xs-pull-0{right:auto}.col-xs-push-12{left:100%}.col-xs-push-11{left:91.66666667%}.col-xs-push-10{left:83.33333333%}.col-xs-push-9{left:75%}.col-xs-push-8{left:66.66666667%}.col-xs-push-7{left:58.33333333%}.col-xs-push-6{left:50%}.col-xs-push-5{left:41.66666667%}.col-xs-push-4{left:33.33333333%}.col-xs-push-3{left:25%}.col-xs-push-2{left:16.66666667%}.col-xs-push-1{left:8.33333333%}.col-xs-push-0{left:auto}.col-xs-offset-12{margin-left:100%}.col-xs-offset-11{margin-left:91.66666667%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-0{margin-left:0}@media (min-width:768px){.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9{float:left}.col-sm-12{width:100%}.col-sm-11{width:91.66666667%}.col-sm-10{width:83.33333333%}.col-sm-9{width:75%}.col-sm-8{width:66.66666667%}.col-sm-7{width:58.33333333%}.col-sm-6{width:50%}.col-sm-5{width:41.66666667%}.col-sm-4{width:33.33333333%}.col-sm-3{width:25%}.col-sm-2{width:16.66666667%}.col-sm-1{width:8.33333333%}.col-sm-pull-12{right:100%}.col-sm-pull-11{right:91.66666667%}.col-sm-pull-10{right:83.33333333%}.col-sm-pull-9{right:75%}.col-sm-pull-8{right:66.66666667%}.col-sm-pull-7{right:58.33333333%}.col-sm-pull-6{right:50%}.col-sm-pull-5{right:41.66666667%}.col-sm-pull-4{right:33.33333333%}.col-sm-pull-3{right:25%}.col-sm-pull-2{right:16.66666667%}.col-sm-pull-1{right:8.33333333%}.col-sm-pull-0{right:auto}.col-sm-push-12{left:100%}.col-sm-push-11{left:91.66666667%}.col-sm-push-10{left:83.33333333%}.col-sm-push-9{left:75%}.col-sm-push-8{left:66.66666667%}.col-sm-push-7{left:58.33333333%}.col-sm-push-6{left:50%}.col-sm-push-5{left:41.66666667%}.col-sm-push-4{left:33.33333333%}.col-sm-push-3{left:25%}.col-sm-push-2{left:16.66666667%}.col-sm-push-1{left:8.33333333%}.col-sm-push-0{left:auto}.col-sm-offset-12{margin-left:100%}.col-sm-offset-11{margin-left:91.66666667%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-0{margin-left:0}}@media (min-width:992px){.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9{float:left}.col-md-12{width:100%}.col-md-11{width:91.66666667%}.col-md-10{width:83.33333333%}.col-md-9{width:75%}.col-md-8{width:66.66666667%}.col-md-7{width:58.33333333%}.col-md-6{width:50%}.col-md-5{width:41.66666667%}.col-md-4{width:33.33333333%}.col-md-3{width:25%}.col-md-2{width:16.66666667%}.col-md-1{width:8.33333333%}.col-md-pull-12{right:100%}.col-md-pull-11{right:91.66666667%}.col-md-pull-10{right:83.33333333%}.col-md-pull-9{right:75%}.col-md-pull-8{right:66.66666667%}.col-md-pull-7{right:58.33333333%}.col-md-pull-6{right:50%}.col-md-pull-5{right:41.66666667%}.col-md-pull-4{right:33.33333333%}.col-md-pull-3{right:25%}.col-md-pull-2{right:16.66666667%}.col-md-pull-1{right:8.33333333%}.col-md-pull-0{right:auto}.col-md-push-12{left:100%}.col-md-push-11{left:91.66666667%}.col-md-push-10{left:83.33333333%}.col-md-push-9{left:75%}.col-md-push-8{left:66.66666667%}.col-md-push-7{left:58.33333333%}.col-md-push-6{left:50%}.col-md-push-5{left:41.66666667%}.col-md-push-4{left:33.33333333%}.col-md-push-3{left:25%}.col-md-push-2{left:16.66666667%}.col-md-push-1{left:8.33333333%}.col-md-push-0{left:auto}.col-md-offset-12{margin-left:100%}.col-md-offset-11{margin-left:91.66666667%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-9{margin-left:75%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-6{margin-left:50%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-3{margin-left:25%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-0{margin-left:0}}@media (min-width:1200px){.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9{float:left}.col-lg-12{width:100%}.col-lg-11{width:91.66666667%}.col-lg-10{width:83.33333333%}.col-lg-9{width:75%}.col-lg-8{width:66.66666667%}.col-lg-7{width:58.33333333%}.col-lg-6{width:50%}.col-lg-5{width:41.66666667%}.col-lg-4{width:33.33333333%}.col-lg-3{width:25%}.col-lg-2{width:16.66666667%}.col-lg-1{width:8.33333333%}.col-lg-pull-12{right:100%}.col-lg-pull-11{right:91.66666667%}.col-lg-pull-10{right:83.33333333%}.col-lg-pull-9{right:75%}.col-lg-pull-8{right:66.66666667%}.col-lg-pull-7{right:58.33333333%}.col-lg-pull-6{right:50%}.col-lg-pull-5{right:41.66666667%}.col-lg-pull-4{right:33.33333333%}.col-lg-pull-3{right:25%}.col-lg-pull-2{right:16.66666667%}.col-lg-pull-1{right:8.33333333%}.col-lg-pull-0{right:auto}.col-lg-push-12{left:100%}.col-lg-push-11{left:91.66666667%}.col-lg-push-10{left:83.33333333%}.col-lg-push-9{left:75%}.col-lg-push-8{left:66.66666667%}.col-lg-push-7{left:58.33333333%}.col-lg-push-6{left:50%}.col-lg-push-5{left:41.66666667%}.col-lg-push-4{left:33.33333333%}.col-lg-push-3{left:25%}.col-lg-push-2{left:16.66666667%}.col-lg-push-1{left:8.33333333%}.col-lg-push-0{left:auto}.col-lg-offset-12{margin-left:100%}.col-lg-offset-11{margin-left:91.66666667%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-0{margin-left:0}}table{background-color:transparent}caption{padding-top:8px;padding-bottom:8px;color:#777;text-align:left}th{text-align:left}.table{width:100%;max-width:100%;margin-bottom:20px}.table>tbody>tr>td,.table>tbody>tr>th,.table>tfoot>tr>td,.table>tfoot>tr>th,.table>thead>tr>td,.table>thead>tr>th{padding:8px;line-height:1.42857143;vertical-align:top;border-top:1px solid #ddd}.table>thead>tr>th{vertical-align:bottom;border-bottom:2px solid #ddd}.table>caption+thead>tr:first-child>td,.table>caption+thead>tr:first-child>th,.table>colgroup+thead>tr:first-child>td,.table>colgroup+thead>tr:first-child>th,.table>thead:first-child>tr:first-child>td,.table>thead:first-child>tr:first-child>th{border-top:0}.table>tbody+tbody{border-top:2px solid #ddd}.table .table{background-color:#fff}.table-condensed>tbody>tr>td,.table-condensed>tbody>tr>th,.table-condensed>tfoot>tr>td,.table-condensed>tfoot>tr>th,.table-condensed>thead>tr>td,.table-condensed>thead>tr>th{padding:5px}.table-bordered{border:1px solid #ddd}.table-bordered>tbody>tr>td,.table-bordered>tbody>tr>th,.table-bordered>tfoot>tr>td,.table-bordered>tfoot>tr>th,.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border:1px solid #ddd}.table-bordered>thead>tr>td,.table-bordered>thead>tr>th{border-bottom-width:2px}.table-striped>tbody>tr:nth-of-type(odd){background-color:#f9f9f9}.table-hover>tbody>tr:hover{background-color:#f5f5f5}table col[class*=col-]{position:static;display:table-column;float:none}table td[class*=col-],table th[class*=col-]{position:static;display:table-cell;float:none}.table>tbody>tr.active>td,.table>tbody>tr.active>th,.table>tbody>tr>td.active,.table>tbody>tr>th.active,.table>tfoot>tr.active>td,.table>tfoot>tr.active>th,.table>tfoot>tr>td.active,.table>tfoot>tr>th.active,.table>thead>tr.active>td,.table>thead>tr.active>th,.table>thead>tr>td.active,.table>thead>tr>th.active{background-color:#f5f5f5}.table-hover>tbody>tr.active:hover>td,.table-hover>tbody>tr.active:hover>th,.table-hover>tbody>tr:hover>.active,.table-hover>tbody>tr>td.active:hover,.table-hover>tbody>tr>th.active:hover{background-color:#e8e8e8}.table>tbody>tr.success>td,.table>tbody>tr.success>th,.table>tbody>tr>td.success,.table>tbody>tr>th.success,.table>tfoot>tr.success>td,.table>tfoot>tr.success>th,.table>tfoot>tr>td.success,.table>tfoot>tr>th.success,.table>thead>tr.success>td,.table>thead>tr.success>th,.table>thead>tr>td.success,.table>thead>tr>th.success{background-color:#dff0d8}.table-hover>tbody>tr.success:hover>td,.table-hover>tbody>tr.success:hover>th,.table-hover>tbody>tr:hover>.success,.table-hover>tbody>tr>td.success:hover,.table-hover>tbody>tr>th.success:hover{background-color:#d0e9c6}.table>tbody>tr.info>td,.table>tbody>tr.info>th,.table>tbody>tr>td.info,.table>tbody>tr>th.info,.table>tfoot>tr.info>td,.table>tfoot>tr.info>th,.table>tfoot>tr>td.info,.table>tfoot>tr>th.info,.table>thead>tr.info>td,.table>thead>tr.info>th,.table>thead>tr>td.info,.table>thead>tr>th.info{background-color:#d9edf7}.table-hover>tbody>tr.info:hover>td,.table-hover>tbody>tr.info:hover>th,.table-hover>tbody>tr:hover>.info,.table-hover>tbody>tr>td.info:hover,.table-hover>tbody>tr>th.info:hover{background-color:#c4e3f3}.table>tbody>tr.warning>td,.table>tbody>tr.warning>th,.table>tbody>tr>td.warning,.table>tbody>tr>th.warning,.table>tfoot>tr.warning>td,.table>tfoot>tr.warning>th,.table>tfoot>tr>td.warning,.table>tfoot>tr>th.warning,.table>thead>tr.warning>td,.table>thead>tr.warning>th,.table>thead>tr>td.warning,.table>thead>tr>th.warning{background-color:#fcf8e3}.table-hover>tbody>tr.warning:hover>td,.table-hover>tbody>tr.warning:hover>th,.table-hover>tbody>tr:hover>.warning,.table-hover>tbody>tr>td.warning:hover,.table-hover>tbody>tr>th.warning:hover{background-color:#faf2cc}.table>tbody>tr.danger>td,.table>tbody>tr.danger>th,.table>tbody>tr>td.danger,.table>tbody>tr>th.danger,.table>tfoot>tr.danger>td,.table>tfoot>tr.danger>th,.table>tfoot>tr>td.danger,.table>tfoot>tr>th.danger,.table>thead>tr.danger>td,.table>thead>tr.danger>th,.table>thead>tr>td.danger,.table>thead>tr>th.danger{background-color:#f2dede}.table-hover>tbody>tr.danger:hover>td,.table-hover>tbody>tr.danger:hover>th,.table-hover>tbody>tr:hover>.danger,.table-hover>tbody>tr>td.danger:hover,.table-hover>tbody>tr>th.danger:hover{background-color:#ebcccc}.table-responsive{min-height:.01%;overflow-x:auto}@media screen and (max-width:767px){.table-responsive{width:100%;margin-bottom:15px;overflow-y:hidden;-ms-overflow-style:-ms-autohiding-scrollbar;border:1px solid #ddd}.table-responsive>.table{margin-bottom:0}.table-responsive>.table>tbody>tr>td,.table-responsive>.table>tbody>tr>th,.table-responsive>.table>tfoot>tr>td,.table-responsive>.table>tfoot>tr>th,.table-responsive>.table>thead>tr>td,.table-responsive>.table>thead>tr>th{white-space:nowrap}.table-responsive>.table-bordered{border:0}.table-responsive>.table-bordered>tbody>tr>td:first-child,.table-responsive>.table-bordered>tbody>tr>th:first-child,.table-responsive>.table-bordered>tfoot>tr>td:first-child,.table-responsive>.table-bordered>tfoot>tr>th:first-child,.table-responsive>.table-bordered>thead>tr>td:first-child,.table-responsive>.table-bordered>thead>tr>th:first-child{border-left:0}.table-responsive>.table-bordered>tbody>tr>td:last-child,.table-responsive>.table-bordered>tbody>tr>th:last-child,.table-responsive>.table-bordered>tfoot>tr>td:last-child,.table-responsive>.table-bordered>tfoot>tr>th:last-child,.table-responsive>.table-bordered>thead>tr>td:last-child,.table-responsive>.table-bordered>thead>tr>th:last-child{border-right:0}.table-responsive>.table-bordered>tbody>tr:last-child>td,.table-responsive>.table-bordered>tbody>tr:last-child>th,.table-responsive>.table-bordered>tfoot>tr:last-child>td,.table-responsive>.table-bordered>tfoot>tr:last-child>th{border-bottom:0}}fieldset{min-width:0;padding:0;margin:0;border:0}legend{display:block;width:100%;padding:0;margin-bottom:20px;font-size:21px;line-height:inherit;color:#333;border:0;border-bottom:1px solid #e5e5e5}label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700}input[type=search]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}input[type=checkbox],input[type=radio]{margin:4px 0 0;margin-top:1px\\9;line-height:normal}input[type=file]{display:block}input[type=range]{display:block;width:100%}select[multiple],select[size]{height:auto}input[type=file]:focus,input[type=checkbox]:focus,input[type=radio]:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}output{display:block;padding-top:7px;font-size:14px;line-height:1.42857143;color:#555}.form-control{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.form-control::-webkit-input-placeholder{color:#999}.form-control::-ms-expand{background-color:transparent;border:0}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{background-color:#eee;opacity:1}.form-control[disabled],fieldset[disabled] .form-control{cursor:not-allowed}textarea.form-control{height:auto}input[type=search]{-webkit-appearance:none}@media screen and (-webkit-min-device-pixel-ratio:0){input[type=date].form-control,input[type=time].form-control,input[type=datetime-local].form-control,input[type=month].form-control{line-height:34px}.input-group-sm input[type=date],.input-group-sm input[type=time],.input-group-sm input[type=datetime-local],.input-group-sm input[type=month],input[type=date].input-sm,input[type=time].input-sm,input[type=datetime-local].input-sm,input[type=month].input-sm{line-height:30px}.input-group-lg input[type=date],.input-group-lg input[type=time],.input-group-lg input[type=datetime-local],.input-group-lg input[type=month],input[type=date].input-lg,input[type=time].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg{line-height:46px}}.form-group{margin-bottom:15px}.checkbox,.radio{position:relative;display:block;margin-top:10px;margin-bottom:10px}.checkbox label,.radio label{min-height:20px;padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox],.radio input[type=radio],.radio-inline input[type=radio]{position:absolute;margin-top:4px\\9;margin-left:-20px}.checkbox+.checkbox,.radio+.radio{margin-top:-5px}.checkbox-inline,.radio-inline{position:relative;display:inline-block;padding-left:20px;margin-bottom:0;font-weight:400;vertical-align:middle;cursor:pointer}.checkbox-inline+.checkbox-inline,.radio-inline+.radio-inline{margin-top:0;margin-left:10px}fieldset[disabled] input[type=checkbox],fieldset[disabled] input[type=radio],input[type=checkbox].disabled,input[type=checkbox][disabled],input[type=radio].disabled,input[type=radio][disabled]{cursor:not-allowed}.checkbox-inline.disabled,.radio-inline.disabled,fieldset[disabled] .checkbox-inline,fieldset[disabled] .radio-inline{cursor:not-allowed}.checkbox.disabled label,.radio.disabled label,fieldset[disabled] .checkbox label,fieldset[disabled] .radio label{cursor:not-allowed}.form-control-static{min-height:34px;padding-top:7px;padding-bottom:7px;margin-bottom:0}.form-control-static.input-lg,.form-control-static.input-sm{padding-right:0;padding-left:0}.input-sm{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-sm{height:30px;line-height:30px}select[multiple].input-sm,textarea.input-sm{height:auto}.form-group-sm .form-control{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.form-group-sm select.form-control{height:30px;line-height:30px}.form-group-sm select[multiple].form-control,.form-group-sm textarea.form-control{height:auto}.form-group-sm .form-control-static{height:30px;min-height:32px;padding:6px 10px;font-size:12px;line-height:1.5}.input-lg{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-lg{height:46px;line-height:46px}select[multiple].input-lg,textarea.input-lg{height:auto}.form-group-lg .form-control{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.form-group-lg select.form-control{height:46px;line-height:46px}.form-group-lg select[multiple].form-control,.form-group-lg textarea.form-control{height:auto}.form-group-lg .form-control-static{height:46px;min-height:38px;padding:11px 16px;font-size:18px;line-height:1.3333333}.has-feedback{position:relative}.has-feedback .form-control{padding-right:42.5px}.form-control-feedback{position:absolute;top:0;right:0;z-index:2;display:block;width:34px;height:34px;line-height:34px;text-align:center;pointer-events:none}.form-group-lg .form-control+.form-control-feedback,.input-group-lg+.form-control-feedback,.input-lg+.form-control-feedback{width:46px;height:46px;line-height:46px}.form-group-sm .form-control+.form-control-feedback,.input-group-sm+.form-control-feedback,.input-sm+.form-control-feedback{width:30px;height:30px;line-height:30px}.has-success .checkbox,.has-success .checkbox-inline,.has-success .control-label,.has-success .help-block,.has-success .radio,.has-success .radio-inline,.has-success.checkbox label,.has-success.checkbox-inline label,.has-success.radio label,.has-success.radio-inline label{color:#3c763d}.has-success .form-control{border-color:#3c763d;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-success .form-control:focus{border-color:#2b542c;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #67b168}.has-success .input-group-addon{color:#3c763d;background-color:#dff0d8;border-color:#3c763d}.has-success .form-control-feedback{color:#3c763d}.has-warning .checkbox,.has-warning .checkbox-inline,.has-warning .control-label,.has-warning .help-block,.has-warning .radio,.has-warning .radio-inline,.has-warning.checkbox label,.has-warning.checkbox-inline label,.has-warning.radio label,.has-warning.radio-inline label{color:#8a6d3b}.has-warning .form-control{border-color:#8a6d3b;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-warning .form-control:focus{border-color:#66512c;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #c0a16b}.has-warning .input-group-addon{color:#8a6d3b;background-color:#fcf8e3;border-color:#8a6d3b}.has-warning .form-control-feedback{color:#8a6d3b}.has-error .checkbox,.has-error .checkbox-inline,.has-error .control-label,.has-error .help-block,.has-error .radio,.has-error .radio-inline,.has-error.checkbox label,.has-error.checkbox-inline label,.has-error.radio label,.has-error.radio-inline label{color:#a94442}.has-error .form-control{border-color:#a94442;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075)}.has-error .form-control:focus{border-color:#843534;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483;box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #ce8483}.has-error .input-group-addon{color:#a94442;background-color:#f2dede;border-color:#a94442}.has-error .form-control-feedback{color:#a94442}.has-feedback label~.form-control-feedback{top:25px}.has-feedback label.sr-only~.form-control-feedback{top:0}.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}@media (min-width:768px){.form-inline .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.form-inline .form-control{display:inline-block;width:auto;vertical-align:middle}.form-inline .form-control-static{display:inline-block}.form-inline .input-group{display:inline-table;vertical-align:middle}.form-inline .input-group .form-control,.form-inline .input-group .input-group-addon,.form-inline .input-group .input-group-btn{width:auto}.form-inline .input-group>.form-control{width:100%}.form-inline .control-label{margin-bottom:0;vertical-align:middle}.form-inline .checkbox,.form-inline .radio{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.form-inline .checkbox label,.form-inline .radio label{padding-left:0}.form-inline .checkbox input[type=checkbox],.form-inline .radio input[type=radio]{position:relative;margin-left:0}.form-inline .has-feedback .form-control-feedback{top:0}}.form-horizontal .checkbox,.form-horizontal .checkbox-inline,.form-horizontal .radio,.form-horizontal .radio-inline{padding-top:7px;margin-top:0;margin-bottom:0}.form-horizontal .checkbox,.form-horizontal .radio{min-height:27px}.form-horizontal .form-group{margin-right:-15px;margin-left:-15px}@media (min-width:768px){.form-horizontal .control-label{padding-top:7px;margin-bottom:0;text-align:right}}.form-horizontal .has-feedback .form-control-feedback{right:15px}@media (min-width:768px){.form-horizontal .form-group-lg .control-label{padding-top:11px;font-size:18px}}@media (min-width:768px){.form-horizontal .form-group-sm .control-label{padding-top:6px;font-size:12px}}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px}.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus{outline:thin dotted;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}.btn.focus,.btn:focus,.btn:hover{color:#333;text-decoration:none}.btn.active,.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none;opacity:.65}a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}.btn-default{color:#333;background-color:#fff;border-color:#ccc}.btn-default.focus,.btn-default:focus{color:#333;background-color:#e6e6e6;border-color:#8c8c8c}.btn-default:hover{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default.active,.btn-default:active,.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}.btn-default.active.focus,.btn-default.active:focus,.btn-default.active:hover,.btn-default:active.focus,.btn-default:active:focus,.btn-default:active:hover,.open>.dropdown-toggle.btn-default.focus,.open>.dropdown-toggle.btn-default:focus,.open>.dropdown-toggle.btn-default:hover{color:#333;background-color:#d4d4d4;border-color:#8c8c8c}.btn-default.active,.btn-default:active,.open>.dropdown-toggle.btn-default{background-image:none}.btn-default.disabled.focus,.btn-default.disabled:focus,.btn-default.disabled:hover,.btn-default[disabled].focus,.btn-default[disabled]:focus,.btn-default[disabled]:hover,fieldset[disabled] .btn-default.focus,fieldset[disabled] .btn-default:focus,fieldset[disabled] .btn-default:hover{background-color:#fff;border-color:#ccc}.btn-default .badge{color:#fff;background-color:#333}.btn-primary{color:#fff;background-color:#337ab7;border-color:#2e6da4}.btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#286090;border-color:#122b40}.btn-primary:hover{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#286090;border-color:#204d74}.btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#fff;background-color:#204d74;border-color:#122b40}.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#337ab7;border-color:#2e6da4}.btn-primary .badge{color:#337ab7;background-color:#fff}.btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}.btn-success.focus,.btn-success:focus{color:#fff;background-color:#449d44;border-color:#255625}.btn-success:hover{color:#fff;background-color:#449d44;border-color:#398439}.btn-success.active,.btn-success:active,.open>.dropdown-toggle.btn-success{color:#fff;background-color:#449d44;border-color:#398439}.btn-success.active.focus,.btn-success.active:focus,.btn-success.active:hover,.btn-success:active.focus,.btn-success:active:focus,.btn-success:active:hover,.open>.dropdown-toggle.btn-success.focus,.open>.dropdown-toggle.btn-success:focus,.open>.dropdown-toggle.btn-success:hover{color:#fff;background-color:#398439;border-color:#255625}.btn-success.active,.btn-success:active,.open>.dropdown-toggle.btn-success{background-image:none}.btn-success.disabled.focus,.btn-success.disabled:focus,.btn-success.disabled:hover,.btn-success[disabled].focus,.btn-success[disabled]:focus,.btn-success[disabled]:hover,fieldset[disabled] .btn-success.focus,fieldset[disabled] .btn-success:focus,fieldset[disabled] .btn-success:hover{background-color:#5cb85c;border-color:#4cae4c}.btn-success .badge{color:#5cb85c;background-color:#fff}.btn-info{color:#fff;background-color:#5bc0de;border-color:#46b8da}.btn-info.focus,.btn-info:focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}.btn-info:hover{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info.active,.btn-info:active,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}.btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{color:#fff;background-color:#269abc;border-color:#1b6d85}.btn-info.active,.btn-info:active,.open>.dropdown-toggle.btn-info{background-image:none}.btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#5bc0de;border-color:#46b8da}.btn-info .badge{color:#5bc0de;background-color:#fff}.btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}.btn-warning.focus,.btn-warning:focus{color:#fff;background-color:#ec971f;border-color:#985f0d}.btn-warning:hover{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning.active,.btn-warning:active,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}.btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover{color:#fff;background-color:#d58512;border-color:#985f0d}.btn-warning.active,.btn-warning:active,.open>.dropdown-toggle.btn-warning{background-image:none}.btn-warning.disabled.focus,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled].focus,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning.focus,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#f0ad4e;border-color:#eea236}.btn-warning .badge{color:#f0ad4e;background-color:#fff}.btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}.btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c9302c;border-color:#761c19}.btn-danger:hover{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger.active,.btn-danger:active,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}.btn-danger.active.focus,.btn-danger.active:focus,.btn-danger.active:hover,.btn-danger:active.focus,.btn-danger:active:focus,.btn-danger:active:hover,.open>.dropdown-toggle.btn-danger.focus,.open>.dropdown-toggle.btn-danger:focus,.open>.dropdown-toggle.btn-danger:hover{color:#fff;background-color:#ac2925;border-color:#761c19}.btn-danger.active,.btn-danger:active,.open>.dropdown-toggle.btn-danger{background-image:none}.btn-danger.disabled.focus,.btn-danger.disabled:focus,.btn-danger.disabled:hover,.btn-danger[disabled].focus,.btn-danger[disabled]:focus,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger.focus,fieldset[disabled] .btn-danger:focus,fieldset[disabled] .btn-danger:hover{background-color:#d9534f;border-color:#d43f3a}.btn-danger .badge{color:#d9534f;background-color:#fff}.btn-link{font-weight:400;color:#337ab7;border-radius:0}.btn-link,.btn-link.active,.btn-link:active,.btn-link[disabled],fieldset[disabled] .btn-link{background-color:transparent;-webkit-box-shadow:none;box-shadow:none}.btn-link,.btn-link:active,.btn-link:focus,.btn-link:hover{border-color:transparent}.btn-link:focus,.btn-link:hover{color:#23527c;text-decoration:underline;background-color:transparent}.btn-link[disabled]:focus,.btn-link[disabled]:hover,fieldset[disabled] .btn-link:focus,fieldset[disabled] .btn-link:hover{color:#777;text-decoration:none}.btn-group-lg>.btn,.btn-lg{padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}.btn-group-sm>.btn,.btn-sm{padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}.btn-group-xs>.btn,.btn-xs{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px}.btn-block{display:block;width:100%}.btn-block+.btn-block{margin-top:5px}input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-block{width:100%}.fade{opacity:0;-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}.fade.in{opacity:1}.collapse{display:none}.collapse.in{display:block}tr.collapse.in{display:table-row}tbody.collapse.in{display:table-row-group}.collapsing{position:relative;height:0;overflow:hidden;-webkit-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease;-webkit-transition-duration:.35s;-o-transition-duration:.35s;transition-duration:.35s;-webkit-transition-property:height,visibility;-o-transition-property:height,visibility;transition-property:height,visibility}.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:4px dashed;border-top:4px solid\\9;border-right:4px solid transparent;border-left:4px solid transparent}.dropdown,.dropup{position:relative}.dropdown-toggle:focus{outline:0}.dropdown-menu{position:absolute;top:100%;left:0;z-index:1000;display:none;float:left;min-width:160px;padding:5px 0;margin:2px 0 0;font-size:14px;text-align:left;list-style:none;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.15);border-radius:4px;-webkit-box-shadow:0 6px 12px rgba(0,0,0,.175);box-shadow:0 6px 12px rgba(0,0,0,.175)}.dropdown-menu.pull-right{right:0;left:auto}.dropdown-menu .divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.dropdown-menu>li>a{display:block;padding:3px 20px;clear:both;font-weight:400;line-height:1.42857143;color:#333;white-space:nowrap}.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{color:#262626;text-decoration:none;background-color:#f5f5f5}.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}.dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{color:#777}.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{text-decoration:none;cursor:not-allowed;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)}.open>.dropdown-menu{display:block}.open>a{outline:0}.dropdown-menu-right{right:0;left:auto}.dropdown-menu-left{right:auto;left:0}.dropdown-header{display:block;padding:3px 20px;font-size:12px;line-height:1.42857143;color:#777;white-space:nowrap}.dropdown-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:990}.pull-right>.dropdown-menu{right:0;left:auto}.dropup .caret,.navbar-fixed-bottom .dropdown .caret{content:\"\";border-top:0;border-bottom:4px dashed;border-bottom:4px solid\\9}.dropup .dropdown-menu,.navbar-fixed-bottom .dropdown .dropdown-menu{top:auto;bottom:100%;margin-bottom:2px}@media (min-width:768px){.navbar-right .dropdown-menu{right:0;left:auto}.navbar-right .dropdown-menu-left{right:auto;left:0}}.btn-group,.btn-group-vertical{position:relative;display:inline-block;vertical-align:middle}.btn-group-vertical>.btn,.btn-group>.btn{position:relative;float:left}.btn-group-vertical>.btn.active,.btn-group-vertical>.btn:active,.btn-group-vertical>.btn:focus,.btn-group-vertical>.btn:hover,.btn-group>.btn.active,.btn-group>.btn:active,.btn-group>.btn:focus,.btn-group>.btn:hover{z-index:2}.btn-group .btn+.btn,.btn-group .btn+.btn-group,.btn-group .btn-group+.btn,.btn-group .btn-group+.btn-group{margin-left:-1px}.btn-toolbar{margin-left:-5px}.btn-toolbar .btn,.btn-toolbar .btn-group,.btn-toolbar .input-group{float:left}.btn-toolbar>.btn,.btn-toolbar>.btn-group,.btn-toolbar>.input-group{margin-left:5px}.btn-group>.btn:not(:first-child):not(:last-child):not(.dropdown-toggle){border-radius:0}.btn-group>.btn:first-child{margin-left:0}.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle){border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn:last-child:not(:first-child),.btn-group>.dropdown-toggle:not(:first-child){border-top-left-radius:0;border-bottom-left-radius:0}.btn-group>.btn-group{float:left}.btn-group>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-top-right-radius:0;border-bottom-right-radius:0}.btn-group>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-bottom-left-radius:0}.btn-group .dropdown-toggle:active,.btn-group.open .dropdown-toggle{outline:0}.btn-group>.btn+.dropdown-toggle{padding-right:8px;padding-left:8px}.btn-group>.btn-lg+.dropdown-toggle{padding-right:12px;padding-left:12px}.btn-group.open .dropdown-toggle{-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.btn-group.open .dropdown-toggle.btn-link{-webkit-box-shadow:none;box-shadow:none}.btn .caret{margin-left:0}.btn-lg .caret{border-width:5px 5px 0;border-bottom-width:0}.dropup .btn-lg .caret{border-width:0 5px 5px}.btn-group-vertical>.btn,.btn-group-vertical>.btn-group,.btn-group-vertical>.btn-group>.btn{display:block;float:none;width:100%;max-width:100%}.btn-group-vertical>.btn-group>.btn{float:none}.btn-group-vertical>.btn+.btn,.btn-group-vertical>.btn+.btn-group,.btn-group-vertical>.btn-group+.btn,.btn-group-vertical>.btn-group+.btn-group{margin-top:-1px;margin-left:0}.btn-group-vertical>.btn:not(:first-child):not(:last-child){border-radius:0}.btn-group-vertical>.btn:first-child:not(:last-child){border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn:last-child:not(:first-child){border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}.btn-group-vertical>.btn-group:not(:first-child):not(:last-child)>.btn{border-radius:0}.btn-group-vertical>.btn-group:first-child:not(:last-child)>.btn:last-child,.btn-group-vertical>.btn-group:first-child:not(:last-child)>.dropdown-toggle{border-bottom-right-radius:0;border-bottom-left-radius:0}.btn-group-vertical>.btn-group:last-child:not(:first-child)>.btn:first-child{border-top-left-radius:0;border-top-right-radius:0}.btn-group-justified{display:table;width:100%;table-layout:fixed;border-collapse:separate}.btn-group-justified>.btn,.btn-group-justified>.btn-group{display:table-cell;float:none;width:1%}.btn-group-justified>.btn-group .btn{width:100%}.btn-group-justified>.btn-group .dropdown-menu{left:auto}[data-toggle=buttons]>.btn input[type=checkbox],[data-toggle=buttons]>.btn input[type=radio],[data-toggle=buttons]>.btn-group>.btn input[type=checkbox],[data-toggle=buttons]>.btn-group>.btn input[type=radio]{position:absolute;clip:rect(0,0,0,0);pointer-events:none}.input-group{position:relative;display:table;border-collapse:separate}.input-group[class*=col-]{float:none;padding-right:0;padding-left:0}.input-group .form-control{position:relative;z-index:2;float:left;width:100%;margin-bottom:0}.input-group .form-control:focus{z-index:3}.input-group-lg>.form-control,.input-group-lg>.input-group-addon,.input-group-lg>.input-group-btn>.btn{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}select.input-group-lg>.form-control,select.input-group-lg>.input-group-addon,select.input-group-lg>.input-group-btn>.btn{height:46px;line-height:46px}select[multiple].input-group-lg>.form-control,select[multiple].input-group-lg>.input-group-addon,select[multiple].input-group-lg>.input-group-btn>.btn,textarea.input-group-lg>.form-control,textarea.input-group-lg>.input-group-addon,textarea.input-group-lg>.input-group-btn>.btn{height:auto}.input-group-sm>.form-control,.input-group-sm>.input-group-addon,.input-group-sm>.input-group-btn>.btn{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}select.input-group-sm>.form-control,select.input-group-sm>.input-group-addon,select.input-group-sm>.input-group-btn>.btn{height:30px;line-height:30px}select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.input-group-addon,select[multiple].input-group-sm>.input-group-btn>.btn,textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon,textarea.input-group-sm>.input-group-btn>.btn{height:auto}.input-group .form-control,.input-group-addon,.input-group-btn{display:table-cell}.input-group .form-control:not(:first-child):not(:last-child),.input-group-addon:not(:first-child):not(:last-child),.input-group-btn:not(:first-child):not(:last-child){border-radius:0}.input-group-addon,.input-group-btn{width:1%;white-space:nowrap;vertical-align:middle}.input-group-addon{padding:6px 12px;font-size:14px;font-weight:400;line-height:1;color:#555;text-align:center;background-color:#eee;border:1px solid #ccc;border-radius:4px}.input-group-addon.input-sm{padding:5px 10px;font-size:12px;border-radius:3px}.input-group-addon.input-lg{padding:10px 16px;font-size:18px;border-radius:6px}.input-group-addon input[type=checkbox],.input-group-addon input[type=radio]{margin-top:0}.input-group .form-control:first-child,.input-group-addon:first-child,.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group>.btn,.input-group-btn:first-child>.dropdown-toggle,.input-group-btn:last-child>.btn-group:not(:last-child)>.btn,.input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle){border-top-right-radius:0;border-bottom-right-radius:0}.input-group-addon:first-child{border-right:0}.input-group .form-control:last-child,.input-group-addon:last-child,.input-group-btn:first-child>.btn-group:not(:first-child)>.btn,.input-group-btn:first-child>.btn:not(:first-child),.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group>.btn,.input-group-btn:last-child>.dropdown-toggle{border-top-left-radius:0;border-bottom-left-radius:0}.input-group-addon:last-child{border-left:0}.input-group-btn{position:relative;font-size:0;white-space:nowrap}.input-group-btn>.btn{position:relative}.input-group-btn>.btn+.btn{margin-left:-1px}.input-group-btn>.btn:active,.input-group-btn>.btn:focus,.input-group-btn>.btn:hover{z-index:2}.input-group-btn:first-child>.btn,.input-group-btn:first-child>.btn-group{margin-right:-1px}.input-group-btn:last-child>.btn,.input-group-btn:last-child>.btn-group{z-index:2;margin-left:-1px}.nav{padding-left:0;margin-bottom:0;list-style:none}.nav>li{position:relative;display:block}.nav>li>a{position:relative;display:block;padding:10px 15px}.nav>li>a:focus,.nav>li>a:hover{text-decoration:none;background-color:#eee}.nav>li.disabled>a{color:#777}.nav>li.disabled>a:focus,.nav>li.disabled>a:hover{color:#777;text-decoration:none;cursor:not-allowed;background-color:transparent}.nav .open>a,.nav .open>a:focus,.nav .open>a:hover{background-color:#eee;border-color:#337ab7}.nav .nav-divider{height:1px;margin:9px 0;overflow:hidden;background-color:#e5e5e5}.nav>li>a>img{max-width:none}.nav-tabs{border-bottom:1px solid #ddd}.nav-tabs>li{float:left;margin-bottom:-1px}.nav-tabs>li>a{margin-right:2px;line-height:1.42857143;border:1px solid transparent;border-radius:4px 4px 0 0}.nav-tabs>li>a:hover{border-color:#eee #eee #ddd}.nav-tabs>li.active>a,.nav-tabs>li.active>a:focus,.nav-tabs>li.active>a:hover{color:#555;cursor:default;background-color:#fff;border:1px solid #ddd;border-bottom-color:transparent}.nav-tabs.nav-justified{width:100%;border-bottom:0}.nav-tabs.nav-justified>li{float:none}.nav-tabs.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-tabs.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media (min-width:768px){.nav-tabs.nav-justified>li{display:table-cell;width:1%}.nav-tabs.nav-justified>li>a{margin-bottom:0}}.nav-tabs.nav-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border:1px solid #ddd}@media (min-width:768px){.nav-tabs.nav-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs.nav-justified>.active>a,.nav-tabs.nav-justified>.active>a:focus,.nav-tabs.nav-justified>.active>a:hover{border-bottom-color:#fff}}.nav-pills>li{float:left}.nav-pills>li>a{border-radius:4px}.nav-pills>li+li{margin-left:2px}.nav-pills>li.active>a,.nav-pills>li.active>a:focus,.nav-pills>li.active>a:hover{color:#fff;background-color:#337ab7}.nav-stacked>li{float:none}.nav-stacked>li+li{margin-top:2px;margin-left:0}.nav-justified{width:100%}.nav-justified>li{float:none}.nav-justified>li>a{margin-bottom:5px;text-align:center}.nav-justified>.dropdown .dropdown-menu{top:auto;left:auto}@media (min-width:768px){.nav-justified>li{display:table-cell;width:1%}.nav-justified>li>a{margin-bottom:0}}.nav-tabs-justified{border-bottom:0}.nav-tabs-justified>li>a{margin-right:0;border-radius:4px}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border:1px solid #ddd}@media (min-width:768px){.nav-tabs-justified>li>a{border-bottom:1px solid #ddd;border-radius:4px 4px 0 0}.nav-tabs-justified>.active>a,.nav-tabs-justified>.active>a:focus,.nav-tabs-justified>.active>a:hover{border-bottom-color:#fff}}.tab-content>.tab-pane{display:none}.tab-content>.active{display:block}.nav-tabs .dropdown-menu{margin-top:-1px;border-top-left-radius:0;border-top-right-radius:0}.navbar{position:relative;min-height:50px;margin-bottom:20px;border:1px solid transparent}@media (min-width:768px){.navbar{border-radius:4px}}@media (min-width:768px){.navbar-header{float:left}}.navbar-collapse{padding-right:15px;padding-left:15px;overflow-x:visible;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}.navbar-collapse.in{overflow-y:auto}@media (min-width:768px){.navbar-collapse{width:auto;border-top:0;-webkit-box-shadow:none;box-shadow:none}.navbar-collapse.collapse{display:block!important;height:auto!important;padding-bottom:0;overflow:visible!important}.navbar-collapse.in{overflow-y:visible}.navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse,.navbar-static-top .navbar-collapse{padding-right:0;padding-left:0}}.navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse{max-height:340px}@media (max-device-width:480px) and (orientation:landscape){.navbar-fixed-bottom .navbar-collapse,.navbar-fixed-top .navbar-collapse{max-height:200px}}.container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header{margin-right:-15px;margin-left:-15px}@media (min-width:768px){.container-fluid>.navbar-collapse,.container-fluid>.navbar-header,.container>.navbar-collapse,.container>.navbar-header{margin-right:0;margin-left:0}}.navbar-static-top{z-index:1000;border-width:0 0 1px}@media (min-width:768px){.navbar-static-top{border-radius:0}}.navbar-fixed-bottom,.navbar-fixed-top{position:fixed;right:0;left:0;z-index:1030}@media (min-width:768px){.navbar-fixed-bottom,.navbar-fixed-top{border-radius:0}}.navbar-fixed-top{top:0;border-width:0 0 1px}.navbar-fixed-bottom{bottom:0;margin-bottom:0;border-width:1px 0 0}.navbar-brand{float:left;height:50px;padding:15px 15px;font-size:18px;line-height:20px}.navbar-brand:focus,.navbar-brand:hover{text-decoration:none}.navbar-brand>img{display:block}@media (min-width:768px){.navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}}.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}.navbar-toggle:focus{outline:0}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}@media (min-width:768px){.navbar-toggle{display:none}}.navbar-nav{margin:7.5px -15px}.navbar-nav>li>a{padding-top:10px;padding-bottom:10px;line-height:20px}@media (max-width:767px){.navbar-nav .open .dropdown-menu{position:static;float:none;width:auto;margin-top:0;background-color:transparent;border:0;-webkit-box-shadow:none;box-shadow:none}.navbar-nav .open .dropdown-menu .dropdown-header,.navbar-nav .open .dropdown-menu>li>a{padding:5px 15px 5px 25px}.navbar-nav .open .dropdown-menu>li>a{line-height:20px}.navbar-nav .open .dropdown-menu>li>a:focus,.navbar-nav .open .dropdown-menu>li>a:hover{background-image:none}}@media (min-width:768px){.navbar-nav{float:left;margin:0}.navbar-nav>li{float:left}.navbar-nav>li>a{padding-top:15px;padding-bottom:15px}}.navbar-form{padding:10px 15px;margin-top:8px;margin-right:-15px;margin-bottom:8px;margin-left:-15px;border-top:1px solid transparent;border-bottom:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 1px 0 rgba(255,255,255,.1)}@media (min-width:768px){.navbar-form .form-group{display:inline-block;margin-bottom:0;vertical-align:middle}.navbar-form .form-control{display:inline-block;width:auto;vertical-align:middle}.navbar-form .form-control-static{display:inline-block}.navbar-form .input-group{display:inline-table;vertical-align:middle}.navbar-form .input-group .form-control,.navbar-form .input-group .input-group-addon,.navbar-form .input-group .input-group-btn{width:auto}.navbar-form .input-group>.form-control{width:100%}.navbar-form .control-label{margin-bottom:0;vertical-align:middle}.navbar-form .checkbox,.navbar-form .radio{display:inline-block;margin-top:0;margin-bottom:0;vertical-align:middle}.navbar-form .checkbox label,.navbar-form .radio label{padding-left:0}.navbar-form .checkbox input[type=checkbox],.navbar-form .radio input[type=radio]{position:relative;margin-left:0}.navbar-form .has-feedback .form-control-feedback{top:0}}@media (max-width:767px){.navbar-form .form-group{margin-bottom:5px}.navbar-form .form-group:last-child{margin-bottom:0}}@media (min-width:768px){.navbar-form{width:auto;padding-top:0;padding-bottom:0;margin-right:0;margin-left:0;border:0;-webkit-box-shadow:none;box-shadow:none}}.navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0}.navbar-fixed-bottom .navbar-nav>li>.dropdown-menu{margin-bottom:0;border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-right-radius:0;border-bottom-left-radius:0}.navbar-btn{margin-top:8px;margin-bottom:8px}.navbar-btn.btn-sm{margin-top:10px;margin-bottom:10px}.navbar-btn.btn-xs{margin-top:14px;margin-bottom:14px}.navbar-text{margin-top:15px;margin-bottom:15px}@media (min-width:768px){.navbar-text{float:left;margin-right:15px;margin-left:15px}}@media (min-width:768px){.navbar-left{float:left!important}.navbar-right{float:right!important;margin-right:-15px}.navbar-right~.navbar-right{margin-right:0}}.navbar-default{background-color:#f8f8f8;border-color:#e7e7e7}.navbar-default .navbar-brand{color:#777}.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover{color:#5e5e5e;background-color:transparent}.navbar-default .navbar-text{color:#777}.navbar-default .navbar-nav>li>a{color:#777}.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{color:#333;background-color:transparent}.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:focus,.navbar-default .navbar-nav>.disabled>a:hover{color:#ccc;background-color:transparent}.navbar-default .navbar-toggle{border-color:#ddd}.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{background-color:#ddd}.navbar-default .navbar-toggle .icon-bar{background-color:#888}.navbar-default .navbar-collapse,.navbar-default .navbar-form{border-color:#e7e7e7}.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>.open>a:hover{color:#555;background-color:#e7e7e7}@media (max-width:767px){.navbar-default .navbar-nav .open .dropdown-menu>li>a{color:#777}.navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{color:#333;background-color:transparent}.navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover{color:#555;background-color:#e7e7e7}.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:#ccc;background-color:transparent}}.navbar-default .navbar-link{color:#777}.navbar-default .navbar-link:hover{color:#333}.navbar-default .btn-link{color:#777}.navbar-default .btn-link:focus,.navbar-default .btn-link:hover{color:#333}.navbar-default .btn-link[disabled]:focus,.navbar-default .btn-link[disabled]:hover,fieldset[disabled] .navbar-default .btn-link:focus,fieldset[disabled] .navbar-default .btn-link:hover{color:#ccc}.navbar-inverse{background-color:#222;border-color:#080808}.navbar-inverse .navbar-brand{color:#9d9d9d}.navbar-inverse .navbar-brand:focus,.navbar-inverse .navbar-brand:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-text{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:focus,.navbar-inverse .navbar-nav>.active>a:hover{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav>.disabled>a,.navbar-inverse .navbar-nav>.disabled>a:focus,.navbar-inverse .navbar-nav>.disabled>a:hover{color:#444;background-color:transparent}.navbar-inverse .navbar-toggle{border-color:#333}.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{background-color:#333}.navbar-inverse .navbar-toggle .icon-bar{background-color:#fff}.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form{border-color:#101010}.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a:focus,.navbar-inverse .navbar-nav>.open>a:hover{color:#fff;background-color:#080808}@media (max-width:767px){.navbar-inverse .navbar-nav .open .dropdown-menu>.dropdown-header{border-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu .divider{background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a{color:#9d9d9d}.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{color:#fff;background-color:transparent}.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover{color:#fff;background-color:#080808}.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.disabled>a:hover{color:#444;background-color:transparent}}.navbar-inverse .navbar-link{color:#9d9d9d}.navbar-inverse .navbar-link:hover{color:#fff}.navbar-inverse .btn-link{color:#9d9d9d}.navbar-inverse .btn-link:focus,.navbar-inverse .btn-link:hover{color:#fff}.navbar-inverse .btn-link[disabled]:focus,.navbar-inverse .btn-link[disabled]:hover,fieldset[disabled] .navbar-inverse .btn-link:focus,fieldset[disabled] .navbar-inverse .btn-link:hover{color:#444}.breadcrumb{padding:8px 15px;margin-bottom:20px;list-style:none;background-color:#f5f5f5;border-radius:4px}.breadcrumb>li{display:inline-block}.breadcrumb>li+li:before{padding:0 5px;color:#ccc;content:\"/\\00a0\"}.breadcrumb>.active{color:#777}.pagination{display:inline-block;padding-left:0;margin:20px 0;border-radius:4px}.pagination>li{display:inline}.pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#337ab7;text-decoration:none;background-color:#fff;border:1px solid #ddd}.pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}.pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}.pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{z-index:2;color:#23527c;background-color:#eee;border-color:#ddd}.pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:3;color:#fff;cursor:default;background-color:#337ab7;border-color:#337ab7}.pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}.pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px;line-height:1.3333333}.pagination-lg>li:first-child>a,.pagination-lg>li:first-child>span{border-top-left-radius:6px;border-bottom-left-radius:6px}.pagination-lg>li:last-child>a,.pagination-lg>li:last-child>span{border-top-right-radius:6px;border-bottom-right-radius:6px}.pagination-sm>li>a,.pagination-sm>li>span{padding:5px 10px;font-size:12px;line-height:1.5}.pagination-sm>li:first-child>a,.pagination-sm>li:first-child>span{border-top-left-radius:3px;border-bottom-left-radius:3px}.pagination-sm>li:last-child>a,.pagination-sm>li:last-child>span{border-top-right-radius:3px;border-bottom-right-radius:3px}.pager{padding-left:0;margin:20px 0;text-align:center;list-style:none}.pager li{display:inline}.pager li>a,.pager li>span{display:inline-block;padding:5px 14px;background-color:#fff;border:1px solid #ddd;border-radius:15px}.pager li>a:focus,.pager li>a:hover{text-decoration:none;background-color:#eee}.pager .next>a,.pager .next>span{float:right}.pager .previous>a,.pager .previous>span{float:left}.pager .disabled>a,.pager .disabled>a:focus,.pager .disabled>a:hover,.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}.label{display:inline;padding:.2em .6em .3em;font-size:75%;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:baseline;border-radius:.25em}a.label:focus,a.label:hover{color:#fff;text-decoration:none;cursor:pointer}.label:empty{display:none}.btn .label{position:relative;top:-1px}.label-default{background-color:#777}.label-default[href]:focus,.label-default[href]:hover{background-color:#5e5e5e}.label-primary{background-color:#337ab7}.label-primary[href]:focus,.label-primary[href]:hover{background-color:#286090}.label-success{background-color:#5cb85c}.label-success[href]:focus,.label-success[href]:hover{background-color:#449d44}.label-info{background-color:#5bc0de}.label-info[href]:focus,.label-info[href]:hover{background-color:#31b0d5}.label-warning{background-color:#f0ad4e}.label-warning[href]:focus,.label-warning[href]:hover{background-color:#ec971f}.label-danger{background-color:#d9534f}.label-danger[href]:focus,.label-danger[href]:hover{background-color:#c9302c}.badge{display:inline-block;min-width:10px;padding:3px 7px;font-size:12px;font-weight:700;line-height:1;color:#fff;text-align:center;white-space:nowrap;vertical-align:middle;background-color:#777;border-radius:10px}.badge:empty{display:none}.btn .badge{position:relative;top:-1px}.btn-group-xs>.btn .badge,.btn-xs .badge{top:0;padding:1px 5px}a.badge:focus,a.badge:hover{color:#fff;text-decoration:none;cursor:pointer}.list-group-item.active>.badge,.nav-pills>.active>a>.badge{color:#337ab7;background-color:#fff}.list-group-item>.badge{float:right}.list-group-item>.badge+.badge{margin-right:5px}.nav-pills>li>a>.badge{margin-left:3px}.jumbotron{padding-top:30px;padding-bottom:30px;margin-bottom:30px;color:inherit;background-color:#eee}.jumbotron .h1,.jumbotron h1{color:inherit}.jumbotron p{margin-bottom:15px;font-size:21px;font-weight:200}.jumbotron>hr{border-top-color:#d5d5d5}.container .jumbotron,.container-fluid .jumbotron{padding-right:15px;padding-left:15px;border-radius:6px}.jumbotron .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}.container .jumbotron,.container-fluid .jumbotron{padding-right:60px;padding-left:60px}.jumbotron .h1,.jumbotron h1{font-size:63px}}.thumbnail{display:block;padding:4px;margin-bottom:20px;line-height:1.42857143;background-color:#fff;border:1px solid #ddd;border-radius:4px;-webkit-transition:border .2s ease-in-out;-o-transition:border .2s ease-in-out;transition:border .2s ease-in-out}.thumbnail a>img,.thumbnail>img{margin-right:auto;margin-left:auto}a.thumbnail.active,a.thumbnail:focus,a.thumbnail:hover{border-color:#337ab7}.thumbnail .caption{padding:9px;color:#333}.alert{padding:15px;margin-bottom:20px;border:1px solid transparent;border-radius:4px}.alert h4{margin-top:0;color:inherit}.alert .alert-link{font-weight:700}.alert>p,.alert>ul{margin-bottom:0}.alert>p+p{margin-top:5px}.alert-dismissable,.alert-dismissible{padding-right:35px}.alert-dismissable .close,.alert-dismissible .close{position:relative;top:-2px;right:-21px;color:inherit}.alert-success{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.alert-success hr{border-top-color:#c9e2b3}.alert-success .alert-link{color:#2b542c}.alert-info{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.alert-info hr{border-top-color:#a6e1ec}.alert-info .alert-link{color:#245269}.alert-warning{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.alert-warning hr{border-top-color:#f7e1b5}.alert-warning .alert-link{color:#66512c}.alert-danger{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.alert-danger hr{border-top-color:#e4b9c0}.alert-danger .alert-link{color:#843534}@-webkit-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@-o-keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}@keyframes progress-bar-stripes{from{background-position:40px 0}to{background-position:0 0}}.progress{height:20px;margin-bottom:20px;overflow:hidden;background-color:#f5f5f5;border-radius:4px;-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);box-shadow:inset 0 1px 2px rgba(0,0,0,.1)}.progress-bar{float:left;width:0;height:100%;font-size:12px;line-height:20px;color:#fff;text-align:center;background-color:#337ab7;-webkit-box-shadow:inset 0 -1px 0 rgba(0,0,0,.15);box-shadow:inset 0 -1px 0 rgba(0,0,0,.15);-webkit-transition:width .6s ease;-o-transition:width .6s ease;transition:width .6s ease}.progress-bar-striped,.progress-striped .progress-bar{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);-webkit-background-size:40px 40px;background-size:40px 40px}.progress-bar.active,.progress.active .progress-bar{-webkit-animation:progress-bar-stripes 2s linear infinite;-o-animation:progress-bar-stripes 2s linear infinite;animation:progress-bar-stripes 2s linear infinite}.progress-bar-success{background-color:#5cb85c}.progress-striped .progress-bar-success{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-info{background-color:#5bc0de}.progress-striped .progress-bar-info{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-warning{background-color:#f0ad4e}.progress-striped .progress-bar-warning{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.progress-bar-danger{background-color:#d9534f}.progress-striped .progress-bar-danger{background-image:-webkit-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:-o-linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);background-image:linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)}.media{margin-top:15px}.media:first-child{margin-top:0}.media,.media-body{overflow:hidden;zoom:1}.media-body{width:10000px}.media-object{display:block}.media-object.img-thumbnail{max-width:none}.media-right,.media>.pull-right{padding-left:10px}.media-left,.media>.pull-left{padding-right:10px}.media-body,.media-left,.media-right{display:table-cell;vertical-align:top}.media-middle{vertical-align:middle}.media-bottom{vertical-align:bottom}.media-heading{margin-top:0;margin-bottom:5px}.media-list{padding-left:0;list-style:none}.list-group{padding-left:0;margin-bottom:20px}.list-group-item{position:relative;display:block;padding:10px 15px;margin-bottom:-1px;background-color:#fff;border:1px solid #ddd}.list-group-item:first-child{border-top-left-radius:4px;border-top-right-radius:4px}.list-group-item:last-child{margin-bottom:0;border-bottom-right-radius:4px;border-bottom-left-radius:4px}a.list-group-item,button.list-group-item{color:#555}a.list-group-item .list-group-item-heading,button.list-group-item .list-group-item-heading{color:#333}a.list-group-item:focus,a.list-group-item:hover,button.list-group-item:focus,button.list-group-item:hover{color:#555;text-decoration:none;background-color:#f5f5f5}button.list-group-item{width:100%;text-align:left}.list-group-item.disabled,.list-group-item.disabled:focus,.list-group-item.disabled:hover{color:#777;cursor:not-allowed;background-color:#eee}.list-group-item.disabled .list-group-item-heading,.list-group-item.disabled:focus .list-group-item-heading,.list-group-item.disabled:hover .list-group-item-heading{color:inherit}.list-group-item.disabled .list-group-item-text,.list-group-item.disabled:focus .list-group-item-text,.list-group-item.disabled:hover .list-group-item-text{color:#777}.list-group-item.active,.list-group-item.active:focus,.list-group-item.active:hover{z-index:2;color:#fff;background-color:#337ab7;border-color:#337ab7}.list-group-item.active .list-group-item-heading,.list-group-item.active .list-group-item-heading>.small,.list-group-item.active .list-group-item-heading>small,.list-group-item.active:focus .list-group-item-heading,.list-group-item.active:focus .list-group-item-heading>.small,.list-group-item.active:focus .list-group-item-heading>small,.list-group-item.active:hover .list-group-item-heading,.list-group-item.active:hover .list-group-item-heading>.small,.list-group-item.active:hover .list-group-item-heading>small{color:inherit}.list-group-item.active .list-group-item-text,.list-group-item.active:focus .list-group-item-text,.list-group-item.active:hover .list-group-item-text{color:#c7ddef}.list-group-item-success{color:#3c763d;background-color:#dff0d8}a.list-group-item-success,button.list-group-item-success{color:#3c763d}a.list-group-item-success .list-group-item-heading,button.list-group-item-success .list-group-item-heading{color:inherit}a.list-group-item-success:focus,a.list-group-item-success:hover,button.list-group-item-success:focus,button.list-group-item-success:hover{color:#3c763d;background-color:#d0e9c6}a.list-group-item-success.active,a.list-group-item-success.active:focus,a.list-group-item-success.active:hover,button.list-group-item-success.active,button.list-group-item-success.active:focus,button.list-group-item-success.active:hover{color:#fff;background-color:#3c763d;border-color:#3c763d}.list-group-item-info{color:#31708f;background-color:#d9edf7}a.list-group-item-info,button.list-group-item-info{color:#31708f}a.list-group-item-info .list-group-item-heading,button.list-group-item-info .list-group-item-heading{color:inherit}a.list-group-item-info:focus,a.list-group-item-info:hover,button.list-group-item-info:focus,button.list-group-item-info:hover{color:#31708f;background-color:#c4e3f3}a.list-group-item-info.active,a.list-group-item-info.active:focus,a.list-group-item-info.active:hover,button.list-group-item-info.active,button.list-group-item-info.active:focus,button.list-group-item-info.active:hover{color:#fff;background-color:#31708f;border-color:#31708f}.list-group-item-warning{color:#8a6d3b;background-color:#fcf8e3}a.list-group-item-warning,button.list-group-item-warning{color:#8a6d3b}a.list-group-item-warning .list-group-item-heading,button.list-group-item-warning .list-group-item-heading{color:inherit}a.list-group-item-warning:focus,a.list-group-item-warning:hover,button.list-group-item-warning:focus,button.list-group-item-warning:hover{color:#8a6d3b;background-color:#faf2cc}a.list-group-item-warning.active,a.list-group-item-warning.active:focus,a.list-group-item-warning.active:hover,button.list-group-item-warning.active,button.list-group-item-warning.active:focus,button.list-group-item-warning.active:hover{color:#fff;background-color:#8a6d3b;border-color:#8a6d3b}.list-group-item-danger{color:#a94442;background-color:#f2dede}a.list-group-item-danger,button.list-group-item-danger{color:#a94442}a.list-group-item-danger .list-group-item-heading,button.list-group-item-danger .list-group-item-heading{color:inherit}a.list-group-item-danger:focus,a.list-group-item-danger:hover,button.list-group-item-danger:focus,button.list-group-item-danger:hover{color:#a94442;background-color:#ebcccc}a.list-group-item-danger.active,a.list-group-item-danger.active:focus,a.list-group-item-danger.active:hover,button.list-group-item-danger.active,button.list-group-item-danger.active:focus,button.list-group-item-danger.active:hover{color:#fff;background-color:#a94442;border-color:#a94442}.list-group-item-heading{margin-top:0;margin-bottom:5px}.list-group-item-text{margin-bottom:0;line-height:1.3}.panel{margin-bottom:20px;background-color:#fff;border:1px solid transparent;border-radius:4px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.panel-body{padding:15px}.panel-heading{padding:10px 15px;border-bottom:1px solid transparent;border-top-left-radius:3px;border-top-right-radius:3px}.panel-heading>.dropdown .dropdown-toggle{color:inherit}.panel-title{margin-top:0;margin-bottom:0;font-size:16px;color:inherit}.panel-title>.small,.panel-title>.small>a,.panel-title>a,.panel-title>small,.panel-title>small>a{color:inherit}.panel-footer{padding:10px 15px;background-color:#f5f5f5;border-top:1px solid #ddd;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.list-group,.panel>.panel-collapse>.list-group{margin-bottom:0}.panel>.list-group .list-group-item,.panel>.panel-collapse>.list-group .list-group-item{border-width:1px 0;border-radius:0}.panel>.list-group:first-child .list-group-item:first-child,.panel>.panel-collapse>.list-group:first-child .list-group-item:first-child{border-top:0;border-top-left-radius:3px;border-top-right-radius:3px}.panel>.list-group:last-child .list-group-item:last-child,.panel>.panel-collapse>.list-group:last-child .list-group-item:last-child{border-bottom:0;border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.panel-heading+.panel-collapse>.list-group .list-group-item:first-child{border-top-left-radius:0;border-top-right-radius:0}.panel-heading+.list-group .list-group-item:first-child{border-top-width:0}.list-group+.panel-footer{border-top-width:0}.panel>.panel-collapse>.table,.panel>.table,.panel>.table-responsive>.table{margin-bottom:0}.panel>.panel-collapse>.table caption,.panel>.table caption,.panel>.table-responsive>.table caption{padding-right:15px;padding-left:15px}.panel>.table-responsive:first-child>.table:first-child,.panel>.table:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child,.panel>.table:first-child>thead:first-child>tr:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:first-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:first-child,.panel>.table:first-child>thead:first-child>tr:first-child td:first-child,.panel>.table:first-child>thead:first-child>tr:first-child th:first-child{border-top-left-radius:3px}.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>tbody:first-child>tr:first-child th:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table-responsive:first-child>.table:first-child>thead:first-child>tr:first-child th:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child td:last-child,.panel>.table:first-child>tbody:first-child>tr:first-child th:last-child,.panel>.table:first-child>thead:first-child>tr:first-child td:last-child,.panel>.table:first-child>thead:first-child>tr:first-child th:last-child{border-top-right-radius:3px}.panel>.table-responsive:last-child>.table:last-child,.panel>.table:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child,.panel>.table:last-child>tbody:last-child>tr:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child{border-bottom-right-radius:3px;border-bottom-left-radius:3px}.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:first-child,.panel>.table:last-child>tbody:last-child>tr:last-child td:first-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:first-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:first-child{border-bottom-left-radius:3px}.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table-responsive:last-child>.table:last-child>tfoot:last-child>tr:last-child th:last-child,.panel>.table:last-child>tbody:last-child>tr:last-child td:last-child,.panel>.table:last-child>tbody:last-child>tr:last-child th:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child td:last-child,.panel>.table:last-child>tfoot:last-child>tr:last-child th:last-child{border-bottom-right-radius:3px}.panel>.panel-body+.table,.panel>.panel-body+.table-responsive,.panel>.table+.panel-body,.panel>.table-responsive+.panel-body{border-top:1px solid #ddd}.panel>.table>tbody:first-child>tr:first-child td,.panel>.table>tbody:first-child>tr:first-child th{border-top:0}.panel>.table-bordered,.panel>.table-responsive>.table-bordered{border:0}.panel>.table-bordered>tbody>tr>td:first-child,.panel>.table-bordered>tbody>tr>th:first-child,.panel>.table-bordered>tfoot>tr>td:first-child,.panel>.table-bordered>tfoot>tr>th:first-child,.panel>.table-bordered>thead>tr>td:first-child,.panel>.table-bordered>thead>tr>th:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:first-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:first-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:first-child,.panel>.table-responsive>.table-bordered>thead>tr>td:first-child,.panel>.table-responsive>.table-bordered>thead>tr>th:first-child{border-left:0}.panel>.table-bordered>tbody>tr>td:last-child,.panel>.table-bordered>tbody>tr>th:last-child,.panel>.table-bordered>tfoot>tr>td:last-child,.panel>.table-bordered>tfoot>tr>th:last-child,.panel>.table-bordered>thead>tr>td:last-child,.panel>.table-bordered>thead>tr>th:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>td:last-child,.panel>.table-responsive>.table-bordered>tbody>tr>th:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>td:last-child,.panel>.table-responsive>.table-bordered>tfoot>tr>th:last-child,.panel>.table-responsive>.table-bordered>thead>tr>td:last-child,.panel>.table-responsive>.table-bordered>thead>tr>th:last-child{border-right:0}.panel>.table-bordered>tbody>tr:first-child>td,.panel>.table-bordered>tbody>tr:first-child>th,.panel>.table-bordered>thead>tr:first-child>td,.panel>.table-bordered>thead>tr:first-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:first-child>th,.panel>.table-responsive>.table-bordered>thead>tr:first-child>td,.panel>.table-responsive>.table-bordered>thead>tr:first-child>th{border-bottom:0}.panel>.table-bordered>tbody>tr:last-child>td,.panel>.table-bordered>tbody>tr:last-child>th,.panel>.table-bordered>tfoot>tr:last-child>td,.panel>.table-bordered>tfoot>tr:last-child>th,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>td,.panel>.table-responsive>.table-bordered>tbody>tr:last-child>th,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>td,.panel>.table-responsive>.table-bordered>tfoot>tr:last-child>th{border-bottom:0}.panel>.table-responsive{margin-bottom:0;border:0}.panel-group{margin-bottom:20px}.panel-group .panel{margin-bottom:0;border-radius:4px}.panel-group .panel+.panel{margin-top:5px}.panel-group .panel-heading{border-bottom:0}.panel-group .panel-heading+.panel-collapse>.list-group,.panel-group .panel-heading+.panel-collapse>.panel-body{border-top:1px solid #ddd}.panel-group .panel-footer{border-top:0}.panel-group .panel-footer+.panel-collapse .panel-body{border-bottom:1px solid #ddd}.panel-default{border-color:#ddd}.panel-default>.panel-heading{color:#333;background-color:#f5f5f5;border-color:#ddd}.panel-default>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ddd}.panel-default>.panel-heading .badge{color:#f5f5f5;background-color:#333}.panel-default>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ddd}.panel-primary{border-color:#337ab7}.panel-primary>.panel-heading{color:#fff;background-color:#337ab7;border-color:#337ab7}.panel-primary>.panel-heading+.panel-collapse>.panel-body{border-top-color:#337ab7}.panel-primary>.panel-heading .badge{color:#337ab7;background-color:#fff}.panel-primary>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#337ab7}.panel-success{border-color:#d6e9c6}.panel-success>.panel-heading{color:#3c763d;background-color:#dff0d8;border-color:#d6e9c6}.panel-success>.panel-heading+.panel-collapse>.panel-body{border-top-color:#d6e9c6}.panel-success>.panel-heading .badge{color:#dff0d8;background-color:#3c763d}.panel-success>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#d6e9c6}.panel-info{border-color:#bce8f1}.panel-info>.panel-heading{color:#31708f;background-color:#d9edf7;border-color:#bce8f1}.panel-info>.panel-heading+.panel-collapse>.panel-body{border-top-color:#bce8f1}.panel-info>.panel-heading .badge{color:#d9edf7;background-color:#31708f}.panel-info>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#bce8f1}.panel-warning{border-color:#faebcc}.panel-warning>.panel-heading{color:#8a6d3b;background-color:#fcf8e3;border-color:#faebcc}.panel-warning>.panel-heading+.panel-collapse>.panel-body{border-top-color:#faebcc}.panel-warning>.panel-heading .badge{color:#fcf8e3;background-color:#8a6d3b}.panel-warning>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#faebcc}.panel-danger{border-color:#ebccd1}.panel-danger>.panel-heading{color:#a94442;background-color:#f2dede;border-color:#ebccd1}.panel-danger>.panel-heading+.panel-collapse>.panel-body{border-top-color:#ebccd1}.panel-danger>.panel-heading .badge{color:#f2dede;background-color:#a94442}.panel-danger>.panel-footer+.panel-collapse>.panel-body{border-bottom-color:#ebccd1}.embed-responsive{position:relative;display:block;height:0;padding:0;overflow:hidden}.embed-responsive .embed-responsive-item,.embed-responsive embed,.embed-responsive iframe,.embed-responsive object,.embed-responsive video{position:absolute;top:0;bottom:0;left:0;width:100%;height:100%;border:0}.embed-responsive-16by9{padding-bottom:56.25%}.embed-responsive-4by3{padding-bottom:75%}.well{min-height:20px;padding:19px;margin-bottom:20px;background-color:#f5f5f5;border:1px solid #e3e3e3;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.05);box-shadow:inset 0 1px 1px rgba(0,0,0,.05)}.well blockquote{border-color:#ddd;border-color:rgba(0,0,0,.15)}.well-lg{padding:24px;border-radius:6px}.well-sm{padding:9px;border-radius:3px}.close{float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer;filter:alpha(opacity=50);opacity:.5}button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;border:0}.modal-open{overflow:hidden}.modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}.modal.fade .modal-dialog{-webkit-transition:-webkit-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out;-webkit-transform:translate(0,-25%);-ms-transform:translate(0,-25%);-o-transform:translate(0,-25%);transform:translate(0,-25%)}.modal.in .modal-dialog{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);-o-transform:translate(0,0);transform:translate(0,0)}.modal-open .modal{overflow-x:hidden;overflow-y:auto}.modal-dialog{position:relative;width:auto;margin:10px}.modal-content{position:relative;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #999;border:1px solid rgba(0,0,0,.2);border-radius:6px;outline:0;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5)}.modal-backdrop{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1040;background-color:#000}.modal-backdrop.fade{filter:alpha(opacity=0);opacity:0}.modal-backdrop.in{filter:alpha(opacity=50);opacity:.5}.modal-header{padding:15px;border-bottom:1px solid #e5e5e5}.modal-header .close{margin-top:-2px}.modal-title{margin:0;line-height:1.42857143}.modal-body{position:relative;padding:15px}.modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5}.modal-footer .btn+.btn{margin-bottom:0;margin-left:5px}.modal-footer .btn-group .btn+.btn{margin-left:-1px}.modal-footer .btn-block+.btn-block{margin-left:0}.modal-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}@media (min-width:768px){.modal-dialog{width:600px;margin:30px auto}.modal-content{-webkit-box-shadow:0 5px 15px rgba(0,0,0,.5);box-shadow:0 5px 15px rgba(0,0,0,.5)}.modal-sm{width:300px}}@media (min-width:992px){.modal-lg{width:900px}}.tooltip{position:absolute;z-index:1070;display:block;font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;font-size:12px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;filter:alpha(opacity=0);opacity:0;line-break:auto}.tooltip.in{filter:alpha(opacity=90);opacity:.9}.tooltip.top{padding:5px 0;margin-top:-3px}.tooltip.right{padding:0 5px;margin-left:3px}.tooltip.bottom{padding:5px 0;margin-top:3px}.tooltip.left{padding:0 5px;margin-left:-3px}.tooltip-inner{max-width:200px;padding:3px 8px;color:#fff;text-align:center;background-color:#000;border-radius:4px}.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-left .tooltip-arrow{right:5px;bottom:0;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.top-right .tooltip-arrow{bottom:0;left:5px;margin-bottom:-5px;border-width:5px 5px 0;border-top-color:#000}.tooltip.right .tooltip-arrow{top:50%;left:0;margin-top:-5px;border-width:5px 5px 5px 0;border-right-color:#000}.tooltip.left .tooltip-arrow{top:50%;right:0;margin-top:-5px;border-width:5px 0 5px 5px;border-left-color:#000}.tooltip.bottom .tooltip-arrow{top:0;left:50%;margin-left:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-left .tooltip-arrow{top:0;right:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.tooltip.bottom-right .tooltip-arrow{top:0;left:5px;margin-top:-5px;border-width:0 5px 5px;border-bottom-color:#000}.popover{position:absolute;top:0;left:0;z-index:1060;display:none;max-width:276px;padding:1px;font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;font-size:14px;font-style:normal;font-weight:400;line-height:1.42857143;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;word-wrap:normal;white-space:normal;background-color:#fff;-webkit-background-clip:padding-box;background-clip:padding-box;border:1px solid #ccc;border:1px solid rgba(0,0,0,.2);border-radius:6px;-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2);line-break:auto}.popover.top{margin-top:-10px}.popover.right{margin-left:10px}.popover.bottom{margin-top:10px}.popover.left{margin-left:-10px}.popover-title{padding:8px 14px;margin:0;font-size:14px;background-color:#f7f7f7;border-bottom:1px solid #ebebeb;border-radius:5px 5px 0 0}.popover-content{padding:9px 14px}.popover>.arrow,.popover>.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.popover>.arrow{border-width:11px}.popover>.arrow:after{content:\"\";border-width:10px}.popover.top>.arrow{bottom:-11px;left:50%;margin-left:-11px;border-top-color:#999;border-top-color:rgba(0,0,0,.25);border-bottom-width:0}.popover.top>.arrow:after{bottom:1px;margin-left:-10px;content:\" \";border-top-color:#fff;border-bottom-width:0}.popover.right>.arrow{top:50%;left:-11px;margin-top:-11px;border-right-color:#999;border-right-color:rgba(0,0,0,.25);border-left-width:0}.popover.right>.arrow:after{bottom:-10px;left:1px;content:\" \";border-right-color:#fff;border-left-width:0}.popover.bottom>.arrow{top:-11px;left:50%;margin-left:-11px;border-top-width:0;border-bottom-color:#999;border-bottom-color:rgba(0,0,0,.25)}.popover.bottom>.arrow:after{top:1px;margin-left:-10px;content:\" \";border-top-width:0;border-bottom-color:#fff}.popover.left>.arrow{top:50%;right:-11px;margin-top:-11px;border-right-width:0;border-left-color:#999;border-left-color:rgba(0,0,0,.25)}.popover.left>.arrow:after{right:1px;bottom:-10px;content:\" \";border-right-width:0;border-left-color:#fff}.carousel{position:relative}.carousel-inner{position:relative;width:100%;overflow:hidden}.carousel-inner>.item{position:relative;display:none;-webkit-transition:.6s ease-in-out left;-o-transition:.6s ease-in-out left;transition:.6s ease-in-out left}.carousel-inner>.item>a>img,.carousel-inner>.item>img{line-height:1}@media all and (transform-3d),(-webkit-transform-3d){.carousel-inner>.item{-webkit-transition:-webkit-transform .6s ease-in-out;-o-transition:-o-transform .6s ease-in-out;transition:transform .6s ease-in-out;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px}.carousel-inner>.item.active.right,.carousel-inner>.item.next{left:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}.carousel-inner>.item.active.left,.carousel-inner>.item.prev{left:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}.carousel-inner>.item.active,.carousel-inner>.item.next.left,.carousel-inner>.item.prev.right{left:0;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.carousel-inner>.active,.carousel-inner>.next,.carousel-inner>.prev{display:block}.carousel-inner>.active{left:0}.carousel-inner>.next,.carousel-inner>.prev{position:absolute;top:0;width:100%}.carousel-inner>.next{left:100%}.carousel-inner>.prev{left:-100%}.carousel-inner>.next.left,.carousel-inner>.prev.right{left:0}.carousel-inner>.active.left{left:-100%}.carousel-inner>.active.right{left:100%}.carousel-control{position:absolute;top:0;bottom:0;left:0;width:15%;font-size:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6);background-color:rgba(0,0,0,0);filter:alpha(opacity=50);opacity:.5}.carousel-control.left{background-image:-webkit-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.5)),to(rgba(0,0,0,.0001)));background-image:linear-gradient(to right,rgba(0,0,0,.5) 0,rgba(0,0,0,.0001) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);background-repeat:repeat-x}.carousel-control.right{right:0;left:auto;background-image:-webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);background-image:-webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));background-image:linear-gradient(to right,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);background-repeat:repeat-x}.carousel-control:focus,.carousel-control:hover{color:#fff;text-decoration:none;filter:alpha(opacity=90);outline:0;opacity:.9}.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next,.carousel-control .icon-prev{position:absolute;top:50%;z-index:5;display:inline-block;margin-top:-10px}.carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{left:50%;margin-left:-10px}.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next{right:50%;margin-right:-10px}.carousel-control .icon-next,.carousel-control .icon-prev{width:20px;height:20px;font-family:serif;line-height:1}.carousel-control .icon-prev:before{content:'\\2039'}.carousel-control .icon-next:before{content:'\\203a'}.carousel-indicators{position:absolute;bottom:10px;left:50%;z-index:15;width:60%;padding-left:0;margin-left:-30%;text-align:center;list-style:none}.carousel-indicators li{display:inline-block;width:10px;height:10px;margin:1px;text-indent:-999px;cursor:pointer;background-color:#000\\9;background-color:rgba(0,0,0,0);border:1px solid #fff;border-radius:10px}.carousel-indicators .active{width:12px;height:12px;margin:0;background-color:#fff}.carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center;text-shadow:0 1px 2px rgba(0,0,0,.6)}.carousel-caption .btn{text-shadow:none}@media screen and (min-width:768px){.carousel-control .glyphicon-chevron-left,.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next,.carousel-control .icon-prev{width:30px;height:30px;margin-top:-10px;font-size:30px}.carousel-control .glyphicon-chevron-left,.carousel-control .icon-prev{margin-left:-10px}.carousel-control .glyphicon-chevron-right,.carousel-control .icon-next{margin-right:-10px}.carousel-caption{right:20%;left:20%;padding-bottom:30px}.carousel-indicators{bottom:20px}}.btn-group-vertical>.btn-group:after,.btn-group-vertical>.btn-group:before,.btn-toolbar:after,.btn-toolbar:before,.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.dl-horizontal dd:after,.dl-horizontal dd:before,.form-horizontal .form-group:after,.form-horizontal .form-group:before,.modal-footer:after,.modal-footer:before,.modal-header:after,.modal-header:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.pager:after,.pager:before,.panel-body:after,.panel-body:before,.row:after,.row:before{display:table;content:\" \"}.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-horizontal .form-group:after,.modal-footer:after,.modal-header:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after{clear:both}.center-block{display:block;margin-right:auto;margin-left:auto}.pull-right{float:right!important}.pull-left{float:left!important}.hide{display:none!important}.show{display:block!important}.invisible{visibility:hidden}.text-hide{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}.hidden{display:none!important}.affix{position:fixed}@-ms-viewport{width:device-width}.visible-lg,.visible-md,.visible-sm,.visible-xs{display:none!important}.visible-lg-block,.visible-lg-inline,.visible-lg-inline-block,.visible-md-block,.visible-md-inline,.visible-md-inline-block,.visible-sm-block,.visible-sm-inline,.visible-sm-inline-block,.visible-xs-block,.visible-xs-inline,.visible-xs-inline-block{display:none!important}@media (max-width:767px){.visible-xs{display:block!important}table.visible-xs{display:table!important}tr.visible-xs{display:table-row!important}td.visible-xs,th.visible-xs{display:table-cell!important}}@media (max-width:767px){.visible-xs-block{display:block!important}}@media (max-width:767px){.visible-xs-inline{display:inline!important}}@media (max-width:767px){.visible-xs-inline-block{display:inline-block!important}}@media (min-width:768px) and (max-width:991px){.visible-sm{display:block!important}table.visible-sm{display:table!important}tr.visible-sm{display:table-row!important}td.visible-sm,th.visible-sm{display:table-cell!important}}@media (min-width:768px) and (max-width:991px){.visible-sm-block{display:block!important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline{display:inline!important}}@media (min-width:768px) and (max-width:991px){.visible-sm-inline-block{display:inline-block!important}}@media (min-width:992px) and (max-width:1199px){.visible-md{display:block!important}table.visible-md{display:table!important}tr.visible-md{display:table-row!important}td.visible-md,th.visible-md{display:table-cell!important}}@media (min-width:992px) and (max-width:1199px){.visible-md-block{display:block!important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline{display:inline!important}}@media (min-width:992px) and (max-width:1199px){.visible-md-inline-block{display:inline-block!important}}@media (min-width:1200px){.visible-lg{display:block!important}table.visible-lg{display:table!important}tr.visible-lg{display:table-row!important}td.visible-lg,th.visible-lg{display:table-cell!important}}@media (min-width:1200px){.visible-lg-block{display:block!important}}@media (min-width:1200px){.visible-lg-inline{display:inline!important}}@media (min-width:1200px){.visible-lg-inline-block{display:inline-block!important}}@media (max-width:767px){.hidden-xs{display:none!important}}@media (min-width:768px) and (max-width:991px){.hidden-sm{display:none!important}}@media (min-width:992px) and (max-width:1199px){.hidden-md{display:none!important}}@media (min-width:1200px){.hidden-lg{display:none!important}}.visible-print{display:none!important}@media print{.visible-print{display:block!important}table.visible-print{display:table!important}tr.visible-print{display:table-row!important}td.visible-print,th.visible-print{display:table-cell!important}}.visible-print-block{display:none!important}@media print{.visible-print-block{display:block!important}}.visible-print-inline{display:none!important}@media print{.visible-print-inline{display:inline!important}}.visible-print-inline-block{display:none!important}@media print{.visible-print-inline-block{display:inline-block!important}}@media print{.hidden-print{display:none!important}}/*!\nAnimate.css - http://daneden.me/animate\nLicensed under the MIT license - http://opensource.org/licenses/MIT\n\nCopyright (c) 2015 Daniel Eden\n*/.animated{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.animated.hinge{-webkit-animation-duration:2s;animation-duration:2s}.animated.bounceIn,.animated.bounceOut{-webkit-animation-duration:.75s;animation-duration:.75s}.animated.flipOutX,.animated.flipOutY{-webkit-animation-duration:.75s;animation-duration:.75s}@-webkit-keyframes bounce{100%,20%,53%,80%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}40%,43%{-webkit-animation-timing-function:cubic-bezier(.755,.050,.855,.060);animation-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}70%{-webkit-animation-timing-function:cubic-bezier(.755,.050,.855,.060);animation-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-15px,0);transform:translate3d(0,-15px,0)}90%{-webkit-transform:translate3d(0,-4px,0);transform:translate3d(0,-4px,0)}}@keyframes bounce{100%,20%,53%,80%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}40%,43%{-webkit-animation-timing-function:cubic-bezier(.755,.050,.855,.060);animation-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}70%{-webkit-animation-timing-function:cubic-bezier(.755,.050,.855,.060);animation-timing-function:cubic-bezier(.755,.050,.855,.060);-webkit-transform:translate3d(0,-15px,0);transform:translate3d(0,-15px,0)}90%{-webkit-transform:translate3d(0,-4px,0);transform:translate3d(0,-4px,0)}}.bounce{-webkit-animation-name:bounce;animation-name:bounce;-webkit-transform-origin:center bottom;transform-origin:center bottom}@-webkit-keyframes flash{100%,50%,from{opacity:1}25%,75%{opacity:0}}@keyframes flash{100%,50%,from{opacity:1}25%,75%{opacity:0}}.flash{-webkit-animation-name:flash;animation-name:flash}@-webkit-keyframes pulse{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes pulse{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}.pulse{-webkit-animation-name:pulse;animation-name:pulse}@-webkit-keyframes rubberBand{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}40%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}50%{-webkit-transform:scale3d(1.15,.85,1);transform:scale3d(1.15,.85,1)}65%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}75%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes rubberBand{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}40%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}50%{-webkit-transform:scale3d(1.15,.85,1);transform:scale3d(1.15,.85,1)}65%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}75%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}.rubberBand{-webkit-animation-name:rubberBand;animation-name:rubberBand}@-webkit-keyframes shake{100%,from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}@keyframes shake{100%,from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}10%,30%,50%,70%,90%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}20%,40%,60%,80%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}}.shake{-webkit-animation-name:shake;animation-name:shake}@-webkit-keyframes swing{20%{-webkit-transform:rotate3d(0,0,1,15deg);transform:rotate3d(0,0,1,15deg)}40%{-webkit-transform:rotate3d(0,0,1,-10deg);transform:rotate3d(0,0,1,-10deg)}60%{-webkit-transform:rotate3d(0,0,1,5deg);transform:rotate3d(0,0,1,5deg)}80%{-webkit-transform:rotate3d(0,0,1,-5deg);transform:rotate3d(0,0,1,-5deg)}100%{-webkit-transform:rotate3d(0,0,1,0deg);transform:rotate3d(0,0,1,0deg)}}@keyframes swing{20%{-webkit-transform:rotate3d(0,0,1,15deg);transform:rotate3d(0,0,1,15deg)}40%{-webkit-transform:rotate3d(0,0,1,-10deg);transform:rotate3d(0,0,1,-10deg)}60%{-webkit-transform:rotate3d(0,0,1,5deg);transform:rotate3d(0,0,1,5deg)}80%{-webkit-transform:rotate3d(0,0,1,-5deg);transform:rotate3d(0,0,1,-5deg)}100%{-webkit-transform:rotate3d(0,0,1,0deg);transform:rotate3d(0,0,1,0deg)}}.swing{-webkit-transform-origin:top center;transform-origin:top center;-webkit-animation-name:swing;animation-name:swing}@-webkit-keyframes tada{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)}30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)}40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes tada{from{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}10%,20%{-webkit-transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg);transform:scale3d(.9,.9,.9) rotate3d(0,0,1,-3deg)}30%,50%,70%,90%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,3deg)}40%,60%,80%{-webkit-transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg);transform:scale3d(1.1,1.1,1.1) rotate3d(0,0,1,-3deg)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}.tada{-webkit-animation-name:tada;animation-name:tada}@-webkit-keyframes wobble{from{-webkit-transform:none;transform:none}15%{-webkit-transform:translate3d(-25%,0,0) rotate3d(0,0,1,-5deg);transform:translate3d(-25%,0,0) rotate3d(0,0,1,-5deg)}30%{-webkit-transform:translate3d(20%,0,0) rotate3d(0,0,1,3deg);transform:translate3d(20%,0,0) rotate3d(0,0,1,3deg)}45%{-webkit-transform:translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);transform:translate3d(-15%,0,0) rotate3d(0,0,1,-3deg)}60%{-webkit-transform:translate3d(10%,0,0) rotate3d(0,0,1,2deg);transform:translate3d(10%,0,0) rotate3d(0,0,1,2deg)}75%{-webkit-transform:translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);transform:translate3d(-5%,0,0) rotate3d(0,0,1,-1deg)}100%{-webkit-transform:none;transform:none}}@keyframes wobble{from{-webkit-transform:none;transform:none}15%{-webkit-transform:translate3d(-25%,0,0) rotate3d(0,0,1,-5deg);transform:translate3d(-25%,0,0) rotate3d(0,0,1,-5deg)}30%{-webkit-transform:translate3d(20%,0,0) rotate3d(0,0,1,3deg);transform:translate3d(20%,0,0) rotate3d(0,0,1,3deg)}45%{-webkit-transform:translate3d(-15%,0,0) rotate3d(0,0,1,-3deg);transform:translate3d(-15%,0,0) rotate3d(0,0,1,-3deg)}60%{-webkit-transform:translate3d(10%,0,0) rotate3d(0,0,1,2deg);transform:translate3d(10%,0,0) rotate3d(0,0,1,2deg)}75%{-webkit-transform:translate3d(-5%,0,0) rotate3d(0,0,1,-1deg);transform:translate3d(-5%,0,0) rotate3d(0,0,1,-1deg)}100%{-webkit-transform:none;transform:none}}.wobble{-webkit-animation-name:wobble;animation-name:wobble}@-webkit-keyframes jello{100%,11.1%,from{-webkit-transform:none;transform:none}22.2%{-webkit-transform:skewX(-12.5deg) skewY(-12.5deg);transform:skewX(-12.5deg) skewY(-12.5deg)}33.3%{-webkit-transform:skewX(6.25deg) skewY(6.25deg);transform:skewX(6.25deg) skewY(6.25deg)}44.4%{-webkit-transform:skewX(-3.125deg) skewY(-3.125deg);transform:skewX(-3.125deg) skewY(-3.125deg)}55.5%{-webkit-transform:skewX(1.5625deg) skewY(1.5625deg);transform:skewX(1.5625deg) skewY(1.5625deg)}66.6%{-webkit-transform:skewX(-.78125deg) skewY(-.78125deg);transform:skewX(-.78125deg) skewY(-.78125deg)}77.7%{-webkit-transform:skewX(.390625deg) skewY(.390625deg);transform:skewX(.390625deg) skewY(.390625deg)}88.8%{-webkit-transform:skewX(-.1953125deg) skewY(-.1953125deg);transform:skewX(-.1953125deg) skewY(-.1953125deg)}}@keyframes jello{100%,11.1%,from{-webkit-transform:none;transform:none}22.2%{-webkit-transform:skewX(-12.5deg) skewY(-12.5deg);transform:skewX(-12.5deg) skewY(-12.5deg)}33.3%{-webkit-transform:skewX(6.25deg) skewY(6.25deg);transform:skewX(6.25deg) skewY(6.25deg)}44.4%{-webkit-transform:skewX(-3.125deg) skewY(-3.125deg);transform:skewX(-3.125deg) skewY(-3.125deg)}55.5%{-webkit-transform:skewX(1.5625deg) skewY(1.5625deg);transform:skewX(1.5625deg) skewY(1.5625deg)}66.6%{-webkit-transform:skewX(-.78125deg) skewY(-.78125deg);transform:skewX(-.78125deg) skewY(-.78125deg)}77.7%{-webkit-transform:skewX(.390625deg) skewY(.390625deg);transform:skewX(.390625deg) skewY(.390625deg)}88.8%{-webkit-transform:skewX(-.1953125deg) skewY(-.1953125deg);transform:skewX(-.1953125deg) skewY(-.1953125deg)}}.jello{-webkit-animation-name:jello;animation-name:jello;-webkit-transform-origin:center;transform-origin:center}@-webkit-keyframes bounceIn{100%,20%,40%,60%,80%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}20%{-webkit-transform:scale3d(1.1,1.1,1.1);transform:scale3d(1.1,1.1,1.1)}40%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}60%{opacity:1;-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}80%{-webkit-transform:scale3d(.97,.97,.97);transform:scale3d(.97,.97,.97)}100%{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes bounceIn{100%,20%,40%,60%,80%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}20%{-webkit-transform:scale3d(1.1,1.1,1.1);transform:scale3d(1.1,1.1,1.1)}40%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}60%{opacity:1;-webkit-transform:scale3d(1.03,1.03,1.03);transform:scale3d(1.03,1.03,1.03)}80%{-webkit-transform:scale3d(.97,.97,.97);transform:scale3d(.97,.97,.97)}100%{opacity:1;-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}.bounceIn{-webkit-animation-name:bounceIn;animation-name:bounceIn}@-webkit-keyframes bounceInDown{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:translate3d(0,-3000px,0);transform:translate3d(0,-3000px,0)}60%{opacity:1;-webkit-transform:translate3d(0,25px,0);transform:translate3d(0,25px,0)}75%{-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}90%{-webkit-transform:translate3d(0,5px,0);transform:translate3d(0,5px,0)}100%{-webkit-transform:none;transform:none}}@keyframes bounceInDown{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:translate3d(0,-3000px,0);transform:translate3d(0,-3000px,0)}60%{opacity:1;-webkit-transform:translate3d(0,25px,0);transform:translate3d(0,25px,0)}75%{-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}90%{-webkit-transform:translate3d(0,5px,0);transform:translate3d(0,5px,0)}100%{-webkit-transform:none;transform:none}}.bounceInDown{-webkit-animation-name:bounceInDown;animation-name:bounceInDown}@-webkit-keyframes bounceInLeft{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:translate3d(-3000px,0,0);transform:translate3d(-3000px,0,0)}60%{opacity:1;-webkit-transform:translate3d(25px,0,0);transform:translate3d(25px,0,0)}75%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}90%{-webkit-transform:translate3d(5px,0,0);transform:translate3d(5px,0,0)}100%{-webkit-transform:none;transform:none}}@keyframes bounceInLeft{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}0%{opacity:0;-webkit-transform:translate3d(-3000px,0,0);transform:translate3d(-3000px,0,0)}60%{opacity:1;-webkit-transform:translate3d(25px,0,0);transform:translate3d(25px,0,0)}75%{-webkit-transform:translate3d(-10px,0,0);transform:translate3d(-10px,0,0)}90%{-webkit-transform:translate3d(5px,0,0);transform:translate3d(5px,0,0)}100%{-webkit-transform:none;transform:none}}.bounceInLeft{-webkit-animation-name:bounceInLeft;animation-name:bounceInLeft}@-webkit-keyframes bounceInRight{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;-webkit-transform:translate3d(3000px,0,0);transform:translate3d(3000px,0,0)}60%{opacity:1;-webkit-transform:translate3d(-25px,0,0);transform:translate3d(-25px,0,0)}75%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}90%{-webkit-transform:translate3d(-5px,0,0);transform:translate3d(-5px,0,0)}100%{-webkit-transform:none;transform:none}}@keyframes bounceInRight{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;-webkit-transform:translate3d(3000px,0,0);transform:translate3d(3000px,0,0)}60%{opacity:1;-webkit-transform:translate3d(-25px,0,0);transform:translate3d(-25px,0,0)}75%{-webkit-transform:translate3d(10px,0,0);transform:translate3d(10px,0,0)}90%{-webkit-transform:translate3d(-5px,0,0);transform:translate3d(-5px,0,0)}100%{-webkit-transform:none;transform:none}}.bounceInRight{-webkit-animation-name:bounceInRight;animation-name:bounceInRight}@-webkit-keyframes bounceInUp{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;-webkit-transform:translate3d(0,3000px,0);transform:translate3d(0,3000px,0)}60%{opacity:1;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}75%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}90%{-webkit-transform:translate3d(0,-5px,0);transform:translate3d(0,-5px,0)}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes bounceInUp{100%,60%,75%,90%,from{-webkit-animation-timing-function:cubic-bezier(.215,.61,.355,1);animation-timing-function:cubic-bezier(.215,.61,.355,1)}from{opacity:0;-webkit-transform:translate3d(0,3000px,0);transform:translate3d(0,3000px,0)}60%{opacity:1;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}75%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}90%{-webkit-transform:translate3d(0,-5px,0);transform:translate3d(0,-5px,0)}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.bounceInUp{-webkit-animation-name:bounceInUp;animation-name:bounceInUp}@-webkit-keyframes bounceOut{20%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;-webkit-transform:scale3d(1.1,1.1,1.1);transform:scale3d(1.1,1.1,1.1)}100%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}}@keyframes bounceOut{20%{-webkit-transform:scale3d(.9,.9,.9);transform:scale3d(.9,.9,.9)}50%,55%{opacity:1;-webkit-transform:scale3d(1.1,1.1,1.1);transform:scale3d(1.1,1.1,1.1)}100%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}}.bounceOut{-webkit-animation-name:bounceOut;animation-name:bounceOut}@-webkit-keyframes bounceOutDown{20%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}40%,45%{opacity:1;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}100%{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}}@keyframes bounceOutDown{20%{-webkit-transform:translate3d(0,10px,0);transform:translate3d(0,10px,0)}40%,45%{opacity:1;-webkit-transform:translate3d(0,-20px,0);transform:translate3d(0,-20px,0)}100%{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}}.bounceOutDown{-webkit-animation-name:bounceOutDown;animation-name:bounceOutDown}@-webkit-keyframes bounceOutLeft{20%{opacity:1;-webkit-transform:translate3d(20px,0,0);transform:translate3d(20px,0,0)}100%{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}}@keyframes bounceOutLeft{20%{opacity:1;-webkit-transform:translate3d(20px,0,0);transform:translate3d(20px,0,0)}100%{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}}.bounceOutLeft{-webkit-animation-name:bounceOutLeft;animation-name:bounceOutLeft}@-webkit-keyframes bounceOutRight{20%{opacity:1;-webkit-transform:translate3d(-20px,0,0);transform:translate3d(-20px,0,0)}100%{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}}@keyframes bounceOutRight{20%{opacity:1;-webkit-transform:translate3d(-20px,0,0);transform:translate3d(-20px,0,0)}100%{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}}.bounceOutRight{-webkit-animation-name:bounceOutRight;animation-name:bounceOutRight}@-webkit-keyframes bounceOutUp{20%{-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}40%,45%{opacity:1;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0)}100%{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}}@keyframes bounceOutUp{20%{-webkit-transform:translate3d(0,-10px,0);transform:translate3d(0,-10px,0)}40%,45%{opacity:1;-webkit-transform:translate3d(0,20px,0);transform:translate3d(0,20px,0)}100%{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}}.bounceOutUp{-webkit-animation-name:bounceOutUp;animation-name:bounceOutUp}@-webkit-keyframes fadeIn{from{opacity:0}100%{opacity:1}}@keyframes fadeIn{from{opacity:0}100%{opacity:1}}.fadeIn{-webkit-animation-name:fadeIn;animation-name:fadeIn}@-webkit-keyframes fadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDown{from{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInDown{-webkit-animation-name:fadeInDown;animation-name:fadeInDown}@-webkit-keyframes fadeInDownBig{from{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInDownBig{from{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInDownBig{-webkit-animation-name:fadeInDownBig;animation-name:fadeInDownBig}@-webkit-keyframes fadeInLeft{from{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInLeft{from{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInLeft{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}@-webkit-keyframes fadeInLeftBig{from{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInLeftBig{from{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInLeftBig{-webkit-animation-name:fadeInLeftBig;animation-name:fadeInLeftBig}@-webkit-keyframes fadeInRight{from{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInRight{from{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInRight{-webkit-animation-name:fadeInRight;animation-name:fadeInRight}@-webkit-keyframes fadeInRightBig{from{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInRightBig{from{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInRightBig{-webkit-animation-name:fadeInRightBig;animation-name:fadeInRightBig}@-webkit-keyframes fadeInUp{from{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInUp{from{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInUp{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}@-webkit-keyframes fadeInUpBig{from{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes fadeInUpBig{from{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}100%{opacity:1;-webkit-transform:none;transform:none}}.fadeInUpBig{-webkit-animation-name:fadeInUpBig;animation-name:fadeInUpBig}@-webkit-keyframes fadeOut{from{opacity:1}100%{opacity:0}}@keyframes fadeOut{from{opacity:1}100%{opacity:0}}.fadeOut{-webkit-animation-name:fadeOut;animation-name:fadeOut}@-webkit-keyframes fadeOutDown{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@keyframes fadeOutDown{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}.fadeOutDown{-webkit-animation-name:fadeOutDown;animation-name:fadeOutDown}@-webkit-keyframes fadeOutDownBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}}@keyframes fadeOutDownBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,2000px,0);transform:translate3d(0,2000px,0)}}.fadeOutDownBig{-webkit-animation-name:fadeOutDownBig;animation-name:fadeOutDownBig}@-webkit-keyframes fadeOutLeft{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}@keyframes fadeOutLeft{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}.fadeOutLeft{-webkit-animation-name:fadeOutLeft;animation-name:fadeOutLeft}@-webkit-keyframes fadeOutLeftBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}}@keyframes fadeOutLeftBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(-2000px,0,0);transform:translate3d(-2000px,0,0)}}.fadeOutLeftBig{-webkit-animation-name:fadeOutLeftBig;animation-name:fadeOutLeftBig}@-webkit-keyframes fadeOutRight{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}@keyframes fadeOutRight{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.fadeOutRight{-webkit-animation-name:fadeOutRight;animation-name:fadeOutRight}@-webkit-keyframes fadeOutRightBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}}@keyframes fadeOutRightBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(2000px,0,0);transform:translate3d(2000px,0,0)}}.fadeOutRightBig{-webkit-animation-name:fadeOutRightBig;animation-name:fadeOutRightBig}@-webkit-keyframes fadeOutUp{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}}@keyframes fadeOutUp{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}}.fadeOutUp{-webkit-animation-name:fadeOutUp;animation-name:fadeOutUp}@-webkit-keyframes fadeOutUpBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}}@keyframes fadeOutUpBig{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(0,-2000px,0);transform:translate3d(0,-2000px,0)}}.fadeOutUpBig{-webkit-animation-name:fadeOutUpBig;animation-name:fadeOutUpBig}@-webkit-keyframes flip{from{-webkit-transform:perspective(400px) rotate3d(0,1,0,-360deg);transform:perspective(400px) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(400px) scale3d(.95,.95,.95);transform:perspective(400px) scale3d(.95,.95,.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:perspective(400px);transform:perspective(400px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}@keyframes flip{from{-webkit-transform:perspective(400px) rotate3d(0,1,0,-360deg);transform:perspective(400px) rotate3d(0,1,0,-360deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}40%{-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-190deg);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}50%{-webkit-transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);transform:perspective(400px) translate3d(0,0,150px) rotate3d(0,1,0,-170deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}80%{-webkit-transform:perspective(400px) scale3d(.95,.95,.95);transform:perspective(400px) scale3d(.95,.95,.95);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}100%{-webkit-transform:perspective(400px);transform:perspective(400px);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}}.animated.flip{-webkit-backface-visibility:visible;backface-visibility:visible;-webkit-animation-name:flip;animation-name:flip}@-webkit-keyframes flipInX{from{-webkit-transform:perspective(400px) rotate3d(1,0,0,90deg);transform:perspective(400px) rotate3d(1,0,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-20deg);transform:perspective(400px) rotate3d(1,0,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{-webkit-transform:perspective(400px) rotate3d(1,0,0,10deg);transform:perspective(400px) rotate3d(1,0,0,10deg);opacity:1}80%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-5deg);transform:perspective(400px) rotate3d(1,0,0,-5deg)}100%{-webkit-transform:perspective(400px);transform:perspective(400px)}}@keyframes flipInX{from{-webkit-transform:perspective(400px) rotate3d(1,0,0,90deg);transform:perspective(400px) rotate3d(1,0,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-20deg);transform:perspective(400px) rotate3d(1,0,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{-webkit-transform:perspective(400px) rotate3d(1,0,0,10deg);transform:perspective(400px) rotate3d(1,0,0,10deg);opacity:1}80%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-5deg);transform:perspective(400px) rotate3d(1,0,0,-5deg)}100%{-webkit-transform:perspective(400px);transform:perspective(400px)}}.flipInX{-webkit-backface-visibility:visible!important;backface-visibility:visible!important;-webkit-animation-name:flipInX;animation-name:flipInX}@-webkit-keyframes flipInY{from{-webkit-transform:perspective(400px) rotate3d(0,1,0,90deg);transform:perspective(400px) rotate3d(0,1,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-20deg);transform:perspective(400px) rotate3d(0,1,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{-webkit-transform:perspective(400px) rotate3d(0,1,0,10deg);transform:perspective(400px) rotate3d(0,1,0,10deg);opacity:1}80%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-5deg);transform:perspective(400px) rotate3d(0,1,0,-5deg)}100%{-webkit-transform:perspective(400px);transform:perspective(400px)}}@keyframes flipInY{from{-webkit-transform:perspective(400px) rotate3d(0,1,0,90deg);transform:perspective(400px) rotate3d(0,1,0,90deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in;opacity:0}40%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-20deg);transform:perspective(400px) rotate3d(0,1,0,-20deg);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}60%{-webkit-transform:perspective(400px) rotate3d(0,1,0,10deg);transform:perspective(400px) rotate3d(0,1,0,10deg);opacity:1}80%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-5deg);transform:perspective(400px) rotate3d(0,1,0,-5deg)}100%{-webkit-transform:perspective(400px);transform:perspective(400px)}}.flipInY{-webkit-backface-visibility:visible!important;backface-visibility:visible!important;-webkit-animation-name:flipInY;animation-name:flipInY}@-webkit-keyframes flipOutX{from{-webkit-transform:perspective(400px);transform:perspective(400px)}30%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-20deg);transform:perspective(400px) rotate3d(1,0,0,-20deg);opacity:1}100%{-webkit-transform:perspective(400px) rotate3d(1,0,0,90deg);transform:perspective(400px) rotate3d(1,0,0,90deg);opacity:0}}@keyframes flipOutX{from{-webkit-transform:perspective(400px);transform:perspective(400px)}30%{-webkit-transform:perspective(400px) rotate3d(1,0,0,-20deg);transform:perspective(400px) rotate3d(1,0,0,-20deg);opacity:1}100%{-webkit-transform:perspective(400px) rotate3d(1,0,0,90deg);transform:perspective(400px) rotate3d(1,0,0,90deg);opacity:0}}.flipOutX{-webkit-animation-name:flipOutX;animation-name:flipOutX;-webkit-backface-visibility:visible!important;backface-visibility:visible!important}@-webkit-keyframes flipOutY{from{-webkit-transform:perspective(400px);transform:perspective(400px)}30%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-15deg);transform:perspective(400px) rotate3d(0,1,0,-15deg);opacity:1}100%{-webkit-transform:perspective(400px) rotate3d(0,1,0,90deg);transform:perspective(400px) rotate3d(0,1,0,90deg);opacity:0}}@keyframes flipOutY{from{-webkit-transform:perspective(400px);transform:perspective(400px)}30%{-webkit-transform:perspective(400px) rotate3d(0,1,0,-15deg);transform:perspective(400px) rotate3d(0,1,0,-15deg);opacity:1}100%{-webkit-transform:perspective(400px) rotate3d(0,1,0,90deg);transform:perspective(400px) rotate3d(0,1,0,90deg);opacity:0}}.flipOutY{-webkit-backface-visibility:visible!important;backface-visibility:visible!important;-webkit-animation-name:flipOutY;animation-name:flipOutY}@-webkit-keyframes lightSpeedIn{from{-webkit-transform:translate3d(100%,0,0) skewX(-30deg);transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{-webkit-transform:skewX(20deg);transform:skewX(20deg);opacity:1}80%{-webkit-transform:skewX(-5deg);transform:skewX(-5deg);opacity:1}100%{-webkit-transform:none;transform:none;opacity:1}}@keyframes lightSpeedIn{from{-webkit-transform:translate3d(100%,0,0) skewX(-30deg);transform:translate3d(100%,0,0) skewX(-30deg);opacity:0}60%{-webkit-transform:skewX(20deg);transform:skewX(20deg);opacity:1}80%{-webkit-transform:skewX(-5deg);transform:skewX(-5deg);opacity:1}100%{-webkit-transform:none;transform:none;opacity:1}}.lightSpeedIn{-webkit-animation-name:lightSpeedIn;animation-name:lightSpeedIn;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}@-webkit-keyframes lightSpeedOut{from{opacity:1}100%{-webkit-transform:translate3d(100%,0,0) skewX(30deg);transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}@keyframes lightSpeedOut{from{opacity:1}100%{-webkit-transform:translate3d(100%,0,0) skewX(30deg);transform:translate3d(100%,0,0) skewX(30deg);opacity:0}}.lightSpeedOut{-webkit-animation-name:lightSpeedOut;animation-name:lightSpeedOut;-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}@-webkit-keyframes rotateIn{from{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate3d(0,0,1,-200deg);transform:rotate3d(0,0,1,-200deg);opacity:0}100%{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:none;transform:none;opacity:1}}@keyframes rotateIn{from{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate3d(0,0,1,-200deg);transform:rotate3d(0,0,1,-200deg);opacity:0}100%{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:none;transform:none;opacity:1}}.rotateIn{-webkit-animation-name:rotateIn;animation-name:rotateIn}@-webkit-keyframes rotateInDownLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:none;transform:none;opacity:1}}@keyframes rotateInDownLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:none;transform:none;opacity:1}}.rotateInDownLeft{-webkit-animation-name:rotateInDownLeft;animation-name:rotateInDownLeft}@-webkit-keyframes rotateInDownRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:none;transform:none;opacity:1}}@keyframes rotateInDownRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:none;transform:none;opacity:1}}.rotateInDownRight{-webkit-animation-name:rotateInDownRight;animation-name:rotateInDownRight}@-webkit-keyframes rotateInUpLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:none;transform:none;opacity:1}}@keyframes rotateInUpLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:none;transform:none;opacity:1}}.rotateInUpLeft{-webkit-animation-name:rotateInUpLeft;animation-name:rotateInUpLeft}@-webkit-keyframes rotateInUpRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,-90deg);transform:rotate3d(0,0,1,-90deg);opacity:0}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:none;transform:none;opacity:1}}@keyframes rotateInUpRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,-90deg);transform:rotate3d(0,0,1,-90deg);opacity:0}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:none;transform:none;opacity:1}}.rotateInUpRight{-webkit-animation-name:rotateInUpRight;animation-name:rotateInUpRight}@-webkit-keyframes rotateOut{from{-webkit-transform-origin:center;transform-origin:center;opacity:1}100%{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate3d(0,0,1,200deg);transform:rotate3d(0,0,1,200deg);opacity:0}}@keyframes rotateOut{from{-webkit-transform-origin:center;transform-origin:center;opacity:1}100%{-webkit-transform-origin:center;transform-origin:center;-webkit-transform:rotate3d(0,0,1,200deg);transform:rotate3d(0,0,1,200deg);opacity:0}}.rotateOut{-webkit-animation-name:rotateOut;animation-name:rotateOut}@-webkit-keyframes rotateOutDownLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;opacity:1}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}}@keyframes rotateOutDownLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;opacity:1}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,45deg);transform:rotate3d(0,0,1,45deg);opacity:0}}.rotateOutDownLeft{-webkit-animation-name:rotateOutDownLeft;animation-name:rotateOutDownLeft}@-webkit-keyframes rotateOutDownRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;opacity:1}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}}@keyframes rotateOutDownRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;opacity:1}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}}.rotateOutDownRight{-webkit-animation-name:rotateOutDownRight;animation-name:rotateOutDownRight}@-webkit-keyframes rotateOutUpLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;opacity:1}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}}@keyframes rotateOutUpLeft{from{-webkit-transform-origin:left bottom;transform-origin:left bottom;opacity:1}100%{-webkit-transform-origin:left bottom;transform-origin:left bottom;-webkit-transform:rotate3d(0,0,1,-45deg);transform:rotate3d(0,0,1,-45deg);opacity:0}}.rotateOutUpLeft{-webkit-animation-name:rotateOutUpLeft;animation-name:rotateOutUpLeft}@-webkit-keyframes rotateOutUpRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;opacity:1}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,90deg);transform:rotate3d(0,0,1,90deg);opacity:0}}@keyframes rotateOutUpRight{from{-webkit-transform-origin:right bottom;transform-origin:right bottom;opacity:1}100%{-webkit-transform-origin:right bottom;transform-origin:right bottom;-webkit-transform:rotate3d(0,0,1,90deg);transform:rotate3d(0,0,1,90deg);opacity:0}}.rotateOutUpRight{-webkit-animation-name:rotateOutUpRight;animation-name:rotateOutUpRight}@-webkit-keyframes hinge{0%{-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}20%,60%{-webkit-transform:rotate3d(0,0,1,80deg);transform:rotate3d(0,0,1,80deg);-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}40%,80%{-webkit-transform:rotate3d(0,0,1,60deg);transform:rotate3d(0,0,1,60deg);-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;opacity:1}100%{-webkit-transform:translate3d(0,700px,0);transform:translate3d(0,700px,0);opacity:0}}@keyframes hinge{0%{-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}20%,60%{-webkit-transform:rotate3d(0,0,1,80deg);transform:rotate3d(0,0,1,80deg);-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out}40%,80%{-webkit-transform:rotate3d(0,0,1,60deg);transform:rotate3d(0,0,1,60deg);-webkit-transform-origin:top left;transform-origin:top left;-webkit-animation-timing-function:ease-in-out;animation-timing-function:ease-in-out;opacity:1}100%{-webkit-transform:translate3d(0,700px,0);transform:translate3d(0,700px,0);opacity:0}}.hinge{-webkit-animation-name:hinge;animation-name:hinge}@-webkit-keyframes rollIn{from{opacity:0;-webkit-transform:translate3d(-100%,0,0) rotate3d(0,0,1,-120deg);transform:translate3d(-100%,0,0) rotate3d(0,0,1,-120deg)}100%{opacity:1;-webkit-transform:none;transform:none}}@keyframes rollIn{from{opacity:0;-webkit-transform:translate3d(-100%,0,0) rotate3d(0,0,1,-120deg);transform:translate3d(-100%,0,0) rotate3d(0,0,1,-120deg)}100%{opacity:1;-webkit-transform:none;transform:none}}.rollIn{-webkit-animation-name:rollIn;animation-name:rollIn}@-webkit-keyframes rollOut{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0) rotate3d(0,0,1,120deg);transform:translate3d(100%,0,0) rotate3d(0,0,1,120deg)}}@keyframes rollOut{from{opacity:1}100%{opacity:0;-webkit-transform:translate3d(100%,0,0) rotate3d(0,0,1,120deg);transform:translate3d(100%,0,0) rotate3d(0,0,1,120deg)}}.rollOut{-webkit-animation-name:rollOut;animation-name:rollOut}@-webkit-keyframes zoomIn{from{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}@keyframes zoomIn{from{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}50%{opacity:1}}.zoomIn{-webkit-animation-name:zoomIn;animation-name:zoomIn}@-webkit-keyframes zoomInDown{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInDown{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomInDown{-webkit-animation-name:zoomInDown;animation-name:zoomInDown}@-webkit-keyframes zoomInLeft{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(10px,0,0);transform:scale3d(.475,.475,.475) translate3d(10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInLeft{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);transform:scale3d(.1,.1,.1) translate3d(-1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(10px,0,0);transform:scale3d(.475,.475,.475) translate3d(10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomInLeft{-webkit-animation-name:zoomInLeft;animation-name:zoomInLeft}@-webkit-keyframes zoomInRight{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInRight{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);transform:scale3d(.1,.1,.1) translate3d(1000px,0,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);transform:scale3d(.475,.475,.475) translate3d(-10px,0,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomInRight{-webkit-animation-name:zoomInRight;animation-name:zoomInRight}@-webkit-keyframes zoomInUp{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomInUp{from{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}60%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomInUp{-webkit-animation-name:zoomInUp;animation-name:zoomInUp}@-webkit-keyframes zoomOut{from{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}@keyframes zoomOut{from{opacity:1}50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}100%{opacity:0}}.zoomOut{-webkit-animation-name:zoomOut;animation-name:zoomOut}@-webkit-keyframes zoomOutDown{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}100%{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);-webkit-transform-origin:center bottom;transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomOutDown{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);transform:scale3d(.475,.475,.475) translate3d(0,-60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}100%{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);transform:scale3d(.1,.1,.1) translate3d(0,2000px,0);-webkit-transform-origin:center bottom;transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomOutDown{-webkit-animation-name:zoomOutDown;animation-name:zoomOutDown}@-webkit-keyframes zoomOutLeft{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(42px,0,0);transform:scale3d(.475,.475,.475) translate3d(42px,0,0)}100%{opacity:0;-webkit-transform:scale(.1) translate3d(-2000px,0,0);transform:scale(.1) translate3d(-2000px,0,0);-webkit-transform-origin:left center;transform-origin:left center}}@keyframes zoomOutLeft{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(42px,0,0);transform:scale3d(.475,.475,.475) translate3d(42px,0,0)}100%{opacity:0;-webkit-transform:scale(.1) translate3d(-2000px,0,0);transform:scale(.1) translate3d(-2000px,0,0);-webkit-transform-origin:left center;transform-origin:left center}}.zoomOutLeft{-webkit-animation-name:zoomOutLeft;animation-name:zoomOutLeft}@-webkit-keyframes zoomOutRight{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(-42px,0,0);transform:scale3d(.475,.475,.475) translate3d(-42px,0,0)}100%{opacity:0;-webkit-transform:scale(.1) translate3d(2000px,0,0);transform:scale(.1) translate3d(2000px,0,0);-webkit-transform-origin:right center;transform-origin:right center}}@keyframes zoomOutRight{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(-42px,0,0);transform:scale3d(.475,.475,.475) translate3d(-42px,0,0)}100%{opacity:0;-webkit-transform:scale(.1) translate3d(2000px,0,0);transform:scale(.1) translate3d(2000px,0,0);-webkit-transform-origin:right center;transform-origin:right center}}.zoomOutRight{-webkit-animation-name:zoomOutRight;animation-name:zoomOutRight}@-webkit-keyframes zoomOutUp{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}100%{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);-webkit-transform-origin:center bottom;transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}@keyframes zoomOutUp{40%{opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)}100%{opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-2000px,0);-webkit-transform-origin:center bottom;transform-origin:center bottom;-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)}}.zoomOutUp{-webkit-animation-name:zoomOutUp;animation-name:zoomOutUp}@-webkit-keyframes slideInDown{from{-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes slideInDown{from{-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.slideInDown{-webkit-animation-name:slideInDown;animation-name:slideInDown}@-webkit-keyframes slideInLeft{from{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes slideInLeft{from{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.slideInLeft{-webkit-animation-name:slideInLeft;animation-name:slideInLeft}@-webkit-keyframes slideInRight{from{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes slideInRight{from{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.slideInRight{-webkit-animation-name:slideInRight;animation-name:slideInRight}@-webkit-keyframes slideInUp{from{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}@keyframes slideInUp{from{-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0);visibility:visible}100%{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}.slideInUp{-webkit-animation-name:slideInUp;animation-name:slideInUp}@-webkit-keyframes slideOutDown{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}@keyframes slideOutDown{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}}.slideOutDown{-webkit-animation-name:slideOutDown;animation-name:slideOutDown}@-webkit-keyframes slideOutLeft{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}@keyframes slideOutLeft{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}.slideOutLeft{-webkit-animation-name:slideOutLeft;animation-name:slideOutLeft}@-webkit-keyframes slideOutRight{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}@keyframes slideOutRight{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.slideOutRight{-webkit-animation-name:slideOutRight;animation-name:slideOutRight}@-webkit-keyframes slideOutUp{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}}@keyframes slideOutUp{from{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}100%{visibility:hidden;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}}.slideOutUp{-webkit-animation-name:slideOutUp;animation-name:slideOutUp}/*!\n *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome\n *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\n */@font-face{font-family:FontAwesome;src:url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.eot?v=4.5.0);src:url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'),url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.woff2?v=4.5.0) format('woff2'),url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.woff?v=4.5.0) format('woff'),url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.ttf?v=4.5.0) format('truetype'),url(jspm_packages/npm/font-awesome@4.5.0/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal}.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-fw{width:1.28571429em;text-align:center}.fa-ul{padding-left:0;margin-left:2.14285714em;list-style-type:none}.fa-ul>li{position:relative}.fa-li{position:absolute;left:-2.14285714em;width:2.14285714em;top:.14285714em;text-align:center}.fa-li.fa-lg{left:-1.85714286em}.fa-border{padding:.2em .25em .15em;border:solid .08em #eee;border-radius:.1em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left{margin-right:.3em}.fa.fa-pull-right{margin-left:.3em}.pull-right{float:right}.pull-left{float:left}.fa.pull-left{margin-right:.3em}.fa.pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}.fa-rotate-90{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);-webkit-transform:rotate(180deg);-ms-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);-webkit-transform:rotate(270deg);-ms-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);-webkit-transform:scale(-1,1);-ms-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);-webkit-transform:scale(1,-1);-ms-transform:scale(1,-1);transform:scale(1,-1)}:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{filter:none}.fa-stack{position:relative;display:inline-block;width:2em;height:2em;line-height:2em;vertical-align:middle}.fa-stack-1x,.fa-stack-2x{position:absolute;left:0;width:100%;text-align:center}.fa-stack-1x{line-height:inherit}.fa-stack-2x{font-size:2em}.fa-inverse{color:#fff}.fa-glass:before{content:\"\\f000\"}.fa-music:before{content:\"\\f001\"}.fa-search:before{content:\"\\f002\"}.fa-envelope-o:before{content:\"\\f003\"}.fa-heart:before{content:\"\\f004\"}.fa-star:before{content:\"\\f005\"}.fa-star-o:before{content:\"\\f006\"}.fa-user:before{content:\"\\f007\"}.fa-film:before{content:\"\\f008\"}.fa-th-large:before{content:\"\\f009\"}.fa-th:before{content:\"\\f00a\"}.fa-th-list:before{content:\"\\f00b\"}.fa-check:before{content:\"\\f00c\"}.fa-close:before,.fa-remove:before,.fa-times:before{content:\"\\f00d\"}.fa-search-plus:before{content:\"\\f00e\"}.fa-search-minus:before{content:\"\\f010\"}.fa-power-off:before{content:\"\\f011\"}.fa-signal:before{content:\"\\f012\"}.fa-cog:before,.fa-gear:before{content:\"\\f013\"}.fa-trash-o:before{content:\"\\f014\"}.fa-home:before{content:\"\\f015\"}.fa-file-o:before{content:\"\\f016\"}.fa-clock-o:before{content:\"\\f017\"}.fa-road:before{content:\"\\f018\"}.fa-download:before{content:\"\\f019\"}.fa-arrow-circle-o-down:before{content:\"\\f01a\"}.fa-arrow-circle-o-up:before{content:\"\\f01b\"}.fa-inbox:before{content:\"\\f01c\"}.fa-play-circle-o:before{content:\"\\f01d\"}.fa-repeat:before,.fa-rotate-right:before{content:\"\\f01e\"}.fa-refresh:before{content:\"\\f021\"}.fa-list-alt:before{content:\"\\f022\"}.fa-lock:before{content:\"\\f023\"}.fa-flag:before{content:\"\\f024\"}.fa-headphones:before{content:\"\\f025\"}.fa-volume-off:before{content:\"\\f026\"}.fa-volume-down:before{content:\"\\f027\"}.fa-volume-up:before{content:\"\\f028\"}.fa-qrcode:before{content:\"\\f029\"}.fa-barcode:before{content:\"\\f02a\"}.fa-tag:before{content:\"\\f02b\"}.fa-tags:before{content:\"\\f02c\"}.fa-book:before{content:\"\\f02d\"}.fa-bookmark:before{content:\"\\f02e\"}.fa-print:before{content:\"\\f02f\"}.fa-camera:before{content:\"\\f030\"}.fa-font:before{content:\"\\f031\"}.fa-bold:before{content:\"\\f032\"}.fa-italic:before{content:\"\\f033\"}.fa-text-height:before{content:\"\\f034\"}.fa-text-width:before{content:\"\\f035\"}.fa-align-left:before{content:\"\\f036\"}.fa-align-center:before{content:\"\\f037\"}.fa-align-right:before{content:\"\\f038\"}.fa-align-justify:before{content:\"\\f039\"}.fa-list:before{content:\"\\f03a\"}.fa-dedent:before,.fa-outdent:before{content:\"\\f03b\"}.fa-indent:before{content:\"\\f03c\"}.fa-video-camera:before{content:\"\\f03d\"}.fa-image:before,.fa-photo:before,.fa-picture-o:before{content:\"\\f03e\"}.fa-pencil:before{content:\"\\f040\"}.fa-map-marker:before{content:\"\\f041\"}.fa-adjust:before{content:\"\\f042\"}.fa-tint:before{content:\"\\f043\"}.fa-edit:before,.fa-pencil-square-o:before{content:\"\\f044\"}.fa-share-square-o:before{content:\"\\f045\"}.fa-check-square-o:before{content:\"\\f046\"}.fa-arrows:before{content:\"\\f047\"}.fa-step-backward:before{content:\"\\f048\"}.fa-fast-backward:before{content:\"\\f049\"}.fa-backward:before{content:\"\\f04a\"}.fa-play:before{content:\"\\f04b\"}.fa-pause:before{content:\"\\f04c\"}.fa-stop:before{content:\"\\f04d\"}.fa-forward:before{content:\"\\f04e\"}.fa-fast-forward:before{content:\"\\f050\"}.fa-step-forward:before{content:\"\\f051\"}.fa-eject:before{content:\"\\f052\"}.fa-chevron-left:before{content:\"\\f053\"}.fa-chevron-right:before{content:\"\\f054\"}.fa-plus-circle:before{content:\"\\f055\"}.fa-minus-circle:before{content:\"\\f056\"}.fa-times-circle:before{content:\"\\f057\"}.fa-check-circle:before{content:\"\\f058\"}.fa-question-circle:before{content:\"\\f059\"}.fa-info-circle:before{content:\"\\f05a\"}.fa-crosshairs:before{content:\"\\f05b\"}.fa-times-circle-o:before{content:\"\\f05c\"}.fa-check-circle-o:before{content:\"\\f05d\"}.fa-ban:before{content:\"\\f05e\"}.fa-arrow-left:before{content:\"\\f060\"}.fa-arrow-right:before{content:\"\\f061\"}.fa-arrow-up:before{content:\"\\f062\"}.fa-arrow-down:before{content:\"\\f063\"}.fa-mail-forward:before,.fa-share:before{content:\"\\f064\"}.fa-expand:before{content:\"\\f065\"}.fa-compress:before{content:\"\\f066\"}.fa-plus:before{content:\"\\f067\"}.fa-minus:before{content:\"\\f068\"}.fa-asterisk:before{content:\"\\f069\"}.fa-exclamation-circle:before{content:\"\\f06a\"}.fa-gift:before{content:\"\\f06b\"}.fa-leaf:before{content:\"\\f06c\"}.fa-fire:before{content:\"\\f06d\"}.fa-eye:before{content:\"\\f06e\"}.fa-eye-slash:before{content:\"\\f070\"}.fa-exclamation-triangle:before,.fa-warning:before{content:\"\\f071\"}.fa-plane:before{content:\"\\f072\"}.fa-calendar:before{content:\"\\f073\"}.fa-random:before{content:\"\\f074\"}.fa-comment:before{content:\"\\f075\"}.fa-magnet:before{content:\"\\f076\"}.fa-chevron-up:before{content:\"\\f077\"}.fa-chevron-down:before{content:\"\\f078\"}.fa-retweet:before{content:\"\\f079\"}.fa-shopping-cart:before{content:\"\\f07a\"}.fa-folder:before{content:\"\\f07b\"}.fa-folder-open:before{content:\"\\f07c\"}.fa-arrows-v:before{content:\"\\f07d\"}.fa-arrows-h:before{content:\"\\f07e\"}.fa-bar-chart-o:before,.fa-bar-chart:before{content:\"\\f080\"}.fa-twitter-square:before{content:\"\\f081\"}.fa-facebook-square:before{content:\"\\f082\"}.fa-camera-retro:before{content:\"\\f083\"}.fa-key:before{content:\"\\f084\"}.fa-cogs:before,.fa-gears:before{content:\"\\f085\"}.fa-comments:before{content:\"\\f086\"}.fa-thumbs-o-up:before{content:\"\\f087\"}.fa-thumbs-o-down:before{content:\"\\f088\"}.fa-star-half:before{content:\"\\f089\"}.fa-heart-o:before{content:\"\\f08a\"}.fa-sign-out:before{content:\"\\f08b\"}.fa-linkedin-square:before{content:\"\\f08c\"}.fa-thumb-tack:before{content:\"\\f08d\"}.fa-external-link:before{content:\"\\f08e\"}.fa-sign-in:before{content:\"\\f090\"}.fa-trophy:before{content:\"\\f091\"}.fa-github-square:before{content:\"\\f092\"}.fa-upload:before{content:\"\\f093\"}.fa-lemon-o:before{content:\"\\f094\"}.fa-phone:before{content:\"\\f095\"}.fa-square-o:before{content:\"\\f096\"}.fa-bookmark-o:before{content:\"\\f097\"}.fa-phone-square:before{content:\"\\f098\"}.fa-twitter:before{content:\"\\f099\"}.fa-facebook-f:before,.fa-facebook:before{content:\"\\f09a\"}.fa-github:before{content:\"\\f09b\"}.fa-unlock:before{content:\"\\f09c\"}.fa-credit-card:before{content:\"\\f09d\"}.fa-feed:before,.fa-rss:before{content:\"\\f09e\"}.fa-hdd-o:before{content:\"\\f0a0\"}.fa-bullhorn:before{content:\"\\f0a1\"}.fa-bell:before{content:\"\\f0f3\"}.fa-certificate:before{content:\"\\f0a3\"}.fa-hand-o-right:before{content:\"\\f0a4\"}.fa-hand-o-left:before{content:\"\\f0a5\"}.fa-hand-o-up:before{content:\"\\f0a6\"}.fa-hand-o-down:before{content:\"\\f0a7\"}.fa-arrow-circle-left:before{content:\"\\f0a8\"}.fa-arrow-circle-right:before{content:\"\\f0a9\"}.fa-arrow-circle-up:before{content:\"\\f0aa\"}.fa-arrow-circle-down:before{content:\"\\f0ab\"}.fa-globe:before{content:\"\\f0ac\"}.fa-wrench:before{content:\"\\f0ad\"}.fa-tasks:before{content:\"\\f0ae\"}.fa-filter:before{content:\"\\f0b0\"}.fa-briefcase:before{content:\"\\f0b1\"}.fa-arrows-alt:before{content:\"\\f0b2\"}.fa-group:before,.fa-users:before{content:\"\\f0c0\"}.fa-chain:before,.fa-link:before{content:\"\\f0c1\"}.fa-cloud:before{content:\"\\f0c2\"}.fa-flask:before{content:\"\\f0c3\"}.fa-cut:before,.fa-scissors:before{content:\"\\f0c4\"}.fa-copy:before,.fa-files-o:before{content:\"\\f0c5\"}.fa-paperclip:before{content:\"\\f0c6\"}.fa-floppy-o:before,.fa-save:before{content:\"\\f0c7\"}.fa-square:before{content:\"\\f0c8\"}.fa-bars:before,.fa-navicon:before,.fa-reorder:before{content:\"\\f0c9\"}.fa-list-ul:before{content:\"\\f0ca\"}.fa-list-ol:before{content:\"\\f0cb\"}.fa-strikethrough:before{content:\"\\f0cc\"}.fa-underline:before{content:\"\\f0cd\"}.fa-table:before{content:\"\\f0ce\"}.fa-magic:before{content:\"\\f0d0\"}.fa-truck:before{content:\"\\f0d1\"}.fa-pinterest:before{content:\"\\f0d2\"}.fa-pinterest-square:before{content:\"\\f0d3\"}.fa-google-plus-square:before{content:\"\\f0d4\"}.fa-google-plus:before{content:\"\\f0d5\"}.fa-money:before{content:\"\\f0d6\"}.fa-caret-down:before{content:\"\\f0d7\"}.fa-caret-up:before{content:\"\\f0d8\"}.fa-caret-left:before{content:\"\\f0d9\"}.fa-caret-right:before{content:\"\\f0da\"}.fa-columns:before{content:\"\\f0db\"}.fa-sort:before,.fa-unsorted:before{content:\"\\f0dc\"}.fa-sort-desc:before,.fa-sort-down:before{content:\"\\f0dd\"}.fa-sort-asc:before,.fa-sort-up:before{content:\"\\f0de\"}.fa-envelope:before{content:\"\\f0e0\"}.fa-linkedin:before{content:\"\\f0e1\"}.fa-rotate-left:before,.fa-undo:before{content:\"\\f0e2\"}.fa-gavel:before,.fa-legal:before{content:\"\\f0e3\"}.fa-dashboard:before,.fa-tachometer:before{content:\"\\f0e4\"}.fa-comment-o:before{content:\"\\f0e5\"}.fa-comments-o:before{content:\"\\f0e6\"}.fa-bolt:before,.fa-flash:before{content:\"\\f0e7\"}.fa-sitemap:before{content:\"\\f0e8\"}.fa-umbrella:before{content:\"\\f0e9\"}.fa-clipboard:before,.fa-paste:before{content:\"\\f0ea\"}.fa-lightbulb-o:before{content:\"\\f0eb\"}.fa-exchange:before{content:\"\\f0ec\"}.fa-cloud-download:before{content:\"\\f0ed\"}.fa-cloud-upload:before{content:\"\\f0ee\"}.fa-user-md:before{content:\"\\f0f0\"}.fa-stethoscope:before{content:\"\\f0f1\"}.fa-suitcase:before{content:\"\\f0f2\"}.fa-bell-o:before{content:\"\\f0a2\"}.fa-coffee:before{content:\"\\f0f4\"}.fa-cutlery:before{content:\"\\f0f5\"}.fa-file-text-o:before{content:\"\\f0f6\"}.fa-building-o:before{content:\"\\f0f7\"}.fa-hospital-o:before{content:\"\\f0f8\"}.fa-ambulance:before{content:\"\\f0f9\"}.fa-medkit:before{content:\"\\f0fa\"}.fa-fighter-jet:before{content:\"\\f0fb\"}.fa-beer:before{content:\"\\f0fc\"}.fa-h-square:before{content:\"\\f0fd\"}.fa-plus-square:before{content:\"\\f0fe\"}.fa-angle-double-left:before{content:\"\\f100\"}.fa-angle-double-right:before{content:\"\\f101\"}.fa-angle-double-up:before{content:\"\\f102\"}.fa-angle-double-down:before{content:\"\\f103\"}.fa-angle-left:before{content:\"\\f104\"}.fa-angle-right:before{content:\"\\f105\"}.fa-angle-up:before{content:\"\\f106\"}.fa-angle-down:before{content:\"\\f107\"}.fa-desktop:before{content:\"\\f108\"}.fa-laptop:before{content:\"\\f109\"}.fa-tablet:before{content:\"\\f10a\"}.fa-mobile-phone:before,.fa-mobile:before{content:\"\\f10b\"}.fa-circle-o:before{content:\"\\f10c\"}.fa-quote-left:before{content:\"\\f10d\"}.fa-quote-right:before{content:\"\\f10e\"}.fa-spinner:before{content:\"\\f110\"}.fa-circle:before{content:\"\\f111\"}.fa-mail-reply:before,.fa-reply:before{content:\"\\f112\"}.fa-github-alt:before{content:\"\\f113\"}.fa-folder-o:before{content:\"\\f114\"}.fa-folder-open-o:before{content:\"\\f115\"}.fa-smile-o:before{content:\"\\f118\"}.fa-frown-o:before{content:\"\\f119\"}.fa-meh-o:before{content:\"\\f11a\"}.fa-gamepad:before{content:\"\\f11b\"}.fa-keyboard-o:before{content:\"\\f11c\"}.fa-flag-o:before{content:\"\\f11d\"}.fa-flag-checkered:before{content:\"\\f11e\"}.fa-terminal:before{content:\"\\f120\"}.fa-code:before{content:\"\\f121\"}.fa-mail-reply-all:before,.fa-reply-all:before{content:\"\\f122\"}.fa-star-half-empty:before,.fa-star-half-full:before,.fa-star-half-o:before{content:\"\\f123\"}.fa-location-arrow:before{content:\"\\f124\"}.fa-crop:before{content:\"\\f125\"}.fa-code-fork:before{content:\"\\f126\"}.fa-chain-broken:before,.fa-unlink:before{content:\"\\f127\"}.fa-question:before{content:\"\\f128\"}.fa-info:before{content:\"\\f129\"}.fa-exclamation:before{content:\"\\f12a\"}.fa-superscript:before{content:\"\\f12b\"}.fa-subscript:before{content:\"\\f12c\"}.fa-eraser:before{content:\"\\f12d\"}.fa-puzzle-piece:before{content:\"\\f12e\"}.fa-microphone:before{content:\"\\f130\"}.fa-microphone-slash:before{content:\"\\f131\"}.fa-shield:before{content:\"\\f132\"}.fa-calendar-o:before{content:\"\\f133\"}.fa-fire-extinguisher:before{content:\"\\f134\"}.fa-rocket:before{content:\"\\f135\"}.fa-maxcdn:before{content:\"\\f136\"}.fa-chevron-circle-left:before{content:\"\\f137\"}.fa-chevron-circle-right:before{content:\"\\f138\"}.fa-chevron-circle-up:before{content:\"\\f139\"}.fa-chevron-circle-down:before{content:\"\\f13a\"}.fa-html5:before{content:\"\\f13b\"}.fa-css3:before{content:\"\\f13c\"}.fa-anchor:before{content:\"\\f13d\"}.fa-unlock-alt:before{content:\"\\f13e\"}.fa-bullseye:before{content:\"\\f140\"}.fa-ellipsis-h:before{content:\"\\f141\"}.fa-ellipsis-v:before{content:\"\\f142\"}.fa-rss-square:before{content:\"\\f143\"}.fa-play-circle:before{content:\"\\f144\"}.fa-ticket:before{content:\"\\f145\"}.fa-minus-square:before{content:\"\\f146\"}.fa-minus-square-o:before{content:\"\\f147\"}.fa-level-up:before{content:\"\\f148\"}.fa-level-down:before{content:\"\\f149\"}.fa-check-square:before{content:\"\\f14a\"}.fa-pencil-square:before{content:\"\\f14b\"}.fa-external-link-square:before{content:\"\\f14c\"}.fa-share-square:before{content:\"\\f14d\"}.fa-compass:before{content:\"\\f14e\"}.fa-caret-square-o-down:before,.fa-toggle-down:before{content:\"\\f150\"}.fa-caret-square-o-up:before,.fa-toggle-up:before{content:\"\\f151\"}.fa-caret-square-o-right:before,.fa-toggle-right:before{content:\"\\f152\"}.fa-eur:before,.fa-euro:before{content:\"\\f153\"}.fa-gbp:before{content:\"\\f154\"}.fa-dollar:before,.fa-usd:before{content:\"\\f155\"}.fa-inr:before,.fa-rupee:before{content:\"\\f156\"}.fa-cny:before,.fa-jpy:before,.fa-rmb:before,.fa-yen:before{content:\"\\f157\"}.fa-rouble:before,.fa-rub:before,.fa-ruble:before{content:\"\\f158\"}.fa-krw:before,.fa-won:before{content:\"\\f159\"}.fa-bitcoin:before,.fa-btc:before{content:\"\\f15a\"}.fa-file:before{content:\"\\f15b\"}.fa-file-text:before{content:\"\\f15c\"}.fa-sort-alpha-asc:before{content:\"\\f15d\"}.fa-sort-alpha-desc:before{content:\"\\f15e\"}.fa-sort-amount-asc:before{content:\"\\f160\"}.fa-sort-amount-desc:before{content:\"\\f161\"}.fa-sort-numeric-asc:before{content:\"\\f162\"}.fa-sort-numeric-desc:before{content:\"\\f163\"}.fa-thumbs-up:before{content:\"\\f164\"}.fa-thumbs-down:before{content:\"\\f165\"}.fa-youtube-square:before{content:\"\\f166\"}.fa-youtube:before{content:\"\\f167\"}.fa-xing:before{content:\"\\f168\"}.fa-xing-square:before{content:\"\\f169\"}.fa-youtube-play:before{content:\"\\f16a\"}.fa-dropbox:before{content:\"\\f16b\"}.fa-stack-overflow:before{content:\"\\f16c\"}.fa-instagram:before{content:\"\\f16d\"}.fa-flickr:before{content:\"\\f16e\"}.fa-adn:before{content:\"\\f170\"}.fa-bitbucket:before{content:\"\\f171\"}.fa-bitbucket-square:before{content:\"\\f172\"}.fa-tumblr:before{content:\"\\f173\"}.fa-tumblr-square:before{content:\"\\f174\"}.fa-long-arrow-down:before{content:\"\\f175\"}.fa-long-arrow-up:before{content:\"\\f176\"}.fa-long-arrow-left:before{content:\"\\f177\"}.fa-long-arrow-right:before{content:\"\\f178\"}.fa-apple:before{content:\"\\f179\"}.fa-windows:before{content:\"\\f17a\"}.fa-android:before{content:\"\\f17b\"}.fa-linux:before{content:\"\\f17c\"}.fa-dribbble:before{content:\"\\f17d\"}.fa-skype:before{content:\"\\f17e\"}.fa-foursquare:before{content:\"\\f180\"}.fa-trello:before{content:\"\\f181\"}.fa-female:before{content:\"\\f182\"}.fa-male:before{content:\"\\f183\"}.fa-gittip:before,.fa-gratipay:before{content:\"\\f184\"}.fa-sun-o:before{content:\"\\f185\"}.fa-moon-o:before{content:\"\\f186\"}.fa-archive:before{content:\"\\f187\"}.fa-bug:before{content:\"\\f188\"}.fa-vk:before{content:\"\\f189\"}.fa-weibo:before{content:\"\\f18a\"}.fa-renren:before{content:\"\\f18b\"}.fa-pagelines:before{content:\"\\f18c\"}.fa-stack-exchange:before{content:\"\\f18d\"}.fa-arrow-circle-o-right:before{content:\"\\f18e\"}.fa-arrow-circle-o-left:before{content:\"\\f190\"}.fa-caret-square-o-left:before,.fa-toggle-left:before{content:\"\\f191\"}.fa-dot-circle-o:before{content:\"\\f192\"}.fa-wheelchair:before{content:\"\\f193\"}.fa-vimeo-square:before{content:\"\\f194\"}.fa-try:before,.fa-turkish-lira:before{content:\"\\f195\"}.fa-plus-square-o:before{content:\"\\f196\"}.fa-space-shuttle:before{content:\"\\f197\"}.fa-slack:before{content:\"\\f198\"}.fa-envelope-square:before{content:\"\\f199\"}.fa-wordpress:before{content:\"\\f19a\"}.fa-openid:before{content:\"\\f19b\"}.fa-bank:before,.fa-institution:before,.fa-university:before{content:\"\\f19c\"}.fa-graduation-cap:before,.fa-mortar-board:before{content:\"\\f19d\"}.fa-yahoo:before{content:\"\\f19e\"}.fa-google:before{content:\"\\f1a0\"}.fa-reddit:before{content:\"\\f1a1\"}.fa-reddit-square:before{content:\"\\f1a2\"}.fa-stumbleupon-circle:before{content:\"\\f1a3\"}.fa-stumbleupon:before{content:\"\\f1a4\"}.fa-delicious:before{content:\"\\f1a5\"}.fa-digg:before{content:\"\\f1a6\"}.fa-pied-piper:before{content:\"\\f1a7\"}.fa-pied-piper-alt:before{content:\"\\f1a8\"}.fa-drupal:before{content:\"\\f1a9\"}.fa-joomla:before{content:\"\\f1aa\"}.fa-language:before{content:\"\\f1ab\"}.fa-fax:before{content:\"\\f1ac\"}.fa-building:before{content:\"\\f1ad\"}.fa-child:before{content:\"\\f1ae\"}.fa-paw:before{content:\"\\f1b0\"}.fa-spoon:before{content:\"\\f1b1\"}.fa-cube:before{content:\"\\f1b2\"}.fa-cubes:before{content:\"\\f1b3\"}.fa-behance:before{content:\"\\f1b4\"}.fa-behance-square:before{content:\"\\f1b5\"}.fa-steam:before{content:\"\\f1b6\"}.fa-steam-square:before{content:\"\\f1b7\"}.fa-recycle:before{content:\"\\f1b8\"}.fa-automobile:before,.fa-car:before{content:\"\\f1b9\"}.fa-cab:before,.fa-taxi:before{content:\"\\f1ba\"}.fa-tree:before{content:\"\\f1bb\"}.fa-spotify:before{content:\"\\f1bc\"}.fa-deviantart:before{content:\"\\f1bd\"}.fa-soundcloud:before{content:\"\\f1be\"}.fa-database:before{content:\"\\f1c0\"}.fa-file-pdf-o:before{content:\"\\f1c1\"}.fa-file-word-o:before{content:\"\\f1c2\"}.fa-file-excel-o:before{content:\"\\f1c3\"}.fa-file-powerpoint-o:before{content:\"\\f1c4\"}.fa-file-image-o:before,.fa-file-photo-o:before,.fa-file-picture-o:before{content:\"\\f1c5\"}.fa-file-archive-o:before,.fa-file-zip-o:before{content:\"\\f1c6\"}.fa-file-audio-o:before,.fa-file-sound-o:before{content:\"\\f1c7\"}.fa-file-movie-o:before,.fa-file-video-o:before{content:\"\\f1c8\"}.fa-file-code-o:before{content:\"\\f1c9\"}.fa-vine:before{content:\"\\f1ca\"}.fa-codepen:before{content:\"\\f1cb\"}.fa-jsfiddle:before{content:\"\\f1cc\"}.fa-life-bouy:before,.fa-life-buoy:before,.fa-life-ring:before,.fa-life-saver:before,.fa-support:before{content:\"\\f1cd\"}.fa-circle-o-notch:before{content:\"\\f1ce\"}.fa-ra:before,.fa-rebel:before{content:\"\\f1d0\"}.fa-empire:before,.fa-ge:before{content:\"\\f1d1\"}.fa-git-square:before{content:\"\\f1d2\"}.fa-git:before{content:\"\\f1d3\"}.fa-hacker-news:before,.fa-y-combinator-square:before,.fa-yc-square:before{content:\"\\f1d4\"}.fa-tencent-weibo:before{content:\"\\f1d5\"}.fa-qq:before{content:\"\\f1d6\"}.fa-wechat:before,.fa-weixin:before{content:\"\\f1d7\"}.fa-paper-plane:before,.fa-send:before{content:\"\\f1d8\"}.fa-paper-plane-o:before,.fa-send-o:before{content:\"\\f1d9\"}.fa-history:before{content:\"\\f1da\"}.fa-circle-thin:before{content:\"\\f1db\"}.fa-header:before{content:\"\\f1dc\"}.fa-paragraph:before{content:\"\\f1dd\"}.fa-sliders:before{content:\"\\f1de\"}.fa-share-alt:before{content:\"\\f1e0\"}.fa-share-alt-square:before{content:\"\\f1e1\"}.fa-bomb:before{content:\"\\f1e2\"}.fa-futbol-o:before,.fa-soccer-ball-o:before{content:\"\\f1e3\"}.fa-tty:before{content:\"\\f1e4\"}.fa-binoculars:before{content:\"\\f1e5\"}.fa-plug:before{content:\"\\f1e6\"}.fa-slideshare:before{content:\"\\f1e7\"}.fa-twitch:before{content:\"\\f1e8\"}.fa-yelp:before{content:\"\\f1e9\"}.fa-newspaper-o:before{content:\"\\f1ea\"}.fa-wifi:before{content:\"\\f1eb\"}.fa-calculator:before{content:\"\\f1ec\"}.fa-paypal:before{content:\"\\f1ed\"}.fa-google-wallet:before{content:\"\\f1ee\"}.fa-cc-visa:before{content:\"\\f1f0\"}.fa-cc-mastercard:before{content:\"\\f1f1\"}.fa-cc-discover:before{content:\"\\f1f2\"}.fa-cc-amex:before{content:\"\\f1f3\"}.fa-cc-paypal:before{content:\"\\f1f4\"}.fa-cc-stripe:before{content:\"\\f1f5\"}.fa-bell-slash:before{content:\"\\f1f6\"}.fa-bell-slash-o:before{content:\"\\f1f7\"}.fa-trash:before{content:\"\\f1f8\"}.fa-copyright:before{content:\"\\f1f9\"}.fa-at:before{content:\"\\f1fa\"}.fa-eyedropper:before{content:\"\\f1fb\"}.fa-paint-brush:before{content:\"\\f1fc\"}.fa-birthday-cake:before{content:\"\\f1fd\"}.fa-area-chart:before{content:\"\\f1fe\"}.fa-pie-chart:before{content:\"\\f200\"}.fa-line-chart:before{content:\"\\f201\"}.fa-lastfm:before{content:\"\\f202\"}.fa-lastfm-square:before{content:\"\\f203\"}.fa-toggle-off:before{content:\"\\f204\"}.fa-toggle-on:before{content:\"\\f205\"}.fa-bicycle:before{content:\"\\f206\"}.fa-bus:before{content:\"\\f207\"}.fa-ioxhost:before{content:\"\\f208\"}.fa-angellist:before{content:\"\\f209\"}.fa-cc:before{content:\"\\f20a\"}.fa-ils:before,.fa-shekel:before,.fa-sheqel:before{content:\"\\f20b\"}.fa-meanpath:before{content:\"\\f20c\"}.fa-buysellads:before{content:\"\\f20d\"}.fa-connectdevelop:before{content:\"\\f20e\"}.fa-dashcube:before{content:\"\\f210\"}.fa-forumbee:before{content:\"\\f211\"}.fa-leanpub:before{content:\"\\f212\"}.fa-sellsy:before{content:\"\\f213\"}.fa-shirtsinbulk:before{content:\"\\f214\"}.fa-simplybuilt:before{content:\"\\f215\"}.fa-skyatlas:before{content:\"\\f216\"}.fa-cart-plus:before{content:\"\\f217\"}.fa-cart-arrow-down:before{content:\"\\f218\"}.fa-diamond:before{content:\"\\f219\"}.fa-ship:before{content:\"\\f21a\"}.fa-user-secret:before{content:\"\\f21b\"}.fa-motorcycle:before{content:\"\\f21c\"}.fa-street-view:before{content:\"\\f21d\"}.fa-heartbeat:before{content:\"\\f21e\"}.fa-venus:before{content:\"\\f221\"}.fa-mars:before{content:\"\\f222\"}.fa-mercury:before{content:\"\\f223\"}.fa-intersex:before,.fa-transgender:before{content:\"\\f224\"}.fa-transgender-alt:before{content:\"\\f225\"}.fa-venus-double:before{content:\"\\f226\"}.fa-mars-double:before{content:\"\\f227\"}.fa-venus-mars:before{content:\"\\f228\"}.fa-mars-stroke:before{content:\"\\f229\"}.fa-mars-stroke-v:before{content:\"\\f22a\"}.fa-mars-stroke-h:before{content:\"\\f22b\"}.fa-neuter:before{content:\"\\f22c\"}.fa-genderless:before{content:\"\\f22d\"}.fa-facebook-official:before{content:\"\\f230\"}.fa-pinterest-p:before{content:\"\\f231\"}.fa-whatsapp:before{content:\"\\f232\"}.fa-server:before{content:\"\\f233\"}.fa-user-plus:before{content:\"\\f234\"}.fa-user-times:before{content:\"\\f235\"}.fa-bed:before,.fa-hotel:before{content:\"\\f236\"}.fa-viacoin:before{content:\"\\f237\"}.fa-train:before{content:\"\\f238\"}.fa-subway:before{content:\"\\f239\"}.fa-medium:before{content:\"\\f23a\"}.fa-y-combinator:before,.fa-yc:before{content:\"\\f23b\"}.fa-optin-monster:before{content:\"\\f23c\"}.fa-opencart:before{content:\"\\f23d\"}.fa-expeditedssl:before{content:\"\\f23e\"}.fa-battery-4:before,.fa-battery-full:before{content:\"\\f240\"}.fa-battery-3:before,.fa-battery-three-quarters:before{content:\"\\f241\"}.fa-battery-2:before,.fa-battery-half:before{content:\"\\f242\"}.fa-battery-1:before,.fa-battery-quarter:before{content:\"\\f243\"}.fa-battery-0:before,.fa-battery-empty:before{content:\"\\f244\"}.fa-mouse-pointer:before{content:\"\\f245\"}.fa-i-cursor:before{content:\"\\f246\"}.fa-object-group:before{content:\"\\f247\"}.fa-object-ungroup:before{content:\"\\f248\"}.fa-sticky-note:before{content:\"\\f249\"}.fa-sticky-note-o:before{content:\"\\f24a\"}.fa-cc-jcb:before{content:\"\\f24b\"}.fa-cc-diners-club:before{content:\"\\f24c\"}.fa-clone:before{content:\"\\f24d\"}.fa-balance-scale:before{content:\"\\f24e\"}.fa-hourglass-o:before{content:\"\\f250\"}.fa-hourglass-1:before,.fa-hourglass-start:before{content:\"\\f251\"}.fa-hourglass-2:before,.fa-hourglass-half:before{content:\"\\f252\"}.fa-hourglass-3:before,.fa-hourglass-end:before{content:\"\\f253\"}.fa-hourglass:before{content:\"\\f254\"}.fa-hand-grab-o:before,.fa-hand-rock-o:before{content:\"\\f255\"}.fa-hand-paper-o:before,.fa-hand-stop-o:before{content:\"\\f256\"}.fa-hand-scissors-o:before{content:\"\\f257\"}.fa-hand-lizard-o:before{content:\"\\f258\"}.fa-hand-spock-o:before{content:\"\\f259\"}.fa-hand-pointer-o:before{content:\"\\f25a\"}.fa-hand-peace-o:before{content:\"\\f25b\"}.fa-trademark:before{content:\"\\f25c\"}.fa-registered:before{content:\"\\f25d\"}.fa-creative-commons:before{content:\"\\f25e\"}.fa-gg:before{content:\"\\f260\"}.fa-gg-circle:before{content:\"\\f261\"}.fa-tripadvisor:before{content:\"\\f262\"}.fa-odnoklassniki:before{content:\"\\f263\"}.fa-odnoklassniki-square:before{content:\"\\f264\"}.fa-get-pocket:before{content:\"\\f265\"}.fa-wikipedia-w:before{content:\"\\f266\"}.fa-safari:before{content:\"\\f267\"}.fa-chrome:before{content:\"\\f268\"}.fa-firefox:before{content:\"\\f269\"}.fa-opera:before{content:\"\\f26a\"}.fa-internet-explorer:before{content:\"\\f26b\"}.fa-television:before,.fa-tv:before{content:\"\\f26c\"}.fa-contao:before{content:\"\\f26d\"}.fa-500px:before{content:\"\\f26e\"}.fa-amazon:before{content:\"\\f270\"}.fa-calendar-plus-o:before{content:\"\\f271\"}.fa-calendar-minus-o:before{content:\"\\f272\"}.fa-calendar-times-o:before{content:\"\\f273\"}.fa-calendar-check-o:before{content:\"\\f274\"}.fa-industry:before{content:\"\\f275\"}.fa-map-pin:before{content:\"\\f276\"}.fa-map-signs:before{content:\"\\f277\"}.fa-map-o:before{content:\"\\f278\"}.fa-map:before{content:\"\\f279\"}.fa-commenting:before{content:\"\\f27a\"}.fa-commenting-o:before{content:\"\\f27b\"}.fa-houzz:before{content:\"\\f27c\"}.fa-vimeo:before{content:\"\\f27d\"}.fa-black-tie:before{content:\"\\f27e\"}.fa-fonticons:before{content:\"\\f280\"}.fa-reddit-alien:before{content:\"\\f281\"}.fa-edge:before{content:\"\\f282\"}.fa-credit-card-alt:before{content:\"\\f283\"}.fa-codiepie:before{content:\"\\f284\"}.fa-modx:before{content:\"\\f285\"}.fa-fort-awesome:before{content:\"\\f286\"}.fa-usb:before{content:\"\\f287\"}.fa-product-hunt:before{content:\"\\f288\"}.fa-mixcloud:before{content:\"\\f289\"}.fa-scribd:before{content:\"\\f28a\"}.fa-pause-circle:before{content:\"\\f28b\"}.fa-pause-circle-o:before{content:\"\\f28c\"}.fa-stop-circle:before{content:\"\\f28d\"}.fa-stop-circle-o:before{content:\"\\f28e\"}.fa-shopping-bag:before{content:\"\\f290\"}.fa-shopping-basket:before{content:\"\\f291\"}.fa-hashtag:before{content:\"\\f292\"}.fa-bluetooth:before{content:\"\\f293\"}.fa-bluetooth-b:before{content:\"\\f294\"}.fa-percent:before{content:\"\\f295\"}@font-face{font-family:simple-line-icons;src:url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.eot?v=2.2.2);src:url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.eot?#iefix&v=2.2.2) format('embedded-opentype'),url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.ttf?v=2.2.2) format('truetype'),url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.woff2?v=2.2.2) format('woff2'),url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.woff?v=2.2.2) format('woff'),url(jspm_packages/npm/simple-line-icons@2.2.3/fonts/Simple-Line-Icons.svg?v=2.2.2#simple-line-icons) format('svg');font-weight:400;font-style:normal}.icon-action-redo,.icon-action-undo,.icon-anchor,.icon-arrow-down,.icon-arrow-down-circle,.icon-arrow-left,.icon-arrow-left-circle,.icon-arrow-right,.icon-arrow-right-circle,.icon-arrow-up,.icon-arrow-up-circle,.icon-badge,.icon-bag,.icon-ban,.icon-basket,.icon-basket-loaded,.icon-bell,.icon-book-open,.icon-briefcase,.icon-bubble,.icon-bubbles,.icon-bulb,.icon-calculator,.icon-calendar,.icon-call-end,.icon-call-in,.icon-call-out,.icon-camera,.icon-camrecorder,.icon-chart,.icon-check,.icon-chemistry,.icon-clock,.icon-close,.icon-cloud-download,.icon-cloud-upload,.icon-compass,.icon-control-end,.icon-control-forward,.icon-control-pause,.icon-control-play,.icon-control-rewind,.icon-control-start,.icon-credit-card,.icon-crop,.icon-cup,.icon-cursor,.icon-cursor-move,.icon-diamond,.icon-direction,.icon-directions,.icon-disc,.icon-dislike,.icon-doc,.icon-docs,.icon-drawar,.icon-drop,.icon-earphones,.icon-earphones-alt,.icon-emotsmile,.icon-energy,.icon-envelope,.icon-envelope-letter,.icon-envelope-open,.icon-equalizer,.icon-eye,.icon-eyeglass,.icon-feed,.icon-film,.icon-fire,.icon-flag,.icon-folder,.icon-folder-alt,.icon-frame,.icon-game-controller,.icon-ghost,.icon-globe,.icon-globe-alt,.icon-graduation,.icon-graph,.icon-grid,.icon-handbag,.icon-heart,.icon-home,.icon-hourglass,.icon-info,.icon-key,.icon-layers,.icon-like,.icon-link,.icon-list,.icon-location-pin,.icon-lock,.icon-lock-open,.icon-login,.icon-logout,.icon-loop,.icon-magic-wand,.icon-magnet,.icon-magnifier,.icon-magnifier-add,.icon-magnifier-remove,.icon-map,.icon-menu,.icon-microphone,.icon-mouse,.icon-music-tone,.icon-music-tone-alt,.icon-mustache,.icon-note,.icon-notebook,.icon-options,.icon-options-vertical,.icon-paper-clip,.icon-paper-plane,.icon-paypal,.icon-pencil,.icon-people,.icon-phone,.icon-picture,.icon-pie-chart,.icon-pin,.icon-plane,.icon-playlist,.icon-plus,.icon-power,.icon-present,.icon-printer,.icon-puzzle,.icon-question,.icon-refresh,.icon-reload,.icon-rocket,.icon-screen-desktop,.icon-screen-smartphone,.icon-screen-tablet,.icon-settings,.icon-share,.icon-share-alt,.icon-shield,.icon-shuffle,.icon-size-actual,.icon-size-fullscreen,.icon-social-behance,.icon-social-dribbble,.icon-social-dropbox,.icon-social-facebook,.icon-social-foursqare,.icon-social-github,.icon-social-gplus,.icon-social-instagram,.icon-social-linkedin,.icon-social-pinterest,.icon-social-reddit,.icon-social-skype,.icon-social-soundcloud,.icon-social-spotify,.icon-social-stumbleupon,.icon-social-tumblr,.icon-social-twitter,.icon-social-youtube,.icon-speech,.icon-speedometer,.icon-star,.icon-support,.icon-symble-female,.icon-symbol-male,.icon-tag,.icon-target,.icon-trash,.icon-trophy,.icon-umbrella,.icon-user,.icon-user-female,.icon-user-follow,.icon-user-following,.icon-user-unfollow,.icon-vector,.icon-volume-1,.icon-volume-2,.icon-volume-off,.icon-wallet,.icon-wrench{font-family:simple-line-icons;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-user:before{content:\"\\e005\"}.icon-people:before{content:\"\\e001\"}.icon-user-female:before{content:\"\\e000\"}.icon-user-follow:before{content:\"\\e002\"}.icon-user-following:before{content:\"\\e003\"}.icon-user-unfollow:before{content:\"\\e004\"}.icon-login:before{content:\"\\e066\"}.icon-logout:before{content:\"\\e065\"}.icon-emotsmile:before{content:\"\\e021\"}.icon-phone:before{content:\"\\e600\"}.icon-call-end:before{content:\"\\e048\"}.icon-call-in:before{content:\"\\e047\"}.icon-call-out:before{content:\"\\e046\"}.icon-map:before{content:\"\\e033\"}.icon-location-pin:before{content:\"\\e096\"}.icon-direction:before{content:\"\\e042\"}.icon-directions:before{content:\"\\e041\"}.icon-compass:before{content:\"\\e045\"}.icon-layers:before{content:\"\\e034\"}.icon-menu:before{content:\"\\e601\"}.icon-list:before{content:\"\\e067\"}.icon-options-vertical:before{content:\"\\e602\"}.icon-options:before{content:\"\\e603\"}.icon-arrow-down:before{content:\"\\e604\"}.icon-arrow-left:before{content:\"\\e605\"}.icon-arrow-right:before{content:\"\\e606\"}.icon-arrow-up:before{content:\"\\e607\"}.icon-arrow-up-circle:before{content:\"\\e078\"}.icon-arrow-left-circle:before{content:\"\\e07a\"}.icon-arrow-right-circle:before{content:\"\\e079\"}.icon-arrow-down-circle:before{content:\"\\e07b\"}.icon-check:before{content:\"\\e080\"}.icon-clock:before{content:\"\\e081\"}.icon-plus:before{content:\"\\e095\"}.icon-close:before{content:\"\\e082\"}.icon-trophy:before{content:\"\\e006\"}.icon-screen-smartphone:before{content:\"\\e010\"}.icon-screen-desktop:before{content:\"\\e011\"}.icon-plane:before{content:\"\\e012\"}.icon-notebook:before{content:\"\\e013\"}.icon-mustache:before{content:\"\\e014\"}.icon-mouse:before{content:\"\\e015\"}.icon-magnet:before{content:\"\\e016\"}.icon-energy:before{content:\"\\e020\"}.icon-disc:before{content:\"\\e022\"}.icon-cursor:before{content:\"\\e06e\"}.icon-cursor-move:before{content:\"\\e023\"}.icon-crop:before{content:\"\\e024\"}.icon-chemistry:before{content:\"\\e026\"}.icon-speedometer:before{content:\"\\e007\"}.icon-shield:before{content:\"\\e00e\"}.icon-screen-tablet:before{content:\"\\e00f\"}.icon-magic-wand:before{content:\"\\e017\"}.icon-hourglass:before{content:\"\\e018\"}.icon-graduation:before{content:\"\\e019\"}.icon-ghost:before{content:\"\\e01a\"}.icon-game-controller:before{content:\"\\e01b\"}.icon-fire:before{content:\"\\e01c\"}.icon-eyeglass:before{content:\"\\e01d\"}.icon-envelope-open:before{content:\"\\e01e\"}.icon-envelope-letter:before{content:\"\\e01f\"}.icon-bell:before{content:\"\\e027\"}.icon-badge:before{content:\"\\e028\"}.icon-anchor:before{content:\"\\e029\"}.icon-wallet:before{content:\"\\e02a\"}.icon-vector:before{content:\"\\e02b\"}.icon-speech:before{content:\"\\e02c\"}.icon-puzzle:before{content:\"\\e02d\"}.icon-printer:before{content:\"\\e02e\"}.icon-present:before{content:\"\\e02f\"}.icon-playlist:before{content:\"\\e030\"}.icon-pin:before{content:\"\\e031\"}.icon-picture:before{content:\"\\e032\"}.icon-handbag:before{content:\"\\e035\"}.icon-globe-alt:before{content:\"\\e036\"}.icon-globe:before{content:\"\\e037\"}.icon-folder-alt:before{content:\"\\e039\"}.icon-folder:before{content:\"\\e089\"}.icon-film:before{content:\"\\e03a\"}.icon-feed:before{content:\"\\e03b\"}.icon-drop:before{content:\"\\e03e\"}.icon-drawar:before{content:\"\\e03f\"}.icon-docs:before{content:\"\\e040\"}.icon-doc:before{content:\"\\e085\"}.icon-diamond:before{content:\"\\e043\"}.icon-cup:before{content:\"\\e044\"}.icon-calculator:before{content:\"\\e049\"}.icon-bubbles:before{content:\"\\e04a\"}.icon-briefcase:before{content:\"\\e04b\"}.icon-book-open:before{content:\"\\e04c\"}.icon-basket-loaded:before{content:\"\\e04d\"}.icon-basket:before{content:\"\\e04e\"}.icon-bag:before{content:\"\\e04f\"}.icon-action-undo:before{content:\"\\e050\"}.icon-action-redo:before{content:\"\\e051\"}.icon-wrench:before{content:\"\\e052\"}.icon-umbrella:before{content:\"\\e053\"}.icon-trash:before{content:\"\\e054\"}.icon-tag:before{content:\"\\e055\"}.icon-support:before{content:\"\\e056\"}.icon-frame:before{content:\"\\e038\"}.icon-size-fullscreen:before{content:\"\\e057\"}.icon-size-actual:before{content:\"\\e058\"}.icon-shuffle:before{content:\"\\e059\"}.icon-share-alt:before{content:\"\\e05a\"}.icon-share:before{content:\"\\e05b\"}.icon-rocket:before{content:\"\\e05c\"}.icon-question:before{content:\"\\e05d\"}.icon-pie-chart:before{content:\"\\e05e\"}.icon-pencil:before{content:\"\\e05f\"}.icon-note:before{content:\"\\e060\"}.icon-loop:before{content:\"\\e064\"}.icon-home:before{content:\"\\e069\"}.icon-grid:before{content:\"\\e06a\"}.icon-graph:before{content:\"\\e06b\"}.icon-microphone:before{content:\"\\e063\"}.icon-music-tone-alt:before{content:\"\\e061\"}.icon-music-tone:before{content:\"\\e062\"}.icon-earphones-alt:before{content:\"\\e03c\"}.icon-earphones:before{content:\"\\e03d\"}.icon-equalizer:before{content:\"\\e06c\"}.icon-like:before{content:\"\\e068\"}.icon-dislike:before{content:\"\\e06d\"}.icon-control-start:before{content:\"\\e06f\"}.icon-control-rewind:before{content:\"\\e070\"}.icon-control-play:before{content:\"\\e071\"}.icon-control-pause:before{content:\"\\e072\"}.icon-control-forward:before{content:\"\\e073\"}.icon-control-end:before{content:\"\\e074\"}.icon-volume-1:before{content:\"\\e09f\"}.icon-volume-2:before{content:\"\\e0a0\"}.icon-volume-off:before{content:\"\\e0a1\"}.icon-calendar:before{content:\"\\e075\"}.icon-bulb:before{content:\"\\e076\"}.icon-chart:before{content:\"\\e077\"}.icon-ban:before{content:\"\\e07c\"}.icon-bubble:before{content:\"\\e07d\"}.icon-camrecorder:before{content:\"\\e07e\"}.icon-camera:before{content:\"\\e07f\"}.icon-cloud-download:before{content:\"\\e083\"}.icon-cloud-upload:before{content:\"\\e084\"}.icon-envelope:before{content:\"\\e086\"}.icon-eye:before{content:\"\\e087\"}.icon-flag:before{content:\"\\e088\"}.icon-heart:before{content:\"\\e08a\"}.icon-info:before{content:\"\\e08b\"}.icon-key:before{content:\"\\e08c\"}.icon-link:before{content:\"\\e08d\"}.icon-lock:before{content:\"\\e08e\"}.icon-lock-open:before{content:\"\\e08f\"}.icon-magnifier:before{content:\"\\e090\"}.icon-magnifier-add:before{content:\"\\e091\"}.icon-magnifier-remove:before{content:\"\\e092\"}.icon-paper-clip:before{content:\"\\e093\"}.icon-paper-plane:before{content:\"\\e094\"}.icon-power:before{content:\"\\e097\"}.icon-refresh:before{content:\"\\e098\"}.icon-reload:before{content:\"\\e099\"}.icon-settings:before{content:\"\\e09a\"}.icon-star:before{content:\"\\e09b\"}.icon-symble-female:before{content:\"\\e09c\"}.icon-symbol-male:before{content:\"\\e09d\"}.icon-target:before{content:\"\\e09e\"}.icon-credit-card:before{content:\"\\e025\"}.icon-paypal:before{content:\"\\e608\"}.icon-social-tumblr:before{content:\"\\e00a\"}.icon-social-twitter:before{content:\"\\e009\"}.icon-social-facebook:before{content:\"\\e00b\"}.icon-social-instagram:before{content:\"\\e609\"}.icon-social-linkedin:before{content:\"\\e60a\"}.icon-social-pinterest:before{content:\"\\e60b\"}.icon-social-github:before{content:\"\\e60c\"}.icon-social-gplus:before{content:\"\\e60d\"}.icon-social-reddit:before{content:\"\\e60e\"}.icon-social-skype:before{content:\"\\e60f\"}.icon-social-dribbble:before{content:\"\\e00d\"}.icon-social-behance:before{content:\"\\e610\"}.icon-social-foursqare:before{content:\"\\e611\"}.icon-social-soundcloud:before{content:\"\\e612\"}.icon-social-spotify:before{content:\"\\e613\"}.icon-social-stumbleupon:before{content:\"\\e614\"}.icon-social-youtube:before{content:\"\\e008\"}.icon-social-dropbox:before{content:\"\\e00c\"}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:300;src:local('Source Sans Pro Light'),local('SourceSansPro-Light'),url(assets/fonts/sourcesanspro/sourcesanspro-light.woff) format('woff')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:400;src:local('Source Sans Pro'),local('SourceSansPro-Regular'),url(assets/fonts/sourcesanspro/sourcesanspro.woff) format('woff')}@font-face{font-family:'Source Sans Pro';font-style:normal;font-weight:700;src:local('Source Sans Pro Bold'),local('SourceSansPro-Bold'),url(assets/fonts/sourcesanspro/sourcesanspro-bold.woff) format('woff')}.jp-controls{display:table;table-layout:fixed;border-spacing:0;width:100%}.jp-controls a{cursor:pointer;display:inline-block;padding:10px 5px}.jp-controls a i{line-height:inherit}.jp-controls>div{display:table-cell;vertical-align:middle;text-align:center;width:40px;height:60px}div.jp-progress{width:auto;padding:0 15px;vertical-align:top;position:relative}.jp-seek-bar{position:relative}.jp-title{position:absolute;left:25px;top:0;right:25px;display:block!important;line-height:60px}.jp-title ul{list-style:none;margin:0;padding:0}.jp-title li{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.jp-artist{opacity:.6}.jp-play-bar{height:60px}.jp-volume{width:60px!important;padding-right:10px!important}.jp-volume-bar-value{height:6px}a.hid{display:none}.jp-video{font-size:0;line-height:0;min-height:160px}.jp-video-play{display:inline-block;position:absolute;left:50%;top:50%;cursor:pointer;margin-left:-30px;margin-top:-65px}.jp-video-full{width:480px;height:270px;position:static!important;position:relative}.jp-video-full div div{z-index:1000}.jp-video-full .jp-jplayer{top:0;left:0;position:fixed!important;position:relative;overflow:hidden}.jp-video-full .jp-gui{position:fixed!important;position:static;top:0;left:0;width:100%;height:100%;z-index:1001}.jp-video-full .jp-interface{position:absolute!important;position:relative;bottom:0;left:0}.jp-playlist ul{max-height:320px;overflow-x:hidden;overflow-y:auto;padding:0;display:none!important}.jp-playlist.open ul{display:block!important;bottom:60px;left:180px}.jp-playlist li{list-style:none;position:relative}.jp-playlist-item{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border-top:1px solid rgba(255,255,255,.1);padding:12px 40px 12px 8px}.jp-playlist-item:focus{outline:0}.jp-playlist-item:before{display:inline-block;text-align:center;width:30px;font-family:FontAwesome;content:\"\\f0da\";opacity:.6}a.jp-playlist-current:before{content:\"\\f144\";opacity:1}.jp-playlist li:first-child .jp-playlist-item{border-width:0}.jp-playlist-item-remove{font-size:15px;display:block;position:absolute;right:0;top:0;padding:11px 18px;opacity:.6}@media (max-width:767px){.footer .jp-gui{margin:0 -10px}div.jp-progress{padding:0 10px}.jp-playlist.open ul{display:block!important;bottom:60px;left:0;right:0}}html{background-color:#f2f4f8;overflow-x:hidden}body{font-family:\"Source Sans Pro\",\"Helvetica Neue\",Helvetica,Arial,sans-serif;font-size:14px;color:#788188;background-color:transparent;-webkit-font-smoothing:antialiased;line-height:1.4}.h1,.h2,.h3,.h4,.h5,.h6{margin:0}a{color:#545a5f;text-decoration:none}a:focus,a:hover{color:#303437;text-decoration:none}label{font-weight:400}.small,small{font-size:13px}.badge,.label{font-weight:700}.badge{background-color:#aac4c8}.badge.up{position:relative;top:-10px;padding:3px 6px;margin-left:-10px}.badge-sm{font-size:85%;padding:2px 5px!important}.label-sm{padding-top:0;padding-bottom:0}.badge-white{background-color:transparent;border:1px solid rgba(255,255,255,.35);padding:2px 6px}.badge-empty{background-color:transparent;border:1px solid rgba(0,0,0,.15);color:inherit}.caret-white{border-top-color:#fff;border-top-color:rgba(255,255,255,.65)}a:hover .caret-white{border-top-color:#fff}.tooltip-inner{background-color:rgba(0,0,0,.9);background-color:#5a6a7a}.tooltip.top .tooltip-arrow{border-top-color:rgba(0,0,0,.9);border-top-color:#5a6a7a}.tooltip.right .tooltip-arrow{border-right-color:rgba(0,0,0,.9);border-right-color:#5a6a7a}.tooltip.bottom .tooltip-arrow{border-bottom-color:rgba(0,0,0,.9);border-bottom-color:#5a6a7a}.tooltip.left .tooltip-arrow{border-left-color:rgba(0,0,0,.9);border-left-color:#5a6a7a}.thumbnail{border-color:#eaeef1}.popover-content{font-size:12px;line-height:1.5}.progress-xs{height:6px}.progress-sm{height:10px}.progress-sm .progress-bar{font-size:10px;line-height:1em}.progress,.progress-bar{-webkit-box-shadow:none;box-shadow:none}.breadcrumb{background-color:#fff;border:1px solid #eaeef1;padding-left:10px;margin-bottom:10px}.breadcrumb>.active,.breadcrumb>li+li:before{color:inherit}.accordion-group,.accordion-inner{border-color:#eaeef1;border-radius:2px}.alert{font-size:13px;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}.alert .close i{font-size:12px;font-weight:400;display:block}.form-control{border-color:#cbd5dd;border-radius:2px}.form-control,.form-control:focus{-webkit-box-shadow:none;box-shadow:none}.form-control:focus{border-color:#545ca6}.input-s-sm{width:120px}.input-s{width:200px}.input-s-lg{width:250px}.input-lg{height:45px}.input-group-addon{border-color:#cbd5dd;background-color:#f1f5f6}.list-group{border-radius:2px}.list-group.no-radius .list-group-item{border-radius:0!important}.list-group.no-borders .list-group-item{border:none}.list-group.no-border .list-group-item{border-width:1px 0}.list-group.no-bg .list-group-item{background-color:transparent}.list-group-item{border-color:#eaeef1;padding-right:15px}a.list-group-item:focus,a.list-group-item:hover{background-color:#eef3f4}.list-group-item.media{margin-top:0}.list-group-item.active{color:#fff;border-color:#4cb6cb!important;background-color:#4cb6cb!important}.list-group-item.active .text-muted{color:#c3e6ed}.list-group-item.active a{color:#fff}.list-group-alt .list-group-item:nth-child(2n+2){background-color:rgba(0,0,0,.02)!important}.list-group-lg .list-group-item{padding-top:15px;padding-bottom:15px}.list-group-sp .list-group-item{margin-bottom:5px;border-radius:3px}.list-group-item>.badge{margin-right:0}.list-group-item>.fa-chevron-right{float:right;margin-top:4px;margin-right:-5px}.list-group-item>.fa-chevron-right+.badge{margin-right:5px}.nav-pills.no-radius>li>a{border-radius:0}.nav-pills>li.active>a{color:#fff!important;background-color:#4cb6cb}.nav>li>a:focus,.nav>li>a:hover{background-color:#edf2f3}.nav.nav-sm>li>a{padding:6px 8px}.nav .open>a,.nav .open>a:focus,.nav .open>a:hover{background-color:#edf2f3}.nav-tabs{border-color:#eaeef1}.nav-tabs>li>a{border-radius:2px 2px 0 0;border-bottom-color:#eaeef1!important}.nav-tabs>li.active>a{border-color:#eaeef1!important;border-bottom-color:#fff!important}.pagination>li>a{border-color:#eaeef1}.pagination>li>a:focus,.pagination>li>a:hover{border-color:#eaeef1;background-color:#e8eff0}.panel{border-radius:2px}.panel.panel-default{border-color:#eaeef1}.panel.panel-default>.panel-footer,.panel.panel-default>.panel-heading{border-color:#eaeef1}.panel .list-group-item{border-color:#f3f5f7}.panel.no-borders{border-width:0}.panel.no-borders .panel-footer,.panel.no-borders .panel-heading{border-width:0}.panel .table td,.panel .table th{padding:8px 15px;border-top:1px solid #eaeef1}.panel .table thead>tr>th{border-bottom:1px solid #eaeef1}.panel .table-striped>tbody>tr:nth-child(odd)>td,.panel .table-striped>tbody>tr:nth-child(odd)>th{background-color:#f7fafa}.panel .table-striped>thead th{background-color:#f7fafa;border-right:1px solid #eaeef1}.panel .table-striped>thead th:last-child{border-right:none}.panel-heading{border-radius:2px 2px 0 0}.panel-default .panel-heading{background-color:#f7fafa}.panel-heading.no-border{margin:-1px -1px 0 -1px;border:none}.panel-heading .nav{margin:-10px -15px}.panel-heading .nav-tabs{margin:-11px -16px}.panel-heading .nav-tabs.nav-justified{width:auto}.panel-heading .nav-tabs>li>a{margin:0;padding-top:9px}.panel-heading .list-group{background:0 0}.panel-footer{border-color:#eaeef1;border-radius:0 0 2px 2px;background-color:#f7fafa}.panel-group .panel-heading+.panel-collapse .panel-body{border-top:1px solid #eaedef}.open{z-index:1050;position:relative}.dropdown-menu{border-radius:2px;-webkit-box-shadow:0 2px 6px rgba(0,0,0,.1);box-shadow:0 2px 6px rgba(0,0,0,.1);border:1px solid #ddd;border:1px solid rgba(0,0,0,.1)}.dropdown-menu.pull-left{left:100%}.dropdown-menu>.panel{border:none;margin:-5px 0}.dropdown-menu>li>a{padding:5px 15px}.dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{background-image:none;filter:none;background-color:#e8eff0!important;color:#303437}.dropdown-header{padding:5px 15px}.dropdown-submenu{position:relative}.dropdown-submenu:focus>a,.dropdown-submenu:hover>a{background-color:#e8eff0!important;color:#788188}.dropdown-submenu:focus>.dropdown-menu,.dropdown-submenu:hover>.dropdown-menu{display:block}.dropdown-submenu.pull-left{float:none!important}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px}.dropdown-submenu .dropdown-menu{left:100%;top:0;margin-top:-6px;margin-left:-1px}.dropup .dropdown-submenu>.dropdown-menu{top:auto;bottom:0}.dropdown-select>li input{position:absolute;left:-9999em}.carousel-control{width:40px;color:#999;text-shadow:none}.carousel-control:focus,.carousel-control:hover{color:#ccc;text-decoration:none;opacity:.9;filter:alpha(opacity=90)}.carousel-control.left,.carousel-control.right{background-image:none;filter:none}.carousel-control i{position:absolute;top:50%;left:50%;z-index:5;display:inline-block;width:20px;height:20px;margin-top:-10px;margin-left:-10px}.carousel-indicators.out{bottom:-5px}.carousel-indicators li{-webkit-transition:background-color .25s;transition:background-color .25s;background:#ddd;background-color:rgba(0,0,0,.2);border:none}.carousel-indicators .active{background:#f0f0f0;background-color:rgba(200,200,200,.2);width:10px;height:10px;margin:1px}.carousel.carousel-fade .item{-webkit-transition:opacity .25s;transition:opacity .25s;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;opacity:0;filter:alpha(opacity=0)}.carousel.carousel-fade .active{opacity:1;filter:alpha(opacity=1)}.carousel.carousel-fade .active.left,.carousel.carousel-fade .active.right{left:0;z-index:2;opacity:0;filter:alpha(opacity=0)}.carousel.carousel-fade .next,.carousel.carousel-fade .prev{left:0;z-index:1}.carousel.carousel-fade .carousel-control{z-index:3}.col-lg-2-4{position:relative;min-height:1px;padding-left:15px;padding-right:15px}.col-0{clear:left}.row.no-gutter{margin-left:0;margin-right:0}.no-gutter [class*=col]{padding:0}.modal-backdrop{background-color:#5a6a7a}.modal-backdrop.in{opacity:.8;filter:alpha(opacity=80)}.modal-over{width:100%;height:100%;position:relative;background:#5a6a7a}.modal-center{position:absolute;left:50%;top:50%}.modal-content{-webkit-box-shadow:0 2px 10px rgba(0,0,0,.25);box-shadow:0 2px 10px rgba(0,0,0,.25)}.icon-muted{color:#ccc}.navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form{border-color:transparent}.navbar-fixed-bottom,.navbar-fixed-top{position:fixed!important}.navbar-fixed-top+*{padding-top:50px}.navbar-fixed-top.header-md+*{padding-top:60px}.footer,.header{min-height:50px;padding:0 15px}.footer>p,.header>p{margin-top:15px;display:inline-block}.footer>.btn,.footer>.btn-group,.footer>.btn-toolbar,.header>.btn,.header>.btn-group,.header>.btn-toolbar{margin-top:10px}.footer>.btn-lg,.header>.btn-lg{margin-top:0}.footer .nav-tabs,.header .nav-tabs{border:none;margin-left:-15px;margin-right:-15px}.footer .nav-tabs>li a,.header .nav-tabs>li a{border:none!important;border-radius:0;padding-top:15px;padding-bottom:15px;line-height:20px}.footer .nav-tabs>li a:focus,.footer .nav-tabs>li a:hover,.header .nav-tabs>li a:focus,.header .nav-tabs>li a:hover{background-color:transparent}.footer .nav-tabs>li.active a,.header .nav-tabs>li.active a{color:#788188}.footer .nav-tabs>li.active a,.footer .nav-tabs>li.active a:hover,.header .nav-tabs>li.active a,.header .nav-tabs>li.active a:hover{background-color:#f2f4f8}.footer .nav-tabs.nav-white>li.active a,.footer .nav-tabs.nav-white>li.active a:hover,.header .nav-tabs.nav-white>li.active a,.header .nav-tabs.nav-white>li.active a:hover{background-color:#fff}.footer.navbar,.header.navbar{border-radius:0;border:none;margin-bottom:0;padding:0;position:relative;z-index:1000}body.container{padding:0}@media (orientation:landscape){html.ios7.ipad>body{padding-bottom:20px}}@media (min-width:768px){body.container{-webkit-box-shadow:0 3px 60px rgba(0,0,0,.3);box-shadow:0 3px 60px rgba(0,0,0,.3);border-left:1px solid #cbd5dd;border-right:1px solid #cbd5dd}.app,.app body{height:100%;overflow:hidden}.app .hbox.stretch{height:100%}.app .vbox>footer,.app .vbox>section{position:absolute}.app .vbox.flex>section>section{overflow:auto}.hbox{display:table;table-layout:fixed;border-spacing:0;width:100%}.hbox>aside,.hbox>section{display:table-cell;vertical-align:top;height:100%;float:none}.hbox>aside.hidden-sm,.hbox>aside.show,.hbox>section.hidden-sm,.hbox>section.show{display:table-cell!important}.vbox{display:table;border-spacing:0;position:relative;height:100%;width:100%}.vbox>footer,.vbox>section{top:0;bottom:0;width:100%}.vbox>header~section{top:50px}.vbox>header.header-md~section{top:60px}.vbox>section.w-f{bottom:50px}.vbox>section.w-f-md{bottom:60px}.vbox>footer{top:auto;z-index:1000}.vbox.flex>footer,.vbox.flex>header,.vbox.flex>section{position:inherit}.vbox.flex>section{display:table-row;height:100%}.vbox.flex>section>section{position:relative;height:100%;-webkit-overflow-scrolling:touch}.ie .vbox.flex>section>section{display:table-cell}.vbox.flex>section>section>section{position:absolute;top:0;bottom:0;left:0;right:0}.aside-xs{width:60px}.aside-sm{width:150px}.aside{width:200px}.aside-md{width:240px}.aside-lg{width:300px}.aside-xl{width:360px}.aside-xxl{width:480px}.header-md{min-height:60px}.header-md .navbar-form{margin-top:15px;margin-bottom:15px}.footer-md{min-height:60px}.scrollable{-webkit-overflow-scrolling:touch}::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background-color:rgba(50,50,50,.25);border:2px solid transparent;border-radius:10px;background-clip:padding-box}::-webkit-scrollbar-thumb:hover{background-color:rgba(50,50,50,.5)}::-webkit-scrollbar-track{background-color:rgba(50,50,50,.05)}}.scrollable{overflow-x:hidden;overflow-y:auto}.no-touch .scrollable.hover{overflow-y:hidden}.no-touch .scrollable.hover:hover{overflow:visible;overflow-y:auto}.no-touch ::-webkit-scrollbar-button{width:10px;height:6px;background-color:rgba(50,50,50,.05)}.slimScrollBar{border-radius:5px;border:2px solid transparent;border-radius:10px;background-clip:padding-box!important}@media print{.hbox,.vbox,body,html{height:auto}.vbox>footer,.vbox>section{position:relative}}.navbar-header{position:relative}.navbar-header>.btn{position:absolute;font-size:1.3em;padding:9px 16px;line-height:30px;left:0;text-decoration:none!important}.navbar-header .navbar-brand+.btn{right:0;top:0;left:auto}.navbar-brand{float:none;text-align:center;font-size:20px;font-weight:700;height:auto;line-height:50px;display:inline-block;padding:0 20px}.navbar-brand:hover{text-decoration:none}.navbar-brand img{max-height:20px;margin-top:-4px;vertical-align:middle}.nav-primary li>a>i{margin:-10px -10px;line-height:38px;width:38px;float:left;margin-right:5px;text-align:center;position:relative;overflow:hidden}.nav-primary li>a>i:before{position:relative;z-index:2}.nav-primary ul.nav>li>a{padding:9px 20px;position:relative;-webkit-transition:background-color .2s ease-in-out 0s;transition:background-color .2s ease-in-out 0s}.no-borders .nav-primary ul.nav>li>a{border-width:0!important}.nav-primary ul.nav>li>a>.badge{font-size:11px;padding:2px 5px 2px 4px;margin-top:2px}.nav-primary ul.nav>li>a>.text-muted{margin:0 3px}.nav-primary ul.nav>li>a.active .text{display:none}.nav-primary ul.nav>li>a.active .text-active{display:inline-block!important}.nav-primary ul.nav>li li a{font-weight:400;text-transform:none}.nav-primary ul.nav>li.active>ul{display:block}.nav-primary ul.nav ul{display:none}@media (min-width:768px){.visible-nav-xs{display:none}.nav-xs{width:70px}.nav-xs .slim-scroll,.nav-xs .slimScrollDiv{overflow:visible!important}.nav-xs .slimScrollBar,.nav-xs .slimScrollRail{display:none!important}.nav-xs .scrollable{overflow:visible}.nav-xs .nav-primary>ul>li>a{position:relative;padding:0;font-size:11px;text-align:center;height:50px;overflow-y:hidden;border:none}.nav-xs .nav-primary>ul>li>a span{display:table-cell;vertical-align:middle;height:50px;width:70px;padding:0 5px}.nav-xs .nav-primary>ul>li>a span.pull-right{display:none!important}.nav-xs .nav-primary>ul>li>a i{width:auto;float:none;display:block;font-size:16px;margin:0;line-height:50px;border:none!important;-webkit-transition:margin-top .2s;transition:margin-top .2s}.nav-xs .nav-primary>ul>li>a i b{left:0!important}.nav-xs .nav-primary>ul>li>a .badge{position:absolute;right:10px;top:4px;z-index:3}.nav-xs .nav-primary>ul>li.active>a i,.nav-xs .nav-primary>ul>li:active>a i,.nav-xs .nav-primary>ul>li:focus>a i,.nav-xs .nav-primary>ul>li:hover>a i{margin-top:-50px}.nav-xs .nav-primary>ul ul{display:none!important;position:absolute;left:100%;top:0;z-index:1050;width:220px;-webkit-box-shadow:0 2px 6px rgba(0,0,0,.1);box-shadow:0 2px 6px rgba(0,0,0,.1)}.nav-xs .nav-primary li:active>ul,.nav-xs .nav-primary li:focus>ul,.nav-xs .nav-primary li:hover>ul{display:block!important}.nav-xs.nav-xs-right .nav-primary>ul ul{left:auto;right:100%}.nav-xs>.vbox>.footer,.nav-xs>.vbox>.header{padding:0 20px}.nav-xs .hidden-nav-xs{display:none}.nav-xs .visible-nav-xs{display:inherit}.nav-xs .text-center-nav-xs{text-align:center}.nav-xs .nav-user{padding-left:0;padding-right:0}.nav-xs .nav-user .avatar{float:none!important;margin-right:0}.nav-xs .nav-user .dropdown>a{display:block;text-align:center}.nav-xs .navbar-header{float:none}.nav-xs .navbar-brand{display:block;padding:0}.nav-xs .navbar-brand img{margin-right:0}.nav-xs .navbar{padding:0}.header-md .navbar-brand{line-height:60px}.header-md .navbar-brand img{max-height:30px}.header-md .navbar-nav>li>a{padding:20px}}@media (max-width:767px){.navbar-fixed-top-xs{position:fixed!important;left:0;width:100%;z-index:1100}.navbar-fixed-top-xs+*{padding-top:50px!important}.nav-bar-fixed-bottom{position:fixed;left:0;bottom:0;width:100%;z-index:1100}body,html{overflow-x:hidden;min-height:100%}.open,.open body{height:100%}.nav-primary .dropdown-menu{position:relative;float:none;left:0;margin-left:0;padding:0}.nav-primary .dropdown-menu a{padding:15px;border-bottom:1px solid #eee}.nav-primary .dropdown-menu li:last-child a{border-bottom:none}.navbar-header{text-align:center}.nav-user{margin:0;padding:15px}.nav-user.open{display:inherit!important}.nav-user .dropdown-menu{display:block;position:static;float:none}.nav-user .dropdown>a{display:block;text-align:center;font-size:18px;padding-bottom:10px}.nav-user .avatar{width:160px!important;float:none!important;display:block;margin:20px auto;padding:5px;background-color:rgba(255,255,255,.1);position:relative}.nav-user .avatar:before{content:\"\";position:absolute;left:5px;right:5px;bottom:5px;top:5px;border:4px solid #fff;border-radius:500px}.nav-off-screen{display:block!important;position:absolute;left:0;top:0;bottom:0;width:75%;visibility:visible;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch}.nav-off-screen .nav-primary{display:block!important}.nav-off-screen .navbar-fixed-top-xs{width:75%}.nav-off-screen.push-right .navbar-fixed-top-xs{left:25%}.nav-off-screen.push-right{left:auto;right:0}.nav-off-screen.push-right+*{-webkit-transform:translate3d(-75%,0,0);transform:translate3d(-75%,0,0)}.nav-off-screen+*{background-color:#f2f4f8;-webkit-transition:-webkit-transform .2s ease-in-out;-moz-transition:-moz-transform .2s ease-in-out;-o-transition:-o-transform .2s ease-in-out;transition:transform .2s ease-in-out;-webkit-transition-delay:0s;transition-delay:0s;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-transform:translate3d(75%,0,0);transform:translate3d(75%,0,0);overflow:hidden;position:absolute;width:100%;top:0;bottom:0;left:0;right:0;z-index:2}.nav-off-screen+* .nav-off-screen-block{display:block!important;position:absolute;left:0;right:0;top:0;bottom:0;z-index:1950}.navbar+section .nav-off-screen{top:50px}.navbar+section .nav-off-screen+*{top:50px}.slim-scroll,.slimScrollDiv{overflow:visible!important;height:auto!important}.slimScrollBar,.slimScrollRail{display:none!important}}.arrow{border-width:8px;z-index:10}.arrow,.arrow:after{position:absolute;display:block;width:0;height:0;border-color:transparent;border-style:solid}.arrow:after{border-width:7px;content:\"\"}.arrow.top{left:50%;margin-left:-8px;border-top-width:0;border-bottom-color:#eee;border-bottom-color:rgba(0,0,0,.1);top:-8px}.arrow.top:after{content:\" \";top:1px;margin-left:-7px;border-top-width:0;border-bottom-color:#fff}.arrow.right{top:50%;right:-8px;margin-top:-8px;border-right-width:0;border-left-color:#eee;border-left-color:rgba(0,0,0,.1)}.arrow.right:after{content:\" \";right:1px;border-right-width:0;border-left-color:#fff;bottom:-7px}.arrow.bottom{left:50%;margin-left:-8px;border-bottom-width:0;border-top-color:#eee;border-top-color:rgba(0,0,0,.1);bottom:-8px}.arrow.bottom:after{content:\" \";bottom:1px;margin-left:-7px;border-bottom-width:0;border-top-color:#fff}.arrow.left{top:50%;left:-8px;margin-top:-8px;border-left-width:0;border-right-color:#eee;border-right-color:rgba(0,0,0,.1)}.arrow.left:after{content:\" \";left:1px;border-left-width:0;border-right-color:#fff;bottom:-7px}.btn-link{color:#788188}.btn-link.active{webkit-box-shadow:none;box-shadow:none}.btn-default{color:#788188!important;background-color:#fff;border-color:#dbe2e7;border-bottom-color:#d5dde3;-webkit-box-shadow:0 1px 1px rgba(90,90,90,.1);box-shadow:0 1px 1px rgba(90,90,90,.1)}.btn-default.active,.btn-default:active,.btn-default:focus,.btn-default:hover,.open .dropdown-toggle.btn-default{color:#788188!important;background-color:#f2f2f2;border-color:#c2ced6}.btn-default.active,.btn-default:active,.open .dropdown-toggle.btn-default{background-image:none}.btn-default.disabled,.btn-default.disabled.active,.btn-default.disabled:active,.btn-default.disabled:focus,.btn-default.disabled:hover,.btn-default[disabled],.btn-default[disabled].active,.btn-default[disabled]:active,.btn-default[disabled]:focus,.btn-default[disabled]:hover,fieldset[disabled] .btn-default,fieldset[disabled] .btn-default.active,fieldset[disabled] .btn-default:active,fieldset[disabled] .btn-default:focus,fieldset[disabled] .btn-default:hover{background-color:#fff;border-color:#dbe2e7}.btn-default.btn-bg{border-color:rgba(0,0,0,.1);background-clip:padding-box}.btn-primary{color:#fff!important;background-color:#545ca6;border-color:#545ca6}.btn-primary.active,.btn-primary:active,.btn-primary:focus,.btn-primary:hover,.open .dropdown-toggle.btn-primary{color:#fff!important;background-color:#4b5395;border-color:#464d8b}.btn-primary.active,.btn-primary:active,.open .dropdown-toggle.btn-primary{background-image:none}.btn-primary.disabled,.btn-primary.disabled.active,.btn-primary.disabled:active,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled],.btn-primary[disabled].active,.btn-primary[disabled]:active,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary,fieldset[disabled] .btn-primary.active,fieldset[disabled] .btn-primary:active,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#545ca6;border-color:#545ca6}.btn-success{color:#fff!important;background-color:#1ab667;border-color:#1ab667}.btn-success.active,.btn-success:active,.btn-success:focus,.btn-success:hover,.open .dropdown-toggle.btn-success{color:#fff!important;background-color:#17a05a;border-color:#159253}.btn-success.active,.btn-success:active,.open .dropdown-toggle.btn-success{background-image:none}.btn-success.disabled,.btn-success.disabled.active,.btn-success.disabled:active,.btn-success.disabled:focus,.btn-success.disabled:hover,.btn-success[disabled],.btn-success[disabled].active,.btn-success[disabled]:active,.btn-success[disabled]:focus,.btn-success[disabled]:hover,fieldset[disabled] .btn-success,fieldset[disabled] .btn-success.active,fieldset[disabled] .btn-success:active,fieldset[disabled] .btn-success:focus,fieldset[disabled] .btn-success:hover{background-color:#1ab667;border-color:#1ab667}.btn-info{color:#fff!important;background-color:#4cb6cb;border-color:#4cb6cb}.btn-info.active,.btn-info:active,.btn-info:focus,.btn-info:hover,.open .dropdown-toggle.btn-info{color:#fff!important;background-color:#39adc4;border-color:#36a3b9}.btn-info.active,.btn-info:active,.open .dropdown-toggle.btn-info{background-image:none}.btn-info.disabled,.btn-info.disabled.active,.btn-info.disabled:active,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled],.btn-info[disabled].active,.btn-info[disabled]:active,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info,fieldset[disabled] .btn-info.active,fieldset[disabled] .btn-info:active,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#4cb6cb;border-color:#4cb6cb}.btn-warning{color:#fff!important;background-color:#fad733;border-color:#fad733}.btn-warning.active,.btn-warning:active,.btn-warning:focus,.btn-warning:hover,.open .dropdown-toggle.btn-warning{color:#fff!important;background-color:#f9d21a;border-color:#f9cf0b}.btn-warning.active,.btn-warning:active,.open .dropdown-toggle.btn-warning{background-image:none}.btn-warning.disabled,.btn-warning.disabled.active,.btn-warning.disabled:active,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled],.btn-warning[disabled].active,.btn-warning[disabled]:active,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning,fieldset[disabled] .btn-warning.active,fieldset[disabled] .btn-warning:active,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#fad733;border-color:#fad733}.btn-danger{color:#fff!important;background-color:#f05050;border-color:#f05050}.btn-danger.active,.btn-danger:active,.btn-danger:focus,.btn-danger:hover,.open .dropdown-toggle.btn-danger{color:#fff!important;background-color:#ee3939;border-color:#ed2a2a}.btn-danger.active,.btn-danger:active,.open .dropdown-toggle.btn-danger{background-image:none}.btn-danger.disabled,.btn-danger.disabled.active,.btn-danger.disabled:active,.btn-danger.disabled:focus,.btn-danger.disabled:hover,.btn-danger[disabled],.btn-danger[disabled].active,.btn-danger[disabled]:active,.btn-danger[disabled]:focus,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger,fieldset[disabled] .btn-danger.active,fieldset[disabled] .btn-danger:active,fieldset[disabled] .btn-danger:focus,fieldset[disabled] .btn-danger:hover{background-color:#f05050;border-color:#f05050}.btn-dark{color:#fff!important;background-color:#5a6a7a;border-color:#5a6a7a}.btn-dark.active,.btn-dark:active,.btn-dark:focus,.btn-dark:hover,.open .dropdown-toggle.btn-dark{color:#fff!important;background-color:#4f5d6b;border-color:#495663}.btn-dark.active,.btn-dark:active,.open .dropdown-toggle.btn-dark{background-image:none}.btn-dark.disabled,.btn-dark.disabled.active,.btn-dark.disabled:active,.btn-dark.disabled:focus,.btn-dark.disabled:hover,.btn-dark[disabled],.btn-dark[disabled].active,.btn-dark[disabled]:active,.btn-dark[disabled]:focus,.btn-dark[disabled]:hover,fieldset[disabled] .btn-dark,fieldset[disabled] .btn-dark.active,fieldset[disabled] .btn-dark:active,fieldset[disabled] .btn-dark:focus,fieldset[disabled] .btn-dark:hover{background-color:#5a6a7a;border-color:#5a6a7a}.btn{font-weight:500;border-radius:2px}.btn-icon{padding-left:0!important;padding-right:0!important;width:34px;text-align:center}.btn-icon.b-2x{width:36px}.btn-icon.btn-sm{width:30px}.btn-icon.btn-sm.b-2x{width:32px}.btn-icon.btn-lg{width:45px}.btn-icon.btn-lg.b-2x{width:47px}.btn-group-justified{border-collapse:separate}.btn-rounded{border-radius:50px;padding-left:15px;padding-right:15px}.btn-rounded.btn-lg{padding-left:25px;padding-right:25px}.btn>i.pull-left,.btn>i.pull-right{line-height:1.428571429}.btn-block{padding-left:12px;padding-right:12px}.btn-group-vertical>.btn:first-child:not(:last-child){border-top-right-radius:2px}.btn-group-vertical>.btn:last-child:not(:first-child){border-bottom-left-radius:2px}.btn-inactive{-webkit-box-shadow:none!important;box-shadow:none!important}.chat-item:after,.chat-item:before{content:\" \";display:table}.chat-item:after{clear:both}.chat-item .arrow{top:20px}.chat-item .arrow.right:after{border-left-color:#e8eff0}.chat-item .chat-body{position:relative;margin-left:50px;min-height:30px}.chat-item .chat-body .panel{margin:0 -1px}.chat-item.right .chat-body{margin-left:0;margin-right:50px}.chat-item+.chat-item{margin-top:15px}.comment-list{position:relative}.comment-list .comment-item{margin-top:0;position:relative}.comment-list .comment-item>.thumb-sm{width:36px}.comment-list .comment-item .arrow.left{top:20px;left:39px}.comment-list .comment-item .comment-body{margin-left:46px}.comment-list .comment-item .panel-body{padding:10px 15px}.comment-list .comment-item .panel-footer,.comment-list .comment-item .panel-heading{position:relative;font-size:12px;background-color:#fff}.comment-list .comment-reply{margin-left:46px}.comment-list:before{position:absolute;top:0;bottom:35px;left:18px;width:1px;background:#e0e4e8;content:''}.timeline{display:table;width:100%;border-spacing:0;table-layout:fixed;position:relative;border-collapse:collapse}.timeline:before{content:\"\";width:1px;margin-left:-1px;position:absolute;left:50%;top:0;bottom:30px;background-color:#ddd;z-index:0}.timeline .timeline-date{position:absolute;width:150px;left:-200px;top:50%;margin-top:-9px;text-align:right}.timeline .timeline-icon{position:absolute;left:-41px;top:-2px;top:50%;margin-top:-15px}.timeline .time-icon{width:30px;height:30px;line-height:30px;display:inline-block!important;z-index:10;border-radius:20px;text-align:center}.timeline .time-icon:before{font-size:14px;margin-top:5px}.timeline-item{display:table-row}.timeline-item.alt:after,.timeline-item:before{content:\"\";display:block;width:50%}.timeline-item.alt{text-align:right}.timeline-item.alt:before{display:none}.timeline-item.alt .panel{margin-right:25px;margin-left:0}.timeline-item.alt .timeline-date{left:auto;right:-200px;text-align:left}.timeline-item.alt .timeline-icon{left:auto;right:-41px}.timeline-item.active{display:table-caption;text-align:center}.timeline-item.active:before{width:1%}.timeline-item.active .timeline-caption{display:inline-block;width:auto}.timeline-item.active .timeline-caption h5 span{color:#fff}.timeline-item.active .panel{margin-left:0}.timeline-item.active .timeline-date,.timeline-item.active .timeline-icon{position:static;margin-bottom:10px;display:inline-block;width:auto}.timeline-caption{display:table-cell;vertical-align:top;width:50%}.timeline-caption .panel{position:relative;margin-left:25px;text-align:left}.timeline-caption h5{margin:0}.timeline-caption h5 span{display:block;color:#999;margin-bottom:4px;font-size:12px}.timeline-caption p{font-size:12px;margin-bottom:0;margin-top:10px}.timeline-footer{display:table-row}.timeline-footer a{display:table-cell;text-align:right}.timeline-footer .time-icon{margin-right:-15px;z-index:5}.post-item{border-radius:3px;background-color:#fff;-webkit-box-shadow:0 1px 2px rgba(0,0,0,.15);box-shadow:0 1px 2px rgba(0,0,0,.15);margin-bottom:15px}.post-item .post-title{margin-top:0}.post-item .post-media{text-align:center}.post-item .post-media img{border-radius:3px 3px 0 0}.i-fw{width:1.2857142857143em;text-align:center}.i-lg{font-size:1.3333333333333em;line-height:.75em;vertical-align:-15%}.i-md{font-size:1.2em}.i-sm{font-size:.75em}.i-1x{font-size:1em}.i-2x{font-size:2em}.i-3x{font-size:3em}.i-4x{font-size:4em}.i-5x{font-size:5em}.i-s{position:relative;display:inline-block;vertical-align:middle}.i-s>i{position:absolute;left:0;width:100%;text-align:center;line-height:inherit}.i-s-2x{width:2em;height:2em;font-size:2em;line-height:2em}.i-s-2x .i-s-base{font-size:2em}.i-s-3x{width:2.5em;height:2.5em;font-size:2.5em;line-height:2.5em}.i-s-3x .i-s-base{font-size:2.5em}.i-s-4x{width:3em;height:3em;font-size:3em;line-height:3em}.i-s-4x .i-s-base{font-size:3em}.i-s-5x{width:3.5em;height:3.5em;font-size:3.5em;line-height:3.5em}.i-s-5x .i-s-base{font-size:3.5em}.switch{cursor:pointer;position:relative}.switch input{position:absolute;opacity:0;filter:alpha(opacity=0)}.switch input:checked+span{background-color:#1ab667}.switch input:checked+span:after{left:31px}.switch span{position:relative;width:60px;height:30px;border-radius:30px;background-color:#fff;border:1px solid #eee;border-color:rgba(0,0,0,.1);display:inline-block;-webkit-transition:background-color .2s;transition:background-color .2s}.switch span:after{content:\"\";position:absolute;background-color:#fff;width:26px;top:1px;bottom:1px;border-radius:30px;-webkit-box-shadow:1px 1px 3px rgba(0,0,0,.25);box-shadow:1px 1px 3px rgba(0,0,0,.25);-webkit-transition:left .2s;transition:left .2s}.nav-docs>ul>li>a{padding-top:5px!important;padding-bottom:5px!important}.dropfile{border:2px dashed #e0e4e8;text-align:center;min-height:20px}.dropfile.hover{border-color:#aac3cc}.dropfile small{margin:50px 0;display:block}.portlet{min-height:30px}.jqstooltip{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}.easypiechart{position:relative;text-align:center}.easypiechart>div{position:relative;z-index:1}.easypiechart>div .text{position:absolute;width:100%;top:60%;line-height:1}.easypiechart>div img{margin-top:-4px}.easypiechart canvas{position:absolute;top:0;left:0;z-index:0}.flot-legend .legend>div{display:none}.flot-legend .legend .legendColorBox>div{border:none!important;margin:5px}.flot-legend .legend .legendColorBox>div>div{border-radius:10px}.doc-buttons .btn{margin-bottom:5px}.list-icon i{font-size:14px;width:40px;vertical-align:middle;margin:0;display:inline-block;text-align:center;-webkit-transition:font-size .2s;transition:font-size .2s}.list-icon div{line-height:40px;white-space:nowrap}.list-icon div:hover i{font-size:26px}.th-sortable{cursor:pointer}.th-sortable .th-sort{float:right;position:relative}.th-sort i{position:relative;z-index:1}.th-sort .fa-sort{position:absolute;left:0;top:3px;color:#bac3cc;z-index:0}.th-sortable.active .text{display:none!important}.th-sortable.active .text-active{display:inline-block!important}.sortable-placeholder{list-style:none;border:1px dashed #CCC;min-height:50px;margin-bottom:5px}.input-append.date .add-on i,.input-prepend.date .add-on i{display:block;cursor:pointer;width:16px;height:16px}.parsley-error-list{margin:0;padding:0;list-style:none;margin-top:6px;font-size:12px}.parsley-error{border-color:#ff5f5f!important}.datepicker td.active,.datepicker td.active.active,.datepicker td.active:hover,.datepicker td.active:hover.active{background:#545ca6}#flotTip{padding:3px 5px;background-color:#000;z-index:100;color:#fff;opacity:.7;filter:alpha(opacity=70);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.bg-gradient{background-image:-webkit-gradient(linear,left 0,left 100%,from(rgba(40,50,60,0)),to(rgba(40,50,60,.05)));background-image:-webkit-linear-gradient(top,rgba(40,50,60,0),0,rgba(40,50,60,.05),100%);background-image:-moz-linear-gradient(top,rgba(40,50,60,0) 0,rgba(40,50,60,.05) 100%);background-image:linear-gradient(to bottom,rgba(40,50,60,0) 0,rgba(40,50,60,.05) 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0028323c', endColorstr='#0c28323c', GradientType=0);filter:none}.bg-light{background-color:#e8eff0;color:#788188}.bg-light .lt,.bg-light.lt{background-color:#edf2f3}.bg-light .lter,.bg-light.lter{background-color:#f2f5f5}.bg-light .dk,.bg-light.dk{background-color:#e0eaec}.bg-light .dker,.bg-light.dker{background-color:#d7e5e8}.bg-light .bg,.bg-light.bg{background-color:#e8eff0}.bg-dark{background-color:#5a6a7a;color:#c9d0d7}.bg-dark .lt,.bg-dark.lt{background-color:#687786}.bg-dark .lter,.bg-dark.lter{background-color:#778490}.bg-dark .dk,.bg-dark.dk{background-color:#4d5d6e}.bg-dark .dker,.bg-dark.dker{background-color:#405161}.bg-dark .bg,.bg-dark.bg{background-color:#5a6a7a}.bg-dark a{color:#e6eaed}.bg-dark a:hover{color:#fff}.bg-dark a.list-group-item:focus,.bg-dark a.list-group-item:hover{background-color:inherit}.bg-dark .nav>li.active>a,.bg-dark .nav>li:active>a,.bg-dark .nav>li:focus>a,.bg-dark .nav>li:hover>a{color:#fff;background-color:#62778c}.bg-dark .nav>li>a{color:#d8dde2}.bg-dark .nav>li>a:focus,.bg-dark .nav>li>a:hover{background-color:#62778c}.bg-dark .nav .open>a{background-color:#62778c}.bg-dark .caret{border-top-color:#c9d0d7;border-bottom-color:#c9d0d7}.bg-dark.navbar .nav>li.active>a{color:#fff;background-color:#4d5d6e}.bg-dark .open>a,.bg-dark .open>a:focus,.bg-dark .open>a:hover{color:#fff}.bg-dark .text-muted{color:#acb7c1!important}.bg-dark .text-lt{color:#fff!important}.bg-dark .icon-muted{color:#acb7c1!important}.bg-dark .auto .list-group-item,.bg-dark.auto .list-group-item{border-color:#4f5d6b!important;background-color:transparent}.bg-dark .auto .list-group-item.active,.bg-dark .auto .list-group-item:active,.bg-dark .auto .list-group-item:focus,.bg-dark .auto .list-group-item:hover,.bg-dark.auto .list-group-item.active,.bg-dark.auto .list-group-item:active,.bg-dark.auto .list-group-item:focus,.bg-dark.auto .list-group-item:hover{background-color:#4d5d6e!important}.bg-black{background-color:#232c32;color:#7d94a4}.bg-black .lt,.bg-black.lt{background-color:#2f3940}.bg-black .lter,.bg-black.lter{background-color:#3b464d}.bg-black .dk,.bg-black.dk{background-color:#181f24}.bg-black .dker,.bg-black.dker{background-color:#0d1215}.bg-black .bg,.bg-black.bg{background-color:#232c32}.bg-black a{color:#9badb9}.bg-black a:hover{color:#fff}.bg-black a.list-group-item:focus,.bg-black a.list-group-item:hover{background-color:inherit}.bg-black .nav>li.active>a,.bg-black .nav>li:active>a,.bg-black .nav>li:focus>a,.bg-black .nav>li:hover>a{color:#fff;background-color:#2c3942}.bg-black .nav>li>a{color:#8ca1af}.bg-black .nav>li>a:focus,.bg-black .nav>li>a:hover{background-color:#2c3942}.bg-black .nav .open>a{background-color:#2c3942}.bg-black .caret{border-top-color:#7d94a4;border-bottom-color:#7d94a4}.bg-black.navbar .nav>li.active>a{color:#fff;background-color:#181f24}.bg-black .open>a,.bg-black .open>a:focus,.bg-black .open>a:hover{color:#fff}.bg-black .text-muted{color:#627b8c!important}.bg-black .text-lt{color:#c8d2d9!important}.bg-black .icon-muted{color:#627b8c!important}.bg-black .auto .list-group-item,.bg-black.auto .list-group-item{border-color:#191f23!important;background-color:transparent}.bg-black .auto .list-group-item.active,.bg-black .auto .list-group-item:active,.bg-black .auto .list-group-item:focus,.bg-black .auto .list-group-item:hover,.bg-black.auto .list-group-item.active,.bg-black.auto .list-group-item:active,.bg-black.auto .list-group-item:focus,.bg-black.auto .list-group-item:hover{background-color:#181f24!important}.bg-primary{background-color:#545ca6;color:#dadcec}.bg-primary .lt,.bg-primary.lt{background-color:#666dad}.bg-primary .lter,.bg-primary.lter{background-color:#797fb4}.bg-primary .dk,.bg-primary.dk{background-color:#495098}.bg-primary .dker,.bg-primary.dker{background-color:#3e4589}.bg-primary .bg,.bg-primary.bg{background-color:#545ca6}.bg-primary-ltest{background-color:#ecf6fb}.bg-primary a{color:#fcfcfd}.bg-primary a:hover{color:#fff}.bg-primary a.list-group-item:focus,.bg-primary a.list-group-item:hover{background-color:inherit}.bg-primary .nav>li.active>a,.bg-primary .nav>li:active>a,.bg-primary .nav>li:focus>a,.bg-primary .nav>li:hover>a{color:#fff;background-color:#6068b3}.bg-primary .nav>li>a{color:#ebecf5}.bg-primary .nav>li>a:focus,.bg-primary .nav>li>a:hover{background-color:#6068b3}.bg-primary .nav .open>a{background-color:#6068b3}.bg-primary .caret{border-top-color:#dadcec;border-bottom-color:#dadcec}.bg-primary.navbar .nav>li.active>a{color:#fff;background-color:#495098}.bg-primary .open>a,.bg-primary .open>a:focus,.bg-primary .open>a:hover{color:#fff}.bg-primary .text-muted{color:#b8bbdb!important}.bg-primary .text-lt{color:#fff!important}.bg-primary .icon-muted{color:#b8bbdb!important}.bg-primary .auto .list-group-item,.bg-primary.auto .list-group-item{border-color:#4b5395!important;background-color:transparent}.bg-primary .auto .list-group-item.active,.bg-primary .auto .list-group-item:active,.bg-primary .auto .list-group-item:focus,.bg-primary .auto .list-group-item:hover,.bg-primary.auto .list-group-item.active,.bg-primary.auto .list-group-item:active,.bg-primary.auto .list-group-item:focus,.bg-primary.auto .list-group-item:hover{background-color:#495098!important}.bg-success{background-color:#1ab667;color:#a9f3ce}.bg-success .lt,.bg-success.lt{background-color:#20c974}.bg-success .lter,.bg-success.lter{background-color:#2ad980}.bg-success .dk,.bg-success.dk{background-color:#15a25a}.bg-success .dker,.bg-success.dker{background-color:#108d4e}.bg-success .bg,.bg-success.bg{background-color:#1ab667}.bg-success-ltest{background-color:#f1ffed}.bg-success a{color:#d6f9e7}.bg-success a:hover{color:#fff}.bg-success a.list-group-item:focus,.bg-success a.list-group-item:hover{background-color:inherit}.bg-success .nav>li.active>a,.bg-success .nav>li:active>a,.bg-success .nav>li:focus>a,.bg-success .nav>li:hover>a{color:#fff;background-color:#1acf74}.bg-success .nav>li>a{color:#c0f6da}.bg-success .nav>li>a:focus,.bg-success .nav>li>a:hover{background-color:#1acf74}.bg-success .nav .open>a{background-color:#1acf74}.bg-success .caret{border-top-color:#a9f3ce;border-bottom-color:#a9f3ce}.bg-success.navbar .nav>li.active>a{color:#fff;background-color:#15a25a}.bg-success .open>a,.bg-success .open>a:focus,.bg-success .open>a:hover{color:#fff}.bg-success .text-muted{color:#7decb4!important}.bg-success .text-lt{color:#fff!important}.bg-success .icon-muted{color:#7decb4!important}.bg-success .auto .list-group-item,.bg-success.auto .list-group-item{border-color:#17a05a!important;background-color:transparent}.bg-success .auto .list-group-item.active,.bg-success .auto .list-group-item:active,.bg-success .auto .list-group-item:focus,.bg-success .auto .list-group-item:hover,.bg-success.auto .list-group-item.active,.bg-success.auto .list-group-item:active,.bg-success.auto .list-group-item:focus,.bg-success.auto .list-group-item:hover{background-color:#15a25a!important}.bg-info{background-color:#4cb6cb;color:#eaf6f9}.bg-info .lt,.bg-info.lt{background-color:#62bcce}.bg-info .lter,.bg-info.lter{background-color:#78c3d2}.bg-info .dk,.bg-info.dk{background-color:#36b0c8}.bg-info .dker,.bg-info.dker{background-color:#2ea0b6}.bg-info .bg,.bg-info.bg{background-color:#4cb6cb}.bg-info-ltest{background-color:#ecfcff}.bg-info a{color:#fff}.bg-info a:hover{color:#fff}.bg-info a.list-group-item:focus,.bg-info a.list-group-item:hover{background-color:inherit}.bg-info .nav>li.active>a,.bg-info .nav>li:active>a,.bg-info .nav>li:focus>a,.bg-info .nav>li:hover>a{color:#fff;background-color:#5dc0d3}.bg-info .nav>li>a{color:#f2f2f2}.bg-info .nav>li>a:focus,.bg-info .nav>li>a:hover{background-color:#5dc0d3}.bg-info .nav .open>a{background-color:#5dc0d3}.bg-info .caret{border-top-color:#eaf6f9;border-bottom-color:#eaf6f9}.bg-info.navbar .nav>li.active>a{color:#fff;background-color:#36b0c8}.bg-info .open>a,.bg-info .open>a:focus,.bg-info .open>a:hover{color:#fff}.bg-info .text-muted{color:#c3e6ed!important}.bg-info .text-lt{color:#fff!important}.bg-info .icon-muted{color:#c3e6ed!important}.bg-info .auto .list-group-item,.bg-info.auto .list-group-item{border-color:#39adc4!important;background-color:transparent}.bg-info .auto .list-group-item.active,.bg-info .auto .list-group-item:active,.bg-info .auto .list-group-item:focus,.bg-info .auto .list-group-item:hover,.bg-info.auto .list-group-item.active,.bg-info.auto .list-group-item:active,.bg-info.auto .list-group-item:focus,.bg-info.auto .list-group-item:hover{background-color:#36b0c8!important}.bg-warning{background-color:#fad733;color:#fffefa}.bg-warning .lt,.bg-warning.lt{background-color:#f8da4e}.bg-warning .lter,.bg-warning.lter{background-color:#f7de69}.bg-warning .dk,.bg-warning.dk{background-color:#fcd417}.bg-warning .dker,.bg-warning.dker{background-color:#face00}.bg-warning .bg,.bg-warning.bg{background-color:#fad733}.bg-warning-ltest{background-color:#fffee6}.bg-warning a{color:#fff}.bg-warning a:hover{color:#fff}.bg-warning a.list-group-item:focus,.bg-warning a.list-group-item:hover{background-color:inherit}.bg-warning .nav>li.active>a,.bg-warning .nav>li:active>a,.bg-warning .nav>li:focus>a,.bg-warning .nav>li:hover>a{color:#fff;background-color:#fddd4a}.bg-warning .nav>li>a{color:#f2f2f2}.bg-warning .nav>li>a:focus,.bg-warning .nav>li>a:hover{background-color:#fddd4a}.bg-warning .nav .open>a{background-color:#fddd4a}.bg-warning .caret{border-top-color:#fffefa;border-bottom-color:#fffefa}.bg-warning.navbar .nav>li.active>a{color:#fff;background-color:#fcd417}.bg-warning .open>a,.bg-warning .open>a:focus,.bg-warning .open>a:hover{color:#fff}.bg-warning .text-muted{color:#fef4c8!important}.bg-warning .text-lt{color:#fff!important}.bg-warning .icon-muted{color:#fef4c8!important}.bg-warning .auto .list-group-item,.bg-warning.auto .list-group-item{border-color:#f9d21a!important;background-color:transparent}.bg-warning .auto .list-group-item.active,.bg-warning .auto .list-group-item:active,.bg-warning .auto .list-group-item:focus,.bg-warning .auto .list-group-item:hover,.bg-warning.auto .list-group-item.active,.bg-warning.auto .list-group-item:active,.bg-warning.auto .list-group-item:focus,.bg-warning.auto .list-group-item:hover{background-color:#fcd417!important}.bg-danger{background-color:#f05050;color:#fff}.bg-danger .lt,.bg-danger.lt{background-color:#f06a6a}.bg-danger .lter,.bg-danger.lter{background-color:#f18282}.bg-danger .dk,.bg-danger.dk{background-color:#f13636}.bg-danger .dker,.bg-danger.dker{background-color:#f21b1b}.bg-danger .bg,.bg-danger.bg{background-color:#f05050}.bg-danger-ltest{background-color:#fbedec}.bg-danger a{color:#fff}.bg-danger a:hover{color:#fff}.bg-danger a.list-group-item:focus,.bg-danger a.list-group-item:hover{background-color:inherit}.bg-danger .nav>li.active>a,.bg-danger .nav>li:active>a,.bg-danger .nav>li:focus>a,.bg-danger .nav>li:hover>a{color:#fff;background-color:#f46565}.bg-danger .nav>li>a{color:#f2f2f2}.bg-danger .nav>li>a:focus,.bg-danger .nav>li>a:hover{background-color:#f46565}.bg-danger .nav .open>a{background-color:#f46565}.bg-danger .caret{border-top-color:#fff;border-bottom-color:#fff}.bg-danger.navbar .nav>li.active>a{color:#fff;background-color:#f13636}.bg-danger .open>a,.bg-danger .open>a:focus,.bg-danger .open>a:hover{color:#fff}.bg-danger .text-muted{color:#e6e6e6!important}.bg-danger .text-lt{color:#fff!important}.bg-danger .icon-muted{color:#e6e6e6!important}.bg-danger .auto .list-group-item,.bg-danger.auto .list-group-item{border-color:#ee3939!important;background-color:transparent}.bg-danger .auto .list-group-item.active,.bg-danger .auto .list-group-item:active,.bg-danger .auto .list-group-item:focus,.bg-danger .auto .list-group-item:hover,.bg-danger.auto .list-group-item.active,.bg-danger.auto .list-group-item:active,.bg-danger.auto .list-group-item:focus,.bg-danger.auto .list-group-item:hover{background-color:#f13636!important}.bg-white{background-color:#fff;color:#788188}.bg-white a{color:#545a5f}.bg-white a:hover{color:#3c4144}.bg-white .text-muted{color:#939aa0!important}.bg-white-only{background-color:#fff}.bg-empty{background-color:transparent}a.bg-light:focus,a.bg-light:hover{color:#545a5f}.text-primary{color:#545ca6}.text-primary-lt{color:#636bb0}.text-primary-lter{color:#747bb9}.text-primary-dk{color:#4b5395}.text-primary-dker{color:#434984}.text-info{color:#4cb6cb}.text-info-lt{color:#60bed1}.text-info-lter{color:#74c6d6}.text-info-dk{color:#39adc4}.text-info-dker{color:#339cb1}.text-success{color:#1ab667}.text-success-lt{color:#1dcc74}.text-success-lter{color:#23e080}.text-success-dk{color:#17a05a}.text-success-dker{color:#14894e}.text-warning{color:#fad733}.text-warning-lt{color:#fbdc4c}.text-warning-lter{color:#fbe165}.text-warning-dk{color:#f9d21a}.text-warning-dker{color:#f4ca06}.text-danger{color:#f05050}.text-danger-lt{color:#f26767}.text-danger-lter{color:#f47f7f}.text-danger-dk{color:#ee3939}.text-danger-dker{color:#ec2121}.text-dark{color:#5a6a7a}.text-dark-lt{color:#657789}.text-dark-lter{color:#718496}.text-dark-dk{color:#4f5d6b}.text-dark-dker{color:#44515d}.text-black{color:#000}.text-white{color:#fff}.text-muted{color:#939aa0}.pos-rlt{position:relative}.pos-stc{position:static}.pos-abt{position:absolute}.line{height:2px;margin:10px 0;font-size:0;overflow:hidden}.line-xs{margin:0}.line-lg{margin-top:15px;margin-bottom:15px}.line-dashed{border-style:dashed!important;background-color:transparent;border-width:0}.no-line{border-width:0}.no-border,.no-borders{border-color:transparent;border-width:0}.no-radius{border-radius:0}.block{display:block}.block.hide{display:none}.inline{display:inline-block!important}.none{display:none}.pull-right-lg{float:right}.pull-none{float:none}.rounded{border-radius:500px}.btn-s-xs{min-width:90px}.btn-s-sm{min-width:100px}.btn-s-md{min-width:120px}.btn-s-lg{min-width:150px}.btn-s-xl{min-width:200px}.l-h-2x{line-height:2em}.l-h-1x{line-height:1.2}.l-h{line-height:1.5}.v-middle{vertical-align:middle!important}.v-top{vertical-align:top!important}.v-bottom{vertical-align:bottom!important}.font-normal{font-weight:400}.font-thin{font-weight:300}.font-bold{font-weight:700}.text-lg{font-size:18px}.text-md{font-size:16px}.text-sm{font-size:13px}.text-xs{font-size:12px}.text-ellipsis{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.text-u-c{text-transform:uppercase}.text-l-t{text-decoration:line-through}.text-u-l{text-decoration:underline}.active>.auto .text,.active>.text,.text-active{display:none!important}.active>.auto .text-active,.active>.text-active{display:inline-block!important}.box-shadow{box-shadow:0 2px 2px rgba(0,0,0,.05),0 1px 0 rgba(0,0,0,.05)}.wrapper-xs{padding:5px}.wrapper-sm{padding:10px}.wrapper{padding:15px}.wrapper-md{padding:20px}.wrapper-lg{padding:30px}.wrapper-xl{padding:50px}.padder-lg{padding-left:30px;padding-right:30px}.padder-md{padding-left:20px;padding-right:20px}.padder{padding-left:15px;padding-right:15px}.padder-v{padding-top:15px;padding-bottom:15px}.no-padder{padding:0!important}.pull-in{margin-left:-15px;margin-right:-15px}.pull-out{margin:-10px -15px}.b{border:1px solid rgba(0,0,0,.05)}.b-a{border:1px solid #eaeef1}.b-t{border-top:1px solid #eaeef1}.b-r{border-right:1px solid #eaeef1}.b-b{border-bottom:1px solid #eaeef1}.b-l{border-left:1px solid #eaeef1}.b-light{border-color:#d9e4e6}.b-dark{border-color:#657789}.b-primary{border-color:#636bb0}.b-success{border-color:#1dcc74}.b-info{border-color:#60bed1}.b-warning{border-color:#fbdc4c}.b-danger{border-color:#f26767}.b-black{border-color:#2e3941}.b-white{border-color:#fff}.b-dashed{border-style:dashed!important}.b-2x{border-width:2px}.b-3x{border-width:3px}.b-4x{border-width:4px}.b-5x{border-width:5px}.r{border-radius:2px 2px 2px 2px}.r-2x{border-radius:4px}.r-3x{border-radius:6px}.r-l{border-radius:2px 0 0 2px}.r-r{border-radius:0 2px 2px 0}.r-t{border-radius:2px 2px 0 0}.r-b{border-radius:0 0 2px 2px}.m-xxs{margin:2px 4px}.m-xs{margin:5px}.m-sm{margin:10px}.m{margin:15px}.m-md{margin:20px}.m-lg{margin:30px}.m-xl{margin:50px}.m-n{margin:0!important}.m-l-none{margin-left:0}.m-l-xs{margin-left:5px}.m-l-sm{margin-left:10px}.m-l{margin-left:15px}.m-l-md{margin-left:20px}.m-l-lg{margin-left:30px}.m-l-xl{margin-left:40px}.m-l-n-xxs{margin-left:-1px}.m-l-n-xs{margin-left:-5px}.m-l-n-sm{margin-left:-10px}.m-l-n{margin-left:-15px}.m-l-n-md{margin-left:-20px}.m-l-n-lg{margin-left:-30px}.m-l-n-xl{margin-left:-40px}.m-t-none{margin-top:0}.m-t-xxs{margin-top:1px}.m-t-xs{margin-top:5px}.m-t-sm{margin-top:10px}.m-t{margin-top:15px}.m-t-md{margin-top:20px}.m-t-lg{margin-top:30px}.m-t-xl{margin-top:40px}.m-t-n-xxs{margin-top:-1px}.m-t-n-xs{margin-top:-5px}.m-t-n-sm{margin-top:-10px}.m-t-n{margin-top:-15px}.m-t-n-md{margin-top:-20px}.m-t-n-lg{margin-top:-30px}.m-t-n-xl{margin-top:-40px}.m-r-none{margin-right:0}.m-r-xxs{margin-right:1px}.m-r-xs{margin-right:5px}.m-r-sm{margin-right:10px}.m-r{margin-right:15px}.m-r-md{margin-right:20px}.m-r-lg{margin-right:30px}.m-r-xl{margin-right:40px}.m-r-n-xxs{margin-right:-1px}.m-r-n-xs{margin-right:-5px}.m-r-n-sm{margin-right:-10px}.m-r-n{margin-right:-15px}.m-r-n-md{margin-right:-20px}.m-r-n-lg{margin-right:-30px}.m-r-n-xl{margin-right:-40px}.m-b-none{margin-bottom:0}.m-b-xxs{margin-bottom:1px}.m-b-xs{margin-bottom:5px}.m-b-sm{margin-bottom:10px}.m-b{margin-bottom:15px}.m-b-md{margin-bottom:20px}.m-b-lg{margin-bottom:30px}.m-b-xl{margin-bottom:40px}.m-b-n-xxs{margin-bottom:-1px}.m-b-n-xs{margin-bottom:-5px}.m-b-n-sm{margin-bottom:-10px}.m-b-n{margin-bottom:-15px}.m-b-n-md{margin-bottom:-20px}.m-b-n-lg{margin-bottom:-30px}.m-b-n-xl{margin-bottom:-40px}.media-xs{min-width:50px}.media-sm{min-width:80px}.media-md{min-width:90px}.media-lg{min-width:120px}.avatar{position:relative;display:block;border-radius:500px;white-space:nowrap}.avatar img{border-radius:500px;width:100%}.avatar i{position:absolute;left:0;top:0;width:10px;height:10px;border-width:2px;border-style:solid;border-radius:100%}.avatar i.md{width:12px;height:12px;margin:1px}.avatar i.sm{margin:-1px}.avatar i.right{left:auto;right:0}.avatar i.bottom{left:auto;top:auto;bottom:0;right:0}.avatar i.on{background-color:#1ab667}.avatar i.off{background-color:#939aa0}.avatar i.busy{background-color:#f05050}.avatar i.away{background-color:#fad733}.thumb-lg{width:128px;display:inline-block}.thumb-md{width:64px;display:inline-block}.thumb{width:50px;display:inline-block}.thumb-sm{width:40px;display:inline-block}.thumb-xs{width:30px;display:inline-block}.thumb-wrapper{padding:2px;border:1px solid #dbe2e7}.thumb img,.thumb-btn img,.thumb-lg img,.thumb-md img,.thumb-sm img,.thumb-xs img{height:auto;max-width:100%;vertical-align:middle}.img-full{width:100%}.img-full img{width:100%}.clear{display:block;overflow:hidden}.row-sm{margin-left:-10px;margin-right:-10px}.row-sm>div{padding-left:10px;padding-right:10px}.i-checks input{opacity:0}.i-checks input:checked+i{border-color:#545ca6}.i-checks input:checked+i:before{position:absolute;left:0;width:100%;top:2px;text-align:center;font-family:FontAwesome;font-style:normal;font-weight:400;color:#545ca6}.i-checks input[type=radio]+i{border-radius:100%}.i-checks input[type=checkbox]:checked+i:before{content:\"\\f00c\"}.i-checks input[type=radio]:checked+i:before{content:\"\\f111\"}.i-checks input[disabled]+i,fieldset[disabled] .i-checks input+i{border-color:#dbe2e7}.i-checks input[disabled]+i:before,fieldset[disabled] .i-checks input+i:before{color:#cbd5dd}.i-checks i{width:18px;height:18px;line-height:1;border:1px solid #cbd5dd;background-color:#fff;margin-left:-20px;margin-top:-2px;display:inline-block;vertical-align:middle;margin-right:4px;position:relative;font-size:12px}.ie8 .i-checks i{display:none}.scroll-x,.scroll-y{overflow:hidden;-webkit-overflow-scrolling:touch}.scroll-y{overflow-y:auto}.scroll-x{overflow-x:auto}.no-touch .scroll-x,.no-touch .scroll-y{overflow:hidden}.no-touch .scroll-x:active,.no-touch .scroll-x:focus,.no-touch .scroll-x:hover{overflow-x:auto}.no-touch .scroll-y:active,.no-touch .scroll-y:focus,.no-touch .scroll-y:hover{overflow-y:auto}.no-touch .hover-action{display:none}.no-touch .hover:hover .hover-action{display:inherit}.hover-rotate{-webkit-transition:all .2s ease-in-out .1s;transition:all .2s ease-in-out .1s}.hover:active .hover-rotate,.hover:hover .hover-rotate{-webkit-transform:rotate(90deg);-ms-transform:rotate(90deg);transform:rotate(90deg)}.item .top{position:absolute;top:0;left:0;right:0}.item .bottom{position:absolute;bottom:0;left:0;right:0}.item .center{position:absolute;top:50%;left:0;right:0}.item .gd{background-color:transparent;background-image:-webkit-gradient(linear,0 0,0 100%,from(rgba(0,0,0,0)),color-stop(20%,rgba(0,0,0,.25)),to(rgba(0,0,0,.75)));background-image:-webkit-linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.25) 20%,rgba(0,0,0,.75));background-image:-moz-linear-gradient(top,rgba(0,0,0,0),rgba(0,0,0,.25) 20%,rgba(0,0,0,.75));background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.25) 20%,rgba(0,0,0,.75));background-repeat:no-repeat}.item .opacity{background-color:rgba(0,0,0,.75)}.item-overlay{display:none;position:absolute;top:0;right:0;bottom:0;left:0}.item-overlay.active,.item:hover .item-overlay{display:block}.backdrop{position:absolute;top:0;right:0;bottom:0;left:0;z-index:1050}.backdrop.fade{opacity:0;filter:alpha(opacity=0)}.backdrop.in{opacity:.8;filter:alpha(opacity=80)}.h{font-size:170px;text-shadow:0 1px 0 #d9d9d9,0 2px 0 #d0d0d0,0 5px 10px rgba(0,0,0,.125),0 10px 20px rgba(0,0,0,.2)}@media screen and (min-width:992px){.col-lg-2-4{width:20%;float:left}}@media (max-width:767px){.shift{display:none!important}.shift.in{display:block!important}.row-2 [class*=col]{width:50%;float:left}.row-2 .col-0{clear:none}.row-2 li:nth-child(odd){clear:left;margin-left:0}.text-center-xs{text-align:center}.text-left-xs{text-align:left}.text-right-xs{text-align:right}.pull-none-xs{float:none!important}.dropdown-menu.pull-none-xs{left:0}.hidden-xs.show{display:inherit!important}.wrapper-lg{padding:15px}.padder-lg{padding-left:15px;padding-right:15px}}.musicbar{position:relative}.musicbar span{position:absolute;bottom:0;width:15%;text-indent:-9999px}.bar1{left:0;height:60%}.bar2{left:20%;height:45%}.bar3{left:40%;height:90%}.bar4{left:60%;height:60%}.bar5{left:80%;height:40%}.animate .a1{-webkit-animation:movingbar1 1s infinite alternate both;-moz-animation:movingbar1 1s infinite alternate both;animation:movingbar1 1s infinite alternate both}.animate .a2{-webkit-animation:movingbar2 1.5s infinite alternate both;-moz-animation:movingbar2 1.5s infinite alternate both;animation:movingbar2 1.5s infinite alternate both}.animate .a3{-webkit-animation:movingbar3 1.2s infinite alternate both;-moz-animation:movingbar3 1.2s infinite alternate both;animation:movingbar3 1.2s infinite alternate both}.animate .a4{-webkit-animation:movingbar4 1.1s infinite alternate both;-moz-animation:movingbar4 1.1s infinite alternate both;animation:movingbar4 1.1s infinite alternate both}.animate .a5{-webkit-animation:movingbar5 1.2s infinite alternate both;-moz-animation:movingbar5 1.2s infinite alternate both;animation:movingbar5 1.2s infinite alternate both}@-webkit-keyframes movingbar1{0%{height:32%}25%{height:80%}50%{height:56%}75%{height:100%}100%{height:84%}}@-moz-keyframes movingbar1{0%{height:32%}25%{height:80%}50%{height:56%}75%{height:100%}100%{height:84%}}@keyframes movingbar1{0%{height:32%}25%{height:80%}50%{height:56%}75%{height:100%}100%{height:84%}}@-webkit-keyframes movingbar2{0%{height:20%}25%{height:58%}50%{height:90%}75%{height:74%}100%{height:53%}}@-moz-keyframes movingbar2{0%{height:20%}25%{height:58%}50%{height:90%}75%{height:74%}100%{height:53%}}@keyframes movingbar2{0%{height:20%}25%{height:58%}50%{height:90%}75%{height:74%}100%{height:53%}}@-webkit-keyframes movingbar3{0%{height:34%}25%{height:69%}50%{height:100%}75%{height:82%}100%{height:41%}}@-moz-keyframes movingbar3{0%{height:34%}25%{height:69%}50%{height:100%}75%{height:82%}100%{height:41%}}@keyframes movingbar3{0%{height:34%}25%{height:69%}50%{height:100%}75%{height:82%}100%{height:41%}}@-webkit-keyframes movingbar4{0%{height:80%}25%{height:49%}50%{height:59%}75%{height:82%}100%{height:65%}}@-moz-keyframes movingbar4{0%{height:80%}25%{height:49%}50%{height:59%}75%{height:82%}100%{height:65%}}@keyframes movingbar4{0%{height:80%}25%{height:49%}50%{height:59%}75%{height:82%}100%{height:65%}}@-webkit-keyframes movingbar5{0%{height:50%}25%{height:30%}50%{height:90%}75%{height:50%}100%{height:65%}}@-moz-keyframes movingbar5{0%{height:50%}25%{height:30%}50%{height:90%}75%{height:50%}100%{height:65%}}@keyframes movingbar5{0%{height:50%}25%{height:30%}50%{height:90%}75%{height:50%}100%{height:65%}}.jp-volume{width:100px!important}.hbox>app-shell{display:table-cell;vertical-align:top;height:100%;float:none}");
 //# sourceMappingURL=app.bundle.js.map
