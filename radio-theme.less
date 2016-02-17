@@ -1,0 +1,138 @@
+/* common variables start */
+@margin:10px;
+@padding:10px;
+@list-font-size:1.25em;
+/* common variables end */
+
+
+/* colors - variable start*/
+
+@hot-color-primary:#ee5f5b;
+@hot-color-complement:#000000;
+@hot-color-complement-secondary:#3B3C36;
+
+/* colors - variables end */
+
+
+
+.btn {
+    border-radius:0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.padd{
+    padding:@padding;
+}
+
+.margin{
+    margin:@margin;
+}
+
+ul.main-list{
+    list-style-type: none;
+    background-color: @hot-color-complement-secondary;
+    padding:0;
+    .margin;
+}
+
+.active{
+    background:@hot-color-primary !important;
+    color:#fff;
+}
+
+.player{
+    position:fixed;
+    width:100%;
+    padding:20px;
+    margin-top:51px;
+    background:#3A3F44;
+    z-index:9999;
+}
+
+.player span{
+    padding-left: @padding;
+    padding-right: @padding;
+}
+.player-control.player-control-active{
+        color:@hot-color-primary;
+}
+
+.player-control:hover{
+    color:@hot-color-primary;
+    cursor:pointer;
+}
+
+.player-volume-bar{
+    background-color: @hot-color-complement-secondary;
+    width:200px;
+    height:10px;
+    display:inline-block;
+    margin-bottom: 5px;
+}
+
+.player-volume-bar:hover{
+    cursor:pointer;
+}
+
+.player-volume-bar-value{
+    background-color: @hot-color-primary;
+    width:100px;
+    height:8px;
+    display:inline-block;
+    margin-bottom: 6px;
+}
+
+.main-list{ 
+    li {
+        font-size: @list-font-size;
+        font-weight:bold;
+        .padd;
+        border-bottom:1px ridge #000;
+    }
+    li:hover{
+        .active;
+        cursor:pointer;
+    }
+}
+
+.i-2x{
+    font-size: 2em;
+}
+
+li.active{
+    .active;
+}
+
+li.active {
+    a{
+        .active;
+    }
+}
+
+nav{ 
+    font-weight:bold;
+    a:hover {
+        .active;    
+    }
+}
+
+.content{
+    position:relative;
+    padding-top:102px;
+    max-width:600px;
+    margin:auto;
+}
+
+
+
+footer{
+    bottom:0;
+    text-align: center;
+    background:#3A3F44;
+}
+
+.muted{
+    font-size:x-small;
+    color:grey !important;
+}
