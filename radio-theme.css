@@ -27,9 +27,10 @@ ul.main-list {
   position: fixed;
   width: 100%;
   padding: 20px;
-  margin-top: 51px;
+  margin-top: 56px;
   background: #3A3F44;
   z-index: 9999;
+  box-shadow: 0 0 5px 1px #000;
 }
 .player span {
   padding-left: 10px;
@@ -90,14 +91,14 @@ nav a:hover {
 }
 .content {
   position: relative;
-  padding-top: 102px;
-  max-width: 600px;
+  padding-top: 120px;
   margin: auto;
 }
 footer {
   bottom: 0;
   text-align: center;
   background: #3A3F44;
+  box-shadow: 0 0 2px 1px #000;
 }
 .muted {
   font-size: x-small;

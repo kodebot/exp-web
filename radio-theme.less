@@ -8,8 +8,10 @@
 /* colors - variable start*/
 
 @hot-color-primary:#ee5f5b;
-@hot-color-complement:#000000;
+@hot-color-complement:#000;
 @hot-color-complement-secondary:#3B3C36;
+@hot-color-complement-extra:#3A3F44;
+@primary-forecolor:#fff;
 
 /* colors - variables end */
 
@@ -38,16 +40,17 @@ ul.main-list{
 
 .active{
     background:@hot-color-primary !important;
-    color:#fff;
+    color:@primary-forecolor;
 }
 
 .player{
     position:fixed;
     width:100%;
-    padding:20px;
-    margin-top:51px;
-    background:#3A3F44;
+    padding:@padding + @padding;
+    margin-top:56px;
+    background:@hot-color-complement-extra;
     z-index:9999;
+    box-shadow:0 0 5px 1px @hot-color-complement;
 }
 
 .player span{
@@ -88,7 +91,7 @@ ul.main-list{
         font-size: @list-font-size;
         font-weight:bold;
         .padd;
-        border-bottom:1px ridge #000;
+        border-bottom:1px ridge @hot-color-complement;
     }
     li:hover{
         .active;
@@ -119,8 +122,7 @@ nav{
 
 .content{
     position:relative;
-    padding-top:102px;
-    max-width:600px;
+    padding-top:120px;
     margin:auto;
 }
 
@@ -129,7 +131,8 @@ nav{
 footer{
     bottom:0;
     text-align: center;
-    background:#3A3F44;
+    background:@hot-color-complement-extra;
+    box-shadow:0 0 2px 1px @hot-color-complement;
 }
 
 .muted{
