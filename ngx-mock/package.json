@@ -1,0 +1,33 @@
+{
+  "name": "@kodebot/ngx-mock",
+  "version": "0.0.1",
+  "description": "A simple angular 2+ utility library to mock components when unit testing.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "src/**/*.d.ts",
+    "src/**/*.js"
+  ],
+  "scripts": {
+    "tsc": "",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^6.1.8",
+    "@angular/core": "^6.1.8",
+    "@angular/forms": "^6.1.8",
+    "@angular/platform-browser": "^6.1.8",
+    "rxjs": "^6.3.2",
+    "zone.js": "^0.8.26"
+  },
+  "peerDependencies": {
+    "@angular/core": ">= 5.x",
+    "@angular/forms": ">= 5.x"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.3"
+  }
+}
