@@ -1,0 +1,27 @@
+﻿@model WebVaanoli.ViewModels.StreamQuality.DetailViewModel
+@{
+    ViewData["Title"] = "Stream Quality - Detail";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Id:</dt>
+        <dd><p>@Model.Id</p></dd>
+
+        <dt>Name:</dt>
+        <dd><p>@Model.Name</p></dd>
+
+        <dt>Description:</dt>
+        <dd><p>@Model.Description</p></dd>
+                
+        <dt>Priority:</dt>
+        <dd><p>@Model.Priority</p></dd>
+
+        <dt>Is Active?</dt>
+        <dd><p>@Model.IsActive</p></dd>
+    </dl>
+</div>
+<a class="btn btn-default" asp-controller="streamquality" asp-action="index"><i class="glyphicon glyphicon-arrow-left"></i>&nbsp;Back</a>
+<a class="btn btn-primary" asp-controller="streamquality" asp-action="edit" asp-route-id="@Model.Id"><i class="glyphicon glyphicon-edit"></i>&nbsp;Edit</a>

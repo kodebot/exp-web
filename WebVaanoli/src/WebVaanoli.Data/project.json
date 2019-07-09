@@ -1,0 +1,20 @@
+﻿{
+  "version": "1.0.0-*",
+  "description": "WebVaanoli.Data Class Library",
+  "authors": [ "vmani" ],
+  "tags": [ "" ],
+  "projectUrl": "",
+  "licenseUrl": "",
+
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "GenFu": "1.0.4",
+    "FireSharp": "2.0.3",
+    "WebVaanoli.Domain": "",
+    "WebVaanoli.Common": ""
+  },
+
+  "frameworks": {
+    "net451": { }
+  }
+}
