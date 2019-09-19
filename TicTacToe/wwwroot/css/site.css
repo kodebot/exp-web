@@ -134,12 +134,18 @@ table.game-board {
     border-collapse: separate;
     border-spacing: 2px 2px;
     color:white;
-    width: 200px;
+    width: 310px;
     font-weight: bold;
 }
 
 .game-board td{
     background-color:darkslateblue;
     text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin:0;
+    height: 100px;
+    width:100px;
+    vertical-align: middle;
        
 }
