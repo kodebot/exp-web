@@ -2,22 +2,47 @@
 
 <h1>Title</h1>
 
-
-
 <table class="table game-board">
+    @{
+        var rowIndex = -1;
+        var colIndex = -1;
+    }
+    @foreach (var row in board)
+    {
+        rowIndex++;
+        colIndex = -1;
     <tr>
-        <td>X</td>
-        <td>O</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>X</td>
-        <td>X</td>
-        <td>O</td>
-    </tr>
-    <tr>
-        <td>X</td>
-        <td>O</td>
-        <td>X</td>
-    </tr>
+        @foreach (var col in row)
+        {
+            colIndex++;
+            @switch (col)
+            {
+                case true:
+                    <td>X</td>;
+                    break;
+                case false:
+                    <td>O</td>;
+                    break;
+                default:
+                    var r = rowIndex;
+                    var c = colIndex;
+                    <td @onclick="() => fill(r, c)">&nbsp;</td>
+                    break;
+            }
+        }
+    </tr>    
+    }
 </table>
+
+@code {
+  bool?[][] board = new bool?[3][] {
+      new bool?[3],
+      new bool?[3],
+      new bool?[3]
+  };
+
+  void fill(int row, int col)
+  {
+      board[row][col] = true;
+  }
+}
