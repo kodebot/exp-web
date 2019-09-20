@@ -1,0 +1,59 @@
+﻿@page "/"
+@using TicTacToe.Core;
+
+<h1 style="text-align:center">The Game is ON!</h1>
+
+<div>
+    You: X 
+</div>
+
+<div>
+    Computer: O
+</div>
+
+@if(game.Winner != null){
+    <div>  
+        @game.Winner won!
+    </div>
+}else{
+    <div>  
+        @game.Turn turn
+    </div>
+}
+
+<div style="width:310px; margin:50px auto">
+    <table class="table game-board">
+        @{
+            var rowIndex = -1;
+            var colIndex = -1;
+        }
+        @foreach (var row in game.Board)
+        {
+            rowIndex++;
+            colIndex = -1;
+        <tr>
+            @foreach (var col in row)
+            {
+                colIndex++;
+                @switch (col)
+                {
+                    case Option.Cross:
+                        <td>X</td>;
+                        break;
+                    case Option.Nought:
+                        <td>O</td>;
+                        break;
+                    default:
+                        var r = rowIndex;
+                        var c = colIndex;
+                        <td @onclick="() => game.Play(r, c)">&nbsp;</td>
+                        break;
+                }
+            }
+        </tr>    
+        }
+    </table>
+</div>
+@code {
+  Game game = new Game();
+}

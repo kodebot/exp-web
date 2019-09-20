@@ -1,0 +1,8 @@
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\bin\Debug\netstandard2.0\TicTacToe.Core.deps.json
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\bin\Debug\netstandard2.0\TicTacToe.Core.dll
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\bin\Debug\netstandard2.0\TicTacToe.Core.pdb
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\obj\Debug\netstandard2.0\TicTacToe.Core.csprojAssemblyReference.cache
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\obj\Debug\netstandard2.0\TicTacToe.Core.AssemblyInfoInputs.cache
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\obj\Debug\netstandard2.0\TicTacToe.Core.AssemblyInfo.cs
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\obj\Debug\netstandard2.0\TicTacToe.Core.dll
+C:\Mani\p\exp-web\TicTacToe\TicTacToe.Core\obj\Debug\netstandard2.0\TicTacToe.Core.pdb
