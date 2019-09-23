@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TicTacToe.Core
@@ -41,6 +42,12 @@ namespace TicTacToe.Core
             if (_winner == null)
             {
                 RotateTurn();
+
+                // if new turn is computers then play computer's turn
+                if (_turn == Player.Player2)
+                {
+                    PlayComputerTurn();
+                }
             }
         }
 
@@ -52,6 +59,22 @@ namespace TicTacToe.Core
                 return;
             }
             _turn = Player.Player1;
+        }
+
+        public void PlayComputerTurn()
+        {
+            // find random empty cell
+            var random = new Random();
+            while (true)
+            {
+                var row = random.Next(0, 2);
+                var col = random.Next(0, 2);
+                if (_board[row][col] == Option.Empty)
+                {
+                    Play(row, col);
+                    break;
+                }
+            }
         }
 
         private void CheckWinning()
