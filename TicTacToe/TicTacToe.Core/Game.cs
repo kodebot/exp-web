@@ -4,17 +4,16 @@ using System.Linq;
 
 namespace TicTacToe.Core
 {
-
     public class Game
     {
-        private readonly Option[][] _board;
+        private readonly Board<Option> _board;
         private Player? _winner;
         private Player _turn;
         private readonly Dictionary<Player, Option> _playerOption;
 
         public Game()
         {
-            _board = new Option[3][] { new Option[3], new Option[3], new Option[3] };
+            _board = new Board<Option>();
             _turn = Player.Player1;
             _playerOption = new Dictionary<Player, Option>
             {
@@ -23,7 +22,7 @@ namespace TicTacToe.Core
             };
         }
 
-        public Option[][] Board => _board;
+        public Board<Option> Board => _board;
 
         public Player? Winner => _winner;
 
@@ -36,17 +35,20 @@ namespace TicTacToe.Core
                 return;  // game over
             }
 
-            _board[row][col] = _playerOption[_turn];
-            CheckWinning();
+            _board.Fill(new Coordinates(row, col), _playerOption[_turn]);
 
-            if (_winner == null)
+            var (hasWinner, winningCells) = GetWinner();
+            if (hasWinner)
+            {
+                _winner = _playerOption.First(p => p.Value == winningCells.First().Value).Key;
+            }
+            else
             {
                 RotateTurn();
-
                 // if new turn is computers then play computer's turn
                 if (_turn == Player.Player2)
                 {
-                    PlayComputerTurn();
+                    PlayComputerTurn(); // todo: move this to event based
                 }
             }
         }
@@ -67,9 +69,9 @@ namespace TicTacToe.Core
             var random = new Random();
             while (true)
             {
-                var row = random.Next(0, 2);
-                var col = random.Next(0, 2);
-                if (_board[row][col] == Option.Empty)
+                var row = random.Next(0, 3);
+                var col = random.Next(0, 3);
+                if (_board[row, col] == Option.Empty)
                 {
                     Play(row, col);
                     break;
@@ -77,46 +79,55 @@ namespace TicTacToe.Core
             }
         }
 
-        private void CheckWinning()
+        private (bool, IReadOnlyList<Cell<Option>>) GetWinner()
         {
+            var hasWinner = false;
+            var winningCells = new List<Cell<Option>>();
+
             // horizontals
-            foreach (var row in _board)
+            foreach (var row in _board.Rows)
             {
-                if (row[0] != Option.Empty &&
-                    row[0] == row[1] &&
-                    row[1] == row[2])
+                if (IsAllFilledWithSameNonEmptyValue(row))
                 {
-                    _winner = _playerOption.First(p => p.Value == row[0]).Key;
-                    return;
+                    hasWinner = true;
+                    winningCells = row.ToList();
+                    return (hasWinner, winningCells);
                 }
             }
 
             // verticals
-            for (var colIndex = 0; colIndex < 3; colIndex++)
+            foreach (var col in _board.Columns)
             {
-                if (_board[0][colIndex] != Option.Empty &&
-                    _board[0][colIndex] == _board[1][colIndex] &&
-                    _board[1][colIndex] == _board[2][colIndex])
+                if (IsAllFilledWithSameNonEmptyValue(col))
                 {
-                    _winner = _playerOption.First(p => p.Value == _board[0][colIndex]).Key;
-                    return;
+                    hasWinner = true;
+                    winningCells = col.ToList();
+                    return (hasWinner, winningCells);
                 }
             }
 
             // diagonal - top left to bottom right
-            if (_board[0][0] != Option.Empty && _board[0][0] == _board[1][1] && _board[1][1] == _board[2][2])
+            if (IsAllFilledWithSameNonEmptyValue(_board.LeftToRightDiagonal))
             {
-                _winner = _playerOption.First(p => p.Value == _board[0][0]).Key;
-                return;
+                hasWinner = true;
+                winningCells = _board.LeftToRightDiagonal.ToList();
+                return (hasWinner, winningCells);
             }
 
             // diagonal - top right to bottom left
-            if (_board[0][2] != Option.Empty && _board[0][2] == _board[1][1] && _board[1][1] == _board[2][0])
+            if (IsAllFilledWithSameNonEmptyValue(_board.RightToLeftDiagonal))
             {
-                _winner = _playerOption.First(p => p.Value == _board[0][0]).Key;
-                return;
+                hasWinner = true;
+                winningCells = _board.RightToLeftDiagonal.ToList();
+                return (hasWinner, winningCells);
             }
+
+            return (hasWinner, winningCells); // no winner
         }
 
+        private static bool IsAllFilledWithSameNonEmptyValue(Cell<Option>[] cells)
+        {
+            return cells.All(c => c.Value != Option.Empty) && cells.GroupBy(c => c.Value).Count() == 1;
+        }
     }
 }

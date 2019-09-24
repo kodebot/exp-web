@@ -32,19 +32,13 @@
 
 <div style="width:310px; margin:50px auto">
     <table class="table game-board">
-        @{
-            var rowIndex = -1;
-            var colIndex = -1;
-        }
-        @foreach (var row in game.Board)
+
+        @foreach (var row in game.Board.Rows)
         {
-            rowIndex++;
-            colIndex = -1;
         <tr>
-            @foreach (var col in row)
+            @foreach (var cell in row)
             {
-                colIndex++;
-                @switch (col)
+                @switch (cell.Value)
                 {
                     case Option.Cross:
                         <td>X</td>;
@@ -53,8 +47,8 @@
                         <td>O</td>;
                         break;
                     default:
-                        var r = rowIndex;
-                        var c = colIndex;
+                        var r = cell.Coordinates.X;
+                        var c = cell.Coordinates.Y;
                         <td @onclick="() => game.Play(r, c)">&nbsp;</td>
                         break;
                 }
