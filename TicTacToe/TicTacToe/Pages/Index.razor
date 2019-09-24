@@ -55,6 +55,8 @@
   </ul>
 </div>
 
+<button @onclick="Restart"> Restart</button>
+
 
 <div class="board">
     <table>
@@ -71,8 +73,20 @@
         }
     </table>
 </div>
+
+<div>
+    0. allow restart
+    1. strike across winning cells
+    2. use cartoony fonts
+    3. use random pictures for noughts and crosses
+</div>
 @code {
   Game game = new Game();
+
+  private void Restart()
+  {
+      game = new Game();
+  }
 
   private string GetStatusStyle()
   {
