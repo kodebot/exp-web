@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using TicTacToe.Components.Board;
 @using TicTacToe.Core;
 
 <h1 style="text-align:center">Main title</h1>
@@ -38,20 +39,10 @@
         <tr>
             @foreach (var cell in row)
             {
-                @switch (cell.Value)
-                {
-                    case Option.Cross:
-                        <td>X</td>;
-                        break;
-                    case Option.Nought:
-                        <td>O</td>;
-                        break;
-                    default:
-                        var r = cell.Coordinates.X;
-                        var c = cell.Coordinates.Y;
-                        <td @onclick="() => game.Play(r, c)">&nbsp;</td>
-                        break;
-                }
+                <td style="padding:0; margin:0">
+                    <Cell Data="cell" OnCellSelected="(coord) => game.Play(coord.X, coord.Y)"/>
+                
+                </td>
             }
         </tr>    
         }

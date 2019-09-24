@@ -1,0 +1,31 @@
+@using TicTacToe.Core;
+
+<div @onclick="CellSelected" style="display:inline-block; width:100%;height:100%;">
+    <span>
+        @switch (Data.Value)
+        {
+            case Option.Cross:
+                @:X
+                break;
+            case Option.Nought:
+                @:O
+                break;
+            default:
+                @:&nbsp;
+                break;
+        }
+    </span>
+</div>
+
+@code {
+  
+  [Parameter]
+  public Cell<Option> Data {get; set;}
+
+  [Parameter]
+  public EventCallback<Coordinates> OnCellSelected {get; set;}
+
+  private void CellSelected(){
+      OnCellSelected.InvokeAsync(Data.Coordinates);
+  }
+}
