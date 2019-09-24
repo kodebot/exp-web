@@ -2,13 +2,38 @@
 @using TicTacToe.Components.Board;
 @using TicTacToe.Core;
 
-<h1 style="text-align:center">Main title</h1>
+<style>
+    .board{
+        width: 310px;
+        margin: 50px auto;
+    }
 
-<div class="card bg-secondary text-center" style="width: 310px; margin: 50px auto">
+    .stats-card{
+        width: 310px;
+        margin: 50px auto;
+        text-transform: uppercase;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bold;
+    }
+
+    .in-progress{
+        background-color: peru !important;
+    }
+
+    .you-won{
+        background-color: mediumseagreen !important;
+    }
+
+    .you-lost{
+        background-color: indianred !important;
+    }
+</style>
+
+<div class="card bg-secondary text-center stats-card">
   <ul class="list-group list-group-flush">
     <li class="list-group-item bg-secondary text-white"> You: X </li>
     <li class="list-group-item bg-secondary text-white">Computer: O</li>
-    <li class="list-group-item bg-secondary text-white" style="font-weight: bold"> 
+    <li class="list-group-item bg-secondary text-white @GetStatusStyle()"> 
         @if(game.Winner != null){
             <div>  
                 @if(game.Winner == Player.Player1){
@@ -31,17 +56,15 @@
 </div>
 
 
-<div style="width:310px; margin:50px auto">
-    <table class="table game-board">
-
+<div class="board">
+    <table>
         @foreach (var row in game.Board.Rows)
         {
         <tr>
             @foreach (var cell in row)
             {
-                <td style="padding:0; margin:0">
+                <td>
                     <Cell Data="cell" OnCellSelected="(coord) => game.Play(coord.X, coord.Y)"/>
-                
                 </td>
             }
         </tr>    
@@ -50,4 +73,15 @@
 </div>
 @code {
   Game game = new Game();
+
+  private string GetStatusStyle()
+  {
+      if (game.Winner == Player.Player1){
+          return "you-won";
+      }else if(game.Winner == Player.Player2){
+          return "you-lost";
+      }
+
+      return "in-progress";
+  }
 }

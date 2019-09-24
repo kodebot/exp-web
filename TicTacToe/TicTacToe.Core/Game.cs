@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace TicTacToe.Core
 {
@@ -28,7 +29,7 @@ namespace TicTacToe.Core
 
         public Player Turn => _turn;
 
-        public void Play(int row, int col)
+        public async Task Play(int row, int col)
         {
             if (_winner != null)
             {
@@ -48,7 +49,8 @@ namespace TicTacToe.Core
                 // if new turn is computers then play computer's turn
                 if (_turn == Player.Player2)
                 {
-                    PlayComputerTurn(); // todo: move this to event based
+                    await Task.Delay(2000);
+                    await PlayComputerTurn(); // todo: move this to event based
                 }
             }
         }
@@ -63,7 +65,7 @@ namespace TicTacToe.Core
             _turn = Player.Player1;
         }
 
-        public void PlayComputerTurn()
+        public async Task PlayComputerTurn()
         {
             // find random empty cell
             var random = new Random();
@@ -73,7 +75,7 @@ namespace TicTacToe.Core
                 var col = random.Next(0, 3);
                 if (_board[row, col] == Option.Empty)
                 {
-                    Play(row, col);
+                    await Play(row, col);
                     break;
                 }
             }
