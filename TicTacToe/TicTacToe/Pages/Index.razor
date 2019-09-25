@@ -92,13 +92,11 @@
 
   private string GetStatusStyle()
   {
-      if (game.Winner == Player.Player1){
-          return "you-won";
-      }else if(game.Winner == Player.Player2){
-          return "you-lost";
-      }
-
-      return "in-progress";
+      return game.Winner switch{
+          Player.Player1 => "you-won",
+          Player.Player2 => "you-lost",
+          _ => "in-progress"
+      };
   }
 
   private async Task CellSelected(Coordinates coords)
