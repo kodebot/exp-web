@@ -21,18 +21,12 @@
 
 <div @onclick="CellSelected" class="cell">
     <span>
-        @switch (Data.Value)
+       @(Data.Value switch
         {
-            case Option.Cross:
-                @:X
-                break;
-            case Option.Nought:
-                @:O
-                break;
-            default:
-                @:&nbsp;
-                break;
-        }
+            Option.Cross => "X",
+            Option.Nought => "O",
+            _ => " "
+        })
     </span>
 </div>
 
