@@ -1,6 +1,6 @@
 namespace TicTacToe.Core
 {
-    public enum CellValueOption
+    public enum CellMarker
     {
         Empty,
         Cross,

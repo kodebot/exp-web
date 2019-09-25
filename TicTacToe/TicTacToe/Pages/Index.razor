@@ -33,23 +33,17 @@
     <li class="list-group-item bg-secondary text-white"> You: X </li>
     <li class="list-group-item bg-secondary text-white">Computer: O</li>
     <li class="list-group-item bg-secondary text-white @GetStatusStyle()"> 
-        @if(game.Winner != null){
-            <div>  
-                @if(game.Winner == Player.Player1){
-                    @:You won!
-                }else{
-                    @:You lost :(
-                }
-            </div>
-        }else{
-            <div>  
-                @if(game.Turn == Player.Player1){
-                    @:Your turn
-                }else{
-                    @:Computer's turn
-                }
-            </div>
-        }
+        <div>  
+            @(game.Status switch
+            {
+                GameStatus.Player1Won => "You won!",
+                GameStatus.Player2Won => "You lost :(",
+                GameStatus.Player1Turn => "You turn",
+                GameStatus.Player2Turn => "Computer's turn",
+                GameStatus.Tie => "Game Tie",
+                _ => "New"
+            })
+        </div>
     </li>
   </ul>
 </div>
@@ -92,9 +86,9 @@
 
   private string GetStatusStyle()
   {
-      return game.Winner switch{
-          Player.Player1 => "you-won",
-          Player.Player2 => "you-lost",
+      return game.Status switch{
+          GameStatus.Player1Won => "you-won",
+          GameStatus.Player2Won => "you-lost",
           _ => "in-progress"
       };
   }
@@ -102,7 +96,7 @@
   private async Task CellSelected(Coordinates coords)
   {
       // ignore any selection when it is not Player1's turn
-      if (game.Turn == Player.Player1){
+      if (game.Status == GameStatus.Player1Turn){
           await game.Play(coords.X, coords.Y);
       }
   }

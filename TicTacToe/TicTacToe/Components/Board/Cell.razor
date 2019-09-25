@@ -23,8 +23,8 @@
     <span>
        @(Data.Value switch
         {
-            Option.Cross => "X",
-            Option.Nought => "O",
+            CellMarker.Cross => "X",
+            CellMarker.Nought => "O",
             _ => " "
         })
     </span>
@@ -33,7 +33,7 @@
 @code {
   
   [Parameter]
-  public Cell<Option> Data {get; set;}
+  public Cell<CellMarker> Data {get; set;}
 
   [Parameter]
   public EventCallback<Coordinates> OnCellSelected {get; set;}
