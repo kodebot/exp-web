@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TicTacToe.Core.Extensions;
+using TicTacToe.Core.PlayerBot;
 
 namespace TicTacToe.Core
 {
@@ -11,9 +12,11 @@ namespace TicTacToe.Core
         private readonly Board<CellMarker> _board;
         private GameStatus _status;
         private readonly Dictionary<Player, CellMarker> _playerMarker;
+        private readonly IPlayerBot _player2;
 
-        public Game()
+        public Game(IPlayerBot player2)
         {
+            _player2 = player2;
             _board = new Board<CellMarker>();
             _playerMarker = new Dictionary<Player, CellMarker>
             {
@@ -27,7 +30,8 @@ namespace TicTacToe.Core
 
         public void Start()
         {
-            if(_status == GameStatus.New){
+            if (_status == GameStatus.New)
+            {
                 _status = GameStatus.Player1Turn;
                 return;
             }
@@ -47,26 +51,15 @@ namespace TicTacToe.Core
             // if new turn is computers then play computer's turn
             if (_status == GameStatus.Player2Turn)
             {
-                await Task.Delay(2000);
-                await PlayComputerTurn(); // todo: move this to event based
+                await PlayPlayer2Turn(); // todo: move this to event based
             }
-
         }
 
-        private async Task PlayComputerTurn()
+        private async Task PlayPlayer2Turn()
         {
-            // find random empty cell
-            var random = new Random();
-            while (true)
-            {
-                var row = random.Next(0, 3);
-                var col = random.Next(0, 3);
-                if (_board[row, col] == CellMarker.Empty)
-                {
-                    await Play(row, col);
-                    break;
-                }
-            }
+            await Task.Delay(2000);
+            var coords = _player2.GetNextMove(_board, _playerMarker[Player.Player2]);
+            await Play(coords.X, coords.Y);
         }
 
         private CellMarker GetCellMarkerOfCurrentPlayer()

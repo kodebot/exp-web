@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using TicTacToe.Core
 @using TicTacToe.Core.Extensions
+@using TicTacToe.Core.PlayerBot
 
 <style>
     
@@ -43,11 +44,11 @@
     </div>
 </div>
 @code {
-  Game game = new Game();
+  Game game = new Game(new RandomPlayerBot());
 
   private void OnRestart()
   {
-      game = new Game();
+      game = new Game(new RandomPlayerBot());
       game.Start();
   }
 
