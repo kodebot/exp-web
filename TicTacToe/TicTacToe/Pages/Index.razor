@@ -1,96 +1,59 @@
 ﻿@page "/"
-@using TicTacToe.Core;
+@using TicTacToe.Core
+@using TicTacToe.Core.Extensions
 
 <style>
+    
+    .game-container{
+        width:300px;
+        margin:0 auto;
+    }
+
     .board{
-        width: 310px;
-        margin: 50px auto;
+        position: relative;
+        width: 100%;
+        width:306px;
     }
 
-    .stats-card{
-        width: 310px;
-        margin: 50px auto;
-        text-transform: uppercase;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-weight: bold;
+    .hide{
+        visibility:hidden;
     }
 
-    .in-progress{
-        background-color: peru !important;
-    }
-
-    .you-won{
-        background-color: mediumseagreen !important;
-    }
-
-    .you-lost{
-        background-color: indianred !important;
-    }
 </style>
 
-<div class="card bg-secondary text-center stats-card">
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item bg-secondary text-white"> You: X </li>
-    <li class="list-group-item bg-secondary text-white">Computer: O</li>
-    <li class="list-group-item bg-secondary text-white @GetStatusStyle()"> 
-        <div>  
-            @(game.Status switch
-            {
-                GameStatus.Player1Won => "You won!",
-                GameStatus.Player2Won => "You lost :(",
-                GameStatus.Player1Turn => "You turn",
-                GameStatus.Player2Turn => "Computer's turn",
-                GameStatus.Tie => "Game Tie",
-                _ => "New"
-            })
+<div class="game-container">
+    <StatusCard Status="game.Status" />
+    <div>
+        <div class="text-right p-2 @HideRestartCssClass()">
+            <button class="btn btn-outline-danger btn-sm" @onclick="OnRestart"> <span class="oi oi-loop-circular"></span> Restart</button>
         </div>
-    </li>
-  </ul>
-</div>
+       
+        <div class="board">
+            <BoardTable Board="game.Board" OnCellSelected="CellSelected"></BoardTable>
+            <StatusOverlay Status="game.Status" OnRestart="OnRestart" OnStart="OnStart"></StatusOverlay>
+        </div>
+    </div>
 
-<div class="text-center">
-    <button class="btn btn-danger" @onclick="Restart"> Restart</button>
-</div>
-
-<div class="board">
-    <table>
-        @foreach (var row in game.Board.Rows)
-        {
-        <tr>
-            @foreach (var cell in row)
-            {
-                <td>
-                    <Cell Data="cell" OnCellSelected="CellSelected">
-                    </Cell>
-                </td>
-            }
-        </tr>    
-        }
-    </table>
-</div>
-
-<div>
-    0. allow restart
-    1. strike across winning cells
-    2. use cartoony fonts
-    3. use random pictures for noughts and crosses
-    4. display when the result is tie (display the game is over and break the infinite loop)
+    <div class="hide">
+        0. allow restart
+        1. strike across winning cells
+        2. use cartoony fonts
+        3. use random pictures for noughts and crosses
+        4. display when the result is tie (display the game is over and break the infinite loop)
+    </div>
 </div>
 @code {
   Game game = new Game();
 
-  private void Restart()
+  private void OnRestart()
   {
       game = new Game();
+      game.Start();
   }
 
-  private string GetStatusStyle()
+  private void OnStart()
   {
-      return game.Status switch{
-          GameStatus.Player1Won => "you-won",
-          GameStatus.Player2Won => "you-lost",
-          _ => "in-progress"
-      };
+      game.Start();
   }
 
   private async Task CellSelected(Coordinates coords)
@@ -99,5 +62,15 @@
       if (game.Status == GameStatus.Player1Turn){
           await game.Play(coords.X, coords.Y);
       }
+  }
+
+  private string HideRestartCssClass()
+  {
+      if(!game.Status.IsInProgress())
+      {
+          return "hide";
+      }
+
+      return String.Empty;
   }
 }

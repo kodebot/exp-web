@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TicTacToe.Core.Extensions;
 
 namespace TicTacToe.Core
 {
@@ -23,9 +24,19 @@ namespace TicTacToe.Core
 
         public Board<CellMarker> Board => _board;
         public GameStatus Status => _status;
+
+        public void Start()
+        {
+            if(_status == GameStatus.New){
+                _status = GameStatus.Player1Turn;
+                return;
+            }
+
+            throw new InvalidOperationException("Cannot start a game that have already been started");
+        }
         public async Task Play(int row, int col)
         {
-            if (IsGameOver())
+            if (_status.IsGameOver())
             {
                 return;
             }
@@ -72,11 +83,6 @@ namespace TicTacToe.Core
         private Player GetPlayerFromCellMarker(CellMarker marker)
         {
             return _playerMarker.First(p => p.Value == marker).Key;
-        }
-
-        private bool IsGameOver()
-        {
-            return _status == GameStatus.Player1Won || _status == GameStatus.Player2Won || _status == GameStatus.Tie;
         }
 
         private void RecalculateGameStatus()
